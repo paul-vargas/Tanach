@@ -1,0 +1,4328 @@
+<?xml version = "1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="XSL/Differences.xsl.xml"?>
+<!-- Copyright C.V.Kimball 2008 -->
+<Differences>
+<header>
+  <title>Differences between versions of the Westminster Leningrad Codex</title>
+  <description>Two versions of the Westminster Leningrad Codex (WLC), in the format of the Unicode/XML Tanach, are compared, looking for any differences between them. The basic element of the Unicode/XML Tanach is the Graphical Object, or GO. GOs have 6 types: w, a single word; q, a word representing a qere variant; k, a word representing a ketib variant; pe, an empty tag representing an open paragraph marker; samekh, an empty tag representing a closed paragraph marker, reversednun, an empty tag representing a reversed nun. w, q, and k type GOs contain Unicode Hebrew text with consonants, vowels, accents, morphological division marks (/), blanks, and the Unicode Zero Width Joiner.  Any other content is invalid in these tags. Any GO may have a transcription note associated with it. The comparison is (normally) made between corresponding GOs from the two different versions. Each pair of GOs is examined for changes in morphological divisions, accents, vowels, consonants and notes and the results are indexed in the format Book C:V.GO, where Book is the book, C is the chapter, V is the verse, and GO is the index of the GO in the verse. All indices, C, V, and GO start with 1. Very infrequently, changes in the text produce different numbers of GOs in a given chapter and verse.  In this case, the entire verse is displayed and a simple analysis is given. The output file documents and summarizes all differences between the versions.</description>
+  <creationdate>5 Aug 2009</creationdate>
+  <notes>
+  <note>
+    <code>1</code>
+    <gccode>1</gccode>
+    <note>BHS has been faithful to the Leningrad Codex where there might be a question of the validity of the form and we keep the same form as BHS.</note>
+  </note>
+  <note>
+    <code>2</code>
+    <gccode>2</gccode>
+    <note>We have added a sop pasuq where L and BHS omit it.(The added sof pasuq often is missing from the text.)</note>
+  </note>
+  <note>
+    <code>3</code>
+    <gccode>3</gccode>
+    <note>We read or understand L differently than BHS (1983 Edition). Often this notation indicates a typographical error in BHS.</note>
+  </note>
+  <note>
+    <code>4</code>
+    <gccode>4</gccode>
+    <note>Puncta extraordinaria -- a \u05c4 is used to mark such marks in the text when they are above the line and a \u05c5 when they are below the line.</note>
+  </note>
+  <note>
+    <code>5</code>
+    <gccode>5</gccode>
+    <note>Large letter(s). Shown as large letters without a superscript note number.</note>
+  </note>
+  <note>
+    <code>6</code>
+    <gccode>6</gccode>
+    <note>Small letter(s). Shown as small letters without a superscript note number.</note>
+  </note>
+  <note>
+    <code>7</code>
+    <gccode>7</gccode>
+    <note>Suspended letter(s). Shown as suspended letters without a superscript note number.</note>
+  </note>
+  <note>
+    <code>8</code>
+    <gccode>8</gccode>
+    <note>Inverted nun in the text.</note>
+  </note>
+  <note>
+    <code>9</code>
+    <gccode>9</gccode>
+    <note>BHS has abandoned L and we concur. All of these occurrences are ketib/qere problems.</note>
+  </note>
+  <note>
+    <code>10</code>
+    <gccode>F</gccode>
+    <note>Marks a consonant with an anomalous final form that is word-medial.</note>
+  </note>
+  <note>
+    <code>11</code>
+    <gccode>M</gccode>
+    <note>Marks a word with a final consonant that is a medial (not a final) form.</note>
+  </note>
+  <note>
+    <code>12</code>
+    <gccode>Q</gccode>
+    <note>Marks a place where we agree with BHQ against BHS in reading L. (Currently occurs only with note ']t'.)</note>
+  </note>
+  <note>
+    <code>13</code>
+    <gccode>a</gccode>
+    <note>Adaptations to a Qere which L and BHS, by their design, do not indicate.</note>
+  </note>
+  <note>
+    <code>14</code>
+    <gccode>c</gccode>
+    <note>We read or understand the cantillation in L differently than BHS (1983 Edition). Often this notation indicates a typographical error in BHS.</note>
+  </note>
+  <note>
+    <code>15</code>
+    <gccode>m</gccode>
+    <note>Miscellaneous notes to the text and occasions where more than one bracket category applies.</note>
+  </note>
+  <note>
+    <code>16</code>
+    <gccode>p</gccode>
+    <note>We disagree with BHS about the placement of an accent or vowel.</note>
+  </note>
+  <note>
+    <code>17</code>
+    <gccode>q</gccode>
+    <note>We have abandoned or added a ketib/qere relative to BHS. In doing this we agree with L against BHS.</note>
+  </note>
+  <note>
+    <code>18</code>
+    <gccode>t</gccode>
+    <note>We read one or more consonants, vowels or punctuation (Maqqef, Dagesh or Mappiq) in L differently from BHS (1997). This is similar to the note ']c', but the latter  refers to the accents. The older note ']3' encompasses the new uses of ']c', ']p' and ']t'.</note>
+  </note>
+  <note>
+    <code>19</code>
+    <gccode>y</gccode>
+    <note>Yathir readings in L which we have designated as Qeres when both Dothan and BHS list a Qere.</note>
+  </note>
+</notes>
+</header>
+<book>
+  <bookname>Genesis</bookname>
+  <bookabbrev>Gen</bookabbrev>
+  <firstbook>
+    <filename>Genesis</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Genesis</filename>
+    <version>4.12</version>
+    <date>5 Aug 2009</date>
+    <transcriptiondate>11 Nov 2009</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="false">
+    <position>Gen 4:13.6</position>
+    <go1>עֲוֹנִ֖י</go1>
+    <go2>עֲוֺנִ֖י</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Gen 5:29.6</position>
+    <go1>זֶ֞ה֠<x>c</x></go1>
+    <go2>זֶ֠ה<x>14</x></go2>
+    <change>Accents are different. A transcription note has been changed.  Note c becomes a note 14.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Gen 6:16.2</position>
+    <go1>תַּעֲשֶׂ֣ה<x>3</x></go1>
+    <go2>תַּֽעֲשֶׂ֣ה</go2>
+    <change>Accents are different. Different number of notes. A note, 3, has been removed.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Gen 9:26.9</position>
+    <go1>לָֽמוֹ׃</go1>
+    <go2>לָֽ/מוֹ׃</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Gen 9:27.10</position>
+    <go1>לָֽמוֹ׃</go1>
+    <go2>לָֽ/מוֹ׃</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Gen 15:16.8</position>
+    <go1>עֲוֹ֥ן</go1>
+    <go2>עֲוֺ֥ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Gen 19:15.18</position>
+    <go1>בַּעֲוֹ֥ן</go1>
+    <go2>בַּעֲוֺ֥ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Gen 26:5.8</position>
+    <go1>מִצְוֹתַ֖י</go1>
+    <go2>מִצְוֺתַ֖י</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Gen 37:10.21</position>
+    <go1>לְהִשְׁתַּחֲוֹ֥ת</go1>
+    <go2>לְהִשְׁתַּחֲוֺ֥ת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Gen 44:16.13</position>
+    <go1>עֲוֹ֣ן</go1>
+    <go2>עֲוֺ֣ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Gen 47:20.12</position>
+    <go1>שָׂדֵ֔ה/וּ</go1>
+    <go2>שָׂדֵ֔/הוּ</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Gen 47:21.10</position>
+    <go1>קָצֵֽה/וּ׃</go1>
+    <go2>קָצֵֽ/הוּ׃</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Gen 49:33.3</position>
+    <go1>לְצַוֹּ֣ת</go1>
+    <go2>לְצַוֺּ֣ת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>4</mdchange>
+    <accentchange>2</accentchange>
+    <vowelchange>7</vowelchange>
+    <notechange>1</notechange>
+    <notevaluechange>1</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Exodus</bookname>
+  <bookabbrev>Ex</bookabbrev>
+  <firstbook>
+    <filename>Exodus</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Exodus</filename>
+    <version>4.12</version>
+    <date>5 Aug 2009</date>
+    <transcriptiondate>11 Nov 2009</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="false">
+    <position>Ex 15:26.12</position>
+    <go1>לְמִצְוֹתָ֔יו</go1>
+    <go2>לְמִצְוֺתָ֔יו</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ex 16:28.9</position>
+    <go1>מִצְוֹתַ֖י</go1>
+    <go2>מִצְוֺתַ֖י</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ex 20:5.13</position>
+    <go1>עֲוֹ֨ן</go1>
+    <go2>עֲוֺ֨ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ex 20:6.6</position>
+    <go1>מִצְוֹתָֽי׃</go1>
+    <go2>מִצְוֺתָֽי׃</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ex 28:38.8</position>
+    <go1>עֲוֹ֣ן</go1>
+    <go2>עֲוֺ֣ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ex 28:43.18</position>
+    <go1>עָוֹ֖ן</go1>
+    <go2>עָוֺ֖ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ex 34:6.15</position>
+    <go1>וֶאֱמֶֽת׃</go1>
+    <go2>וֶאֱמֶֽת ׀<x>14</x></go2>
+    <change>Consonants don't match! Different number of notes. A note, 14, has been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ex 34:7.5</position>
+    <go1>עָוֹ֛ן</go1>
+    <go2>עָוֺ֛ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ex 34:7.12</position>
+    <go1>עֲוֹ֣ן</go1>
+    <go2>עֲוֺ֣ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ex 34:9.18</position>
+    <go1>לַעֲוֹנֵ֥נוּ</go1>
+    <go2>לַעֲוֺנֵ֥נוּ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ex 37:16.14</position>
+    <go1>הַקְּשָׂוֹ֔ת</go1>
+    <go2>הַקְּשָׂוֺ֔ת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ex 38:5.5</position>
+    <go1>הַקְּצָוֹ֖ת</go1>
+    <go2>הַקְּצָוֺ֖ת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>1</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>11</vowelchange>
+    <notechange>1</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Leviticus</bookname>
+  <bookabbrev>Lev</bookabbrev>
+  <firstbook>
+    <filename>Leviticus</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Leviticus</filename>
+    <version>4.12</version>
+    <date>5 Aug 2009</date>
+    <transcriptiondate>11 Nov 2009</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="false">
+    <position>Lev 4:2.11</position>
+    <go1>מִצְוֹ֣ת</go1>
+    <go2>מִצְוֺ֣ת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Lev 4:13.13</position>
+    <go1>מִצְוֹ֧ת</go1>
+    <go2>מִצְוֺ֧ת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Lev 4:22.7</position>
+    <go1>מִצְוֹת֩</go1>
+    <go2>מִצְוֺת֩</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Lev 4:27.10</position>
+    <go1>מִמִּצְוֹ֧ת</go1>
+    <go2>מִמִּצְוֺ֧ת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Lev 5:1.17</position>
+    <go1>עֲוֹנֽוֹ׃</go1>
+    <go2>עֲוֺנֽוֹ׃</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Lev 5:17.8</position>
+    <go1>מִצְוֹ֣ת</go1>
+    <go2>מִצְוֺ֣ת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Lev 5:17.17</position>
+    <go1>עֲוֹנֽוֹ׃</go1>
+    <go2>עֲוֺנֽוֹ׃</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Lev 7:18.21</position>
+    <go1>עֲוֹנָ֥הּ</go1>
+    <go2>עֲוֺנָ֥הּ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Lev 7:38.9</position>
+    <go1>צַוֹּת֜וֹ</go1>
+    <go2>צַוֺּת֜וֹ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Lev 10:17.17</position>
+    <go1>עֲוֹ֣ן</go1>
+    <go2>עֲוֺ֣ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Lev 12:2.16</position>
+    <go1>דְּוֹתָ֖הּ</go1>
+    <go2>דְּוֺתָ֖הּ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Lev 16:21.15</position>
+    <go1>עֲוֹנֹת֙</go1>
+    <go2>עֲוֺנֹת֙</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Lev 16:22.6</position>
+    <go1>עֲוֹנֹתָ֖ם</go1>
+    <go2>עֲוֺנֹתָ֖ם</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Lev 17:16.8</position>
+    <go1>עֲוֹנֽוֹ׃</go1>
+    <go2>עֲוֺנֽוֹ׃</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Lev 18:25.4</position>
+    <go1>עֲוֹנָ֖הּ</go1>
+    <go2>עֲוֺנָ֖הּ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Lev 19:8.2</position>
+    <go1>עֲוֹנ֣וֹ</go1>
+    <go2>עֲוֺנ֣וֹ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Lev 20:17.27</position>
+    <go1>עֲוֹנ֥וֹ</go1>
+    <go2>עֲוֺנ֥וֹ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Lev 20:19.12</position>
+    <go1>עֲוֹנָ֥ם</go1>
+    <go2>עֲוֺנָ֥ם</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Lev 22:16.3</position>
+    <go1>עֲוֹ֣ן</go1>
+    <go2>עֲוֺ֣ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Lev 22:31.2</position>
+    <go1>מִצְוֹתַ֔י</go1>
+    <go2>מִצְוֺתַ֔י</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Lev 26:1.15</position>
+    <go1>לְהִֽשְׁתַּחֲוֹ֖ת</go1>
+    <go2>לְהִֽשְׁתַּחֲוֺ֖ת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Lev 26:3.5</position>
+    <go1>מִצְוֹתַ֣י</go1>
+    <go2>מִצְוֺתַ֣י</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Lev 26:14.9</position>
+    <go1>הַמִּצְוֹ֖ת</go1>
+    <go2>הַמִּצְוֺ֖ת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Lev 26:15.13</position>
+    <go1>מִצְוֹתַ֔י</go1>
+    <go2>מִצְוֺתַ֔י</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Lev 26:39.4</position>
+    <go1>בַּֽעֲוֹנָ֔ם</go1>
+    <go2>בַּֽעֲוֺנָ֔ם</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Lev 26:39.8</position>
+    <go1>בַּעֲוֹנֹ֥ת</go1>
+    <go2>בַּעֲוֺנֹ֥ת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Lev 26:40.3</position>
+    <go1>עֲוֹנָם֙</go1>
+    <go2>עֲוֺנָם֙</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Lev 26:40.5</position>
+    <go1>עֲוֹ֣ן</go1>
+    <go2>עֲוֺ֣ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Lev 26:41.18</position>
+    <go1>עֲוֹנָֽם׃</go1>
+    <go2>עֲוֺנָֽם׃</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Lev 26:43.12</position>
+    <go1>עֲוֹנָ֑ם</go1>
+    <go2>עֲוֺנָ֑ם</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Lev 27:34.2</position>
+    <go1>הַמִּצְוֹ֗ת</go1>
+    <go2>הַמִּצְוֺ֗ת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>31</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Numbers</bookname>
+  <bookabbrev>Num</bookabbrev>
+  <firstbook>
+    <filename>Numbers</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Numbers</filename>
+    <version>4.12</version>
+    <date>5 Aug 2009</date>
+    <transcriptiondate>11 Nov 2009</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="false">
+    <position>Num 5:15.30</position>
+    <go1>עָוֹֽן׃</go1>
+    <go2>עָוֺֽן׃</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Num 5:31.3</position>
+    <go1>מֵעָוֹ֑ן</go1>
+    <go2>מֵעָוֺ֑ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Num 5:31.8</position>
+    <go1>עֲוֹנָֽהּ׃</go1>
+    <go2>עֲוֺנָֽהּ׃</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Num 14:18.7</position>
+    <go1>עָוֹ֖ן</go1>
+    <go2>עָוֺ֖ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Num 14:18.13</position>
+    <go1>עֲוֹ֤ן</go1>
+    <go2>עֲוֺ֤ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Num 14:19.3</position>
+    <go1>לַעֲוֹ֛ן</go1>
+    <go2>לַעֲוֺ֛ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Num 14:34.15</position>
+    <go1>עֲוֹנֹ֣תֵיכֶ֔ם</go1>
+    <go2>עֲוֺנֹ֣תֵיכֶ֔ם</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Num 15:22.7</position>
+    <go1>הַמִּצְוֹ֖ת</go1>
+    <go2>הַמִּצְוֺ֖ת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Num 15:31.12</position>
+    <go1>עֲוֹנָ֥ה</go1>
+    <go2>עֲוֺנָ֥ה</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Num 15:39.9</position>
+    <go1>מִצְוֹ֣ת</go1>
+    <go2>מִצְוֺ֣ת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Num 15:40.6</position>
+    <go1>מִצְוֹתָ֑י</go1>
+    <go2>מִצְוֺתָ֑י</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Num 17:17.24</position>
+    <go1>מַטֵּֽה/וּ׃</go1>
+    <go2>מַטֵּֽ/הוּ׃</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Num 17:28.10</position>
+    <go1>לִגְוֹֽעַ׃</go1>
+    <go2>לִגְוֺֽעַ׃</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Num 18:1.12</position>
+    <go1>עֲוֹ֣ן</go1>
+    <go2>עֲוֺ֣ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Num 18:1.19</position>
+    <go1>עֲוֹ֥ן</go1>
+    <go2>עֲוֺ֥ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Num 18:23.10</position>
+    <go1>עֲוֹנָ֑ם</go1>
+    <go2>עֲוֺנָ֑ם</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Num 30:16.9</position>
+    <go1>עֲוֹנָֽהּ׃</go1>
+    <go2>עֲוֺנָֽהּ׃</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Num 32:41.7</position>
+    <go1>חַוֹּתֵיהֶ֑ם</go1>
+    <go2>חַוֺּתֵיהֶ֑ם</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Num 32:41.10</position>
+    <go1>חַוֹּ֥ת</go1>
+    <go2>חַוֺּ֥ת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Num 36:13.2</position>
+    <go1>הַמִּצְוֹ֞ת</go1>
+    <go2>הַמִּצְוֺ֞ת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>1</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>19</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Deuteronomy</bookname>
+  <bookabbrev>Deut</bookabbrev>
+  <firstbook>
+    <filename>Deuteronomy</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Deuteronomy</filename>
+    <version>4.12</version>
+    <date>5 Aug 2009</date>
+    <transcriptiondate>11 Nov 2009</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="false">
+    <position>Deut 1:31.9</position>
+    <go1>יִשָּׂא־</go1>
+    <go2>יִשָׂא־</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Deut 1:38.2</position>
+    <go1>בִּן־</go1>
+    <go2>בִּן<x>12</x><x>18</x></go2>
+    <change>Accents are different. Different number of notes. 2 notes, 12, 18,  have been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Deut 1:39.19</position>
+    <go1>יִירָשֽׁוּהָ׃</go1>
+    <go2>יִירָשֽׁוּהָּ׃<x>12</x><x>18</x></go2>
+    <change>Vowels are different. Different number of notes. 2 notes, 12, 18,  have been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Deut 2:9.24</position>
+    <go1>יְרֻשָּׁה׃<x>1</x></go1>
+    <go2>יְרֻשָּֽׁה׃</go2>
+    <change>Accents are different. Different number of notes. A note, 1, has been removed.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Deut 3:14.19</position>
+    <go1>חַוֹּ֣ת</go1>
+    <go2>חַוֺּ֣ת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Deut 3:22.2</position>
+    <go1>תִּֽירָא֑וּם</go1>
+    <go2>תְִּירָא֑וּם<x>12</x><x>18</x></go2>
+    <change>Accents are different. Vowels are different. Different number of notes. 2 notes, 12, 18,  have been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Deut 4:2.14</position>
+    <go1>מִצְוֹת֙</go1>
+    <go2>מִצְוֺת֙</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Deut 4:7.12</position>
+    <go1>בְּכָל־</go1>
+    <go2>בְּכָּל־</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Deut 4:40.5</position>
+    <go1>מִצְוֹתָ֗יו</go1>
+    <go2>מִצְוֺתָ֗יו</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Deut 4:40.19</position>
+    <go1>הָ֣אֲדָמָ֔ה</go1>
+    <go2>הַ֣אֲדָמָ֔ה<x>12</x><x>18</x></go2>
+    <change>Vowels are different. Different number of notes. 2 notes, 12, 18,  have been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Deut 5:6.8</position>
+    <go1>מִבֵּ֣י֥ת</go1>
+    <go2>מִבֵּ֣֥ית</go2>
+    <change>Accents are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Deut 5:9.13</position>
+    <go1>עֲוֹ֨ן</go1>
+    <go2>עֲוֺ֨ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Deut 5:10.7</position>
+    <go1>מִצְוֹתָֽי׃</go1>
+    <go2>מִצְוֺתָֽי׃</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Deut 5:29.12</position>
+    <go1>מִצְוֹתַ֖י</go1>
+    <go2>מִצְוֺתַ֖י</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Deut 6:2.10</position>
+    <go1>וּמִצְוֹתָיו֮</go1>
+    <go2>וּמִצְוֺתָיו֮</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Deut 6:17.4</position>
+    <go1>מִצְוֹ֖ת</go1>
+    <go2>מִצְוֺ֖ת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Deut 7:9.15</position>
+    <go1>מִצְוֹתָ֖יו</go1>
+    <go2>מִצְוֺתָ֖יו</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Deut 8:2.22</position>
+    <go1>מִצְוֹתָ֖יו</go1>
+    <go2>מִצְוֺתָ֖יו</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Deut 8:6.3</position>
+    <go1>מִצְוֹ֖ת</go1>
+    <go2>מִצְוֺ֖ת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Deut 8:11.10</position>
+    <go1>מִצְוֹתָיו֙</go1>
+    <go2>מִצְוֺתָיו֙</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Deut 10:13.3</position>
+    <go1>מִצְוֹ֤ת</go1>
+    <go2>מִצְוֺ֤ת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Deut 11:1.9</position>
+    <go1>וּמִצְוֹתָ֖יו</go1>
+    <go2>וּמִצְוֺתָ֖יו</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Deut 11:13.6</position>
+    <go1>מִצְוֹתַ֔י</go1>
+    <go2>מִצְוֺתַ֔י</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Deut 11:27.6</position>
+    <go1>מִצְוֹת֙</go1>
+    <go2>מִצְוֺת֙</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Deut 11:28.6</position>
+    <go1>מִצְוֹת֙</go1>
+    <go2>מִצְוֺת֙</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Deut 13:5.8</position>
+    <go1>מִצְוֹתָ֤יו</go1>
+    <go2>מִצְוֺתָ֤יו</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Deut 13:19.9</position>
+    <go1>מִצְוֹתָ֔יו</go1>
+    <go2>מִצְוֺתָ֔יו</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Deut 14:17.3</position>
+    <go1>הָ/רָחָ֖מָה</go1>
+    <go2>הָ/רָחָ֖מָ/ה</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Deut 19:15.7</position>
+    <go1>עָוֹן֙</go1>
+    <go2>עָוֺן֙</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Deut 26:13.21</position>
+    <go1>מִמִּצְוֹתֶ֖יךָ</go1>
+    <go2>מִמִּצְוֺתֶ֖יךָ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Deut 26:17.12</position>
+    <go1>וּמִצְוֹתָ֛יו</go1>
+    <go2>וּמִצְוֺתָ֛יו</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Deut 26:18.13</position>
+    <go1>מִצְוֹתָֽיו׃</go1>
+    <go2>מִצְוֺתָֽיו׃</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Deut 27:10.7</position>
+    <go1>מִצְוֹתָו֙<x>q</x></go1>
+    <go2>מִצְוֺתָו֙<x>17</x></go2>
+    <change>Vowels are different. A transcription note has been changed.  Note q becomes a note 17.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Deut 28:1.12</position>
+    <go1>מִצְוֹתָ֔יו</go1>
+    <go2>מִצְוֺתָ֔יו</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Deut 28:9.12</position>
+    <go1>מִצְוֹת֙</go1>
+    <go2>מִצְוֺת֙</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Deut 28:13.15</position>
+    <go1>מִצְוֹ֣ת ׀</go1>
+    <go2>מִצְוֺ֣ת ׀</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Deut 28:15.12</position>
+    <go1>מִצְוֹתָ֣יו</go1>
+    <go2>מִצְוֺתָ֣יו</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Deut 28:45.17</position>
+    <go1>מִצְוֹתָ֥יו</go1>
+    <go2>מִצְוֺתָ֥יו</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Deut 30:8.9</position>
+    <go1>מִצְוֹתָ֔יו</go1>
+    <go2>מִצְוֺתָ֔יו</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Deut 30:10.7</position>
+    <go1>מִצְוֹתָיו֙</go1>
+    <go2>מִצְוֺתָיו֙</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Deut 30:16.12</position>
+    <go1>מִצְוֹתָ֥יו</go1>
+    <go2>מִצְוֺתָ֥יו</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Deut 32:32.12</position>
+    <go1>לָֽמוֹ׃</go1>
+    <go2>לָֽ/מוֹ׃</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Deut 32:35.13</position>
+    <go1>לָֽמוֹ׃</go1>
+    <go2>לָֽ/מוֹ׃</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Deut 33:2.7</position>
+    <go1>לָ֔מוֹ</go1>
+    <go2>לָ֔/מוֹ</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Deut 33:2.18</position>
+    <go1>לָֽמוֹ׃</go1>
+    <go2>לָֽ/מוֹ׃</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>5</mdchange>
+    <accentchange>4</accentchange>
+    <vowelchange>37</vowelchange>
+    <notechange>5</notechange>
+    <notevaluechange>1</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Joshua</bookname>
+  <bookabbrev>Josh</bookabbrev>
+  <firstbook>
+    <filename>Joshua</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Joshua</filename>
+    <version>4.12</version>
+    <date>5 Aug 2009</date>
+    <transcriptiondate>11 Nov 2009</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="false">
+    <position>Josh 13:30.12</position>
+    <go1>חַוֹּ֥ת</go1>
+    <go2>חַוֺּ֥ת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Josh 22:5.23</position>
+    <go1>מִצְוֹתָ֖יו</go1>
+    <go2>מִצְוֺתָ֖יו</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Josh 22:17.4</position>
+    <go1>עֲוֹ֣ן</go1>
+    <go2>עֲוֺ֣ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Josh 22:20.19</position>
+    <go1>בַּעֲוֹנֽוֹ׃</go1>
+    <go2>בַּעֲוֺנֽוֹ׃</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>4</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Judges</bookname>
+  <bookabbrev>Judg</bookabbrev>
+  <firstbook>
+    <filename>Judges</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Judges</filename>
+    <version>4.12</version>
+    <date>5 Aug 2009</date>
+    <transcriptiondate>11 Nov 2009</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="false">
+    <position>Judg 2:17.21</position>
+    <go1>מִצְוֹת־</go1>
+    <go2>מִצְוֺת־</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Judg 2:19.12</position>
+    <go1>וּלְהִשְׁתַּחֲוֹ֣ת</go1>
+    <go2>וּלְהִשְׁתַּחֲוֺ֣ת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Judg 3:4.9</position>
+    <go1>מִצְוֹ֣ת</go1>
+    <go2>מִצְוֺ֣ת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Judg 10:4.14</position>
+    <go1>חַוֹּ֣ת</go1>
+    <go2>חַוֺּ֣ת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>4</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>1 Samuel</bookname>
+  <bookabbrev>1 Sam</bookabbrev>
+  <firstbook>
+    <filename>Samuel_1</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Samuel_1</filename>
+    <version>4.12</version>
+    <date>5 Aug 2009</date>
+    <transcriptiondate>11 Nov 2009</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="false">
+    <position>1 Sam 1:3.7</position>
+    <go1>לְהִֽשְׁתַּחֲוֹ֧ת</go1>
+    <go2>לְהִֽשְׁתַּחֲוֺ֧ת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>1 Sam 2:36.6</position>
+    <go1>לְהִשְׁתַּחֲוֹ֣ת</go1>
+    <go2>לְהִשְׁתַּחֲוֺ֣ת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>1 Sam 3:13.10</position>
+    <go1>בַּעֲוֹ֣ן</go1>
+    <go2>בַּעֲוֺ֣ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>1 Sam 3:14.7</position>
+    <go1>עֲוֹ֧ן</go1>
+    <go2>עֲוֺ֧ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>1 Sam 6:17.10</position>
+    <go1>אֶחָ֔ד</go1>
+    <go2>אֶחָ֜ד<x>14</x></go2>
+    <change>Accents are different. Different number of notes. A note, 14, has been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>1 Sam 20:1.13</position>
+    <go1>עֲוֹנִ֤י</go1>
+    <go2>עֲוֺנִ֤י</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>1 Sam 20:8.15</position>
+    <go1>עָוֹן֙</go1>
+    <go2>עָוֺן֙</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>1 Sam 25:24.8</position>
+    <go1>הֶֽעָוֹ֑ן</go1>
+    <go2>הֶֽעָוֺ֑ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>1 Sam 28:10.10</position>
+    <go1>עָוֹ֖ן</go1>
+    <go2>עָוֺ֖ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>1</accentchange>
+    <vowelchange>8</vowelchange>
+    <notechange>1</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>2 Samuel</bookname>
+  <bookabbrev>2 Sam</bookabbrev>
+  <firstbook>
+    <filename>Samuel_2</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Samuel_2</filename>
+    <version>4.12</version>
+    <date>5 Aug 2009</date>
+    <transcriptiondate>11 Nov 2009</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="false">
+    <position>2 Sam 3:8.31</position>
+    <go1>עֲוֹ֥ן</go1>
+    <go2>עֲוֺ֥ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>2 Sam 6:21.13</position>
+    <go1>לְצַוֹּ֨ת</go1>
+    <go2>לְצַוֺּ֨ת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>2 Sam 7:14.10</position>
+    <go1>בְּהַ֣עֲוֹת֔וֹ</go1>
+    <go2>בְּהַ֣עֲוֺת֔וֹ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>2 Sam 14:9.9</position>
+    <go1>הֶעָוֹ֖ן</go1>
+    <go2>הֶעָוֺ֖ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>2 Sam 14:32.31</position>
+    <go1>עָוֹ֖ן</go1>
+    <go2>עָוֺ֖ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>2 Sam 15:5.4</position>
+    <go1>לְהִשְׁתַּחֲוֹ֖ת</go1>
+    <go2>לְהִשְׁתַּחֲוֺ֖ת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>2 Sam 18:5.17</position>
+    <go1>בְּצַוֹּ֥ת</go1>
+    <go2>בְּצַוֺּ֥ת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>2 Sam 19:20.8</position>
+    <go1>עָוֹן֒</go1>
+    <go2>עָוֺן֒</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>2 Sam 22:24.5</position>
+    <go1>מֵעֲוֹנִֽי׃</go1>
+    <go2>מֵעֲוֺנִֽי׃</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>2 Sam 24:10.24</position>
+    <go1>עֲוֹ֣ן</go1>
+    <go2>עֲוֺ֣ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>10</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>1 Kings</bookname>
+  <bookabbrev>1 Kings</bookabbrev>
+  <firstbook>
+    <filename>Kings_1</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Kings_1</filename>
+    <version>4.12</version>
+    <date>5 Aug 2009</date>
+    <transcriptiondate>11 Nov 2009</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="false">
+    <position>1 Kings 2:3.10</position>
+    <go1>מִצְוֹתָיו֙</go1>
+    <go2>מִצְוֺתָיו֙</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>1 Kings 2:3.12</position>
+    <go1>וְעֵדְוֹתָ֔יו</go1>
+    <go2>וְעֵדְוֺתָ֔יו</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>1 Kings 3:14.6</position>
+    <go1>וּמִצְוֹתַ֔י</go1>
+    <go2>וּמִצְוֺתַ֔י</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>1 Kings 4:13.6</position>
+    <go1>חַוֹּת֩</go1>
+    <go2>חַוֺּת֩</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>1 Kings 5:6.5</position>
+    <go1>אֻרְוֹ֥ת</go1>
+    <go2>אֻרְוֺ֥ת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>1 Kings 6:12.15</position>
+    <go1>מִצְוֹתַ֖י</go1>
+    <go2>מִצְוֺתַ֖י</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>1 Kings 8:58.8</position>
+    <go1>מִצְוֹתָ֤יו</go1>
+    <go2>מִצְוֺתָ֤יו</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>1 Kings 8:61.10</position>
+    <go1>מִצְוֹתָ֖יו</go1>
+    <go2>מִצְוֺתָ֖יו</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>1 Kings 9:6.9</position>
+    <go1>מִצְוֹתַ֣י</go1>
+    <go2>מִצְוֺתַ֣י</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>1 Kings 11:34.21</position>
+    <go1>מִצְוֹתַ֥י</go1>
+    <go2>מִצְוֺתַ֥י</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>1 Kings 11:38.15</position>
+    <go1>וּמִצְוֹתַ֔י</go1>
+    <go2>וּמִצְוֺתַ֔י</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>1 Kings 14:8.14</position>
+    <go1>מִצְוֹתַ֜י</go1>
+    <go2>מִצְוֺתַ֜י</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>1 Kings 17:18.13</position>
+    <go1>עֲוֹנִ֖י</go1>
+    <go2>עֲוֺנִ֖י</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>1 Kings 18:18.13</position>
+    <go1>מִצְוֹ֣ת</go1>
+    <go2>מִצְוֺ֣ת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>14</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>2 Kings</bookname>
+  <bookabbrev>2 Kings</bookabbrev>
+  <firstbook>
+    <filename>Kings_2</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Kings_2</filename>
+    <version>4.12</version>
+    <date>5 Aug 2009</date>
+    <transcriptiondate>11 Nov 2009</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="false">
+    <position>2 Kings 5:18.10</position>
+    <go1>לְהִשְׁתַּחֲוֹ֨ת</go1>
+    <go2>לְהִשְׁתַּחֲוֺ֨ת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>2 Kings 17:13.16</position>
+    <go1>מִצְוֹתַ֣י</go1>
+    <go2>מִצְוֺתַ֣י</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>2 Kings 17:15.11</position>
+    <go1>עֵֽדְוֹתָ֔יו</go1>
+    <go2>עֵֽדְוֺתָ֔יו</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>2 Kings 17:16.4</position>
+    <go1>מִצְוֹת֙</go1>
+    <go2>מִצְוֺת֙</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>2 Kings 17:19.6</position>
+    <go1>מִצְוֹ֖ת</go1>
+    <go2>מִצְוֺ֖ת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>2 Kings 18:6.7</position>
+    <go1>מִצְוֹתָ֔יו</go1>
+    <go2>מִצְוֺתָ֔יו</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>2 Kings 23:3.14</position>
+    <go1>מִצְוֹתָ֜יו</go1>
+    <go2>מִצְוֺתָ֜יו</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>2 Kings 23:3.16</position>
+    <go1>עֵדְוֹתָ֤יו</go1>
+    <go2>עֵדְוֺתָ֤יו</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>8</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Isaiah</bookname>
+  <bookabbrev>Isa</bookabbrev>
+  <firstbook>
+    <filename>Isaiah</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Isaiah</filename>
+    <version>4.12</version>
+    <date>5 Aug 2009</date>
+    <transcriptiondate>11 Nov 2009</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="false">
+    <position>Isa 1:4.6</position>
+    <go1>עָוֹ֔ן</go1>
+    <go2>עָוֺ֔ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Isa 2:20.14</position>
+    <go1>לְהִֽשְׁתַּחֲוֹ֔ת</go1>
+    <go2>לְהִֽשְׁתַּחֲוֺ֔ת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Isa 5:18.3</position>
+    <go1>הֶֽעָוֹ֖ן</go1>
+    <go2>הֶֽעָוֺ֖ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Isa 6:7.11</position>
+    <go1>עֲוֹנֶ֔ךָ</go1>
+    <go2>עֲוֺנֶ֔ךָ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Isa 13:11.7</position>
+    <go1>עֲוֹנָ֑ם</go1>
+    <go2>עֲוֺנָ֑ם</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Isa 14:21.4</position>
+    <go1>בַּעֲוֹ֣ן</go1>
+    <go2>בַּעֲוֺ֣ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Isa 16:4.7</position>
+    <go1>לָ֖מוֹ</go1>
+    <go2>לָ֖/מוֹ</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Isa 22:14.7</position>
+    <go1>הֶעָוֹ֨ן<x>c</x></go1>
+    <go2>הֶעָוֺ֨ן<x>14</x></go2>
+    <change>Vowels are different. A transcription note has been changed.  Note c becomes a note 14.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Isa 23:1.13</position>
+    <go1>לָֽמוֹ׃</go1>
+    <go2>לָֽ/מוֹ׃</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Isa 26:14.13</position>
+    <go1>לָֽמוֹ׃</go1>
+    <go2>לָֽ/מוֹ׃</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Isa 26:16.7</position>
+    <go1>לָֽמוֹ׃</go1>
+    <go2>לָֽ/מוֹ׃</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Isa 26:21.7</position>
+    <go1>עֲוֹ֥ן</go1>
+    <go2>עֲוֺ֥ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Isa 27:9.4</position>
+    <go1>עֲוֹֽן־</go1>
+    <go2>עֲוֺֽן־</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Isa 30:5.8</position>
+    <go1>לָ֑מוֹ</go1>
+    <go2>לָ֑/מוֹ</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Isa 30:13.4</position>
+    <go1>הֶעָוֹ֣ן</go1>
+    <go2>הֶעָוֺ֣ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Isa 33:24.9</position>
+    <go1>עָוֹֽן׃</go1>
+    <go2>עָוֺֽן׃</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Isa 35:8.13</position>
+    <go1>לָ֑מוֹ</go1>
+    <go2>לָ֑/מוֹ</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Isa 40:2.12</position>
+    <go1>עֲוֹנָ֑הּ</go1>
+    <go2>עֲוֺנָ֑הּ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Isa 43:8.8</position>
+    <go1>לָֽמוֹ׃</go1>
+    <go2>לָֽ/מוֹ׃</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Isa 43:24.14</position>
+    <go1>בַּעֲוֹנֹתֶֽיךָ׃</go1>
+    <go2>בַּעֲוֺנֹתֶֽיךָ׃</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Isa 44:7.14</position>
+    <go1>לָֽמוֹ׃</go1>
+    <go2>לָֽ/מוֹ׃</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Isa 44:15.18</position>
+    <go1>לָֽמוֹ׃</go1>
+    <go2>לָֽ/מוֹ׃</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Isa 48:18.3</position>
+    <go1>לְמִצְוֹתָ֑י</go1>
+    <go2>לְמִצְוֺתָ֑י</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Isa 48:21.8</position>
+    <go1>לָ֑מוֹ</go1>
+    <go2>לָ֑/מוֹ</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Isa 50:1.19</position>
+    <go1>בַּעֲוֹנֹֽתֵיכֶם֙</go1>
+    <go2>בַּעֲוֺנֹֽתֵיכֶם֙</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Isa 53:5.5</position>
+    <go1>מֵעֲוֹנֹתֵ֑ינוּ</go1>
+    <go2>מֵעֲוֺנֹתֵ֑ינוּ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Isa 53:6.11</position>
+    <go1>עֲוֹ֥ן</go1>
+    <go2>עֲוֺ֥ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Isa 53:8.15</position>
+    <go1>לָֽמוֹ׃</go1>
+    <go2>לָֽ/מוֹ׃</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Isa 53:11.10</position>
+    <go1>וַעֲוֹנֹתָ֖ם</go1>
+    <go2>וַעֲוֺנֹתָ֖ם</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Isa 57:17.1</position>
+    <go1>בַּעֲוֹ֥ן</go1>
+    <go2>בַּעֲוֺ֥ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Isa 59:2.3</position>
+    <go1>עֲוֹנֹֽתֵיכֶם֙</go1>
+    <go2>עֲוֺנֹֽתֵיכֶם֙</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Isa 59:3.6</position>
+    <go1>בֶּֽעָוֹ֑ן</go1>
+    <go2>בֶּֽעָוֺ֑ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Isa 59:12.11</position>
+    <go1>וַעֲוֹנֹתֵ֖ינוּ</go1>
+    <go2>וַעֲוֺנֹתֵ֖ינוּ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Isa 64:5.11</position>
+    <go1>וַעֲוֹנֵ֖נוּ</go1>
+    <go2>וַעֲוֺנֵ֖נוּ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Isa 64:6.13</position>
+    <go1>עֲוֹנֵֽנוּ׃</go1>
+    <go2>עֲוֺנֵֽנוּ׃</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Isa 64:8.9</position>
+    <go1>עָוֹ֑ן</go1>
+    <go2>עָוֺ֑ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Isa 65:7.1</position>
+    <go1>עֲ֠וֹנֹתֵיכֶם</go1>
+    <go2>עֲ֠וֺנֹתֵיכֶם</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Isa 65:7.2</position>
+    <go1>וַעֲוֹנֹ֨ת</go1>
+    <go2>וַעֲוֺנֹ֨ת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Isa 66:23.11</position>
+    <go1>לְהִשְׁתַּחֲוֹ֥ת</go1>
+    <go2>לְהִשְׁתַּחֲוֺ֥ת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>11</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>28</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>1</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Jeremiah</bookname>
+  <bookabbrev>Jer</bookabbrev>
+  <firstbook>
+    <filename>Jeremiah</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Jeremiah</filename>
+    <version>4.12</version>
+    <date>5 Aug 2009</date>
+    <transcriptiondate>11 Nov 2009</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="false">
+    <position>Jer 2:22.9</position>
+    <go1>עֲוֹנֵךְ֙</go1>
+    <go2>עֲוֺנֵךְ֙</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Jer 3:2.9</position>
+    <go1>שֻׁכַּ֔בְּתְּ</go1>
+    <go2>שֻׁכַּ֔בְתְּ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Jer 3:13.3</position>
+    <go1>עֲוֹנֵ֔ךְ</go1>
+    <go2>עֲוֺנֵ֔ךְ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Jer 5:25.1</position>
+    <go1>עֲוֹנוֹתֵיכֶ֖ם</go1>
+    <go2>עֲוֺנוֹתֵיכֶ֖ם</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Jer 7:2.19</position>
+    <go1>לְהִֽשְׁתַּחֲוֹ֖ת</go1>
+    <go2>לְהִֽשְׁתַּחֲוֺ֖ת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Jer 11:10.3</position>
+    <go1>עֲוֹנֹ֨ת</go1>
+    <go2>עֲוֺנֹ֨ת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Jer 13:10.16</position>
+    <go1>וּלְהִשְׁתַּחֲוֹ֣ת</go1>
+    <go2>וּלְהִשְׁתַּחֲוֺ֣ת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Jer 13:22.8</position>
+    <go1>עֲוֹנֵ֛ךְ</go1>
+    <go2>עֲוֺנֵ֛ךְ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Jer 14:7.2</position>
+    <go1>עֲוֹנֵ֙ינוּ֙</go1>
+    <go2>עֲוֺנֵ֙ינוּ֙</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Jer 14:10.17</position>
+    <go1>עֲוֹנָ֔ם</go1>
+    <go2>עֲוֺנָ֔ם</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Jer 14:20.4</position>
+    <go1>עֲוֹ֣ן</go1>
+    <go2>עֲוֺ֣ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Jer 16:10.23</position>
+    <go1>עֲוֹנֵ֙נוּ֙</go1>
+    <go2>עֲוֺנֵ֙נוּ֙</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Jer 16:17.11</position>
+    <go1>עֲוֹנָ֖ם</go1>
+    <go2>עֲוֺנָ֖ם</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Jer 16:18.4</position>
+    <go1>עֲוֹנָם֙</go1>
+    <go2>עֲוֺנָם֙</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Jer 18:23.12</position>
+    <go1>עֲוֹנָ֔ם</go1>
+    <go2>עֲוֺנָ֔ם</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Jer 22:21.3</position>
+    <go1>בְּשַׁלְוֹתַ֔יִךְ</go1>
+    <go2>בְּשַׁלְוֺתַ֔יִךְ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Jer 25:6.7</position>
+    <go1>וּלְהִשְׁתַּחֲוֹ֣ת</go1>
+    <go2>וּלְהִשְׁתַּחֲוֺ֣ת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Jer 25:12.15</position>
+    <go1>עֲוֹנָ֖ם</go1>
+    <go2>עֲוֺנָ֖ם</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Jer 26:2.14</position>
+    <go1>לְהִשְׁתַּחֲוֹ֣ת</go1>
+    <go2>לְהִשְׁתַּחֲוֺ֣ת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Jer 30:14.15</position>
+    <go1>עֲוֹנֵ֔ךְ</go1>
+    <go2>עֲוֺנֵ֔ךְ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Jer 30:15.9</position>
+    <go1>עֲוֹנֵ֗ךְ</go1>
+    <go2>עֲוֺנֵ֗ךְ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Jer 31:30.4</position>
+    <go1>בַּעֲוֹנ֖וֹ</go1>
+    <go2>בַּעֲוֺנ֖וֹ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Jer 31:34.25</position>
+    <go1>לַֽעֲוֹנָ֔ם</go1>
+    <go2>לַֽעֲוֺנָ֔ם</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Jer 32:18.5</position>
+    <go1>עֲוֹ֣ן</go1>
+    <go2>עֲוֺ֣ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Jer 33:8.3</position>
+    <go1>עֲוֹנָ֖ם</go1>
+    <go2>עֲוֺנָ֖ם</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Jer 33:8.10</position>
+    <go1>עֲוֹנֽוֹתֵיהֶם֙</go1>
+    <go2>עֲוֺנֽוֹתֵיהֶם֙</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Jer 35:18.21</position>
+    <go1>מִצְוֹתָ֔יו</go1>
+    <go2>מִצְוֺתָ֔יו</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Jer 36:3.19</position>
+    <go1>לַעֲוֹנָ֖ם</go1>
+    <go2>לַעֲוֺנָ֖ם</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Jer 36:31.8</position>
+    <go1>עֲוֹנָ֑ם</go1>
+    <go2>עֲוֺנָ֑ם</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Jer 44:23.13</position>
+    <go1>וּבְעֵדְוֹתָ֖יו</go1>
+    <go2>וּבְעֵדְוֺתָ֖יו</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Jer 50:20.9</position>
+    <go1>עֲוֹ֤ן</go1>
+    <go2>עֲוֺ֤ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Jer 51:6.9</position>
+    <go1>בַּעֲוֹנָ֑הּ</go1>
+    <go2>בַּעֲוֺנָ֑הּ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>32</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Ezekiel</bookname>
+  <bookabbrev>Ezek</bookabbrev>
+  <firstbook>
+    <filename>Ezekiel</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Ezekiel</filename>
+    <version>4.12</version>
+    <date>5 Aug 2009</date>
+    <transcriptiondate>11 Nov 2009</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="false">
+    <position>Ezek 3:18.16</position>
+    <go1>בַּעֲוֹנ֣וֹ</go1>
+    <go2>בַּעֲוֺנ֣וֹ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ezek 3:19.11</position>
+    <go1>בַּעֲוֹנ֣וֹ</go1>
+    <go2>בַּעֲוֺנ֣וֹ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ezek 4:4.8</position>
+    <go1>עֲוֹ֥ן</go1>
+    <go2>עֲוֺ֥ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ezek 4:4.19</position>
+    <go1>עֲוֹנָֽם׃</go1>
+    <go2>עֲוֺנָֽם׃</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ezek 4:5.6</position>
+    <go1>עֲוֹנָ֔ם</go1>
+    <go2>עֲוֺנָ֔ם</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ezek 4:5.14</position>
+    <go1>עֲוֹ֥ן</go1>
+    <go2>עֲוֺ֥ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ezek 4:6.12</position>
+    <go1>עֲוֹ֣ן</go1>
+    <go2>עֲוֺ֣ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ezek 4:17.9</position>
+    <go1>בַּעֲוֹנָֽם׃</go1>
+    <go2>בַּעֲוֺנָֽם׃</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ezek 7:13.18</position>
+    <go1>בַּעֲוֹנ֛וֹ</go1>
+    <go2>בַּעֲוֺנ֛וֹ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ezek 7:16.11</position>
+    <go1>בַּעֲוֹנֽוֹ׃</go1>
+    <go2>בַּעֲוֺנֽוֹ׃</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ezek 7:19.23</position>
+    <go1>עֲוֹנָ֖ם</go1>
+    <go2>עֲוֺנָ֖ם</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ezek 9:9.3</position>
+    <go1>עֲוֹ֨ן</go1>
+    <go2>עֲוֺ֨ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ezek 10:6.2</position>
+    <go1>בְּצַוֹּתוֹ֙</go1>
+    <go2>בְּצַוֺּתוֹ֙</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ezek 14:3.10</position>
+    <go1>עֲוֹנָ֔ם</go1>
+    <go2>עֲוֺנָ֔ם</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ezek 14:4.21</position>
+    <go1>עֲוֹנוֹ֙</go1>
+    <go2>עֲוֺנוֹ֙</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ezek 14:7.17</position>
+    <go1>עֲוֹנ֔וֹ</go1>
+    <go2>עֲוֺנ֔וֹ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ezek 14:10.2</position>
+    <go1>עֲוֹנָ֑ם</go1>
+    <go2>עֲוֺנָ֑ם</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ezek 14:10.3</position>
+    <go1>כַּֽעֲוֹן֙</go1>
+    <go2>כַּֽעֲוֺן֙</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ezek 14:10.5</position>
+    <go1>כַּעֲוֹ֥ן</go1>
+    <go2>כַּעֲוֺ֥ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ezek 14:14.8</position>
+    <go1>דָּנִיאֵ֣ל</go1>
+    <go2>דָּנִיֵּ֣אל<x>13</x></go2>
+    <change>Accents are different. Vowels are different. Different number of notes. A note, 13, has been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ezek 14:20.3</position>
+    <go1>דָּנִיאֵ֣ל</go1>
+    <go2>דָּנִיֵּ֣אל<x>13</x></go2>
+    <change>Accents are different. Vowels are different. Different number of notes. A note, 13, has been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ezek 16:49.4</position>
+    <go1>עֲוֹ֖ן</go1>
+    <go2>עֲוֺ֖ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ezek 18:17.15</position>
+    <go1>בַּעֲוֹ֥ן</go1>
+    <go2>בַּעֲוֺ֥ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ezek 18:18.16</position>
+    <go1>בַּעֲוֹנֽוֹ׃</go1>
+    <go2>בַּעֲוֺנֽוֹ׃</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ezek 18:19.6</position>
+    <go1>בַּעֲוֹ֣ן</go1>
+    <go2>בַּעֲוֺ֣ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ezek 18:20.8</position>
+    <go1>בַּעֲוֹ֣ן</go1>
+    <go2>בַּעֲוֺ֣ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ezek 18:20.13</position>
+    <go1>בַּעֲוֹ֣ן</go1>
+    <go2>בַּעֲוֺ֣ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ezek 18:30.19</position>
+    <go1>עָוֹֽן׃</go1>
+    <go2>עָוֺֽן׃</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ezek 21:28.12</position>
+    <go1>עָוֹ֖ן</go1>
+    <go2>עָוֺ֖ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ezek 21:29.8</position>
+    <go1>עֲוֹ֣נְכֶ֔ם</go1>
+    <go2>עֲוֺ֣נְכֶ֔ם</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ezek 21:30.10</position>
+    <go1>עֲוֹ֥ן</go1>
+    <go2>עֲוֺ֥ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ezek 21:34.17</position>
+    <go1>עֲוֹ֥ן</go1>
+    <go2>עֲוֺ֥ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ezek 24:23.11</position>
+    <go1>בַּעֲוֹנֹ֣תֵיכֶ֔ם</go1>
+    <go2>בַּעֲוֺנֹ֣תֵיכֶ֔ם</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 25:9.9</position>
+    <go1>מִ/קָּצֵ֑ה/וּ</go1>
+    <go2>מִ/קָּצֵ֑/הוּ</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ezek 28:3.5</position>
+    <go1>מִדָּֽנִיאֵ֑ל</go1>
+    <go2>מִדָּֽנִיֵּ֑אל<x>13</x></go2>
+    <change>Accents are different. Vowels are different. Different number of notes. A note, 13, has been added.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 28:15.8</position>
+    <go1>עַוְלָ֖תָה</go1>
+    <go2>עַוְלָ֖תָ/ה</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ezek 28:18.2</position>
+    <go1>עֲוֹנֶ֗יךָ</go1>
+    <go2>עֲוֺנֶ֗יךָ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ezek 29:16.8</position>
+    <go1>עָוֹ֔ן</go1>
+    <go2>עָוֺ֔ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ezek 32:27.18</position>
+    <go1>עֲוֹֽנֹתָם֙</go1>
+    <go2>עֲוֺֽנֹתָם֙</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ezek 33:6.19</position>
+    <go1>בַּעֲוֹנ֣וֹ</go1>
+    <go2>בַּעֲוֺנ֣וֹ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ezek 33:8.13</position>
+    <go1>בַּעֲוֹנ֣וֹ</go1>
+    <go2>בַּעֲוֺנ֣וֹ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ezek 33:9.12</position>
+    <go1>בַּעֲוֹנ֣וֹ</go1>
+    <go2>בַּעֲוֺנ֣וֹ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ezek 35:5.16</position>
+    <go1>עֲוֹ֥ן</go1>
+    <go2>עֲוֺ֥ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ezek 36:31.12</position>
+    <go1>עֲוֹנֹ֣תֵיכֶ֔ם</go1>
+    <go2>עֲוֺנֹ֣תֵיכֶ֔ם</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ezek 36:33.9</position>
+    <go1>עֲוֹנֽוֹתֵיכֶ֑ם</go1>
+    <go2>עֲוֺנֽוֹתֵיכֶ֑ם</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ezek 39:23.4</position>
+    <go1>בַעֲוֹנָ֞ם</go1>
+    <go2>בַעֲוֺנָ֞ם</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 40:3.6</position>
+    <go1>מַרְאֵ֙ה/וּ֙</go1>
+    <go2>מַרְאֵ֙/הוּ֙</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ezek 43:10.11</position>
+    <go1>מֵעֲוֹנֽוֹתֵיהֶ֑ם</go1>
+    <go2>מֵעֲוֺנֽוֹתֵיהֶ֑ם</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ezek 44:10.15</position>
+    <go1>עֲוֹנָֽם׃</go1>
+    <go2>עֲוֺנָֽם׃</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ezek 44:12.11</position>
+    <go1>עָוֹ֑ן</go1>
+    <go2>עָוֺ֑ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ezek 44:12.21</position>
+    <go1>עֲוֹנָֽם׃</go1>
+    <go2>עֲוֺנָֽם׃</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ezek 46:9.11</position>
+    <go1>לְהִֽשְׁתַּחֲוֹ֗ת</go1>
+    <go2>לְהִֽשְׁתַּחֲוֺ֗ת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 47:12.13</position>
+    <go1>עָלֵ֜ה/וּ</go1>
+    <go2>עָלֵ֜/הוּ</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 47:12.29</position>
+    <go1>וְ/עָלֵ֖ה/וּ</go1>
+    <go2>וְ/עָלֵ֖/הוּ</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>5</mdchange>
+    <accentchange>3</accentchange>
+    <vowelchange>49</vowelchange>
+    <notechange>3</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Hosea</bookname>
+  <bookabbrev>Hos</bookabbrev>
+  <firstbook>
+    <filename>Hosea</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Hosea</filename>
+    <version>4.12</version>
+    <date>5 Aug 2009</date>
+    <transcriptiondate>11 Nov 2009</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="false">
+    <position>Hos 4:8.5</position>
+    <go1>עֲוֹנָ֖ם</go1>
+    <go2>עֲוֺנָ֖ם</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Hos 5:5.8</position>
+    <go1>בַּעֲוֹנָ֔ם</go1>
+    <go2>בַּעֲוֺנָ֔ם</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Hos 7:1.4</position>
+    <go1>עֲוֹ֤ן</go1>
+    <go2>עֲוֺ֤ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Hos 8:13.11</position>
+    <go1>עֲוֹנָם֙</go1>
+    <go2>עֲוֺנָם֙</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Hos 9:7.16</position>
+    <go1>עֲוֹנְךָ֔</go1>
+    <go2>עֲוֺנְךָ֔</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Hos 9:9.6</position>
+    <go1>עֲוֹנָ֔ם</go1>
+    <go2>עֲוֺנָ֔ם</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Hos 10:13.3</position>
+    <go1>עַוְלָ֥תָה</go1>
+    <go2>עַוְלָ֥תָ/ה</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Hos 12:9.13</position>
+    <go1>עָוֹ֥ן</go1>
+    <go2>עָוֺ֥ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Hos 13:12.2</position>
+    <go1>עֲוֹ֣ן</go1>
+    <go2>עֲוֺ֣ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Hos 14:2.8</position>
+    <go1>בַּעֲוֹנֶֽךָ׃</go1>
+    <go2>בַּעֲוֺנֶֽךָ׃</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Hos 14:3.11</position>
+    <go1>עָוֹן֙</go1>
+    <go2>עָוֺן֙</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>1</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>10</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Joel</bookname>
+  <bookabbrev>Joel</bookabbrev>
+  <firstbook>
+    <filename>Joel</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Joel</filename>
+    <version>4.12</version>
+    <date>5 Aug 2009</date>
+    <transcriptiondate>11 Nov 2009</transcriptiondate>
+  </secondbook>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Amos</bookname>
+  <bookabbrev>Am</bookabbrev>
+  <firstbook>
+    <filename>Amos</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Amos</filename>
+    <version>4.12</version>
+    <date>5 Aug 2009</date>
+    <transcriptiondate>11 Nov 2009</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="false">
+    <position>Am 3:2.13</position>
+    <go1>עֲוֹנֹֽתֵיכֶֽם׃</go1>
+    <go2>עֲוֺנֹֽתֵיכֶֽם׃</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>1</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Obadiah</bookname>
+  <bookabbrev>Ob</bookabbrev>
+  <firstbook>
+    <filename>Obadiah</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Obadiah</filename>
+    <version>4.12</version>
+    <date>5 Aug 2009</date>
+    <transcriptiondate>11 Nov 2009</transcriptiondate>
+  </secondbook>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Jonah</bookname>
+  <bookabbrev>Jon</bookabbrev>
+  <firstbook>
+    <filename>Jonah</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Jonah</filename>
+    <version>4.12</version>
+    <date>5 Aug 2009</date>
+    <transcriptiondate>11 Nov 2009</transcriptiondate>
+  </secondbook>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Micah</bookname>
+  <bookabbrev>Mic</bookabbrev>
+  <firstbook>
+    <filename>Micah</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Micah</filename>
+    <version>4.12</version>
+    <date>5 Aug 2009</date>
+    <transcriptiondate>11 Nov 2009</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="false">
+    <position>Mic 7:18.5</position>
+    <go1>עָוֹן֙</go1>
+    <go2>עָוֺן֙</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Mic 7:19.4</position>
+    <go1>עֲוֹֽנֹתֵ֑ינוּ</go1>
+    <go2>עֲוֺֽנֹתֵ֑ינוּ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>2</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Nahum</bookname>
+  <bookabbrev>Nah</bookabbrev>
+  <firstbook>
+    <filename>Nahum</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Nahum</filename>
+    <version>4.12</version>
+    <date>5 Aug 2009</date>
+    <transcriptiondate>11 Nov 2009</transcriptiondate>
+  </secondbook>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Habakkuk</bookname>
+  <bookabbrev>Hab</bookabbrev>
+  <firstbook>
+    <filename>Habakkuk</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Habakkuk</filename>
+    <version>4.12</version>
+    <date>5 Aug 2009</date>
+    <transcriptiondate>11 Nov 2009</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="true">
+    <position>Hab 2:7.9</position>
+    <go1>לָֽמוֹ׃</go1>
+    <go2>לָֽ/מוֹ׃</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>1</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Zephaniah</bookname>
+  <bookabbrev>Zeph</bookabbrev>
+  <firstbook>
+    <filename>Zephaniah</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Zephaniah</filename>
+    <version>4.12</version>
+    <date>5 Aug 2009</date>
+    <transcriptiondate>11 Nov 2009</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="false">
+    <position>Zeph 2:6.4</position>
+    <go1>נְוֹ֛ת</go1>
+    <go2>נְוֺ֛ת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Zeph 2:15.1</position>
+    <go1>זֹ֞א֠ת<x>c</x></go1>
+    <go2>זֹ֠את<x>14</x></go2>
+    <change>Accents are different. A transcription note has been changed.  Note c becomes a note 14.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>1</accentchange>
+    <vowelchange>1</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>1</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Haggai</bookname>
+  <bookabbrev>Hag</bookabbrev>
+  <firstbook>
+    <filename>Haggai</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Haggai</filename>
+    <version>4.12</version>
+    <date>5 Aug 2009</date>
+    <transcriptiondate>11 Nov 2009</transcriptiondate>
+  </secondbook>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Zechariah</bookname>
+  <bookabbrev>Zech</bookabbrev>
+  <firstbook>
+    <filename>Zechariah</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Zechariah</filename>
+    <version>4.12</version>
+    <date>5 Aug 2009</date>
+    <transcriptiondate>11 Nov 2009</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="false">
+    <position>Zech 3:4.16</position>
+    <go1>עֲוֹנֶ֔ךָ</go1>
+    <go2>עֲוֺנֶ֔ךָ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Zech 3:9.21</position>
+    <go1>עֲוֹ֥ן</go1>
+    <go2>עֲוֺ֥ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Zech 14:16.13</position>
+    <go1>לְהִֽשְׁתַּחֲוֹת֙</go1>
+    <go2>לְהִֽשְׁתַּחֲוֺת֙</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Zech 14:17.10</position>
+    <go1>לְהִֽשְׁתַּחֲוֹ֔ת</go1>
+    <go2>לְהִֽשְׁתַּחֲוֺ֔ת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>4</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Malachi</bookname>
+  <bookabbrev>Mal</bookabbrev>
+  <firstbook>
+    <filename>Malachi</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Malachi</filename>
+    <version>4.12</version>
+    <date>5 Aug 2009</date>
+    <transcriptiondate>11 Nov 2009</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="true">
+    <position>Mal 1:13.3</position>
+    <go1>מַתְּלָאָ֜ה</go1>
+    <go2>מַ/תְּלָאָ֜ה</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Mal 2:6.15</position>
+    <go1>מֵעָוֹֽן׃</go1>
+    <go2>מֵעָוֺֽן׃</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>1</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>1</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Psalms</bookname>
+  <bookabbrev>Ps</bookabbrev>
+  <firstbook>
+    <filename>Psalms</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Psalms</filename>
+    <version>4.12</version>
+    <date>5 Aug 2009</date>
+    <transcriptiondate>11 Nov 2009</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="true">
+    <position>Ps 2:4.6</position>
+    <go1>לָֽמוֹ׃</go1>
+    <go2>לָֽ/מוֹ׃</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 18:24.5</position>
+    <go1>מֵעֲוֹנִֽי׃</go1>
+    <go2>מֵעֲוֺנִֽי׃</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 25:11.5</position>
+    <go1>לַ֝עֲוֹנִ֗י</go1>
+    <go2>לַ֝עֲוֺנִ֗י</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ps 28:8.3</position>
+    <go1>לָ֑מוֹ</go1>
+    <go2>לָ֑/מוֹ</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 31:11.8</position>
+    <go1>בַּעֲוֹנִ֣י</go1>
+    <go2>בַּעֲוֺנִ֣י</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 32:2.7</position>
+    <go1>עָוֹ֑ן</go1>
+    <go2>עָוֺ֑ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 32:5.3</position>
+    <go1>וַעֲוֹ֘נִ֤י</go1>
+    <go2>וַעֲוֺ֘נִ֤י</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 32:5.13</position>
+    <go1>עֲוֹ֖ן</go1>
+    <go2>עֲוֺ֖ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 36:3.6</position>
+    <go1>עֲוֹנ֣וֹ</go1>
+    <go2>עֲוֺנ֣וֹ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 37:31.6</position>
+    <go1>אֲשֻׁרָֽיו׃</go1>
+    <go2>אֲשֻׁרָיו׃<x>14</x></go2>
+    <change>Accents are different. Different number of notes. A note, 14, has been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 38:5.2</position>
+    <go1>עֲ֭וֹנֹתַי</go1>
+    <go2>עֲ֭וֺנֹתַי</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 38:19.2</position>
+    <go1>עֲוֹנִ֥י</go1>
+    <go2>עֲוֺנִ֥י</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 39:12.3</position>
+    <go1>עָוֹ֨ן ׀</go1>
+    <go2>עָוֺ֨ן ׀</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 40:2.1</position>
+    <go1>קַוֹּ֣ה</go1>
+    <go2>קַוֺּ֣ה</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 40:13.9</position>
+    <go1>עֲ֭וֹנֹתַי</go1>
+    <go2>עֲ֭וֺנֹתַי</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ps 44:11.7</position>
+    <go1>לָֽמוֹ׃</go1>
+    <go2>לָֽ/מוֹ׃</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 49:6.5</position>
+    <go1>עֲוֹ֖ן</go1>
+    <go2>עֲוֺ֖ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ps 49:14.4</position>
+    <go1>לָ֑מוֹ</go1>
+    <go2>לָ֑/מוֹ</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 51:4.4</position>
+    <go1>מֵעֲוֹנִ֑י</go1>
+    <go2>מֵעֲוֺנִ֑י</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 51:11.5</position>
+    <go1>עֲוֹ֖נֹתַ֣י</go1>
+    <go2>עֲוֺ֖נֹתַ֣י</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ps 55:20.10</position>
+    <go1>לָ֑מוֹ</go1>
+    <go2>לָ֑/מוֹ</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ps 56:8.4</position>
+    <go1>לָ֑מוֹ</go1>
+    <go2>לָ֑/מוֹ</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ps 58:5.2</position>
+    <go1>לָ֗מוֹ</go1>
+    <go2>לָ֗/מוֹ</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ps 58:8.5</position>
+    <go1>לָ֑מוֹ</go1>
+    <go2>לָ֑/מוֹ</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 59:5.2</position>
+    <go1>עָ֭וֹן</go1>
+    <go2>עָ֭וֺן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ps 59:9.4</position>
+    <go1>לָ֑מוֹ</go1>
+    <go2>לָ֑/מוֹ</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ps 64:6.2</position>
+    <go1>לָ֨מוֹ ׀</go1>
+    <go2>לָ֨/מוֹ ׀</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 65:4.2</position>
+    <go1>עֲ֭וֹנֹת</go1>
+    <go2>עֲ֭וֺנֹת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 65:9.3</position>
+    <go1>קְ֭צָוֹת</go1>
+    <go2>קְ֭צָוֺת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ps 66:7.11</position>
+    <go1>לָ֣מוֹ</go1>
+    <go2>לָ֣/מוֹ</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 69:28.2</position>
+    <go1>עָ֭וֹן</go1>
+    <go2>עָ֭וֺן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 69:28.4</position>
+    <go1>עֲוֹנָ֑ם</go1>
+    <go2>עֲוֺנָ֑ם</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ps 73:6.7</position>
+    <go1>לָֽמוֹ׃</go1>
+    <go2>לָֽ/מוֹ׃</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ps 73:10.9</position>
+    <go1>לָֽמוֹ׃</go1>
+    <go2>לָֽ/מוֹ׃</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ps 73:18.4</position>
+    <go1>לָ֑מוֹ</go1>
+    <go2>לָ֑/מוֹ</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 78:7.8</position>
+    <go1>וּמִצְוֹתָ֥יו</go1>
+    <go2>וּמִצְוֺתָ֥יו</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ps 78:24.8</position>
+    <go1>לָֽמוֹ׃</go1>
+    <go2>לָֽ/מוֹ׃</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 78:38.4</position>
+    <go1>עָוֹן֮</go1>
+    <go2>עָוֺן֮</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ps 78:66.7</position>
+    <go1>לָֽמוֹ׃</go1>
+    <go2>לָֽ/מוֹ׃</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 79:8.4</position>
+    <go1>עֲוֹנֹ֪ת</go1>
+    <go2>עֲוֺנֹ֪ת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ps 80:7.6</position>
+    <go1>לָֽמוֹ׃</go1>
+    <go2>לָֽ/מוֹ׃</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 85:3.2</position>
+    <go1>עֲוֹ֣ן</go1>
+    <go2>עֲוֺ֣ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ps 88:9.6</position>
+    <go1>לָ֑מוֹ</go1>
+    <go2>לָ֑/מוֹ</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 89:32.4</position>
+    <go1>וּ֝מִצְוֹתַ֗י</go1>
+    <go2>וּ֝מִצְוֺתַ֗י</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 89:33.5</position>
+    <go1>עֲוֹנָֽם׃</go1>
+    <go2>עֲוֺנָֽם׃</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 90:8.3</position>
+    <go1>עֲוֹנֹתֵ֣ינוּ</go1>
+    <go2>עֲוֺנֹתֵ֣ינוּ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ps 92:16.7</position>
+    <go1>עלתה</go1>
+    <go2>עלת/ה</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ps 92:16.8</position>
+    <go1>עַוְלָ֥תָה</go1>
+    <go2>עַוְלָ֥תָ/ה</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ps 99:7.9</position>
+    <go1>לָֽמוֹ׃</go1>
+    <go2>לָֽ/מוֹ׃</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 103:3.3</position>
+    <go1>עֲוֹנֵ֑כִי</go1>
+    <go2>עֲוֺנֵ֑כִי</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 103:10.6</position>
+    <go1>כַ֝עֲוֹנֹתֵ֗ינוּ</go1>
+    <go2>כַ֝עֲוֺנֹתֵ֗ינוּ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 106:43.8</position>
+    <go1>בַּעֲוֹנָֽם׃</go1>
+    <go2>בַּעֲוֺנָֽם׃</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 107:17.4</position>
+    <go1>וּֽ֝מֵעֲוֹֽנֹתֵיהֶ֗ם</go1>
+    <go2>וּֽ֝מֵעֲוֺֽנֹתֵיהֶ֗ם</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 109:14.2</position>
+    <go1>עֲוֹ֣ן</go1>
+    <go2>עֲוֺ֣ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 112:1.8</position>
+    <go1>בְּ֝מִצְוֹתָ֗יו</go1>
+    <go2>בְּ֝מִצְוֺתָ֗יו</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 119:6.7</position>
+    <go1>מִצְוֹתֶֽיךָ׃</go1>
+    <go2>מִצְוֺתֶֽיךָ׃</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 119:10.6</position>
+    <go1>מִמִּצְוֹתֶֽיךָ׃</go1>
+    <go2>מִמִּצְוֺתֶֽיךָ׃</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 119:14.2</position>
+    <go1>עֵדְוֹתֶ֥יךָ</go1>
+    <go2>עֵדְוֺתֶ֥יךָ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 119:19.7</position>
+    <go1>מִצְוֹתֶֽיךָ׃</go1>
+    <go2>מִצְוֺתֶֽיךָ׃</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 119:21.5</position>
+    <go1>מִמִּצְוֹתֶֽיךָ׃</go1>
+    <go2>מִמִּצְוֺתֶֽיךָ׃</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 119:31.2</position>
+    <go1>בְעֵֽדְוֹתֶ֑יךָ</go1>
+    <go2>בְעֵֽדְוֺתֶ֑יךָ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 119:32.2</position>
+    <go1>מִצְוֹתֶ֥יךָ</go1>
+    <go2>מִצְוֺתֶ֥יךָ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 119:35.3</position>
+    <go1>מִצְוֹתֶ֑יךָ</go1>
+    <go2>מִצְוֺתֶ֑יךָ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 119:36.4</position>
+    <go1>עֵדְוֹתֶ֗יךָ</go1>
+    <go2>עֵדְוֺתֶ֗יךָ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 119:47.2</position>
+    <go1>בְּמִצְוֹתֶ֗יךָ</go1>
+    <go2>בְּמִצְוֺתֶ֗יךָ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 119:48.4</position>
+    <go1>מִ֭צְוֹתֶיךָ</go1>
+    <go2>מִ֭צְוֺתֶיךָ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 119:60.5</position>
+    <go1>מִצְוֹתֶֽיךָ׃</go1>
+    <go2>מִצְוֺתֶֽיךָ׃</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 119:66.6</position>
+    <go1>בְמִצְוֹתֶ֣יךָ</go1>
+    <go2>בְמִצְוֺתֶ֣יךָ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 119:73.6</position>
+    <go1>מִצְוֹתֶֽיךָ׃</go1>
+    <go2>מִצְוֺתֶֽיךָ׃</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 119:86.2</position>
+    <go1>מִצְוֹתֶ֥יךָ</go1>
+    <go2>מִצְוֺתֶ֥יךָ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 119:98.3</position>
+    <go1>מִצְוֹתֶ֑ךָ</go1>
+    <go2>מִצְוֺתֶ֑ךָ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 119:99.5</position>
+    <go1>עֵ֝דְוֹתֶ֗יךָ</go1>
+    <go2>עֵ֝דְוֺתֶ֗יךָ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 119:111.2</position>
+    <go1>עֵדְוֹתֶ֣יךָ</go1>
+    <go2>עֵדְוֺתֶ֣יךָ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 119:115.5</position>
+    <go1>מִצְוֹ֥ת</go1>
+    <go2>מִצְוֺ֥ת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 119:127.4</position>
+    <go1>מִצְוֹתֶ֑יךָ</go1>
+    <go2>מִצְוֺתֶ֑יךָ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 119:129.2</position>
+    <go1>עֵדְוֹתֶ֑יךָ</go1>
+    <go2>עֵדְוֺתֶ֑יךָ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 119:131.5</position>
+    <go1>לְמִצְוֹתֶ֣יךָ</go1>
+    <go2>לְמִצְוֺתֶ֣יךָ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 119:143.4</position>
+    <go1>מִ֝צְוֹתֶ֗יךָ</go1>
+    <go2>מִ֝צְוֺתֶ֗יךָ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 119:144.2</position>
+    <go1>עֵדְוֹתֶ֥יךָ</go1>
+    <go2>עֵדְוֺתֶ֥יךָ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 119:151.5</position>
+    <go1>מִצְוֹתֶ֥יךָ</go1>
+    <go2>מִצְוֺתֶ֥יךָ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 119:157.4</position>
+    <go1>מֵ֝עֵדְוֹתֶ֗יךָ</go1>
+    <go2>מֵ֝עֵדְוֺתֶ֗יךָ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ps 119:165.6</position>
+    <go1>לָ֥מוֹ</go1>
+    <go2>לָ֥/מוֹ</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 119:166.4</position>
+    <go1>וּֽמִצְוֹתֶ֥יךָ</go1>
+    <go2>וּֽמִצְוֺתֶ֥יךָ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 119:172.6</position>
+    <go1>מִצְוֹתֶ֣יךָ</go1>
+    <go2>מִצְוֺתֶ֣יךָ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 119:176.7</position>
+    <go1>מִ֝צְוֹתֶ֗יךָ</go1>
+    <go2>מִ֝צְוֺתֶ֗יךָ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ps 125:3.13</position>
+    <go1>בְּ/עַוְלָ֬תָה</go1>
+    <go2>בְּ/עַוְלָ֬תָ/ה</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 130:3.2</position>
+    <go1>עֲוֹנ֥וֹת</go1>
+    <go2>עֲוֺנ֥וֹת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 130:8.6</position>
+    <go1>עֲוֹנֹתָֽיו׃</go1>
+    <go2>עֲוֺנֹתָֽיו׃</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>23</mdchange>
+    <accentchange>1</accentchange>
+    <vowelchange>64</vowelchange>
+    <notechange>1</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Proverbs</bookname>
+  <bookabbrev>Prov</bookabbrev>
+  <firstbook>
+    <filename>Proverbs</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Proverbs</filename>
+    <version>4.12</version>
+    <date>5 Aug 2009</date>
+    <transcriptiondate>11 Nov 2009</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="false">
+    <position>Prov 2:1.5</position>
+    <go1>וּ֝מִצְוֹתַ֗י</go1>
+    <go2>וּ֝מִצְוֺתַ֗י</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Prov 3:1.5</position>
+    <go1>וּ֝מִצְוֹתַ֗י</go1>
+    <go2>וּ֝מִצְוֺתַ֗י</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Prov 4:4.8</position>
+    <go1>מִצְוֹתַ֣י</go1>
+    <go2>מִצְוֺתַ֣י</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Prov 7:1.4</position>
+    <go1>וּ֝מִצְוֹתַ֗י</go1>
+    <go2>וּ֝מִצְוֺתַ֗י</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Prov 7:2.2</position>
+    <go1>מִצְוֹתַ֣י</go1>
+    <go2>מִצְוֺתַ֣י</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Prov 10:8.4</position>
+    <go1>מִצְוֹ֑ת</go1>
+    <go2>מִצְוֺ֑ת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Prov 16:6.4</position>
+    <go1>עָוֹ֑ן</go1>
+    <go2>עָוֺ֑ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Prov 17:4.10</position>
+    <go1>הַוֹּֽת׃</go1>
+    <go2>הַוֺּֽת׃</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Prov 19:13.1</position>
+    <go1>הַוֹּ֣ת</go1>
+    <go2>הַוֺּ֣ת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Prov 23:20.7</position>
+    <go1>לָֽמוֹ׃</go1>
+    <go2>לָֽ/מוֹ׃</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>1</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>9</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Job</bookname>
+  <bookabbrev>Job</bookabbrev>
+  <firstbook>
+    <filename>Job</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Job</filename>
+    <version>4.12</version>
+    <date>5 Aug 2009</date>
+    <transcriptiondate>11 Nov 2009</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="true">
+    <position>Job 3:14.7</position>
+    <go1>לָֽמוֹ׃</go1>
+    <go2>לָֽ/מוֹ׃</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Job 6:19.7</position>
+    <go1>לָֽמוֹ׃</go1>
+    <go2>לָֽ/מוֹ׃</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Job 7:21.7</position>
+    <go1>עֲוֹ֫נִ֥י</go1>
+    <go2>עֲוֺ֫נִ֥י</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Job 10:6.3</position>
+    <go1>לַעֲוֹנִ֑י</go1>
+    <go2>לַעֲוֺנִ֑י</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Job 10:14.4</position>
+    <go1>וּ֝מֵעֲוֹנִ֗י</go1>
+    <go2>וּ֝מֵעֲוֺנִ֗י</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Job 10:22.2</position>
+    <go1>עֵיפָ֨תָה ׀</go1>
+    <go2>עֵיפָ֨תָ/ה ׀</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Job 11:6.13</position>
+    <go1>מֵעֲוֹנֶֽךָ׃</go1>
+    <go2>מֵעֲוֺנֶֽךָ׃</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Job 13:23.3</position>
+    <go1>עֲוֹנ֣וֹת</go1>
+    <go2>עֲוֺנ֣וֹת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Job 13:26.6</position>
+    <go1>עֲוֹנ֥וֹת</go1>
+    <go2>עֲוֺנ֥וֹת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Job 14:17.6</position>
+    <go1>עֲוֹנִֽי׃</go1>
+    <go2>עֲוֺנִֽי׃</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Job 14:21.8</position>
+    <go1>לָֽמוֹ׃</go1>
+    <go2>לָֽ/מוֹ׃</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Job 15:5.3</position>
+    <go1>עֲוֹנְךָ֣</go1>
+    <go2>עֲוֺנְךָ֣</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Job 15:28.7</position>
+    <go1>לָ֑מוֹ</go1>
+    <go2>לָ֑/מוֹ</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Job 19:29.7</position>
+    <go1>עֲוֹנ֣וֹת</go1>
+    <go2>עֲוֺנ֣וֹת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Job 20:27.3</position>
+    <go1>עֲוֹנ֑וֹ</go1>
+    <go2>עֲוֺנ֑וֹ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Job 22:5.6</position>
+    <go1>לַעֲוֹנֹתֶֽיךָ׃</go1>
+    <go2>לַעֲוֺנֹתֶֽיךָ׃</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Job 22:17.8</position>
+    <go1>לָֽמוֹ׃</go1>
+    <go2>לָֽ/מוֹ׃</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Job 22:19.6</position>
+    <go1>לָֽמוֹ׃</go1>
+    <go2>לָֽ/מוֹ׃</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Job 24:16.6</position>
+    <go1>לָ֗מוֹ</go1>
+    <go2>לָ֗/מוֹ</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Job 24:17.4</position>
+    <go1>לָ֣מוֹ</go1>
+    <go2>לָ֣/מוֹ</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Job 30:13.7</position>
+    <go1>לָֽמוֹ׃</go1>
+    <go2>לָֽ/מוֹ׃</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Job 31:11.7</position>
+    <go1>עָוֹ֥ן</go1>
+    <go2>עָוֺ֥ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Job 31:28.3</position>
+    <go1>עָוֹ֣ן</go1>
+    <go2>עָוֺ֣ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Job 31:33.7</position>
+    <go1>עֲוֹֽנִי׃</go1>
+    <go2>עֲוֺֽנִי׃</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Job 32:6.16</position>
+    <go1>מֵחַוֹּ֖ת</go1>
+    <go2>מֵחַוֺּ֖ת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Job 33:9.8</position>
+    <go1>עָוֹ֣ן</go1>
+    <go2>עָוֺ֣ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Job 39:4.8</position>
+    <go1>לָֽמוֹ׃</go1>
+    <go2>לָֽ/מוֹ׃</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>11</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>16</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Song of Songs</bookname>
+  <bookabbrev>Song</bookabbrev>
+  <firstbook>
+    <filename>Song_of_Songs</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Song_of_Songs</filename>
+    <version>4.12</version>
+    <date>5 Aug 2009</date>
+    <transcriptiondate>11 Nov 2009</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="false">
+    <position>Song 2:14.7</position>
+    <go1>אֶת־</go1>
+    <go2>אֶתּ־</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Song 3:8.11</position>
+    <go1>בַּלֵּילֽוֹת׃</go1>
+    <go2>בַּלֵּילּֽוֹת׃<x>12</x><x>18</x></go2>
+    <change>Vowels are different. Different number of notes. 2 notes, 12, 18,  have been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Song 5:16.4</position>
+    <go1>מַחֲמַדִּ֑ים</go1>
+    <go2>מַחֲּמַדִּ֑ים<x>12</x><x>18</x></go2>
+    <change>Vowels are different. Different number of notes. 2 notes, 12, 18,  have been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Song 6:3.6</position>
+    <go1>בַּשּׁוֹשַׁנִּֽים׃</go1>
+    <go2>בַּשׁוֹשַׁנִּֽים׃<x>12</x><x>18</x></go2>
+    <change>Vowels are different. Different number of notes. 2 notes, 12, 18,  have been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Song 8:1.10</position>
+    <go1>אֶשָּׁ֣קְךָ֔</go1>
+    <go2>אֶשָׁ֣קְךָ֔<x>12</x><x>18</x></go2>
+    <change>Vowels are different. Different number of notes. 2 notes, 12, 18,  have been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Song 8:12.1</position>
+    <go1>כַּרְמִ֥י</go1>
+    <go2>כָּרְמִ֥י<x>12</x><x>18</x></go2>
+    <change>Vowels are different. Different number of notes. 2 notes, 12, 18,  have been added.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>6</vowelchange>
+    <notechange>5</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Ruth</bookname>
+  <bookabbrev>Ruth</bookabbrev>
+  <firstbook>
+    <filename>Ruth</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Ruth</filename>
+    <version>4.12</version>
+    <date>5 Aug 2009</date>
+    <transcriptiondate>11 Nov 2009</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="false">
+    <position>Ruth 2:2.9</position>
+    <go1>וַאֲלַקֳטָ֣ה</go1>
+    <go2>וַאֲלַקֳטָּ֣ה<x>12</x><x>18</x></go2>
+    <change>Vowels are different. Different number of notes. 2 notes, 12, 18,  have been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ruth 2:2.10</position>
+    <go1>בַשִּׁבֳּלִ֔ים</go1>
+    <go2>בַשִׁבֳּלִ֔ים<x>12</x><x>18</x></go2>
+    <change>Vowels are different. Different number of notes. 2 notes, 12, 18,  have been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ruth 2:9.5</position>
+    <go1>וְהָלַ֣כְתְּ</go1>
+    <go2>וְהָלַ֣כְתִּ<x>12</x><x>18</x></go2>
+    <change>Vowels are different. Different number of notes. 2 notes, 12, 18,  have been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ruth 2:10.13</position>
+    <go1>וְאָנֹכִ֖י</go1>
+    <go2>וְאָּנֹכִ֖י<x>12</x><x>18</x></go2>
+    <change>Vowels are different. Different number of notes. 2 notes, 12, 18,  have been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ruth 2:11.17</position>
+    <go1>אָבִ֣יךְ</go1>
+    <go2>אָּבִ֣יךְ<x>12</x><x>18</x></go2>
+    <change>Vowels are different. Different number of notes. 2 notes, 12, 18,  have been added.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>5</vowelchange>
+    <notechange>5</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Lamentations</bookname>
+  <bookabbrev>Lam</bookabbrev>
+  <firstbook>
+    <filename>Lamentations</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Lamentations</filename>
+    <version>4.12</version>
+    <date>5 Aug 2009</date>
+    <transcriptiondate>11 Nov 2009</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="false">
+    <position>Lam 1:1.9</position>
+    <go1>רַבָּ֣תִי</go1>
+    <go2>רַּבָּ֣תִי<x>12</x><x>18</x></go2>
+    <change>Vowels are different. Different number of notes. 2 notes, 12, 18,  have been added.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Lam 1:19.12</position>
+    <go1>לָ֔מוֹ</go1>
+    <go2>לָ֔/מוֹ</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Lam 1:22.6</position>
+    <go1>לָ֔מוֹ</go1>
+    <go2>לָ֔/מוֹ</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Lam 2:3.2</position>
+    <go1>בָּֽחֳרִי־</go1>
+    <go2>בָּֽחֳרִי<x>12</x><x>18</x></go2>
+    <change>Accents are different. Different number of notes. 2 notes, 12, 18,  have been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Lam 2:14.9</position>
+    <go1>עֲוֹנֵ֖ךְ</go1>
+    <go2>עֲוֺנֵ֖ךְ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Lam 3:12.2</position>
+    <go1>קַשְׁתּוֹ֙</go1>
+    <go2>קַשְׁתוֹ֙<x>12</x><x>18</x></go2>
+    <change>Vowels are different. Different number of notes. 2 notes, 12, 18,  have been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Lam 3:33.6</position>
+    <go1>בְּנֵי־</go1>
+    <go2>בְנֵי־</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Lam 4:4.5</position>
+    <go1>חִכּ֖וֹ</go1>
+    <go2>חכּ֖וֹ<x>12</x><x>18</x></go2>
+    <change>Vowels are different. Different number of notes. 2 notes, 12, 18,  have been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Lam 4:6.2</position>
+    <go1>עֲוֹ֣ן</go1>
+    <go2>עֲוֺ֣ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Lam 4:10.8</position>
+    <go1>לָ֔מוֹ</go1>
+    <go2>לָ֔/מוֹ</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Lam 4:13.3</position>
+    <go1>עֲוֹנ֖וֹת</go1>
+    <go2>עֲוֺנ֖וֹת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Lam 4:15.4</position>
+    <go1>לָ֗מוֹ</go1>
+    <go2>לָ֗/מוֹ</go2>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Lam 4:22.2</position>
+    <go1>עֲוֹנֵךְ֙</go1>
+    <go2>עֲוֺנֵךְ֙</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Lam 4:22.9</position>
+    <go1>עֲוֹנֵךְ֙</go1>
+    <go2>עֲוֺנֵךְ֙</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Lam 5:5.7</position>
+    <go1>הֽוּנַֽח־</go1>
+    <go2>הֽוּנַ֖ח<x>12</x><x>18</x></go2>
+    <change>Accents are different. Different number of notes. 2 notes, 12, 18,  have been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Lam 5:7.7</position>
+    <go1>עֲוֹנֹתֵיהֶ֥ם</go1>
+    <go2>עֲוֺנֹתֵיהֶ֥ם</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>4</mdchange>
+    <accentchange>2</accentchange>
+    <vowelchange>10</vowelchange>
+    <notechange>5</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Ecclesiastes</bookname>
+  <bookabbrev>Eccl</bookabbrev>
+  <firstbook>
+    <filename>Ecclesiastes</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Ecclesiastes</filename>
+    <version>4.12</version>
+    <date>5 Aug 2009</date>
+    <transcriptiondate>11 Nov 2009</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="false">
+    <position>Eccl 2:23.11</position>
+    <go1>לִבּ֑וֹ</go1>
+    <go2>לִבּ֑ו<x>12</x><x>18</x></go2>
+    <change>Vowels are different. Different number of notes. 2 notes, 12, 18,  have been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Eccl 5:4.5</position>
+    <go1>מִשֶּׁתִּדּ֖וֹר</go1>
+    <go2>מִשֶׁתִּדּ֖וֹר<x>12</x><x>18</x></go2>
+    <change>Vowels are different. Different number of notes. 2 notes, 12, 18,  have been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Eccl 5:7.16</position>
+    <go1>גָּבֹ֙הַּ֙</go1>
+    <go2>גָּבֹ֙הַ֙<x>12</x><x>18</x></go2>
+    <change>Vowels are different. Different number of notes. 2 notes, 12, 18,  have been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Eccl 9:15.17</position>
+    <go1>הַהֽוּא׃</go1>
+    <go2>הַהּֽוּא׃<x>12</x><x>18</x></go2>
+    <change>Vowels are different. Different number of notes. 2 notes, 12, 18,  have been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Eccl 12:5.19</position>
+    <go1>בַשּׁ֖וּק</go1>
+    <go2>בָשּׁ֖וּק<x>12</x><x>18</x></go2>
+    <change>Vowels are different. Different number of notes. 2 notes, 12, 18,  have been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Eccl 12:13.9</position>
+    <go1>מִצְוֹתָ֣יו</go1>
+    <go2>מִצְוֺתָ֣יו</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>6</vowelchange>
+    <notechange>5</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Esther</bookname>
+  <bookabbrev>Esth</bookabbrev>
+  <firstbook>
+    <filename>Esther</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Esther</filename>
+    <version>4.12</version>
+    <date>5 Aug 2009</date>
+    <transcriptiondate>11 Nov 2009</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="false">
+    <position>Esth 4:11.36</position>
+    <go1>נִקְרֵ֙אתִי֙</go1>
+    <go2>נִקְרֵ֙אתי֙<x>12</x><x>18</x></go2>
+    <change>Vowels are different. Different number of notes. 2 notes, 12, 18,  have been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Esth 5:14.22</position>
+    <go1>אֶל־</go1>
+    <go2>אֶל<x>12</x><x>18</x></go2>
+    <change>Accents are different. Different number of notes. 2 notes, 12, 18,  have been added.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>1</accentchange>
+    <vowelchange>1</vowelchange>
+    <notechange>2</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Daniel</bookname>
+  <bookabbrev>Dan</bookabbrev>
+  <firstbook>
+    <filename>Daniel</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Daniel</filename>
+    <version>4.12</version>
+    <date>5 Aug 2009</date>
+    <transcriptiondate>11 Nov 2009</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="false">
+    <position>Dan 2:6.4</position>
+    <go1>תְּֽהַחֲוֹ֔ן</go1>
+    <go2>תְּֽהַחֲוֺ֔ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Dan 2:6.15</position>
+    <go1>הַחֲוֹֽנִי׃</go1>
+    <go2>הַחֲוֺֽנִי׃</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Dan 2:43.9</position>
+    <go1>לֶהֱוֹן֙</go1>
+    <go2>לֶהֱוֺן֙</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Dan 2:43.13</position>
+    <go1>לֶהֱוֹ֥ן</go1>
+    <go2>לֶהֱוֺ֥ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Dan 5:6.3</position>
+    <go1>זִיוֹ֣הִי</go1>
+    <go2>זִיוֺ֣הִי</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Dan 5:9.6</position>
+    <go1>וְזִיוֹ֖הִי</go1>
+    <go2>וְזִיוֺ֖הִי</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Dan 6:2.11</position>
+    <go1>לֶהֱוֹ֖ן</go1>
+    <go2>לֶהֱוֺ֖ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Dan 6:3.10</position>
+    <go1>לֶהֱוֹ֞ן</go1>
+    <go2>לֶהֱוֺ֞ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Dan 6:27.9</position>
+    <go1>לֶהֱוֹ֤ן</go1>
+    <go2>לֶהֱוֺ֤ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Dan 9:4.16</position>
+    <go1>מִצְוֹתָֽיו׃</go1>
+    <go2>מִצְוֺתָֽיו׃</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Dan 9:5.7</position>
+    <go1>מִמִּצְוֹתֶ֖ךָ</go1>
+    <go2>מִמִּצְוֺתֶ֖ךָ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Dan 9:13.18</position>
+    <go1>מֵֽעֲוֹנֵ֔נוּ</go1>
+    <go2>מֵֽעֲוֺנֵ֔נוּ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Dan 9:16.14</position>
+    <go1>וּבַעֲוֹנ֣וֹת</go1>
+    <go2>וּבַעֲוֺנ֣וֹת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Dan 9:24.16</position>
+    <go1>עָוֹ֔ן</go1>
+    <go2>עָוֺ֔ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>14</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Ezra</bookname>
+  <bookabbrev>Ezra</bookabbrev>
+  <firstbook>
+    <filename>Ezra</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Ezra</filename>
+    <version>4.12</version>
+    <date>5 Aug 2009</date>
+    <transcriptiondate>11 Nov 2009</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="false">
+    <position>Ezra 4:7.9</position>
+    <go1>כְּנָוֹתָ֔יו</go1>
+    <go2>כְּנָוֺתָ֔יו</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ezra 6:10.2</position>
+    <go1>לֶהֱוֹ֧ן</go1>
+    <go2>לֶהֱוֺ֧ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ezra 7:11.13</position>
+    <go1>מִצְוֹת־</go1>
+    <go2>מִצְוֺת־</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ezra 7:25.11</position>
+    <go1>לֶהֱוֹ֤ן</go1>
+    <go2>לֶהֱוֺ֤ן</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ezra 9:6.10</position>
+    <go1>עֲוֹנֹתֵ֤ינוּ</go1>
+    <go2>עֲוֺנֹתֵ֤ינוּ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ezra 9:7.9</position>
+    <go1>וּבַעֲוֹנֹתֵ֡ינוּ</go1>
+    <go2>וּבַעֲוֺנֹתֵ֡ינוּ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ezra 9:10.9</position>
+    <go1>מִצְוֹתֶֽיךָ׃</go1>
+    <go2>מִצְוֺתֶֽיךָ׃</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ezra 9:13.14</position>
+    <go1>מֵֽעֲוֹנֵ֔נוּ</go1>
+    <go2>מֵֽעֲוֺנֵ֔נוּ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ezra 9:14.3</position>
+    <go1>מִצְוֹתֶ֔יךָ</go1>
+    <go2>מִצְוֺתֶ֔יךָ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>9</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Nehemiah</bookname>
+  <bookabbrev>Neh</bookabbrev>
+  <firstbook>
+    <filename>Nehemiah</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Nehemiah</filename>
+    <version>4.12</version>
+    <date>5 Aug 2009</date>
+    <transcriptiondate>11 Nov 2009</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="false">
+    <position>Neh 1:5.14</position>
+    <go1>מִצְוֹתָֽיו׃</go1>
+    <go2>מִצְוֺתָֽיו׃</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Neh 1:7.7</position>
+    <go1>הַמִּצְוֹ֗ת</go1>
+    <go2>הַמִּצְוֺ֗ת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Neh 1:9.4</position>
+    <go1>מִצְוֹתַ֔י</go1>
+    <go2>מִצְוֺתַ֔י</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Neh 3:37.4</position>
+    <go1>עֲוֹנָ֔ם</go1>
+    <go2>עֲוֺנָ֔ם</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Neh 9:2.11</position>
+    <go1>וַעֲוֹנ֖וֹת</go1>
+    <go2>וַעֲוֺנ֖וֹת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Neh 9:13.15</position>
+    <go1>וּמִצְוֹ֖ת</go1>
+    <go2>וּמִצְוֺ֖ת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Neh 9:16.10</position>
+    <go1>מִצְוֹתֶֽיךָ׃</go1>
+    <go2>מִצְוֺתֶֽיךָ׃</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Neh 9:29.10</position>
+    <go1>לְמִצְוֹתֶ֙יךָ֙</go1>
+    <go2>לְמִצְוֺתֶ֙יךָ֙</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Neh 9:34.12</position>
+    <go1>מִצְוֹתֶ֔יךָ</go1>
+    <go2>מִצְוֺתֶ֔יךָ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Neh 9:34.13</position>
+    <go1>וּלְעֵ֣דְוֹתֶ֔יךָ</go1>
+    <go2>וּלְעֵ֣דְוֺתֶ֔יךָ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Neh 10:30.21</position>
+    <go1>מִצְוֹת֙</go1>
+    <go2>מִצְוֺת֙</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Neh 10:33.3</position>
+    <go1>מִצְוֹ֔ת</go1>
+    <go2>מִצְוֺ֔ת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>12</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>1 Chronicles</bookname>
+  <bookabbrev>1 Chr</bookabbrev>
+  <firstbook>
+    <filename>Chronicles_1</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Chronicles_1</filename>
+    <version>4.12</version>
+    <date>5 Aug 2009</date>
+    <transcriptiondate>11 Nov 2009</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="false">
+    <position>1 Chr 2:23.5</position>
+    <go1>חַוֹּ֨ת</go1>
+    <go2>חַוֺּ֨ת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>1 Chr 28:7.9</position>
+    <go1>מִצְוֹתַ֥י</go1>
+    <go2>מִצְוֺתַ֥י</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>1 Chr 28:8.12</position>
+    <go1>מִצְוֹ֖ת</go1>
+    <go2>מִצְוֺ֖ת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>1 Chr 28:17.3</position>
+    <go1>וְהַקְּשָׂוֹ֖ת</go1>
+    <go2>וְהַקְּשָׂוֺ֖ת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>1 Chr 29:19.7</position>
+    <go1>מִצְוֹתֶ֔יךָ</go1>
+    <go2>מִצְוֺתֶ֔יךָ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>1 Chr 29:19.8</position>
+    <go1>עֵדְוֹתֶ֖יךָ</go1>
+    <go2>עֵדְוֺתֶ֖יךָ</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>6</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>2 Chronicles</bookname>
+  <bookabbrev>2 Chr</bookabbrev>
+  <firstbook>
+    <filename>Chronicles_2</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Chronicles_2</filename>
+    <version>4.12</version>
+    <date>5 Aug 2009</date>
+    <transcriptiondate>11 Nov 2009</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="false">
+    <position>2 Chr 7:19.6</position>
+    <go1>וּמִצְוֹתַ֔י</go1>
+    <go2>וּמִצְוֺתַ֔י</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>2 Chr 17:4.5</position>
+    <go1>וּבְמִצְוֹתָ֖יו</go1>
+    <go2>וּבְמִצְוֺתָ֖יו</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>2 Chr 20:18.12</position>
+    <go1>לְהִֽשְׁתַּחֲוֹ֖ת</go1>
+    <go2>לְהִֽשְׁתַּחֲוֺ֖ת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>2 Chr 24:20.21</position>
+    <go1>מִצְוֹ֤ת</go1>
+    <go2>מִצְוֺ֤ת</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>2 Chr 32:28.6</position>
+    <go1>וְאֻֽרָוֹת֙</go1>
+    <go2>וְאֻֽרָוֺת֙</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>2 Chr 34:31.15</position>
+    <go1>מִצְוֹתָיו֙</go1>
+    <go2>מִצְוֺתָיו֙</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>2 Chr 34:31.16</position>
+    <go1>וְעֵֽדְוֹתָ֣יו</go1>
+    <go2>וְעֵֽדְוֺתָ֣יו</go2>
+    <change>Vowels are different.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>7</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<summary>
+  <books>39</books>
+  <invalidgo1>0</invalidgo1>
+  <invalidgo2>0</invalidgo2>
+  <differentword>1</differentword>
+  <mdchange>68</mdchange>
+  <accentchange>15</accentchange>
+  <vowelchange>446</vowelchange>
+  <notechange>34</notechange>
+  <notevaluechange>4</notevaluechange>
+  <gocountchange>0</gocountchange>
+</summary>
+</Differences>

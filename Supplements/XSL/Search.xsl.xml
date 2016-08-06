@@ -1,0 +1,2364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsl:stylesheet version="1.0"  xmlns:xsl="http://www.w3.org/1999/XSL/Transform" >
+<xsl:output method="html" />
+<xsl:strip-space elements="*"/>
+<!--  HTMLOutput.xml - 2010.08.04  =========================================-->
+<!--========================================================================-->
+<!--  SearchLabel.xml - 2011.07.22  ========================================-->
+<!--========================================================================-->
+<!--
+
+* * *  CAUTION:  This file is automatically composed by TanachXSLBuild.  * * * 
+      
+      Edits to this file will disappear when the site is re-built!
+      
+      Edit the component pieces in the ComposeXSL directory instead.
+      
+-->
+<!--========================================================================-->
+<!--========================================================================-->
+<!-- Copyright C.V.Kimball 2006                                            -->
+<!--
+
+            Search.xsl.xml - XSLT file for the Search.xml file in the 
+                             Supplements subdirectory. 
+            
+-->
+<!--========================================================================-->
+<!--========================================================================-->
+<!--*** 1 ***  
+
+
+                   User specifiable constants (Use care!)
+                   
+                                                                            -->
+
+<!-- Variable xsldate is the date of this xsl file.                         -->
+<xsl:variable name="xsldate">27 Oct 2014</xsl:variable>  
+<!-- Variable build is the build date of the complete site as set by ant.   -->
+<xsl:variable name="build">25.1</xsl:variable>  
+
+<!-- Variable template chooses which template to apply.                     -->
+<xsl:param name="template" >Dispatcher</xsl:param>  
+<xsl:param name="baseURL">http://www.tanach.us/</xsl:param>
+<xsl:param name="backbutton">false</xsl:param>
+<xsl:param name="invalidpage">UnspecifiedSearch25</xsl:param>
+
+<!-- Search book code.  Normally the file name less .xml.
+     can also be Torah or Tanach.    -->
+<xsl:param name="searchbook">Deuteronomy</xsl:param>  
+<xsl:param name="searchtype">char</xsl:param>  
+<xsl:param name="searchcontent">consonants</xsl:param>  
+<!-- variants choices: k, q, both. -->
+<xsl:param name="searchvariants">both</xsl:param> 
+<xsl:param name="searchoutput">both</xsl:param> 
+<xsl:param name="currentbook">UnspecifiedSearch184</xsl:param>  
+<xsl:param name="currentbookname">UnspecifiedSearch185</xsl:param>  
+<xsl:param name="currentbookabbrev">UnspecifiedSearch186</xsl:param>  
+<!-- Currently allowable: accents, vowels, consonants, morphology    -->
+<!-- Test string for comparision -->
+<xsl:param name="test">&#x0020;</xsl:param> 
+<xsl:param name="searchreference">Off</xsl:param>  
+<!-- Found instances in a given book. -->
+<xsl:param name="bookcount">0</xsl:param> 
+<!-- Found instances overall. -->
+<xsl:param name="overallcount">0</xsl:param> 
+<xsl:param name="foundinbooks" >1</xsl:param>  
+<xsl:param name="initialstring" >true</xsl:param>  
+
+
+<!-- Variable creativecommons is a URL pointing to the CreativeCommons.gif file. -->
+<xsl:variable name="creativecommons"><xsl:value-of select="$baseURL"/>../Images/CreativeCommons.gif</xsl:variable>  
+<!-- The file name of the file containing the page background.              -->
+<xsl:variable name="background">../Images/Background</xsl:variable>
+<!-- The MIME type of the favicon icon.           -->
+<xsl:variable name="icontype">image.x-icon</xsl:variable>
+<!-- URL of the favicon icon.           -->
+<xsl:variable name="iconURL"><xsl:value-of select="$baseURL"/>Images/TanachIcon.ico</xsl:variable>
+<xsl:variable name="word" >1</xsl:variable>  
+<xsl:variable name="lastword" >1</xsl:variable>
+<!--
+    For searching ONLY blank is among vowels.
+-->
+<!-- Variable searchconsonants contains blank and consonants -->
+<xsl:variable name="searchconsonants" select="concat($blank, $consonants)"/>
+<!-- Variable searchall contains all for the search only.                                -->
+<xsl:variable name="searchall" select="concat($searchconsonants, $maqafsofpasuq, $vowels,  $trueaccents, $mdivider)"/>
+<!-- Variable no morphology eliminates the /.                               -->
+<xsl:variable name="searchnomorphology" 
+  select="concat($searchconsonants,  $maqafsofpasuq, $vowels, $trueaccents)"/>
+<!-- Variable noaccents eliminates the accents except for the sof passuq and maqaf.   -->
+<xsl:variable name="searchnoaccents" select="concat($searchconsonants,  $maqafsofpasuq, $vowels )"/>
+<!-- Variable novowels eliminates the vowels and replaces the maqaf with a blank.   -->
+<!-- Variable novowels eliminates the vowels and replaces the maqaf with a blank.   -->
+<xsl:variable name="searchnovowels" select="concat($searchconsonants, $blank)"/>
+<!--========================================================================-->
+<!--  TextVariables.xml - 2011.07.15  =================================================================-->
+
+<!--  Determines whether the output will be in validated HTML or XHTML,
+      or in an HTML simple enough for browser XSL transformations.
+      Allowable values: html, xhtml, xslhtml values. 
+      html and xhtml are valid with output method xhtml. 
+      xslhtml requires the output method to be html.
+--> 
+<xsl:variable name="outputformat">xslhtml</xsl:variable>
+
+<!--   Parameters settable in Server URL in alphabetical order by URL name                               -->
+
+<!-- Variable align sets the left, center, right position of the text     [URL name: align]             -->
+<xsl:param name="align">center</xsl:param> 
+<!-- Variable brief eliminates header and footer if 1                     [URL name: Brief]             -->
+<xsl:param name="brief">0</xsl:param> 
+<!-- Cellpadding from fontsize through JavaScript                         [URL name: cellpadding]       -->
+<xsl:param name="cellpadding">10</xsl:param> 
+<!-- Variable content chooses how to display chapter content.             [URL name: content]           -->
+<!-- Currently allowable: Morphology, Accents, Vowels, Consonants.                                      -->
+<xsl:param name="content">Accents</xsl:param>  
+<!-- DH source display modes.                                             [URL name: dh]                -->     
+<!-- Variable DH controls the marking of the text with DH sources.                                      -->
+<!-- Currently allowable: Off, Titles, All, Emphasize, Single.                                          -->
+<xsl:param name="DH">Off</xsl:param> 
+<!-- Specified DH source.                                                 [URL name: dhs ]              -->
+<xsl:param name="DHs">J</xsl:param> 
+<!-- Font for English text                                                [URL name: Englishfontfamily] -->
+<xsl:param name="englishfontfamily">Times New Roman</xsl:param>
+<!-- English font size controlled from fontsize                           [URL name: Englishfontsize]   -->
+<xsl:param name="Englishfontsize">16</xsl:param>
+<!-- Variable fontsize gives the size of the fonts in points.             [URL name: font]              -->
+<xsl:param name="fontsize">24</xsl:param> 
+<!-- Font for Hebrew text                                                 [URL name: fontfamily]        -->
+<xsl:param name="fontfamily">SBL Hebrew</xsl:param>
+<!-- Controls the size of text in the citation label                      [URL name: labelsize]         -->
+<xsl:param name="labelsize">24</xsl:param>
+<!-- Variable format chooses what Layout to display text.                                               -->
+<!-- Currently allowable: Full, Note-free, Text-only, Qere-only, Verses   [URL name: layout]            -->
+<xsl:param name="format">Full</xsl:param>  
+<!-- Variable lineheight gives the relative line height as a % of normal. [URL name: lineheight]        -->
+<xsl:param name="lineheight">150</xsl:param> 
+<!-- Variable nobackground eliminates the background if 1                 [URL name: nobackground]      -->
+<xsl:param name="nobackground">0</xsl:param> 
+<!-- Variable nolabel eliminates the text citation label if 1             [URL name: nolabel]           -->
+<xsl:param name="nolabel">0</xsl:param> 
+<!-- Controls whether the citation label follows the text.                [URL name: trailinglabel]     -->
+<xsl:param name="trailinglabel">0</xsl:param>
+<!-- Titles                                                                 -->
+<xsl:param name="title1">?</xsl:param>                               <!-- [URL name: t1]                -->
+<xsl:param name="title2">?</xsl:param>                               <!-- [URL name: t2]                -->
+<xsl:param name="title3">?</xsl:param>                               <!-- [URL name: t3]                -->
+<xsl:param name="title4">?</xsl:param>                               <!-- [URL name: t4]                -->
+<xsl:param name="title5">?</xsl:param>                               <!-- [URL name: t5]                -->
+<!-- Variable view chooses whether to use chapter (0) or verses (1) display.                            -->
+<!-- Currently allowable: 0 <-> Chapter, 1 <-> Verses                     [URL name: view]              -->
+<xsl:param name="view">0</xsl:param>     
+<!-- Variable chapterwidth gives % width in layouts                       [URL name: width]             -->
+<xsl:param name="chapterwidth">95</xsl:param>
+<!-- Excerpt specification, set by JavaScript.                              -->
+<!-- Book specification (starting from 1 ).  Set for multibook files only! -->
+<xsl:param name="booknumber">1</xsl:param>  
+
+
+<!--  True, unsettable variables                                             -->
+
+<!-- This makes the Hebrew font in the top citation a bit larger.           -->
+<xsl:variable name="hebrewlabelsize"><xsl:value-of select="$labelsize*1.1"/></xsl:variable>
+
+<xsl:param name="singlechapter">false</xsl:param>
+<!-- Smaller font size controlled from fontsize through JavaScript          -->
+<!--   It's only used in the Emphasize DH mode.                             -->
+<xsl:param name="reducedfontsize">16</xsl:param> 
+
+<!-- Variable chapterborder gives border width in Full Layout               -->
+<xsl:variable name="chapterborder">1</xsl:variable>
+<!-- Color for emphasized text in DH display mode.                          -->
+<xsl:variable name="emphasiscolor">black</xsl:variable> 
+<!-- Color for de-emphasized text in DH display mode.                       -->
+<xsl:variable name="deemphasiscolor">gray</xsl:variable> 
+<!-- Word for DH legend.                                                    -->
+<xsl:variable name="testword">&#x05d0;&#x05b6;&#x05ea;</xsl:variable>  
+<!-- Definitions of Hebrew characters surrounding transcription notes.
+     Ideally, noteprefix = "" and notesuffix = RLM = 200f,
+     however, many editors don't respond to RLMs.  
+     Until they do, use a Hebrew letter geresh, 05f3 for both.
+     This places the note in quote-like Hebrew characters, i.e. 'a'         -->
+<xsl:variable name="noteprefix">&#x05f3;</xsl:variable>
+<xsl:variable name="notesuffix">&#x05f3;</xsl:variable>
+<!--
+     Very basic definitions of Unicode Hebrew blocks
+-->
+<!-- Blank character -->
+<xsl:param   name="blank">&#x0020;</xsl:param>  
+<!-- Variable consonants contains consonants ONLY -->
+<xsl:param   name="consonants">&#x05d0;&#x05d1;&#x05d2;&#x05d3;&#x05d4;&#x05d5;&#x05d6;&#x05d7;&#x05d8;&#x05d9;&#x05da;&#x05db;&#x05dc;&#x05dd;&#x05de;&#x05df;&#x05e0;&#x05e1;&#x05e2;&#x05e3;&#x05e4;&#x05e5;&#x05e6;&#x05e7;&#x05e8;&#x05e9;&#x05ea;</xsl:param>  
+<!-- Variable maqafsofpasuq contains ONLY maqaf and the sof passuq.                    -->
+<xsl:param   name="maqafsofpasuq">&#x05be;&#x05c3;</xsl:param>  
+<!-- Variable vowels contains vowels and shin/sin dots.                    -->
+<xsl:param   name="vowels">&#x05b0;&#x05b1;&#x05b2;&#x05b3;&#x05b4;&#x05b5;&#x05b6;&#x05b7;&#x05b8;&#x05b9;&#x05ba;&#x05bb;&#x05bc;&#x05c1;&#x05c2;</xsl:param>  
+<!-- Variable trueaccents contains accents less maqaf and sof pasuq plus ZWJ but without blank.             -->
+<xsl:param name="trueaccents">&#x0591;&#x0592;&#x0593;&#x0594;&#x0595;&#x0596;&#x0597;&#x0598;&#x0599;&#x059a;&#x059b;&#x059c;&#x059d;&#x059e;&#x059f;&#x05a0;&#x05a1;&#x05a3;&#x05a4;&#x05a5;&#x05a6;&#x05a7;&#x05a8;&#x05a9;&#x05aa;&#x05ab;&#x05ac;&#x05ad;&#x05ae;&#x05bd;&#x05bf;&#x05c0;&#x05c4;&#x05c5;&#x200d;</xsl:param>
+<!-- Variable mdivider contains the morphogical divider, /.                 -->
+<xsl:param name="mdivider">/</xsl:param>
+<!--
+     Block definitions for book contents,
+     morphology, accents, vowels, consonants. 
+-->
+<!-- Variable accents contains trueaccents plus blank.             -->
+<xsl:param name="accents">&#x0591;&#x0592;&#x0593;&#x0594;&#x0595;&#x0596;&#x0597;&#x0598;&#x0599;&#x059a;&#x059b;&#x059c;&#x059d;&#x059e;&#x059f;&#x05a0;&#x05a1;&#x05a3;&#x05a4;&#x05a5;&#x05a6;&#x05a7;&#x05a8;&#x05a9;&#x05aa;&#x05ab;&#x05ac;&#x05ad;&#x05ae;&#x05bd;&#x05bf;&#x05c0;&#x05c4;&#x05c5;&#x200d;&#x0020;</xsl:param>
+<!-- Variable all contains all of the above.                                -->
+<xsl:variable name="all" 
+  select="concat($consonants, $maqafsofpasuq, $vowels,  $accents, $mdivider)"/>
+<!-- Variable no morphology eliminates the /.                               -->
+<xsl:variable name="nomorphology" 
+  select="concat($consonants,  $maqafsofpasuq, $vowels, $accents)"/>
+<!-- Variable noaccents eliminates the accents except for the sof passuq and maqaf.   -->
+<xsl:variable name="noaccents" select="concat($consonants,  $maqafsofpasuq, $vowels)"/>
+<!-- Variable novowels eliminates the vowels and replaces the maqaf with a blank.   -->
+<xsl:variable name="novowels" select="concat($consonants,'&#x0020;')"/>
+
+<!-- Chapter:Verse specification                                       -->
+<xsl:param name="chapter" >1</xsl:param>  
+<xsl:param name="verse" >1</xsl:param>  
+<!-- LastChapter:LastVerse specification                           -->
+<xsl:param name="lastchapter" >1000</xsl:param>  
+<xsl:param name="lastverse" >1000</xsl:param>  
+
+<!-- Include $showText = Javascript:showText(event) to launch showText page for Text.xsl.xml.   -->
+<!-- Set value to x for ServerText.xsl.xml to eliminate onClick attribute.                                                              -->
+<xsl:variable name="showText">Javascript:showText(event)</xsl:variable>  
+
+<!--========================================================================-->
+<!--  SupplementStyles.xml - 2014.10.27  ====================================-->
+<!--========================================================================-->
+<!--========================================================================-->
+<!-- Copyright C.V.Kimball 2014                                             -->
+<!--   
+
+     Styles as XSL variables for Supplements.        
+
+-->
+<!--========================================================================-->
+<!--========================================================================-->
+
+<xsl:variable name="span.title">font-size:20pt;font-weight:bold</xsl:variable>
+<xsl:variable name="span.subtitle">font-size:16pt;font-weight:bold</xsl:variable>
+<xsl:variable name="span.boldtext">font-size:12pt;font-weight:bold</xsl:variable>
+<xsl:variable name="span.text">font-size:14pt;</xsl:variable>
+<xsl:variable name="span.redtext">font-size:14pt;color:red</xsl:variable>
+<xsl:variable name="span.smalltext">font-size:12pt;</xsl:variable>
+<xsl:variable name="span.pd">font-size:14pt;font-weight:bold</xsl:variable>
+<xsl:variable name="span.pdlist">font-size:10pt;font-weight:bold</xsl:variable>
+<xsl:variable name="span.link">font-size:14pt;font-style:italic; font-weight:bold</xsl:variable>
+
+<!--========================================================================-->
+<!--========================================================================-->
+<!--  SearchDispatch.xml - 2010.08.04  =====================================-->
+<!--*** 2 ***
+          Dispatching template for /Search
+-->
+<!--========================================================================-->
+<xsl:template match="/Search">
+  <xsl:choose> 
+  <xsl:when test="$template = 'Dispatcher'">
+    <xsl:call-template name="Dispatcher"/>
+  </xsl:when>
+  <xsl:when test="$template = 'InvalidPage'">
+    <xsl:call-template name="InvalidPage"/>
+  </xsl:when>
+  <xsl:otherwise>
+    <xsl:call-template name="InvalidTemplate"/>
+  </xsl:otherwise>
+  </xsl:choose>
+</xsl:template>
+
+<xsl:template match="/Tanach">
+  <xsl:choose> 
+  <xsl:when test="$template = 'Search'">
+    <xsl:call-template name="Search"/>
+  </xsl:when>
+  <xsl:when test="$template = 'SearchResult'">
+    <xsl:call-template name="SearchResult"/>
+  </xsl:when>
+  <xsl:when test="$template = 'SearchScan'">
+    <xsl:call-template name="SearchScan"/>
+  </xsl:when>
+  <xsl:when test="$template = 'OverallSearchTitle'">
+    <xsl:call-template name="OverallSearchTitle"/>
+  </xsl:when>
+  <xsl:when test="$template = 'SearchTitle'">
+    <xsl:call-template name="SearchTitle"/>
+  </xsl:when>
+  <xsl:when test="$template = 'Instructions'">
+    <xsl:call-template name="Instructions"/>
+  </xsl:when>
+  <xsl:when test="$template = 'InvalidURL'">
+    <xsl:call-template name="InvalidURL"/>
+  </xsl:when>
+  <xsl:otherwise>
+    <xsl:call-template name="InvalidTemplate"/>
+  </xsl:otherwise>
+  </xsl:choose>
+</xsl:template>
+<!--========================================================================-->
+<!--========================================================================-->
+<!--  Search.xml - 2011.07.22  =============================================-->
+<!--========================================================================-->
+<!--
+
+       Dispatcher
+            
+                                                                            -->          
+<!--========================================================================-->
+<xsl:template name="Dispatcher">
+<html>
+<head profile="http://www.w3.org/2005/11/profile" > 
+  <meta http-equiv="X-UA-Compatible" content="IE=8"/>
+  <link rel="icon" type="{$icontype}" href="{$iconURL}"/>
+  <title>Westminster Leningrad Codex</title>
+  <META NAME="description" CONTENT="Unicode/XML Westminster Leningrad Codex"/>
+  <META NAME="keywords" CONTENT="Bible, Hebrew, Tanach, Unicode, XML, Documentary Hypothesis"/>
+  <script type="text/javascript" src="../Javascript/SarissaLib.js"> </script>
+  <script type="text/javascript" src="../Javascript/UtilityLib.js"> </script>
+  <script type="text/javascript" src="Javascript/Search.js">&#x00a0;</script>
+  <xsl:call-template name="Styles"/>
+</head>
+<body onload="Javascript:init()" 
+      style="background-image:url('{$background}');margin-right:10pt; 
+             margin-left:10pt; margin-top:10pt; margin-bottom:0" >
+  &#x00a0;
+</body>
+</html>
+</xsl:template>
+<!--========================================================================-->
+<!--========================================================================-->
+<!--========================================================================-->
+<!--
+      Search
+-->
+<!--========================================================================-->
+<xsl:template name="Search">
+<html>
+<table align="center" width="100%" >
+  <tr>
+    <td align="left" width="18%" valign="top" >
+      <table cellpadding="3">
+        <tr>
+          <td>
+            <span style="{$span.link}"><a href="../Tanach.xml">Home</a></span>
+          </td>
+        </tr>
+        <tr>
+            <td align="left" valign="top">
+              &#x00a0;
+            </td>
+        </tr>
+        <tr>
+          <td align="left" valign="top">
+              <span style="{$span.link}">
+                <a  href="../Pages/Supplements.html" title="Go to the Supplements page.">Supplements</a>
+              </span>
+          </td>
+        </tr>
+      </table>
+    </td>
+    <td align="center" width="64%">
+      <table>
+        <tr>
+          <td align="center">
+            <span style="{$span.subtitle}">
+              <xsl:value-of select="teiHeader/fileDesc/titleStmt/title[./@level='s' and ./@type='main'] "/> 
+               <xsl:text> [</xsl:text> <xsl:value-of select="/Tanach/teiHeader/fileDesc/editionStmt/edition/version"/><xsl:text>] </xsl:text> 
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td align="center">
+            <span style="font-family:{$englishfontfamily};font-weight:bold;font-size:200%">
+            <xsl:value-of select="teiHeader/fileDesc/titleStmt/title[./@level='s' and ./@type='uniform'] "/>
+                <xsl:text> - </xsl:text></span>
+                     <span align="left" style="font-family:{$fontfamily};font-size:250%">
+                        <xsl:value-of select="teiHeader/fileDesc/titleStmt/title[./@level='s' 
+                            and @type='uniformhebrew']"/>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td align="center">
+            <span style="{$span.smalltext}">
+              <xsl:value-of select="/Tanach/teiHeader/fileDesc/notesStmt/note[1]"/>
+              <br/>
+            </span>
+          </td>
+        </tr>
+      </table>
+    </td>
+    <td  width="18%" valign="top" align="right">
+      <table>
+        <tr>
+          <td align='right'>
+            <xsl:call-template name="BackButton"/>
+          </td>
+        </tr>
+        <tr>
+          <td align='right'><span style="{$span.link}">
+            <a href="Javascript:showInstructions()">Instructions</a>
+          </span></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<p/>
+<table width="80%" cellpadding="10" align="center">
+  <tr>
+    <td align="center"><span style="{$span.text}">
+      Search&#x00a0;&#x00a0;
+      <select id='SearchBookPD' onchange="JavaScript:changeBook()" style="{$span.pdlist}">
+        <option value="Genesis">Genesis</option>
+        <option value="Exodus">Exodus</option>
+        <option value="Leviticus">Leviticus</option>
+        <option value="Numbers">Numbers</option>
+        <option value="Deuteronomy" selected="true">Deuteronomy</option>
+        <option value="Joshua">Joshua</option>
+        <option value="Samuel_1">1 Samuel</option>
+        <option value="Samuel_2">2 Samuel</option>
+        <option value="Kings_1">1 Kings</option>
+        <option value="Kings_2">2 Kings</option>
+        <option value="Isaiah">Isaiah</option>
+        <option value="Jeremiah">Jeremiah</option>
+        <option value="Ezekiel">Ezekiel</option>
+        <option value="Hosea">Hosea</option>
+        <option value="Joel">Joel</option>
+        <option value="Amos">Amos</option>
+        <option value="Obadiah">Obadiah</option>
+        <option value="Jonah">Jonah</option>
+        <option value="Micah">Micah</option>
+        <option value="Nahum">Nahum</option>
+        <option value="Habakkuk">Habakkuk</option>
+        <option value="Zephaniah">Zephaniah</option>
+        <option value="Haggai">Haggai</option>
+        <option value="Zechariah">Zechariah</option>
+        <option value="Malachi">Malachi</option>
+        <option value="Psalms">Psalms</option>
+        <option value="Proverbs">Proverbs</option>
+        <option value="Job">Job</option>
+        <option value="Song_of_Songs">Song of songs</option>
+        <option value="Ruth">Ruth</option>
+        <option value="Lamentations">Lamentations</option>
+        <option value="Ecclesiastes">Ecclesiastes</option>
+        <option value="Esther">Esther</option>
+        <option value="Daniel">Daniel</option>
+        <option value="Ezra">Ezra</option>
+        <option value="Nehemiah">Nehemiah</option>
+        <option value="Chronicles_1">1 Chronicles</option>
+        <option value="Chronicles_2">2 Chronicles</option>
+        <option value="Torah">Torah</option>
+        <option value="Tanach">Tanach</option>
+     </select>
+      &#x00a0;&#x00a0;for&#x00a0;&#x00a0; 
+      <select id='SearchTypePD'  onChange="JavaScript:changeType()"  style="{$span.pdlist}">
+        <option value="char"  selected="true" >Unicode characters</option>
+        <option value="hex">hexadecimal values</option>
+      </select>
+      </span>
+    </td>
+  </tr>  
+  <xsl:if test="$initialstring='true'">
+  <tr>
+    <td style="border-width:1pt;border-style:solid;border-color:blue;padding:10pt;" align="center">
+             <span style="color:blue;">
+              The initial value, 
+              <span style="font-family:SBL Hebrew;font-weight:bold;color:black;font-size:16pt">&#x05d5;&#x05b0;&#x05d0;&#x05b8;&#x05a3;&#x05d4;&#x05b7;&#x05d1;&#x05b0;&#x05ea;&#x05bc;&#x05b8;&#x0594;</span> ,
+               appears in Leviticus and Deuteronomy. 
+              </span>
+    </td> 
+  </tr>  
+  </xsl:if>
+  <tr>
+    <td>
+      <table width="100%" align="center">
+        <tr>
+          <td align="center" width="100%">
+            <form name="SearchForm">
+              <input dir="rtl" type="TEXT" 
+                style="font-weight:bold;font-size:16pt;font-family:{$fontfamily}"
+                size="40" maxlength="256" id="textfield"
+                title="Enter or paste Unicode Hebrew text here." >&#x00a0;
+              </input>
+            </form> 
+          </td>            
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+   <td align="center">
+      <div style="color:red;font-weight:bold" id="SearchError"></div>
+   </td>
+  </tr>
+   <tr>
+    <td align="center"><span style="{$span.text}">
+     comparing&#x00a0;&#x00a0;
+      <select id='SearchContentPD' onChange="JavaScript:changeContent()" style="{$span.pdlist}" >
+        <option value="consonants"  selected="true" >consonants</option>
+        <option value="vowels">vowels</option>
+        <option value="accents">accents</option>
+        <option value="morphology">morphology</option>
+      </select>
+      &#x00a0;and including&#x00a0;&#x00a0;
+      <select id='SearchVariantsPD' onChange="JavaScript:changeVariants()" style="{$span.pdlist}">
+        <option value="k"  selected="true" >ketib variants</option>
+        <option value="q">qere variants</option>
+        <option value="both">both variants</option>
+      </select>&#x00a0;.
+    </span></td>
+  </tr>
+   <tr>
+    <td align="center"><span style="{$span.text}">
+     Show&#x00a0;
+      <select id='SearchOutputPD' onChange="JavaScript:changeOutput()"  style="{$span.pdlist}">
+        <option value="verses"  selected="true" >verses and counts</option>
+        <option value="counts">counts only</option>
+      </select>
+      &#x00a0;.
+    </span></td>
+  </tr>
+  <tr>
+    <td align="center">
+      <input style="color:blue;font-size:14pt;font-weight:bold" onClick="JavaScript:doSearch()" type="button" value="Search"/>
+    </td>
+  </tr>
+</table>
+<xsl:call-template name="PageFooter">
+  <xsl:with-param name="xmldate" select="/Tanach/teiHeader/profileDesc/creation/date"/>
+</xsl:call-template>
+</html>
+</xsl:template>
+<!--========================================================================-->
+<xsl:template name="SearchResult">
+<html>
+<table align="center" width="100%">
+  <tr>
+    <td align="left" width="20%" valign="top">
+      <table cellpadding="4">
+        <tr>
+          <td>
+            &#x00a0;
+          </td>
+        </tr>
+      </table>
+    </td>
+    <td align="center" width="60%">
+      <table>
+        <tr>
+          <td align="center">
+            <span style="{$span.subtitle}">
+              <xsl:value-of select="teiHeader/fileDesc/titleStmt/title[./@level='s' and ./@type='main'] "/> 
+               <xsl:text> [</xsl:text> <xsl:value-of select="/Tanach/teiHeader/fileDesc/editionStmt/edition/version"/><xsl:text>] </xsl:text> 
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td align="center">
+              <span style="font-family:{$englishfontfamily};font-weight:bold;font-size:200%">
+                <xsl:value-of select="teiHeader/fileDesc/titleStmt/title[./@level='s' and ./@type='uniform'] "/>
+                  <xsl:text> - </xsl:text>
+              </span>
+              <span align="left" style="font-family:{$fontfamily};font-size:250%">
+                  <xsl:value-of select="teiHeader/fileDesc/titleStmt/title[./@level='s' 
+                            and @type='uniformhebrew']"/>
+              </span>
+          </td>
+        </tr>
+            <tr>
+              <td align="center">
+                <span style="{$span.smalltext}">
+                   <xsl:value-of select="/Tanach/teiHeader/fileDesc/notesStmt/note[1]"/>
+                </span>
+              </td>
+            </tr>
+      </table>
+    </td>
+    <td  width="20%" valign="top">
+      <table align="right" valign="top" >
+        <tr>
+          <td colspan="2" align='right'>
+            <xsl:call-template name="BackButton"/>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" align='right'>
+            &#x00a0;
+          </td>
+        </tr>
+        <tr title="Change font size.">
+        <td><span style="{$span.pd}">Font size: </span></td>
+        <td align="right">
+                <select id='FontSizePD' style="{$span.pdlist}" 
+                    onchange="JavaScript:changeFontSize()">
+                    <option value="12">12pt</option>
+                    <option value="14">14pt</option>
+                    <option value="16">16pt</option>
+                    <option value="18">18pt</option>
+                    <option value="20" selected="true" >20pt</option>
+                    <option value="22">22pt</option>
+                    <option value="24">24pt</option>
+                    <option value="28">28pt</option>
+                    <option value="32">32pt</option>
+                    <option value="40">40pt</option>
+                    <option value="48">48pt</option>
+                    <option value="56">56pt</option>
+                    <option value="64">64pt</option>
+                    <option value="68">68pt</option>
+                    <option value="72">72pt</option>
+                </select>
+        </td>
+        </tr>
+        <tr title="Change text presentation.">
+          <td align="left"><span style="{$span.pd}">
+             Reference:&#x00a0;
+          </span></td>
+          <td align="right">
+             <select id='ReferencePD' 
+                      onchange="JavaScript:changeReference()" 
+                     style="{$span.pdlist}">
+                <option value="Off"  selected="true" >Off</option>
+                <option value="On">On</option>
+              </select>
+          </td>
+        </tr> 
+      </table>
+    </td>
+  </tr>
+</table>
+<div id="Results">&#x00a0;</div>
+<xsl:call-template name="PageFooter">
+  <xsl:with-param name="xmldate" select="/Tanach/teiHeader/fileDesc/editionStmt/edition/date"/>
+  </xsl:call-template>
+</html>
+</xsl:template>
+<!--========================================================================-->
+<!--========================================================================-->
+<xsl:template name="SearchScan">
+    <table align="center" border="1" cellpadding="5"  width="90%">
+      <xsl:for-each select="/Tanach/tanach/book/c/v">
+        <xsl:variable name="filteredverse">
+          <xsl:text>&#x0020;</xsl:text>  <!-- Place initial blank in every verse. -->
+          <xsl:call-template name="versestring">
+            <xsl:with-param name="filter" select="$searchcontent"/>
+          </xsl:call-template>
+        </xsl:variable>
+        <xsl:variable name="found" select="contains($filteredverse, $test)"/>
+        <xsl:if test="$found=true()">
+          <tr> 
+            <td align="right" width="90%">
+              <table align="right">
+                  <tr><td align="right">
+                    <xsl:call-template name="emphasizetest">
+                      <xsl:with-param name="string" select="$filteredverse"/>
+                      <xsl:with-param name="teststring" select="$test"/>
+                    </xsl:call-template>
+                  </td></tr>
+                <xsl:if test="$searchreference='On'">
+                  <tr><td align="right">
+                    <span dir="rtl" style="font-family:{$fontfamily};font-size:{$fontsize}pt">
+                      <xsl:call-template name="GOs">
+                        <xsl:with-param name="first" select="1"/>
+                        <xsl:with-param name="last" select="count(child::node())"/>
+                      </xsl:call-template>
+                    </span>
+                  </td></tr>
+                </xsl:if>
+              </table>
+            </td>
+            <td align="center" width="10%">
+              <table>
+                <tr><td align="center">
+                  <span style="font-size:{$Englishfontsize};font-family:{$englishfontfamily};font-weight:bold">
+                    <xsl:value-of select="$currentbookabbrev"/>
+                  </span>
+                </td></tr>
+                <tr><td align="center">
+                  <span style="font-size:{$Englishfontsize};font-family:{$englishfontfamily};font-weight:bold">
+                    <xsl:value-of select="../@n"/>:<xsl:value-of select="@n"/>
+                  </span>
+                </td></tr>
+              </table>
+            </td>
+          </tr>
+        </xsl:if>
+      </xsl:for-each>
+    </table>
+</xsl:template>
+<!--========================================================================-->
+<xsl:template name="Instructions">
+<html>
+<xsl:call-template name="PageHeader">
+  <xsl:with-param name="title" select="'Instructions for text searches'"/>
+</xsl:call-template>
+<div style="margin-right:20pt;margin-left:20pt;margin-bottom:20pt;">
+<table align="center">
+<tr><td><a href="JavaScript:showID('Search')">Search principles</a></td></tr>
+<tr><td><a href="JavaScript:showID('Target')">Specifying the target text</a></td></tr>
+<tr><td><a href="JavaScript:showID('Examples')">Examples</a></td></tr>
+</table>
+<h2 id="Search">Search principles</h2>
+The search text is a string of Unicode characters representing the Westminster
+Leningrad Codex.  The search "target" is also a string of Unicode characters. 
+The underlying software finds  <i>only exact matches</i> between text and 
+target Unicode strings.
+<p/>
+Because of the variety of characters in the Hebrew text (consonants, vowels, accents, 
+and morphology divisions) a direct text-to-text comparison is nearly useless.
+For example, a direct search for
+<span style="font-family:{$fontfamily};font-size:16pt">&#x05d1;&#x05bc;&#x05b0;&#x05e8;&#x05b5;&#x05d0;&#x05e9;&#x05c1;&#x05b4;&#x0596;&#x05d9;&#x05ea;</span> 
+ would yield no results ("be empty") 
+because the actual text contains a morphological divider (<b>/</b>):
+<span style="font-family:{$fontfamily};font-size:16pt">&#x05d1;&#x05bc;&#x05b0;&#x002f;&#x05e8;&#x05b5;&#x05d0;&#x05e9;&#x05c1;&#x05b4;&#x0596;&#x05d9;&#x05ea;</span>.
+A search for the consonants 
+<span style="font-family:{$fontfamily};font-size:16pt">&#x05d1;&#x05e8;&#x05d0;&#x05e9;&#x05d9;&#x05ea;
+</span> would also
+be empty because vowels and accents appear between the consonants in the text.
+<p/>
+To overcome this limitation of the underlying search software, <i>both</i> the search and target
+texts are "filtered" to have specified "search content" as indicated in the table below:
+<p/>
+<table align="center" border="1" cellpadding="5">
+  <tr>
+    <th>Content</th>
+    <th>Included characters</th>
+  </tr>
+  <tr>
+    <td>consonants</td>
+    <td>Hebrew consonants <i>and blank</i>.</td>
+  </tr>
+  <tr>
+    <td>vowels</td>
+    <td>The above plus Hebrew vowels, maqaf, and sof pasuq.</td>
+  </tr>
+  <tr>
+    <td>accents</td>
+    <td>The above plus Hebrew accents,  and the zero-width joiner, <b>200d</b>.</td>
+  </tr>
+  <tr>
+    <td>morphology</td>
+    <td>The above plus the morphological divider, <b>/</b>.</td>
+  </tr>
+</table>
+<p/>
+This filtering is analogous to the effect of changing the "Content" pull down
+on a book page: only the characters having the specified content
+are visible on the screen.  The "search content" is set from a pull down
+list following the word "comparing" on the search page.
+<span style="color:red">Most problems arise from a mismatch
+between the content of the target and the search content</span>. Although the software
+provides some warning messages, the user must always be careful
+set the target string and search content correctly.
+<p/>
+In this Tanach orthographic words are contained within XML tags (<b>w, k, q</b>) in the verses.
+The contents of these tags are concatenated together, usually with intermediate blanks,
+to form a single Unicode text string, the verse string, to be searched for each verse.  
+No blanks are added after an orthographic word ending in a maqaf, however. 
+The user has a choice as to which variants
+(<b>k, q</b>, or <b>both</b>) are included in the verse string.  
+<i>A blank character is added at the start of each verse</i> for purposes
+to be indicated later.  
+<p/>
+The search process matches the filtered verse string with the filtered target string.  <i>This matching
+does <i>not</i> cross verse boundaries.</i>  That is, if <b>"A"</b> is the final word in 
+a verse and  <b>"B"</b> is the inital word in the next verse, then the combination <b>"A B"</b>
+will not be found by the search process.
+<p/>
+<span style="color:blue"><i>Blanks are significant parts of both the verse and target strings.</i></span>
+To facilitate awareness of leading and trailing blanks,
+<b>&gt;</b> and <b>&lt;</b> characters are printed on either side of the Hebrew target string.
+These characters are <i>not</i> within the target string itself. 
+<b>&gt;</b><span style="font-family:{$fontfamily};font-size:16pt">&#x05dc;&#x05d0;&#x05d4;</span><b>&lt;</b>
+and 
+<b>&gt;</b><span style="font-family:{$fontfamily};font-size:16pt"> &#x05dc;&#x05d0;&#x05d4; </span><b>&lt;</b> 
+are very different targets. 
+With "consonants" content  
+<b>&gt;</b><span style="font-family:{$fontfamily};font-size:16pt">&#x05dc;&#x05d0;&#x05d4;</span><b>&lt;</b> will match the three consonants anywhere that they appear, including
+instances in which they are inside other consonants (36 times).  
+<b>&gt;</b><span style="font-family:{$fontfamily};font-size:16pt"> &#x05dc;&#x05d0;&#x05d4; </span><b>&lt;</b> 
+will match only the three letters as
+isolated words (28 times). The leading blank added to each verse allows the first word in the verse to be found as a blank-isolated word.
+Multiple, consecutive blanks are reduced to single blanks in target strings because only single
+blanks can appear in the verse string. 
+<p/>
+With the default setting, when the verse and target strings match the entire verse is displayed.  If many matches occur,
+however, a large amount of text must be rendered. This is especially the case when searching for short
+targets, i.e. <span style="font-family:{$fontfamily};font-size:16pt">&#x05dc;&#x05d0; </span> . When the pulldown list after the word "Show"
+is set to "counts only" only the count is given in the result.
+
+
+
+<p/>
+
+<h2 id="Target">Specifying the target text</h2>
+Specifying a target string is difficult because few people have Hebrew keyboards and because
+even Hebrew keyboards lack accents.  Two methods of entering the target text are available
+and are set by the pull down list following the word "for" on the search page.
+<h4>Entering Unicode characters</h4>
+Copying and pasting text into the input field in the "Unicode characters"
+input method is probably the easiest approach.  
+In choosing text to copy, always copy text having <i>at least</i> the content 
+that will be used in the search.
+For example,  using
+<b>&gt;</b><span dir="rtl" style="font-family:{$fontfamily};font-size:16pt">  &#x05dc;&#x05d0;&#x05d4; </span><b>&lt;</b>
+as an input for a search with "accents" content will yield an empty search.  This is because the verse string
+in the search will contain accents content, that is, have accents in addition to consonants, and will not exactly match 
+the consonants-only target string. Using text with "accents" content is recommended for all pasting into the input field.
+<p/>
+If a Hebrew keyboard is available, the target text can be typed directly into
+the input field.
+<h4>Entering hexadecimal constants</h4>
+The hexadecimal constant input method is helpful for situations in which the
+desired text isn't available to copy or a Hebrew keyboard isn't available.  To enter
+text this way, determine the hexadecimal values of the text, perhaps using
+the <a target="_blank" href="../Tanach.xml?Coding">Coding page</a>.  Enter the constants left-to-right as 
+blank-separated hexadecimal numbers, i.e. <b> 20 5dc  5d0 5d4 20</b> for
+<b>&gt;</b><span dir="rtl" style="font-family:{$fontfamily};font-size:16pt">  &#x05dc;&#x05d0;&#x05d4; </span><b>&lt;</b>.
+Here, blanks are necessary only to separate characters and multiple blanks have no effect. The
+hexadecimal input method is especially useful in finding accents.
+
+<h4>For either input method:</h4>
+Consonants with more than one vowel or accent must be entered very carefully if they
+are not directly pasted from this site. <span style="color:blue">The order in which the vowels or accents
+are entered after a consonant, the <i>"mark ordering"</i>, is critical
+to a successful search. </span> The input string 
+must have the same mark ordering as the Tanach text
+as defined in the  <a target="_blank" href="../Tanach.xml?Coding">Coding page</a>.  The easiest
+way to get mark ordering correct is to find a similar set of marks after any consonant in the text
+and determine the Unicode constants as described in the 
+<a target="_blank" href="../Tanach.xml?Instructions">Instructions</a>. 
+The entered marks should have the same order as in the displayed constants.
+<p/>
+Remember that the text of the Westminister Leningrad Codex doesn't contain
+all possible Unicode Hebrew characters, just the 80 characters shown on
+the <a target="_blank" href="../Tanach.xml?Coding">Coding page</a>.  Hence targets specified with these characters,
+such as the reversed nun,  <span dir="rtl" style="font-family:{$fontfamily};font-size:16pt">&#x05c6;</span>,
+will not be accepted and an error message will be given.
+<p/> 
+<h2 id="Examples">Examples</h2>
+Practice with a single book is before trying the lengthier <b>Torah</b> or <b>Tanach</b> 
+multiple book searches.
+<p/>
+To start, go to <a target="_blank" href="../Tanach.xml?Gen29:31">Genesis 29:31</a> 
+and, with the page content set to "Accents", copy the 5-th orthographic word 
+<span dir="rtl" style="font-family:{$fontfamily};font-size:16pt">&#x05dc;&#x05b5;&#x05d0;&#x05b8;&#x0594;&#x05d4;</span>,
+Leah, to the clipboard.  Return to the search page (<b><tt>Search.xml</tt></b>) setting the book to Genesis,
+the input method to "Unicode characters".  Paste the text in the input text field, noticing whether blanks appear
+at either the start of the end of the Hebrew letters. For now, remove any leading or ending blanks in the
+text field.  Set the comparison to "consonants" and the variants to "both". Click the  "Search" button.
+<p/> 
+With luck, a new page titled "Search of Genesis for ..." will appear within a few seconds.  
+It should indicate that 36 instances of 
+&gt;<span style="font-family:{$fontfamily};font-size:16pt">&#x05dc;&#x05d0;&#x05d4;</span>&lt;
+have been found. The target is shown between <b>&gt;</b> and <b>&lt;</b> marks to help is seeing
+starting and ending blanks.
+Although the pasted content was "Accents", note that the target text has been filtered to have the
+"consonants" content.  Genesis 29:31 has been found.  The Hebrew font size can be set from the 
+"Font" pull down list in the upper right corner.  Pull down the "Reference" list, selecting "On".  The search
+will be repeated; the new result shows the verse with accents, variants, and transcription notes
+below each found verse. Changing either the
+"Font" or "Reference" pull downs causes a repetition of the search and is time-consuming.  
+Setting the "Reference" to "On" doubles the rendering time, set it to "Off" for now.
+<p/> 
+Returning to the search page, add blanks before and after the previous search text in the input field.
+Leave the search content at "consonants". Click the "Search" button. This time only 28 instances of 
+&gt;<span style="font-family:{$fontfamily};font-size:16pt"> &#x05dc;&#x05d0;&#x05d4; </span>&lt; have been found.
+<p/> 
+Returning to the search page, set the comparison content to "accents" and click the "Search" button.
+This time only 11 instances of 
+&gt;<span style="font-family:{$fontfamily};font-size:16pt">&#x05dc;&#x05b5;&#x05d0;&#x05b8;&#x0594;&#x05d4;</span>&lt;
+have been found, due to the additional requirement of matching vowels and accents.
+<p/>
+Returning to the search page, set the book to <b>Torah</b>, set the comparison content
+to "consonants", <i>remove the leading and concluding blanks in the input field</i>, and click the "Search" button.
+This will provide a valuable timing example
+on your system.  110 instances of 
+<span style="font-family:{$fontfamily};font-size:16pt">&#x05dc;&#x05d0;&#x05d4;</span>
+will be found.  With Internet Explorer the name of the book being searched
+and other information appears in the status bar.
+<p/>
+If the search over the <b>Torah</b> completed in a timely manner, return to the search page and 
+set the book to <b>Tanach</b> and click the "Search" button. 
+218 instances of 
+<span style="font-family:{$fontfamily};font-size:16pt">&#x05dc;&#x05d0;&#x05d4;</span>
+will be found. This is another valuable timing example.  
+<p/>
+To find a verse referring to the Babylonian king Nebuchadnezzar,
+try entering the five letters 
+<span style="font-family:{$fontfamily};font-size:16pt">&#x05e0;&#x05d1;&#x05db;&#x05d3;&#x05e0;</span>
+into the input text field using a Hebrew keyboard with the "Unicode characters" input method.  
+These letters have the English language labels
+<b>B, C, F, S, B</b> on some Hebrew keyboards. Alternatively, select the "hexadecimal constant" 
+input method and enter <b>5e0 5d1 5db 5d3 5e0</b> into the input field. 
+Search the <b>Tanach</b> with "consonants" search content
+to locate the verse. The result shows 13 instances of the target string in 4 books.
+<p/>
+The <i>shalshelet</i> accent, 
+<span style="font-family:{$fontfamily};font-size:16pt">&#x05e1;&#x0593;</span>,  
+occurs relatively infrequently in the <b>Tanach</b>. To determine
+all the occurrences of the <i>shalshelet</i> in the Tanach, return to the search page
+and set the input mode pull down to "hexadecimal values..." .  
+From the <a target="_blank" href="../Tanach.xml?Coding">Coding page</a> note that 
+the <i>shalshelet</i> has hexadecimal value of <b>0593</b>.  Enter the number <b>0593</b>
+or <b>593</b> in the input field.  Set the search book to <b>Tanach</b>, the comparison content
+to "accents", and click "Search".  The 46 verses containing the <i>shalshelet</i> are shown.
+</div>
+<xsl:call-template name="PageFooter">
+  <xsl:with-param name="xmldate" select="/Tanach/teiHeader/fileDesc/editionStmt/edition/date"/>
+  </xsl:call-template>
+</html>
+</xsl:template>
+<!--========================================================================-->
+<xsl:template name="OverallSearchTitle">
+  <xsl:variable name="displaybook">
+    <xsl:choose>
+      <xsl:when test="$searchbook = 'Tanach' or $searchbook='Torah'">
+        <xsl:value-of select="$searchbook"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:value-of select="$currentbookname"/>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:variable>
+  <html>
+  <center>
+    <xsl:if test="$overallcount=0">
+      <span style="{$span.subtitle}">
+        &gt;<span dir="rtl" style="font-family:{$fontfamily};font-size:20pt"><xsl:value-of select="$test"/></span>&lt;
+        doesn't occur in <xsl:value-of select="$displaybook"/>
+      </span><span style="{$span.text}">
+        when comparing <xsl:value-of select="$searchcontent"/> content
+        and including <xsl:value-of select="$searchvariants"/> variants.<p/></span>
+    </xsl:if>
+    <xsl:if test="$overallcount &gt; 0">
+      <span style="{$span.subtitle}">
+        <xsl:value-of select="$overallcount"/> instances of
+        &gt;<span dir="rtl" style="font-family:{$fontfamily};font-size:20pt"><xsl:value-of select="$test"/></span>&lt;
+        in <xsl:value-of select="$foundinbooks"/> books of the <xsl:value-of select="$displaybook"/>
+      </span><span style="{$span.text}">
+        when comparing <xsl:value-of select="$searchcontent"/>
+        and including <xsl:value-of select="$searchvariants"/> variants.<p/></span>
+    </xsl:if>
+  </center>
+  </html>
+</xsl:template>
+<!--========================================================================-->
+<xsl:template name="SearchTitle">
+  <html>
+    <xsl:if test="$bookcount &gt;0">
+      <xsl:if test="$searchbook=$currentbook"> 
+        <center>
+          <h4><xsl:value-of select="$bookcount"/> instances of
+            &gt;<span dir="rtl" style="font-family:{$fontfamily};font-size:20pt"><xsl:value-of select="$test"/></span><xsl:text>&lt;</xsl:text>
+            in <xsl:value-of select="$currentbookname"/>
+          </h4>
+            when comparing <xsl:value-of select="$searchcontent"/>
+            and including <xsl:value-of select="$searchvariants"/> variants.<p/>
+        </center>
+      </xsl:if>
+      <xsl:if test="$searchbook!=$currentbook">
+        <center>
+          <h4><xsl:value-of select="$bookcount"/> instances of
+            &gt;<span dir="rtl" style="font-family:{$fontfamily};font-size:20pt"><xsl:value-of select="$test"/></span><xsl:text>&lt;</xsl:text>
+            in <xsl:value-of select="$currentbookname"/>.
+          </h4>
+        </center>
+      </xsl:if>
+    </xsl:if>
+  </html>
+</xsl:template>
+<!--========================================================================-->
+
+<!-- Template to head descriptive pages. -->
+
+<!--========================================================================-->
+<xsl:template name="PageHeader">
+  <xsl:param name="title" select="'Title not specified'"/>   
+<table width="100%">
+  <tr>
+    <td align="left"> 
+      <span style="{$span.title}">
+        <xsl:value-of select="$title"/>
+      </span>
+      <p/>     
+    </td>
+    <td align="right">
+      <xsl:call-template name="BackButton"/>
+    </td>
+  </tr>
+</table>
+</xsl:template>
+<!--========================================================================-->
+<xsl:template name="PageFooter">
+  <xsl:param name="xmldate" select="'XML date not available'"/>   
+  <xsl:param name="license" select="'../License.html'"/>   
+<p/>
+<table width="100%">
+  <tr>
+    <td align="left">      
+      <a  title="License information." href="{$license}" alt="License information">
+        <img src="{$creativecommons}" alt="License information" border="0"/>
+      </a>
+    </td>
+    <td align="right">
+      <b>
+        <a title="Build number."><xsl:value-of select="$build"/></a>
+      </b>
+      <xsl:call-template name="BackButton"/>
+    </td>
+  </tr>
+</table>
+<hr/>
+</xsl:template>
+<!--========================================================================-->
+<xsl:template name="InvalidURL" >
+<html>
+  <h1>Invalid URL parameter on Search.xml</h1>
+  <p/>
+  <h4><b>Search.xml</b> doesn't accept <b>'<xsl:value-of select="$invalidpage"/>'</b> 
+    as a URL parameter. The only valid URL parameter is "Instructions".</h4>
+  <p/>
+<hr/>
+</html>        
+</xsl:template>
+<!--========================================================================-->
+<xsl:template name="InvalidPage" >
+    <h1>An invalid page, <xsl:value-of select="$invalidpage"/>, was requested.</h1>
+    <p/>
+    <b>Search.xml</b> doesn't have <b><xsl:value-of select="$invalidpage"/></b> 
+    as a defined page. 
+    <p/>
+    <hr/>        
+</xsl:template>
+<!--========================================================================-->
+<xsl:template name="BackButton" >
+  <xsl:if test="$backbutton='true'">
+      &#x00a0;&#x00a0;&#x00a0;&#x00a0;
+    <button title="Return to previous page." style="font-weight:bold;color:blue;font-size:12pt" onclick="Javascript:previousPage()">Back</button>
+  </xsl:if>
+</xsl:template>
+<!-- ====================================================================== -->
+
+<!--  Outputs a verse number as a link ONLY if it's shown
+      in the current mode.                                                  -->
+
+<!--========================================================================-->
+<xsl:template name="VerseNumber">
+  <xsl:variable name="verse" select="./@n"/>
+  <td>
+    <xsl:choose>
+      <xsl:when test="not($DH='Single') or (count(../v[./@n=$verse and ./@s=$DHs]) &gt; 0)">
+        <span style="font-family:{$englishfontfamily};font-weight:bold;font-size:12pt">
+          <a href="#{../../names/abbrev}.{../@n}:{./@n}">
+            <xsl:value-of select="./@n"/>
+          </a>
+        </span>
+      </xsl:when>
+      
+      <xsl:otherwise>
+        <span style="font-family:{$englishfontfamily};font-weight:bold;font-size:10pt">
+            <xsl:value-of select="./@n"/>
+        </span>
+      </xsl:otherwise>
+    </xsl:choose>
+  </td>
+</xsl:template>
+<!-- ====================================================================== -->
+
+<!--  Table of available verses                                             -->
+
+<!--========================================================================-->
+<xsl:template name="VersesTableLabel">
+<center>
+<table cellpadding="5">
+  <tr>    
+    <td width="15%" align="left">
+      <span style="font-family:{$englishfontfamily};font-weight:bold;font-size:18pt">
+        Verses: 
+      </span>
+    </td> 
+    <td>
+      <table  cellpadding="3">
+        <xsl:for-each select="v[not(./@n=following-sibling::*[1]/@n)]">
+                                                  
+          <xsl:choose>
+          
+            <xsl:when test="position() mod 20 = 1">
+              <tr/>
+                <xsl:call-template name="VerseNumber"/>
+            </xsl:when>
+            
+            <xsl:when test="position() mod 20 = 0">
+                <xsl:call-template name="VerseNumber"/>
+              <tr/>
+            </xsl:when>
+            
+            <xsl:otherwise>
+                <xsl:call-template name="VerseNumber"/>
+            </xsl:otherwise>
+            
+          </xsl:choose>
+ 
+        </xsl:for-each>
+      </table>
+    </td>
+  </tr>
+</table>
+</center>
+</xsl:template>
+<!--========================================================================-->
+<!--
+        Enter with a verse as the context node, the template value 
+        is the verse as a string.  Uses the global $searchvariants variable
+        to determine what goes into the string.  Applies specified 
+        content filter from $filter parameter.              
+-->  
+<xsl:template name="versestring">
+  <xsl:param name="filter" select="false()"/>
+  <xsl:choose>
+    <xsl:when test="$searchvariants='q'">
+      <xsl:for-each select="child::w | child::q">
+        <xsl:call-template name="wordstring">
+          <xsl:with-param name="filter" select="$filter"/>
+        </xsl:call-template>
+      </xsl:for-each>
+    </xsl:when>
+    <xsl:when test="$searchvariants='k'">
+      <xsl:for-each select="child::w | child::k">
+        <xsl:call-template name="wordstring">
+          <xsl:with-param name="filter" select="$filter"/>
+        </xsl:call-template>
+      </xsl:for-each>
+    </xsl:when>
+    <xsl:when test="$searchvariants='both'">
+      <xsl:for-each select="child::w | child::q | child::k ">
+        <xsl:call-template name="wordstring">
+          <xsl:with-param name="filter" select="$filter"/>
+        </xsl:call-template>
+      </xsl:for-each>
+    </xsl:when>
+  </xsl:choose>
+</xsl:template>
+<!--========================================================================-->
+<!--
+        Enter with a word as the context node, the template value 
+        is the verse as a string.  Applies specified content filter
+        from $filter parameter.  
+-->  
+<xsl:template name="wordstring">
+  <xsl:param name="filter" select="false()"/>
+  
+  <xsl:variable name="word">
+    <xsl:for-each select="child::text() | child::s ">
+      <xsl:value-of select="."/>
+    </xsl:for-each>
+  </xsl:variable>
+    
+  <xsl:choose>
+    <xsl:when test="not($filter='')">
+      <xsl:variable name="filteredword">
+        <xsl:call-template name="contentfilter">
+          <xsl:with-param name="string" select="$word"/>
+          <xsl:with-param name="filter" select="$filter"/>
+        </xsl:call-template>
+      </xsl:variable>
+    
+      <xsl:value-of select="$filteredword"/>       
+      <xsl:variable name="lastchar" select="substring($filteredword, string-length($filteredword), 1)"/>
+      <xsl:if test="not( $lastchar = '&#x05be;')">
+        <xsl:text>&#x0020;</xsl:text>
+      </xsl:if>
+    </xsl:when>
+    
+    <xsl:otherwise>
+      <xsl:value-of select="$word"/>       
+      <xsl:variable name="lastchar" select="substring($word, string-length($word), 1)"/>
+      <xsl:if test="not( $lastchar = '&#x05be;')">
+        <xsl:text>&#x0020;</xsl:text>
+      </xsl:if>    
+    </xsl:otherwise>
+    
+  </xsl:choose>
+</xsl:template>
+<!--========================================================================-->
+<!--   
+       Outputs the $string parameter emphasizing text given by the $teststring
+       parameter in blue. Font-family and font-size are from global variables.
+-->
+<xsl:template name="emphasizetest">
+  <xsl:param name="string" select="''"/>
+  <xsl:param name="teststring" select="''"/>
+    <xsl:choose>
+      <xsl:when test="contains($string, $teststring)">
+        <span dir="rtl" style="font-family:{$fontfamily};font-size:{$fontsize}pt">
+          <xsl:value-of select="substring-before($string, $teststring)"/>
+        </span>
+
+<!-- The span statement below must exactly match that in the 
+     JavaScript searchbook function in the SearchResult template. -->    
+        <span dir="rtl" style='color:blue;font-size:{$fontsize}pt;font-family:{$fontfamily}'>
+          <xsl:value-of select="$teststring"/>
+        </span>
+    
+        <xsl:variable name="remainder" select="substring-after($string, $teststring)"/>
+        <xsl:if test="string-length($remainder) > 0">
+          <xsl:call-template name="emphasizetest">
+            <xsl:with-param name="string" select="substring-after($string, $teststring)"/>
+            <xsl:with-param name="teststring" select="$teststring"/>
+          </xsl:call-template>
+        </xsl:if>
+      </xsl:when>
+      
+      <xsl:otherwise>
+        <span dir="rtl" style="font-family:{$fontfamily};font-size:{$fontsize}pt">
+          <xsl:value-of select="$string"/>
+        </span>
+      </xsl:otherwise>
+    </xsl:choose>  
+</xsl:template>
+<!--========================================================================-->
+<xsl:template name="SearchFilter">
+<html>
+<xsl:call-template name="contentfilter">
+  <xsl:with-param name="string" select="$test"/>
+  <xsl:with-param name="filter" select="$searchcontent"/>
+</xsl:call-template>
+</html>
+</xsl:template>
+<!--========================================================================-->
+<!--
+        Content filters the $input string according to $filter,
+        result is the value of this template.
+-->  
+<xsl:template name="contentfilter">
+  <xsl:param name="string" select="''"/>
+  <xsl:param name="filter" select="''"/>
+    <xsl:choose>
+      <xsl:when test="$filter='accents'">
+        <xsl:value-of select="translate($string, $all,$searchnomorphology)"/>
+    </xsl:when>
+    <xsl:when test="$filter='vowels'">
+      <xsl:value-of select="translate($string, $all,$searchnoaccents)"/>
+    </xsl:when>
+    <xsl:when test="$filter='consonants'">
+      <xsl:value-of select="translate($string, $all, $searchnovowels)"/>
+    </xsl:when>
+    <xsl:when test="$filter='morphology'">
+      <xsl:value-of select="$string"/>
+    </xsl:when>
+    <xsl:when test="$filter=''">
+      <xsl:value-of select="$string"/>
+    </xsl:when>
+  </xsl:choose>
+</xsl:template>
+<!--========================================================================-->
+<!--  Excerpt.xml - 2011.08.10  ============================================-->
+<!-- Copyright C.V.Kimball 2006                                             -->
+<!--
+
+            Documentation of templates for Tanach text display
+            
+            8 layers of templates are required.
+            5 label templates are used.
+            
+-->
+<!--========================================================================-->
+<!--
+
+    Template                                        Other templates called  
+                          
+    Excerpt                                         DHLegend
+                                                    ExcerptLabel
+                                                    ExcerptFull     
+                                                                         
+      -  Places Full data with a table and applies labels as needed.
+      
+                                                    
+    GetVerses         
+      - Loops over chapters, then verses ,
+   
+   
+    ExcerptLayout                                   VerseVersesLabel
+                                                    ChapterVersesLabel                                                 
+      - Applies the Chapter/Verse labels according to layout.  A 
+         pass-through for Qere-only layout.
+                                                    
+                                                    
+    ExcerptVerseDispatch
+      - Dispatches all verses having the same verse number
+        to SourceMarkings.
+    
+   
+    SourceMarkings   
+      - If DH isn't off, applies the DH source markings via span tags
+         otherwise passes through to GOs.
+
+
+    GOs                 
+      - Dispatches GOs in verse to handlers for each type of GO.
+      
+      
+    w, k, q,                                        x, s
+      pe, samekh, 
+        reversednun, 
+          x, s    
+      - Outputs text for each type of GO.
+      
+     OutputContent()
+      -  Applies content filters to GO text.
+    
+-->
+<!--========================================================================-->
+<!--========================================================================-->
+
+<xsl:template name="Excerpt">
+
+
+
+<!--  Begins the extraction and display of the text 
+      $chapter:$verse to $lastchapter:$lastverse.
+                                                                            -->
+<!--========================================================================-->
+
+<xsl:choose>
+
+<!-- If $template is Excerpt, insert the styles.  -->
+  <xsl:when test="$template='Excerpt'">
+    <html>
+      <head>
+      </head>
+      <body>
+        <xsl:call-template name="Styles"/>
+        <xsl:call-template name="NormalOperation"/>
+      </body>
+    </html>
+  </xsl:when>  
+  
+<!-- If $template isn't Excerpt, check for errors.  -->
+  <xsl:otherwise>
+  
+    <xsl:choose>
+      <xsl:when test="count(/Tanach/error) > 0">
+        <xsl:call-template name="ErrorTemplate"/>
+      </xsl:when>
+
+      <xsl:otherwise>
+        <xsl:call-template name="NormalOperation"/>
+      </xsl:otherwise>
+    </xsl:choose>    
+
+  </xsl:otherwise>
+</xsl:choose>    
+
+</xsl:template>
+<!--========================================================================-->  
+<xsl:template name="NormalOperation">
+        <xsl:call-template name="ExcerptLabel"/>
+        <xsl:call-template name="DHLegend"/>
+        <xsl:text>&#10;&#10;</xsl:text>
+        <xsl:comment>  Start copying here to copy only the Hebrew text.  </xsl:comment>
+        <xsl:text>&#10;</xsl:text>
+        
+        <xsl:choose>
+        
+          <xsl:when test="$view='1'">
+            <xsl:text>&#10;  </xsl:text>
+            <table class="hebrewtextverses">
+              <xsl:call-template name="GetChapters"/>
+            <xsl:text>&#10;  </xsl:text>
+            </table>
+          </xsl:when>
+
+          <xsl:when test="$view='0'">
+<!--  showText='x' is a flag indicating NO onClick attribute is to be used. -->
+            <xsl:if test="$showText='x'">
+               <xsl:text>&#10;  </xsl:text>
+               <div class="hebrewtext">
+                <xsl:text>&#10;    </xsl:text>              
+                <span class="hebrewtext">
+                  <xsl:call-template name="GetChapters"/>
+                <xsl:text>&#10;    </xsl:text>              
+                </span>
+                <xsl:text>&#10;  </xsl:text>
+              </div>
+            </xsl:if>
+            <xsl:if test="$showText!='x'">
+              <xsl:text>&#10;  </xsl:text>
+              <div class="hebrewtext" onClick="{$showText}" >
+                <xsl:text>&#10;    </xsl:text>              
+                <span class="hebrewtext">
+                  <xsl:call-template name="GetChapters"/>
+                <xsl:text>&#10;    </xsl:text>              
+                </span>
+                <xsl:text>&#10;  </xsl:text>
+              </div>
+            </xsl:if>
+          </xsl:when>
+        
+        </xsl:choose>
+    
+    <xsl:text>&#10;&#10;</xsl:text>
+    <xsl:comment>  End copying Hebrew text here.  </xsl:comment>
+    <xsl:text>&#10;</xsl:text>
+    
+    <xsl:call-template name="TrailingLabel"/>
+
+</xsl:template>
+<!--========================================================================-->
+<xsl:template name="GetChapters">
+<!--
+               Breaks the excerpt specification into 4 types of chapter.
+                                                                           -->
+<!--========================================================================-->
+<xsl:for-each  select="tanach/book[position() = $booknumber]/c[@n &gt;=$chapter and @n &lt;= $lastchapter]">
+  <xsl:choose>
+<!-- A first chapter with other chapters. Initial verse partial, all others full. -->
+    <xsl:when test="@n = $chapter and @n != $lastchapter">
+      <xsl:call-template name="GetVerses">
+        <xsl:with-param name="type" select="'first'"/>
+      </xsl:call-template> 
+    </xsl:when>
+<!-- A complete, entire chapter, a middle chapter. All verses full. -->
+    <xsl:when test="@n != $chapter and @n != $lastchapter">
+      <xsl:call-template name="GetVerses">
+        <xsl:with-param name="type" select="'entire'"/>
+      </xsl:call-template>  
+    </xsl:when>
+<!-- An end chapter. Final verse partial, all others full. -->
+    <xsl:when test="@n != $chapter and @n = $lastchapter">
+      <xsl:call-template name="GetVerses">
+        <xsl:with-param name="type" select="'last'"/>
+      </xsl:call-template> 
+    </xsl:when>
+<!-- A single chapter. Initial and final verses partial  -->
+    <xsl:when test="@n = $chapter and @n = $lastchapter">
+      <xsl:call-template name="GetVerses">
+        <xsl:with-param name="type" select="'single'"/>
+      </xsl:call-template>
+    </xsl:when>
+  </xsl:choose>
+</xsl:for-each>
+</xsl:template>
+<!--========================================================================-->
+
+<!-- Breaks a chapter into 4 types of verse. -->
+
+<!--========================================================================-->
+<xsl:template name="GetVerses">
+  <xsl:param name="type" select ="'entire'"/>
+    
+  <xsl:choose>
+<!-- A full chapter show all the verses -->
+    <xsl:when test="$type='entire'">
+      <xsl:for-each select="v[not(./@n=following-sibling::*[1]/@n)]">
+        <xsl:call-template name="ExcerptLayout" >
+          <xsl:with-param name="type" select="'full'"/>
+        </xsl:call-template>
+      </xsl:for-each>
+    </xsl:when>
+<!-- A first chapter -->
+    <xsl:when test="$type='first'">
+      <xsl:for-each select="v[./@n &gt;= $verse and  not(./@n=following-sibling::*[1]/@n)]">
+        <xsl:call-template name="ExcerptLayout" >
+          <xsl:with-param name="type" select="'start'"/>
+        </xsl:call-template>
+      </xsl:for-each>
+    </xsl:when>
+<!-- A last chapter -->
+    <xsl:when test="$type='last'">
+      <xsl:for-each select="v[./@n &lt; $lastverse and not(./@n=following-sibling::*[1]/@n) ]">
+        <xsl:call-template name="ExcerptLayout" >
+          <xsl:with-param name="type" select="'full'"/>
+        </xsl:call-template>
+      </xsl:for-each>
+        <xsl:for-each select="v[./@n = $lastverse and not(./@n=following-sibling::*[1]/@n) ]">
+          <xsl:call-template name="ExcerptLayout" >
+            <xsl:with-param name="type" select="'last'"/>
+          </xsl:call-template>
+        </xsl:for-each>
+      </xsl:when>
+<!-- A single chapter show all the verses -->
+      <xsl:when test="$type='single'">
+        <xsl:choose>   
+        <!-- Single verse chapter is possible. --> 
+          <xsl:when test="$verse = $lastverse">
+            <xsl:for-each select="v[@n=$verse and not(./@n=following-sibling::*[1]/@n) ]">
+              <xsl:call-template name="ExcerptLayout">
+                <xsl:with-param name="type" select="'single'"/>
+              </xsl:call-template>
+            </xsl:for-each>
+          </xsl:when>
+<!-- Chapter has at least two verses -->       
+          <xsl:otherwise>
+            <xsl:for-each select="v[@n=$verse and not(./@n=following-sibling::*[1]/@n)]">
+              <xsl:call-template name="ExcerptLayout">
+                <xsl:with-param name="type" select="'start'"/>
+              </xsl:call-template>
+            </xsl:for-each>
+            
+            <xsl:for-each select="v[@n &gt; $verse and @n &lt; $lastverse and not(./@n=following-sibling::*[1]/@n)]">
+              <xsl:call-template name="ExcerptLayout" >
+                <xsl:with-param name="type" select="'full'"/>
+              </xsl:call-template>
+            </xsl:for-each>
+            
+            <xsl:for-each select="v[@n=$lastverse and not(./@n=following-sibling::*[1]/@n)]">
+              <xsl:call-template name="ExcerptLayout" >
+                <xsl:with-param name="type" select="'last'"/>
+              </xsl:call-template>
+            </xsl:for-each>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:when>
+    </xsl:choose>
+</xsl:template>
+<!--========================================================================-->
+
+<!-- Shows an excerpt in the specified layout. -->
+
+<!--========================================================================-->
+<xsl:template name="ExcerptLayout">
+    
+  <xsl:variable name="verse" select="./@n"/>
+  <xsl:if test="not($DH='Single') or count(../v[./@n=$verse and ./@s=$DHs]) &gt; 0">
+  <xsl:choose>
+     <xsl:when test="$view='1'">
+      <xsl:text>&#10;    </xsl:text>
+      <tr>
+        <xsl:text>&#10;      </xsl:text>
+        <td  class="hebrewtextverses">
+          <xsl:text>&#10;        </xsl:text> 
+<!--  $showText='x' is a flag indicating no onClick attribute is to be shown. --> 
+          <xsl:if test="$showText='x'" >
+            <span class="hebrewtext" >
+              <xsl:call-template name="ExcerptVerseDispatch"/><xsl:text>&#160;</xsl:text>
+              <xsl:text>&#10;        </xsl:text>       
+            </span>
+          </xsl:if>  
+          <xsl:if test="$showText!='x'" >
+            <span class="hebrewtext" onClick="{$showText}"  >
+              <xsl:call-template name="ExcerptVerseDispatch"/><xsl:text>&#160;</xsl:text>
+              <xsl:text>&#10;        </xsl:text>       
+            </span>
+          </xsl:if>  
+        <xsl:text>&#10;      </xsl:text>
+        </td>
+        <xsl:text>&#10;      </xsl:text>
+
+        <td class="citationverses">
+          <xsl:text>&#10;      </xsl:text>
+          <xsl:call-template name="VerseVersesLabel"/>
+        <xsl:text>&#10;      </xsl:text>
+        </td>
+      <xsl:text>&#10;    </xsl:text>
+      </tr>
+    </xsl:when>
+      
+    <xsl:when test="$format='Full' or $format='Note-free' or $format='Qere-only'">
+<!-- Insert a line feed between verses in the HTML code.-->
+       <xsl:text>&#10;    </xsl:text>
+       <xsl:if test="not($format='Qere-only')">
+           <xsl:call-template name="ChapterVersesLabel"/>
+       </xsl:if>
+        
+       <xsl:call-template name="ExcerptVerseDispatch"/>
+    </xsl:when>
+         
+    <xsl:when test="$format='Text-only' ">
+<!-- Insert a line feed between verses in the HTML code.-->
+       <xsl:text>&#10;</xsl:text>
+       <xsl:call-template name="ExcerptVerseDispatch"/>
+    </xsl:when>
+  </xsl:choose>
+  </xsl:if>
+</xsl:template>
+<!--========================================================================-->
+
+<!-- Dispatches all verses having the same number (split verses)
+     to  appply SourceMarkings.                                             -->     
+
+<!--========================================================================-->
+<xsl:template name="ExcerptVerseDispatch">
+  <xsl:variable name="verse" select="./@n"/>
+  <xsl:for-each select="../v[./@n=$verse]">
+    <xsl:call-template name="SourceMarkings"/>
+  </xsl:for-each>
+</xsl:template>
+<!-- ====================================================================== -->
+<!-- 
+            Applies the source markings as needed.
+                                                                            -->
+<!--========================================================================-->
+<xsl:template name="SourceMarkings">
+
+<xsl:choose>
+
+  <xsl:when test="$DH='Off'">
+      <xsl:call-template name="GOs"/>
+  </xsl:when>
+
+  <xsl:when test="$DH='Titles'">
+    <xsl:variable name="thisverse" select="."/>
+    <xsl:variable name="thissource" select="./@s"/>
+    <xsl:for-each select="/Tanach/tanach/book[position()=$booknumber]/marking/marks/mark">
+      <xsl:if test="$thissource=./code">
+        <xsl:variable name="label" select="./label"/>
+        <xsl:for-each select="$thisverse">
+            <span title='{$label}'>  <!-- Apply label to each verse. 03 Oct 2005 -->
+              <xsl:call-template name="GOs"/>
+            </span>
+        </xsl:for-each>
+      </xsl:if>
+    </xsl:for-each>
+  </xsl:when>
+
+  <xsl:when test="$DH='All'">
+  
+    <xsl:variable name="thisverse" select="."/>
+    <xsl:variable name="thissource" select="./@s"/>
+    
+    <xsl:for-each select="/Tanach/tanach/book[position()=$booknumber]/marking/marks/mark">
+      <xsl:if test="$thissource=./code">
+        <xsl:variable name="p" select="position()"/>
+        <xsl:for-each select="$thisverse">
+              <xsl:text>&#10;          </xsl:text>
+              <span class="dh{$p}">
+                <xsl:call-template name="GOs"/>
+              </span>
+        </xsl:for-each>
+      </xsl:if> 
+    </xsl:for-each>
+    
+  </xsl:when>
+  
+  <xsl:when test="$DH='Emphasize'">
+    <xsl:variable name="thisverse" select="."/>
+    <xsl:variable name="thissource" select="./@s"/>
+    
+    <xsl:if test="$DHs=$thissource">
+      <xsl:for-each select="$thisverse">
+        <span class="dhemphasize">
+          <xsl:call-template name="GOs"/>
+        </span>
+      </xsl:for-each>
+    </xsl:if> 
+    <xsl:if test="not($DHs=$thissource)">
+      <xsl:for-each select="$thisverse">
+        <span class="dhdeemphasize">
+          <xsl:call-template name="GOs"/>
+        </span>
+      </xsl:for-each>
+    </xsl:if> 
+  </xsl:when>
+  
+ <xsl:when test="$DH='Single'">
+  
+    <xsl:variable name="thisverse" select="."/>
+    <xsl:variable name="thissource" select="./@s"/>
+    
+    <xsl:if test="$DHs=$thissource">
+      <xsl:for-each select="$thisverse">
+          <xsl:call-template name="GOs"/>
+      </xsl:for-each>
+    </xsl:if> 
+ </xsl:when>
+</xsl:choose>
+</xsl:template>
+<!-- ====================================================================== -->
+<!-- 
+                     Template to output graphical objects, GOs.                    
+
+  Enter with a verse context node containing v elements with same verse 
+  number.                                  
+                                                                            -->
+<!--========================================================================-->
+<xsl:template name="GOs">
+  <xsl:variable name="verse" select="./@n"/>
+  
+  <xsl:for-each select="child::node()">
+
+<!--    Process a non-KW word (w)  -->
+    <xsl:if test="self::w">
+      <xsl:call-template name="w"/>
+    </xsl:if>
+
+<!--    Process a Ketib (k)  -->
+    <xsl:if test="self::k">
+      <xsl:call-template name="k"/>
+    </xsl:if>
+<!--    Process a Qere (q)  -->
+    <xsl:if test="self::q">
+      <xsl:call-template name="q"/>
+    </xsl:if>
+            
+<!--    Process a pe, samekh, or reversednun  -->
+    <xsl:if test="self::pe">
+      <xsl:call-template name="pe"/>
+    </xsl:if>
+    <xsl:if test="self::samekh">
+      <xsl:call-template name="samekh"/>
+    </xsl:if>
+    <xsl:if test="self::reversednun">
+      <xsl:call-template name="reversednun"/>
+    </xsl:if>
+
+<!--    Process a note  -->
+    <xsl:if test="self::x">
+      <xsl:call-template name="x"/>
+    </xsl:if>
+<!--    Process a special text decoration .  This shouldn't occur. -->
+    <xsl:if test="self::s">
+      <xsl:call-template name="s"/>
+    </xsl:if>
+  </xsl:for-each>
+  
+</xsl:template> 
+<!-- ====================================================================== -->
+
+<!-- Template to display non-KQ words (w).                                  -->
+<!-- Enter with a child of a verse (v) context node known to be a 'w'.      -->
+
+<!--========================================================================-->
+<xsl:template name="w">
+    <xsl:for-each select="child::node()">
+      <xsl:choose>
+        <xsl:when test="self::x">
+          <xsl:call-template name="x"/>
+        </xsl:when>
+        <xsl:when test="self::s">
+          <xsl:call-template name="s"/>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:call-template name="OutputContent"/>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:for-each>
+    <xsl:variable name="lastchild" select="."/>
+    <xsl:variable name="lastchar" select="substring($lastchild, string-length($lastchild), 1)"/>
+    <xsl:if test="not( $lastchar = '&#x05be;' or  $lastchar = '.')">
+      <xsl:text>&#x0020;</xsl:text>
+    </xsl:if>
+</xsl:template>
+<!-- ====================================================================== -->
+
+<!-- Template to display ketib words.                                       -->
+<!-- Enter with a child of a verse (v) context node known to be a 'k'.      -->
+
+<!--========================================================================-->
+<xsl:template name="k">
+  <xsl:if test="$format!='Qere-only'">
+    <span class="ketiv">
+      <xsl:for-each select="child::node()">
+            <xsl:choose>
+                <xsl:when test="self::x">
+                    <xsl:call-template name="x"/>
+                </xsl:when>
+                
+                <xsl:when test="self::s">
+                    <xsl:call-template name="s"/>
+                </xsl:when>
+                    
+                <xsl:otherwise>
+                  <xsl:call-template name="OutputContent"/>
+                </xsl:otherwise>    
+            </xsl:choose>
+        </xsl:for-each>
+        <xsl:variable name="lastchild" select="child::node()[position()=last()]"/>
+        <xsl:variable name="lastchar" select="substring($lastchild, string-length($lastchild), 1)"/>
+        <xsl:if test="not( $lastchar = '&#x05be;' or  $lastchar = '.')">
+          <xsl:text>&#x0020;</xsl:text>
+        </xsl:if>
+      </span>
+     </xsl:if>
+</xsl:template>
+<!-- ====================================================================== -->
+
+<!-- Template to display qere words (q).                                    -->
+<!-- Enter with a child of a verse (v) context node known to be a 'q'.      -->
+
+<!--========================================================================-->
+<xsl:template name="q">
+      <xsl:choose>
+      
+        <xsl:when test="$format!='Qere-only'">
+          <span class="qere">
+            <xsl:for-each select="child::node()">
+              <xsl:choose>
+                <xsl:when test="self::x">
+                    <xsl:call-template name="x"/>  
+                </xsl:when>    
+                <xsl:when test="self::s">
+                    <xsl:call-template name="s"/>
+                </xsl:when>    
+                <xsl:otherwise>
+                    <xsl:call-template name="OutputContent"/>
+                </xsl:otherwise>
+              </xsl:choose>
+          </xsl:for-each> 
+          <xsl:variable name="lastchild" select="child::node()[position()=last()]"/>
+            <xsl:variable name="lastchar" select="substring($lastchild, string-length($lastchild), 1)"/>
+            <xsl:if test="not( $lastchar = '&#x05be;' or  $lastchar = '.')">
+              <xsl:text>&#x0020;</xsl:text>
+            </xsl:if>
+          </span>
+        </xsl:when>
+        
+        <xsl:otherwise>
+          <xsl:for-each select="child::node()">
+            <xsl:choose>
+                <xsl:when test="self::x">
+                    <xsl:call-template name="x"/>
+                </xsl:when>    
+                <xsl:otherwise>
+                    <xsl:call-template name="OutputContent"/>
+               </xsl:otherwise>
+            </xsl:choose>
+          </xsl:for-each> 
+          <xsl:variable name="lastchild" select="child::node()[position()=last()]"/>
+            <xsl:variable name="lastchar" select="substring($lastchild, string-length($lastchild), 1)"/>
+              <xsl:if test="not( $lastchar = '&#x05be;' or  $lastchar = '.')">
+                <xsl:text>&#x0020;</xsl:text>
+              </xsl:if>
+        </xsl:otherwise>
+        </xsl:choose>
+</xsl:template>
+<!-- ====================================================================== -->
+<!-- 
+                    Template to display notes (x).                                      
+      Enter with a child of a word or KQ context node known to be an x.      
+
+  Modified: 3 Jul 2010 - For LRM  note , note  PDF sequence.
+  Modified: 14 Apr 2016 - For correct notes in Verses mode, i.e. Job 15:35.  
+  Modified: 24 Apr 2016 - For direction failure in C:V after notes.
+    Would have preferred to use LEFT-TO-RIGHT ISOLATE and POP ISOLATE DIRECTION,
+    however, they display as empty squares on IE.
+    
+-->
+<!--========================================================================-->
+<xsl:template name="x">
+  <xsl:if test="$format='Full'">
+  
+ <!-- Chapter mode --> 
+    <xsl:if test="$view=0">
+      <xsl:variable name="code" select="."/>
+      <xsl:if test="not(.='5' or .='6' or .='7' or .='8')">
+        <xsl:variable name="note" select="//notes/note/note[../gccode=$code]"/> 
+        <span  class="note" title="&#x202a;{$note}&#x202c;">
+          <xsl:if test="not(name(preceding-sibling::node()[1])='x')"> 
+            <xsl:text>&#x202a;</xsl:text>
+          </xsl:if>
+          <xsl:value-of select="."/>
+          <xsl:if test="name(following-sibling::node()[1])='x'"> 
+            <xsl:text>,</xsl:text>
+          </xsl:if>
+          <xsl:if test="not(name(following-sibling::node()[1])='x')"> 
+            <xsl:text>&#x202c;</xsl:text>
+          </xsl:if>  
+        </span> 
+      </xsl:if>     
+    </xsl:if>
+    
+ <!-- Verses mode --> 
+    <xsl:if test="$view=1">
+      <xsl:variable name="code" select="."/>
+      <xsl:if test="not(.='5' or .='6' or .='7' or .='8')">
+        <xsl:text>&#x202e;</xsl:text> 
+        <xsl:variable name="note" select="//notes/note/note[../gccode=$code]"/> 
+        <span  class="note" title="{$note}">
+          <xsl:value-of select="."/>
+          <xsl:if test="name(following-sibling::node()[1])='x'"> 
+            <xsl:text>,</xsl:text>
+          </xsl:if>
+        </span> 
+        <xsl:text>&#x200f;</xsl:text>
+      </xsl:if>
+    </xsl:if>
+   
+  </xsl:if>
+</xsl:template>
+<!-- ====================================================================== -->
+
+<!-- Template to display special text decoration (s).                       -->
+
+<!-- The contents of the s tag must always be output via OutputContent.     -->
+
+<!--========================================================================-->
+<xsl:template name="s">
+  <xsl:if test="not( $format='Qere-only' or $format='Text-only' )">
+    <xsl:variable name="decoration" select="@t"/>
+    <xsl:choose>
+    
+      <xsl:when test="$decoration='small'">
+        <span class="smallletter" title="Note 6 - Small letter."> 
+          <xsl:call-template name="OutputContent"/>
+        </span>
+      </xsl:when>
+      
+      <xsl:when test="$decoration='large'">
+        <span class="largeletter"  title="Note 5 - Large letter."> 
+          <xsl:call-template name="OutputContent"/>
+        </span>
+      </xsl:when>
+      
+      <xsl:when test="$decoration='suspended'">
+        <span class="suspendedletter"  title="Note 7 - Suspended letter."> 
+          <xsl:call-template name="OutputContent"/>
+        </span>
+      </xsl:when>
+          
+    </xsl:choose>
+  </xsl:if>
+<!--  Modified 14 Sep 2009 thanks to Marsha Hopp.                        -->
+  <xsl:if test=" $format='Qere-only' or $format='Text-only' ">
+    <xsl:call-template name="OutputContent"/>
+  </xsl:if>
+</xsl:template>
+<!-- ====================================================================== -->
+
+<!-- Template to display pe markers (pe).                                   -->
+<!-- Enter with a child verse node known to be a pe.                        -->
+
+<!--========================================================================-->
+<xsl:template name="pe">
+  <xsl:if test="not( $format='Qere-only' or $format='Text-only' )">
+    <span class="pesamekh"  title="&#x202a;Open space, new line.&#x202c;">&#1508;&#160;</span>
+      <xsl:if test="$format='Full'  or $format='Note-free'">
+          <br/>
+      </xsl:if>
+    </xsl:if>
+</xsl:template>
+<!-- ====================================================================== -->
+
+<!-- Template to display samekh markers (samekh).                           -->
+<!-- Enter with a child verse node known to be a samekh.                    -->
+
+<!--========================================================================-->
+<xsl:template name="samekh">
+  <xsl:if test="not( $format='Qere-only' or $format='Text-only' )">
+    <span class="pesamekh" title="&#x202a;Closed space, 6 spaces.&#x202c;"> &#1505; </span>
+    <xsl:if test="$format='Full'or $format='Note-free'">
+      <xsl:text>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</xsl:text>
+    </xsl:if>
+  </xsl:if>
+</xsl:template>
+<!-- ====================================================================== -->
+
+<!-- Template to display reversednun markers.                           -->
+<!-- Enter with a child verse node known to be a reversednun.                    -->
+
+<!--========================================================================-->
+<xsl:template name="reversednun">
+  <xsl:if test="not( $format='Qere-only' or $format='Text-only' )">
+    <span title="&#x202a;Note 8 - Reversed nun.&#x202c;" class="pesamekh">&#x05c6;&#x00a0;</span>
+  </xsl:if>
+</xsl:template>
+<!-- ====================================================================== -->
+
+<!-- Template to show characters after translation.                                  -->
+<!-- Enter with a child of a verse as a context node.     
+
+     Children of any type with contents "." are ignored.    -->
+
+<!--========================================================================-->
+<xsl:template name="OutputContent">
+    
+  <xsl:choose>
+
+    <xsl:when test= ".!='.'">
+      <xsl:choose>
+        <xsl:when test="$content='Accents'">
+         <xsl:value-of select="translate(., $all,$nomorphology)"/>
+        </xsl:when>
+        <xsl:when test="$content='Vowels'">
+          <xsl:value-of select="translate(., $all,$noaccents)"/>
+        </xsl:when>
+        <xsl:when test="$content='Consonants'">
+          <xsl:value-of select="translate(., $all, $novowels)"/>
+        </xsl:when>
+        <xsl:when test="$content='Morphology'">
+          <xsl:value-of select="."/>
+        </xsl:when>
+      </xsl:choose>
+    </xsl:when>
+             
+    <xsl:when test="$DH='Single'">
+      <xsl:text>.</xsl:text>
+    </xsl:when>
+             
+  </xsl:choose>
+ </xsl:template> 
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+<!--
+
+     Text Labels (5)
+     
+     ChapterVersesLabel   called by ExcerptLayout.
+     DHLegend             called by Excerpt.
+     ExcerptLabel         called by Excerpt.
+     TrailingLabel        called by Excerpt.
+     VerseVersesLabel     called by ExcerptLayout.
+     
+                                                                            -->
+<!-- ====================================================================== -->
+<!--========================================================================-->
+<!-- 
+                Labels chapter:verse in the Chapter layout.
+                
+                Called by ExcerptLayout.
+
+                No preceding blank, trailing nbsp.
+                                                                            -->
+<!--========================================================================-->
+<xsl:template name="ChapterVersesLabel">
+    <xsl:text>  </xsl:text>
+    <xsl:variable name="b" select= "/Tanach/tanach/book/names/abbrev"/>
+    <xsl:variable name="c" select="../@n"/>
+    <xsl:variable name="v" select="@n"/>
+    <span class="citation" id="{$b}.{$c}:{$v}">
+      <xsl:value-of select="../@n"/>:<xsl:value-of select="@n"/>
+    </span>
+</xsl:template>
+<!-- ====================================================================== -->
+<!-- 
+            Displays an appropriate legend for DH.
+            
+            Called by Excerpt template.                                          
+                                                                            -->
+<!--========================================================================-->
+<xsl:template name="DHLegend">
+  <xsl:variable name="thislabel" select="/Tanach/tanach/book/marking/marks/mark[ ./code=$DHs]/label"/>
+  <xsl:if test="not($DH='Off')">
+    <xsl:text>&#10;&#10;&#10;  </xsl:text>
+    <xsl:choose>
+      <xsl:when test="$DH='All'"> 
+        <table class="dhlegend">
+          <tr>         
+            <xsl:for-each select="/Tanach/tanach/book[position()=$booknumber]/marking/marks/mark">
+              <xsl:text>&#10;    </xsl:text>
+              <xsl:variable name="p" select="position()"/>
+              <td class="center">
+                <span class="dhlegendenglish"><xsl:value-of select="label"/>:&#x00a0;</span> 
+                <span class="dhlegend{$p}"><xsl:value-of select="$testword"/></span>
+              </td>
+            </xsl:for-each>
+          <xsl:text>&#10;  </xsl:text>
+          </tr>
+        </table>
+    </xsl:when>
+    
+    <xsl:when test="$DH='Emphasize'">
+      <table class="dhlegend">
+        <tr>
+           <xsl:text>&#10;    </xsl:text>
+           <td class="centerhalf">
+              <span class="dhlegendenglish">
+                <xsl:value-of select="$thislabel"/><xsl:text>: </xsl:text>
+              </span> 
+              <span class="dhemphasize">
+                <xsl:value-of select="$testword"/>
+              </span>
+            </td>
+           <xsl:text>&#10;    </xsl:text>
+           <td class="centerhalf">
+              <span class="dhlegendenglish">
+                <xsl:text>All other text: </xsl:text>
+              </span> 
+              <span class="dhdeemphasize">
+                <xsl:value-of select="$testword"/>
+              </span>
+            </td>
+          <xsl:text>&#10;  </xsl:text>
+        </tr>
+      </table>
+    </xsl:when>
+    
+    <xsl:when test="$DH='Single'">
+      <table class="dhlegend">
+        <tr>
+           <td class="center">
+              <span class="dhlegendenglish">
+                <xsl:value-of select="$thislabel"/>
+                <xsl:text> only.</xsl:text>
+              </span> 
+            </td>
+        </tr>
+      </table>
+    </xsl:when>
+    
+  </xsl:choose>
+  <xsl:text>&#10;</xsl:text>
+  </xsl:if>
+</xsl:template>
+<!-- ====================================================================== -->
+
+<!--  Labels the extraction book and chapter:verse range.                   -->
+<!--  Called by Excerpt template.                                           -->
+
+<!--========================================================================-->
+<xsl:template name="ExcerptLabel">
+
+<xsl:if test="$nolabel = 0 and $trailinglabel=0">
+
+  <xsl:text>&#10;  </xsl:text>
+  <div class="centerlabel">
+    <xsl:text>&#10;    </xsl:text>
+    <span class="englishlabel">
+      <xsl:value-of select= "tanach/book[position()=$booknumber]/names/name"/>
+      <xsl:text>&#x00a0;&#x00a0;</xsl:text>
+      <xsl:call-template name="SmartCitation"/>
+    </span>
+    <xsl:text>&#10;    </xsl:text>
+    <span  class="hebrewlabel">
+      <xsl:text>&#x00a0;&#x00a0;</xsl:text>
+      <xsl:value-of select= "tanach/book[position()=$booknumber]/names/hebrewname"/>
+    </span>
+    <xsl:text>&#10;  </xsl:text>
+  </div>
+</xsl:if>
+
+</xsl:template>
+<!--========================================================================-->
+<xsl:template name="TrailingLabel">
+
+<xsl:if test="$nolabel = 0 and $trailinglabel=1">
+  <xsl:text>&#10;&#10;</xsl:text>
+  <div class="rightlabel">
+    <span class="englishlabel">
+      <xsl:text>--&#x00a0;&#x00a0;</xsl:text>
+      <xsl:value-of select= "tanach/book[position()=$booknumber]/names/name"/>
+      <xsl:text>&#x00a0;&#x00a0;</xsl:text>
+      <xsl:call-template name="SmartCitation"/>
+    </span>
+  </div>
+</xsl:if>
+
+</xsl:template>
+<!--========================================================================-->
+<!-- 
+               "Smart" citation
+                                                                            -->
+<!--========================================================================-->
+<xsl:template name="SmartCitation">
+<!-- $chapter=10000 indicates Server-only, $chapter not set. -->
+  <xsl:if test="not($lastchapter = 1000)">
+    <xsl:choose>
+      <xsl:when test="$lastchapter=$chapter and $lastverse=$verse">
+        <xsl:value-of select="$chapter"/>:<xsl:value-of select="$verse"/>
+      </xsl:when>
+      <xsl:when test="$lastchapter=$chapter and $singlechapter='false'">
+        <xsl:value-of select="$chapter"/>:<xsl:value-of select="$verse"/>
+        <xsl:text> - </xsl:text>
+        <xsl:value-of select="$lastverse"/>
+      </xsl:when>
+      <xsl:when test="$singlechapter='true'">
+        Chapter <xsl:value-of select="$chapter"/>
+      </xsl:when>
+    
+      <xsl:otherwise>
+        <xsl:value-of select="$chapter"/>:<xsl:value-of select="$verse"/>
+          <xsl:text> - </xsl:text>
+        <xsl:value-of select="$lastchapter"/>:<xsl:value-of select="$lastverse"/>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:if>  
+<!--  Server output response if $lastchapter=1000 -->  
+  <xsl:if test="$lastchapter = 1000">
+    <!-- Local variables found from the text itself-->
+    <xsl:variable name = "c" select="/Tanach/tanach/book[position()=$booknumber]/c[1]/@n"/>
+    <xsl:variable name = "v" select="/Tanach/tanach/book[position()=$booknumber]/c[1]/v[1]/@n"/>
+    <xsl:variable name = "lc" select="/Tanach/tanach/book[position()=$booknumber]/c[last()]/@n"/>
+    <xsl:variable name=  "lv" select="/Tanach/tanach/book[position()=$booknumber]/c[last()]/v[last()]/@n"/>
+    <xsl:choose>
+      <xsl:when test="$lc=$c and $lv=$v">
+        <xsl:value-of select="$c"/>:<xsl:value-of select="$v"/>
+      </xsl:when>
+      <xsl:when test="$lc=$c">
+        <xsl:value-of select="$c"/>:<xsl:value-of select="$v"/>
+        <xsl:text> - </xsl:text>
+        <xsl:value-of select="$lv"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:value-of select="$c"/>:<xsl:value-of select="$v"/>
+          <xsl:text> - </xsl:text>
+        <xsl:value-of select="$lc"/>:<xsl:value-of select="$lv"/>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:if>  
+
+</xsl:template>
+<!--========================================================================-->
+<!-- 
+                Labels chapter:verse in the Verse layout.
+                
+                Called by ExcerptLayout.
+                                                                            -->
+<!--========================================================================-->
+<xsl:template name="VerseVersesLabel">     
+  <table class="citationverses">
+    <tr>
+      <td>
+        <div>
+            <b><xsl:value-of select="../../names/abbrev"/></b>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div>
+          <xsl:value-of select="../@n"/>:<xsl:value-of select="./@n"/>
+        </div>
+      </td>
+    </tr>
+  </table>
+</xsl:template>
+<!--========================================================================-->
+<xsl:template name="ErrorTemplate" >
+  <div class="error">
+    <p class="errortitle"><xsl:value-of select="/Tanach/error/header"/></p>
+    <p/>  
+    <p class="errortext"><xsl:value-of select="/Tanach/error/text"/></p>
+  </div>
+</xsl:template>
+<!--========================================================================-->
+<xsl:template name="InvalidTemplate" >
+<html>
+  <h1>Invalid template for ServerText.xml</h1>
+  <p/>
+  <h4><b>ServerText.xml</b> doesn't accept a template value 
+        of <b>'<xsl:value-of select="$template"/>'</b>.
+  </h4>
+  <p/>
+  <hr/>
+</html>        
+</xsl:template>
+<!--========================================================================-->
+<!--  Styles.xml - 2010.08.04  =============================================-->
+<!--
+        Style tag for all templates.                                                                
+-->
+<!--========================================================================-->
+<xsl:template name="Styles">
+
+<xsl:variable name = "bck"><xsl:if test="$nobackground=0"><xsl:value-of select="$background"/></xsl:if><xsl:if test="$nobackground=1"> </xsl:if></xsl:variable>
+<xsl:text>&#10;&#10;</xsl:text>
+<xsl:comment>  Definition of CSS styles.                                                   </xsl:comment>
+<xsl:text>&#10;&#10;</xsl:text>
+<xsl:comment>  These CSS styles are necessary for the 'structural' HTML tags in the body.  </xsl:comment>
+<xsl:text>&#10;</xsl:text>
+<xsl:comment>  The styles can be modified to produce personalized displays.                </xsl:comment>
+<xsl:text>&#10;</xsl:text>
+<xsl:comment>  Not all of the listed styles will be used in any particular text.           </xsl:comment>
+<xsl:text>&#10;&#10; </xsl:text>
+<xsl:choose>
+  <xsl:when test="$align='right'">
+  </xsl:when>
+  <xsl:when test="$align='left'">
+  </xsl:when>
+  <xsl:otherwise>
+  </xsl:otherwise>
+</xsl:choose>
+  <style type="text/css">  
+    body { font-family:"<xsl:value-of select="$englishfontfamily"/>" ; background-image: url(<xsl:value-of select="$bck"/>); }   
+    table.header { margin-right:0; margin-left:0; margin-bottom:10pt; width:100%; }
+    table.footer { margin-right:0; margin-left:0; margin-top:10pt; width:100%; }
+    table.footer { margin-right:0; margin-left:0; margin-top:10pt; width:100%; }
+    table.toolbar { margin-right:auto; margin-left:auto; width:<xsl:value-of select="$chapterwidth"/>%; padding:2pt; }
+    td.headerleft { width:18%;text-align:left; }
+    td.headercenter { width:64%; text-align:center; }
+    td.headeright { width:18%;text-align:right; }
+    td.footerleft { width:50%;text-align:left; }
+    td.footerright { width:50%;text-align:right; font-weight:bold; }
+    span.headersmall { color:blue; font-family:'<xsl:value-of select="$englishfontfamily"/>'; font-size:12pt}    
+    div.centerlabel { margin-left:auto; margin-right:auto; width:<xsl:value-of select="$chapterwidth"/>%; text-align:center; }
+    div.rightlabel { margin-left:auto; margin-right:auto; width:<xsl:value-of select="$chapterwidth"/>%; text-align:right; }
+    <xsl:choose>
+      <xsl:when test="$align='right'">
+    div.hebrewtext { margin-right:0; margin-left:auto; width:<xsl:value-of select="$chapterwidth"/>%; padding:<xsl:value-of select="$cellpadding"/>pt; text-align:right; border-style:none; direction:rtl; }
+      </xsl:when>
+      <xsl:when test="$align='left'">
+    div.hebrewtext { margin-right:auto; margin-left:0; width:<xsl:value-of select="$chapterwidth"/>%; padding:<xsl:value-of select="$cellpadding"/>pt; text-align:right; border-style:none; direction:rtl; }
+      </xsl:when>
+      <xsl:otherwise>
+    div.hebrewtext { margin-right:auto; margin-left:auto; width:<xsl:value-of select="$chapterwidth"/>%; padding:<xsl:value-of select="$cellpadding"/>pt; text-align:right; border-style:none; direction:rtl; }
+      </xsl:otherwise>
+    </xsl:choose>
+    div.error { margin-right:auto; margin-left:auto; width:<xsl:value-of select="$chapterwidth"/>%; padding:10pt; border-style:double; margin:20pt;}
+    h1.title { text-align:center; } 
+    h2.title{ text-align:center; } 
+    h4.title { text-align:center; } 
+    p.titlebold { font-weight:bold; }
+    p.title {  }
+    p.errortitle { color:red;font-size:16pt;font-weight:bold; text-align:center; }
+    p.errortext { font-size:12pt; font-weight:bold; text-align:left; }
+    span.englishlabel{ font-family:"<xsl:value-of select="$englishfontfamily"/>"; font-size:<xsl:value-of select="$labelsize"/>pt; font-weight:bold; }
+    span.hebrewlabel{ font-family:"<xsl:value-of select="$fontfamily"/>"; font-size:<xsl:value-of select="round($hebrewlabelsize)"/>pt; font-weight:bold; }
+    span.hebrewtext { font-size:<xsl:value-of select="round($fontsize)"/>pt; line-height:<xsl:value-of select="$lineheight"/>%; font-family:"<xsl:value-of select="$fontfamily"/>"; color:black; direction:rtl; text-align:right; }
+    span.ketiv { direction:rtl; vertical-align:super; color:maroon; }
+    span.qere { direction:rtl; color:blue; }
+    span.note { direction:ltr; vertical-align:super; font-size:<xsl:value-of select="round($Englishfontsize)"/>pt; color:red; }
+    span.largeletter { direction:ltr; font-size:150%; }
+    span.smallletter { direction:ltr; font-size:80%; }
+    span.suspendedletter { direction:ltr; font-size:90%; vertical-align:10%; }
+    span.pesamekh { line-height:<xsl:value-of select="$lineheight"/>%; font-family:'<xsl:value-of select="$fontfamily"/>'; font-size:75%; }
+    span.citation { margin-left:5pt; margin-right:0; vertical-align:super; font-family:"<xsl:value-of select="$englishfontfamily"/>"; font-size:<xsl:value-of select="round($Englishfontsize)"/>pt; color:green; text-align:right; }
+    img { border-style:none; }
+    
+<!-- For XSL files in the Supplements directory.  -->    
+    span.title { font-size:16pt;font-weight:bold; text-align:center; }
+    span.subtitle { font-size:14pt;font-weight:bold; text-align:center; }
+    span.pd { font-size:12pt;font-weight:bold;}
+    span.text{ font-size:12pt;}
+    span.boldtext{ font-size:12pt;font-weight:bold;}
+    span.smalltext{ font-size:10pt; }
+    
+    
+<xsl:if test="$view=1">
+    <xsl:choose>
+      <xsl:when test="$align='right'">
+    table.hebrewtextverses{ margin-top:20pt; margin-right:0; margin-left:auto; margin-bottom:20pt; border-color:black; border-style:solid; border-width:<xsl:value-of select="$chapterborder"/>pt; padding:0; width:<xsl:value-of select="$chapterwidth"/>%; }
+      </xsl:when>
+      <xsl:when test="$align='left'">
+    table.hebrewtextverses{ margin-top:20pt; margin-right:auto; margin-left:0; margin-bottom:20pt; border-color:black; border-style:solid; border-width:<xsl:value-of select="$chapterborder"/>pt; padding:0; width:<xsl:value-of select="$chapterwidth"/>%; }
+      </xsl:when>
+      <xsl:otherwise>
+    table.hebrewtextverses{ margin-top:20pt; margin-right:auto; margin-left:auto; margin-bottom:20pt; border-color:black; border-style:solid; border-width:<xsl:value-of select="$chapterborder"/>pt; padding:0; width:<xsl:value-of select="$chapterwidth"/>%; }
+      </xsl:otherwise>
+    </xsl:choose>
+    table.citationverses { margin-left:auto; margin-right:auto; width:100%; font-size:<xsl:value-of select="round($Englishfontsize)"/>pt; font-family:'<xsl:value-of select="$englishfontfamily"/>'; font-weight:bold; }
+    td.hebrewtextverses { width:90%; border-style:solid; border-width:<xsl:value-of select="$chapterborder"/>pt; padding:<xsl:value-of select="$cellpadding"/>pt; text-align:right; }
+    td.citationverses{ margin-left:auto; margin-right:auto; width:10%; border-style:solid; border-width:<xsl:value-of select="$chapterborder"/>pt; text-align:center; }
+</xsl:if>
+<!-- DH label styles  -->
+<xsl:if test="not($DH='Off')">
+    table.center { margin-left:auto; margin-right:auto; border-style:none; }
+    table.dhlegend { margin-right:auto; margin-left:auto; width:<xsl:value-of select="$chapterwidth"/>%; padding:<xsl:value-of select="$cellpadding"/>pt; border-style:none; }
+    td.center { margin-left:auto; margin-right:auto; text-align:center; border-style:none; }               
+    td.centerhalf { margin-left:auto; margin-right:auto; text-align:center; border-style:none; width:50%; }               
+    span.dhlegendenglish { font-family:"<xsl:value-of select="$englishfontfamily"/>"; font-size:<xsl:value-of select="$labelsize"/>pt; font-weight:bold; }
+    span.dhemphasize { font-family:"<xsl:value-of select="$fontfamily"/>"; line-height:<xsl:value-of select="$lineheight"/>%; font-size:<xsl:value-of select="round($fontsize)"/>pt; color:<xsl:value-of select="$emphasiscolor"/>; }
+    span.dhdeemphasize { font-family:'<xsl:value-of select="$fontfamily"/>'; line-height:<xsl:value-of select="$lineheight"/>%; font-size:<xsl:value-of select="round($reducedfontsize)"/>pt; color:<xsl:value-of select="$deemphasiscolor"/>; }
+          <xsl:for-each select="/Tanach/tanach/book[position()=$booknumber]/marking/marks/mark">
+             <xsl:variable name="thisrelativesize" select="./relativesize"/>
+             <xsl:variable name="thiscolor" select="./color"/>
+             <xsl:variable name="thisstyle" select="./style"/>
+             <xsl:variable name="thislabelfontsize" select="round($labelsize*$thisrelativesize)"/>
+             <xsl:variable name="thisfontsize" select="round($fontsize*$thisrelativesize)"/>
+             <xsl:variable name="thisbackgroundcolor" select="./backgroundcolor"/>
+             <xsl:variable name="thistextdecoration" select="./textdecoration"/>
+    span.dh<xsl:value-of select="position()"/> { font-family:'<xsl:value-of select="$fontfamily"/>'; line-height:<xsl:value-of select="$lineheight"/>%; font-size:<xsl:value-of select="$thisfontsize"/>pt; color:<xsl:value-of select="$thiscolor"/>; font-weight:<xsl:value-of select="$thisstyle"/>;<xsl:if test="not($thisbackgroundcolor='#ffffff')">background-color:<xsl:value-of select="$thisbackgroundcolor"/>;</xsl:if> text-decoration:<xsl:value-of select="$thistextdecoration"/>; direction:rtl; }
+    span.dhlegend<xsl:value-of select="position()"/> { font-family:'<xsl:value-of select="$fontfamily"/>'; line-height:<xsl:value-of select="$lineheight"/>%; font-size:<xsl:value-of select="$thislabelfontsize"/>pt; color:<xsl:value-of select="$thiscolor"/>; font-weight:<xsl:value-of select="$thisstyle"/>; <xsl:if test="not($thisbackgroundcolor='#ffffff')">background-color:<xsl:value-of select="$thisbackgroundcolor"/>;</xsl:if> text-decoration:<xsl:value-of select="$thistextdecoration"/>; direction:rtl; }
+            </xsl:for-each>
+</xsl:if>
+<xsl:text>  &#10;  </xsl:text>
+</style>                 
+<xsl:text>&#10;&#10;</xsl:text>
+</xsl:template>
+<!--========================================================================-->
+<!--  EndStylesheet.xml - 2010.08.04  ======================================-->
+</xsl:stylesheet>
+<!--========================================================================-->
+<!--========================================================================-->

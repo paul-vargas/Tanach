@@ -1,0 +1,3677 @@
+<?xml version = "1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="XSL/Differences.xsl.xml"?>
+<!-- Copyright C.V.Kimball 2011 -->
+<Differences>
+<header>
+  <title>Differences between versions of the Westminster Leningrad Codex</title>
+  <description>Two versions of the Westminster Leningrad Codex (WLC), in the format of the Unicode/XML Tanach, are compared, looking for any differences between them. The basic element of the Unicode/XML Tanach is the Graphical Object, or GO. GOs have 6 types: w, a single word; q, a word representing a qere variant; k, a word representing a ketib variant; pe, an empty tag representing an open paragraph marker; samekh, an empty tag representing a closed paragraph marker, reversednun, an empty tag representing a reversed nun. w, q, and k type GOs contain Unicode Hebrew text with consonants, vowels, accents, morphological division marks (/), blanks, and the Unicode Zero Width Joiner.  Any other content is invalid in these tags. Any GO may have a transcription note associated with it. The comparison is (normally) made between corresponding GOs from the two different versions. Each pair of GOs is examined for changes in morphological divisions, accents, vowels, consonants and notes and the results are indexed in the format Book C:V.GO, where Book is the book, C is the chapter, V is the verse, and GO is the index of the GO in the verse. All indices, C, V, and GO start with 1. Very infrequently, changes in the text produce different numbers of GOs in a given chapter and verse.  In this case, the entire verse is displayed and a simple analysis is given. The output file documents and summarizes all differences between the versions.</description>
+  <creationdate>31 May 2012</creationdate>
+  <notes>
+  <note>
+    <code>1</code>
+    <note>BHS has been faithful to the Leningrad Codex where there might be a question of the validity of the form and we keep the same form as BHS.</note>
+  </note>
+  <note>
+    <code>2</code>
+    <note>We have added a sop pasuq where L and BHS omit it.(The added sof pasuq often is missing from the text.)</note>
+  </note>
+  <note>
+    <code>3</code>
+    <note>We read or understand L differently than BHS (1983 Edition). Often this notation indicates a typographical error in BHS.</note>
+  </note>
+  <note>
+    <code>4</code>
+    <note>Puncta extraordinaria -- a \u05c4 is used to mark such marks in the text when they are above the line and a \u05c5 when they are below the line.</note>
+  </note>
+  <note>
+    <code>5</code>
+    <note>Large letter(s). Shown as large letters without a superscript note number.</note>
+  </note>
+  <note>
+    <code>6</code>
+    <note>Small letter(s). Shown as small letters without a superscript note number.</note>
+  </note>
+  <note>
+    <code>7</code>
+    <note>Suspended letter(s). Shown as suspended letters without a superscript note number.</note>
+  </note>
+  <note>
+    <code>8</code>
+    <note>Inverted nun in the text.</note>
+  </note>
+  <note>
+    <code>9</code>
+    <note>BHS has abandoned L and we concur. All of these occurrences are ketib/qere problems.</note>
+  </note>
+  <note>
+    <code>a</code>
+    <note>Adaptations to a Qere which L and BHS, by their design, do not indicate.</note>
+  </note>
+  <note>
+    <code>c</code>
+    <note>We read or understand the cantillation in L differently than BHS (1983 Edition). Often this notation indicates a typographical error in BHS.</note>
+  </note>
+  <note>
+    <code>m</code>
+    <note>Miscellaneous notes to the text and occasions where more than one bracket category applies.</note>
+  </note>
+  <note>
+    <code>q</code>
+    <note>We have abandoned or added a ketib/qere relative to BHS. In doing this we agree with L against BHS.</note>
+  </note>
+  <note>
+    <code>y</code>
+    <note>Yathir readings in L which we have designated as Qeres when both Dothan and BHS list a Qere.</note>
+  </note>
+</notes>
+</header>
+<book>
+  <bookname>Genesis</bookname>
+  <bookabbrev>Gen</bookabbrev>
+  <firstbook>
+    <filename>Genesis</filename>
+    <version>4.8</version>
+    <date>30 July 2007</date>
+    <transcriptiondate>1 Jul 2007</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Genesis</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="true">
+    <position>Gen 4:15.4</position>
+    <go1>לָכֵן֙</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Final Nun - Pashta</go1names>
+    <go2>לָ/כֵן֙</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Final Nun - Pashta</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Gen 16:5.19</position>
+    <go1>וּבֵינֶֽיׅךָ׃<x>4</x></go1>
+    <go1names>Vav - Dagesh - Bet - Tsere - Yod - Nun - Segol - Meteg - Yod - Lower Dot - Final Kaf - Qamats - Sof Pasuq</go1names>
+    <go2>וּבֵינֶֽיׄךָ׃<x>4</x></go2>
+    <go2names>Vav - Dagesh - Bet - Tsere - Yod - Nun - Segol - Meteg - Yod - Upper Dot - Final Kaf - Qamats - Sof Pasuq</go2names>
+    <change>Accents are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Gen 18:9.2</position>
+    <go1>אֵׅלָׅ֔יׅוׅ<x>4</x></go1>
+    <go1names>Alef - Tsere - Lower Dot - Lamed - Qamats - Lower Dot - Zaqef Qatan - Yod - Lower Dot - Vav - Lower Dot</go1names>
+    <go2>אֵׄלָׄ֔יׄוׄ<x>4</x></go2>
+    <go2names>Alef - Tsere - Upper Dot - Lamed - Qamats - Upper Dot - Zaqef Qatan - Yod - Upper Dot - Vav - Upper Dot</go2names>
+    <change>Accents are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Gen 19:33.15</position>
+    <go1>וּבְקוּׅמָֽהּ׃<x>4</x></go1>
+    <go1names>Vav - Dagesh - Bet - Sheva - Qof - Vav - Dagesh - Lower Dot - Mem - Qamats - Meteg - He - Dagesh - Sof Pasuq</go1names>
+    <go2>וּבְקוּׄמָֽהּ׃<x>4</x></go2>
+    <go2names>Vav - Dagesh - Bet - Sheva - Qof - Vav - Dagesh - Upper Dot - Mem - Qamats - Meteg - He - Dagesh - Sof Pasuq</go2names>
+    <change>Accents are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Gen 30:15.14</position>
+    <go1>לָכֵן֙</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Final Nun - Pashta</go1names>
+    <go2>לָ/כֵן֙</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Final Nun - Pashta</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Gen 33:4.8</position>
+    <go1>וַׅיִּׅשָּׁׅקֵ֑ׅהׅוּׅ<x>4</x></go1>
+    <go1names>Vav - Patah - Lower Dot - Yod - Dagesh - Hiriq - Lower Dot - Shin - Shin Dot - Dagesh - Qamats - Lower Dot - Qof - Tsere - Etnachta - Lower Dot - He - Lower Dot - Vav - Dagesh - Lower Dot</go1names>
+    <go2>וַׄיִּׄשָּׁׄקֵ֑ׄהׄוּׄ<x>4</x></go2>
+    <go2names>Vav - Patah - Upper Dot - Yod - Dagesh - Hiriq - Upper Dot - Shin - Shin Dot - Dagesh - Qamats - Upper Dot - Qof - Tsere - Etnachta - Upper Dot - He - Upper Dot - Vav - Dagesh - Upper Dot</go2names>
+    <change>Accents are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Gen 37:12.4</position>
+    <go1>אֶׅתׅ־</go1>
+    <go1names>Alef - Segol - Lower Dot - Tav - Lower Dot - Maqaf</go1names>
+    <go2>אֶׄתׄ־</go2>
+    <go2names>Alef - Segol - Upper Dot - Tav - Upper Dot - Maqaf</go2names>
+    <change>Accents are different.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>2</mdchange>
+    <accentchange>5</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Exodus</bookname>
+  <bookabbrev>Ex</bookabbrev>
+  <firstbook>
+    <filename>Exodus</filename>
+    <version>4.8</version>
+    <date>30 July 2007</date>
+    <transcriptiondate>1 Jul 2007</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Exodus</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="true">
+    <position>Ex 6:6.1</position>
+    <go1>לָכֵ֞ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Gereshayim - Final Nun</go1names>
+    <go2>לָ/כֵ֞ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Gereshayim - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>1</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Leviticus</bookname>
+  <bookabbrev>Lev</bookabbrev>
+  <firstbook>
+    <filename>Leviticus</filename>
+    <version>4.8</version>
+    <date>30 July 2007</date>
+    <transcriptiondate>1 Jul 2007</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Leviticus</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="false">
+    <position>Lev 5:2.12</position>
+    <go1>א֚וֹ<x>3</x></go1>
+    <go1names>Alef - Yetiv - Vav - Holam</go1names>
+    <go2>א֤וֹ<x>c</x></go2>
+    <go2names>Alef - Mahapakh - Vav - Holam</go2names>
+    <change>Accents are different. A transcription note has been changed.  Note 3 becomes a note c.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>1</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>1</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Numbers</bookname>
+  <bookabbrev>Num</bookabbrev>
+  <firstbook>
+    <filename>Numbers</filename>
+    <version>4.8</version>
+    <date>30 July 2007</date>
+    <transcriptiondate>1 Jul 2007</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Numbers</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="false">
+    <position>Num 3:39.7</position>
+    <go1>וְׅאַׅהֲׅרֹ֛ׅןׅ<x>4</x></go1>
+    <go1names>Vav - Sheva - Lower Dot - Alef - Patah - Lower Dot - He - Hataf Patah - Lower Dot - Resh - Holam - Tevir - Lower Dot - Final Nun - Lower Dot</go1names>
+    <go2>וְׄאַׄהֲׄרֹ֛ׄןׄ<x>4</x></go2>
+    <go2names>Vav - Sheva - Upper Dot - Alef - Patah - Upper Dot - He - Hataf Patah - Upper Dot - Resh - Holam - Tevir - Upper Dot - Final Nun - Upper Dot</go2names>
+    <change>Accents are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Num 9:10.14</position>
+    <go1>רְחֹקָ֜הׅ<x>4</x></go1>
+    <go1names>Resh - Sheva - Het - Holam - Qof - Qamats - Geresh - He - Lower Dot</go1names>
+    <go2>רְחֹקָ֜הׄ<x>4</x></go2>
+    <go2names>Resh - Sheva - Het - Holam - Qof - Qamats - Geresh - He - Upper Dot</go2names>
+    <change>Accents are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Num 15:28.6</position>
+    <go1>בְּ/חֶטְאָ֥/ה</go1>
+    <go1names>Bet - Dagesh - Sheva - Slash - Het - Segol - Tet - Sheva - Alef - Qamats - Merkha - Slash - He</go1names>
+    <go2>בְּ/חֶטְאָ֥ה</go2>
+    <go2names>Bet - Dagesh - Sheva - Slash - Het - Segol - Tet - Sheva - Alef - Qamats - Merkha - He</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Num 16:11.1</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Num 20:12.15</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Num 21:30.9</position>
+    <go1>אֲשֶׁ֖רׅ<x>4</x></go1>
+    <go1names>Alef - Hataf Patah - Shin - Shin Dot - Segol - Tipeha - Resh - Lower Dot</go1names>
+    <go2>אֲשֶׁ֖רׄ<x>4</x></go2>
+    <go2names>Alef - Hataf Patah - Shin - Shin Dot - Segol - Tipeha - Resh - Upper Dot</go2names>
+    <change>Accents are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Num 25:12.1</position>
+    <go1>לָכֵ֖ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Tipeha - Final Nun</go1names>
+    <go2>לָ/כֵ֖ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Tipeha - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Num 29:15.1</position>
+    <go1>וְעִשָּׂרׅוֹן֙<x>4</x></go1>
+    <go1names>Vav - Sheva - Ayin - Hiriq - Shin - Sin Dot - Dagesh - Qamats - Resh - Lower Dot - Vav - Holam - Final Nun - Pashta</go1names>
+    <go2>וְעִשָּׂרׄוֹן֙<x>4</x></go2>
+    <go2names>Vav - Sheva - Ayin - Hiriq - Shin - Sin Dot - Dagesh - Qamats - Resh - Upper Dot - Vav - Holam - Final Nun - Pashta</go2names>
+    <change>Accents are different.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>4</mdchange>
+    <accentchange>4</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Deuteronomy</bookname>
+  <bookabbrev>Deut</bookabbrev>
+  <firstbook>
+    <filename>Deuteronomy</filename>
+    <version>4.8</version>
+    <date>30 July 2007</date>
+    <transcriptiondate>1 Jul 2007</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Deuteronomy</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="false">
+    <position>Deut 29:28.5</position>
+    <go1>לָ֤ׅנׅוּׅ<x>4</x></go1>
+    <go1names>Lamed - Qamats - Mahapakh - Lower Dot - Nun - Lower Dot - Vav - Dagesh - Lower Dot</go1names>
+    <go2>לָ֤ׄנׄוּׄ<x>4</x></go2>
+    <go2names>Lamed - Qamats - Mahapakh - Upper Dot - Nun - Upper Dot - Vav - Dagesh - Upper Dot</go2names>
+    <change>Accents are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Deut 29:28.6</position>
+    <go1>וּׅלְׅבָׅנֵׅ֙יׅנׅוּׅ֙<x>4</x></go1>
+    <go1names>Vav - Dagesh - Lower Dot - Lamed - Sheva - Lower Dot - Bet - Qamats - Lower Dot - Nun - Tsere - Lower Dot - Pashta - Yod - Lower Dot - Nun - Lower Dot - Vav - Dagesh - Lower Dot - Pashta</go1names>
+    <go2>וּׄלְׄבָׄנֵׄ֙יׄנׄוּׄ֙<x>4</x></go2>
+    <go2names>Vav - Dagesh - Upper Dot - Lamed - Sheva - Upper Dot - Bet - Qamats - Upper Dot - Nun - Tsere - Upper Dot - Pashta - Yod - Upper Dot - Nun - Upper Dot - Vav - Dagesh - Upper Dot - Pashta</go2names>
+    <change>Accents are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Deut 34:3.8</position>
+    <go1>הַתְּמָרִ֖ים</go1>
+    <go1names>He - Patah - Tav - Dagesh - Sheva - Mem - Qamats - Resh - Hiriq - Tipeha - Yod - Final Mem</go1names>
+    <go2>הַ/תְּמָרִ֖ים</go2>
+    <go2names>He - Patah - Slash - Tav - Dagesh - Sheva - Mem - Qamats - Resh - Hiriq - Tipeha - Yod - Final Mem</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>1</mdchange>
+    <accentchange>2</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Joshua</bookname>
+  <bookabbrev>Josh</bookabbrev>
+  <firstbook>
+    <filename>Joshua</filename>
+    <version>4.8</version>
+    <date>30 July 2007</date>
+    <transcriptiondate>1 Jul 2007</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Joshua</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="true">
+    <position>Josh 15:62.3</position>
+    <go1>הַמֶּ֖לַח</go1>
+    <go1names>He - Patah - Mem - Dagesh - Segol - Tipeha - Lamed - Patah - Het</go1names>
+    <go2>הַ/מֶּ֖לַח</go2>
+    <go2names>He - Patah - Slash - Mem - Dagesh - Segol - Tipeha - Lamed - Patah - Het</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Josh 19:13.7</position>
+    <go1>עִתָּ֣/ה</go1>
+    <go1names>Ayin - Hiriq - Tav - Dagesh - Qamats - Munah - Slash - He</go1names>
+    <go2>עִתָּ֣ה</go2>
+    <go2names>Ayin - Hiriq - Tav - Dagesh - Qamats - Munah - He</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>2</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Judges</bookname>
+  <bookabbrev>Judg</bookabbrev>
+  <firstbook>
+    <filename>Judges</filename>
+    <version>4.8</version>
+    <date>30 July 2007</date>
+    <transcriptiondate>1 Jul 2007</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Judges</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="true">
+    <position>Judg 1:16.7</position>
+    <go1>הַתְּמָרִים֙</go1>
+    <go1names>He - Patah - Tav - Dagesh - Sheva - Mem - Qamats - Resh - Hiriq - Yod - Final Mem - Pashta</go1names>
+    <go2>הַ/תְּמָרִים֙</go2>
+    <go2names>He - Patah - Slash - Tav - Dagesh - Sheva - Mem - Qamats - Resh - Hiriq - Yod - Final Mem - Pashta</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Judg 3:13.14</position>
+    <go1>הַתְּמָרִֽים׃</go1>
+    <go1names>He - Patah - Tav - Dagesh - Sheva - Mem - Qamats - Resh - Hiriq - Meteg - Yod - Final Mem - Sof Pasuq</go1names>
+    <go2>הַ/תְּמָרִֽים׃</go2>
+    <go2names>He - Patah - Slash - Tav - Dagesh - Sheva - Mem - Qamats - Resh - Hiriq - Meteg - Yod - Final Mem - Sof Pasuq</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Judg 8:7.3</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Judg 10:13.7</position>
+    <go1>לָכֵ֥ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Merkha - Final Nun</go1names>
+    <go2>לָ/כֵ֥ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Merkha - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Judg 11:8.6</position>
+    <go1>לָכֵן֙</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Final Nun - Pashta</go1names>
+    <go2>לָ/כֵן֙</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Final Nun - Pashta</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Judg 15:13.4</position>
+    <go1>לֹ֤א</go1>
+    <go1names>Lamed - Holam - Mahapakh - Alef</go1names>
+    <go2>לֹ֚א<x>c</x></go2>
+    <go2names>Lamed - Holam - Yetiv - Alef</go2names>
+    <change>Accents are different. Different number of notes. A note, c, has been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Judg 16:18.2</position>
+    <go1>דְּלִילָ֗ה</go1>
+    <go1names>Dalet - Dagesh - Sheva - Lamed - Hiriq - Yod - Lamed - Qamats - Revia - He</go1names>
+    <go2>דְלִילָ֗ה<x>3</x></go2>
+    <go2names>Dalet - Sheva - Lamed - Hiriq - Yod - Lamed - Qamats - Revia - He</go2names>
+    <change>Vowels are different. Different number of notes. A note, 3, has been added.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>5</mdchange>
+    <accentchange>1</accentchange>
+    <vowelchange>1</vowelchange>
+    <notechange>2</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>1 Samuel</bookname>
+  <bookabbrev>1 Sam</bookabbrev>
+  <firstbook>
+    <filename>Samuel_1</filename>
+    <version>4.8</version>
+    <date>30 July 2007</date>
+    <transcriptiondate>1 Jul 2007</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Samuel_1</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="true">
+    <position>1 Sam 2:30.1</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>1 Sam 3:14.1</position>
+    <go1>וְ/לָכֵ֥ן</go1>
+    <go1names>Vav - Sheva - Slash - Lamed - Qamats - Kaf - Tsere - Merkha - Final Nun</go1names>
+    <go2>וְ/לָ/כֵ֥ן</go2>
+    <go2names>Vav - Sheva - Slash - Lamed - Qamats - Slash - Kaf - Tsere - Merkha - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>1 Sam 27:6.8</position>
+    <go1>לָכֵ֞ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Gereshayim - Final Nun</go1names>
+    <go2>לָ/כֵ֞ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Gereshayim - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>1 Sam 28:2.5</position>
+    <go1>לָכֵן֙</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Final Nun - Pashta</go1names>
+    <go2>לָ/כֵן֙</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Final Nun - Pashta</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>1 Sam 28:2.16</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>1 Sam 30:9.3</position>
+    <go1>ה֤וּא</go1>
+    <go1names>He - Mahapakh - Vav - Dagesh - Alef</go1names>
+    <go2>ה֚וּא<x>c</x></go2>
+    <go2names>He - Yetiv - Vav - Dagesh - Alef</go2names>
+    <change>Accents are different. Different number of notes. A note, c, has been added.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>5</mdchange>
+    <accentchange>1</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>1</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>2 Samuel</bookname>
+  <bookabbrev>2 Sam</bookabbrev>
+  <firstbook>
+    <filename>Samuel_2</filename>
+    <version>4.8</version>
+    <date>30 July 2007</date>
+    <transcriptiondate>1 Jul 2007</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Samuel_2</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="false">
+    <position>2 Sam 19:20.17</position>
+    <go1>יָׅצָ֥ׅאׅ<x>4</x></go1>
+    <go1names>Yod - Qamats - Lower Dot - Tsadi - Qamats - Merkha - Lower Dot - Alef - Lower Dot</go1names>
+    <go2>יָׄצָ֥ׄאׄ<x>4</x></go2>
+    <go2names>Yod - Qamats - Upper Dot - Tsadi - Qamats - Merkha - Upper Dot - Alef - Upper Dot</go2names>
+    <change>Accents are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>2 Sam 20:12.5</position>
+    <go1>הַֽמְּסִלָּ֑ה</go1>
+    <go1names>He - Patah - Meteg - Mem - Dagesh - Sheva - Samekh - Hiriq - Lamed - Dagesh - Qamats - Etnachta - He</go1names>
+    <go2>הַֽמְסִּלָּ֑ה<x>3</x></go2>
+    <go2names>He - Patah - Meteg - Mem - Sheva - Samekh - Dagesh - Hiriq - Lamed - Dagesh - Qamats - Etnachta - He</go2names>
+    <change>Vowels are different. Different number of notes. A note, 3, has been added.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>2 Sam 23:8.12</position>
+    <go1>עֲדִינ֣וֹ</go1>
+    <go1names>Ayin - Hataf Patah - Dalet - Hiriq - Yod - Nun - Munah - Vav - Holam</go1names>
+    <go2>עֲדִינ֣/וֹ</go2>
+    <go2names>Ayin - Hataf Patah - Dalet - Hiriq - Yod - Nun - Munah - Slash - Vav - Holam</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>2 Sam 24:24.5</position>
+    <go1>לֹ֤א</go1>
+    <go1names>Lamed - Holam - Mahapakh - Alef</go1names>
+    <go2>לֹ֚א<x>c</x></go2>
+    <go2names>Lamed - Holam - Yetiv - Alef</go2names>
+    <change>Accents are different. Different number of notes. A note, c, has been added.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>1</mdchange>
+    <accentchange>2</accentchange>
+    <vowelchange>1</vowelchange>
+    <notechange>2</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>1 Kings</bookname>
+  <bookabbrev>1 Kings</bookabbrev>
+  <firstbook>
+    <filename>Kings_1</filename>
+    <version>4.8</version>
+    <date>30 July 2007</date>
+    <transcriptiondate>1 Jul 2007</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Kings_1</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="true">
+    <position>1 Kings 14:10.1</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>1 Kings 22:19.2</position>
+    <go1>לָכֵ֖ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Tipeha - Final Nun</go1names>
+    <go2>לָ/כֵ֖ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Tipeha - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>2</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>2 Kings</bookname>
+  <bookabbrev>2 Kings</bookabbrev>
+  <firstbook>
+    <filename>Kings_2</filename>
+    <version>4.8</version>
+    <date>30 July 2007</date>
+    <transcriptiondate>1 Jul 2007</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Kings_2</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="true">
+    <position>2 Kings 1:4.1</position>
+    <go1>וְ/לָכֵן֙</go1>
+    <go1names>Vav - Sheva - Slash - Lamed - Qamats - Kaf - Tsere - Final Nun - Pashta</go1names>
+    <go2>וְ/לָ/כֵן֙</go2>
+    <go2names>Vav - Sheva - Slash - Lamed - Qamats - Slash - Kaf - Tsere - Final Nun - Pashta</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>2 Kings 1:6.31</position>
+    <go1>לָ֠כֵן</go1>
+    <go1names>Lamed - Qamats - Telisha Gedola - Kaf - Tsere - Final Nun</go1names>
+    <go2>לָ֠/כֵן</go2>
+    <go2names>Lamed - Qamats - Telisha Gedola - Slash - Kaf - Tsere - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>2 Kings 1:16.21</position>
+    <go1>לָ֠כֵן</go1>
+    <go1names>Lamed - Qamats - Telisha Gedola - Kaf - Tsere - Final Nun</go1names>
+    <go2>לָ֠/כֵן</go2>
+    <go2names>Lamed - Qamats - Telisha Gedola - Slash - Kaf - Tsere - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>2 Kings 19:13.7</position>
+    <go1>לָ/עִ֣יר</go1>
+    <go1names>Lamed - Qamats - Slash - Ayin - Hiriq - Munah - Yod - Resh</go1names>
+    <go2>לָעִ֣יר</go2>
+    <go2names>Lamed - Qamats - Ayin - Hiriq - Munah - Yod - Resh</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>2 Kings 19:32.1</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>2 Kings 21:12.1</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>2 Kings 22:20.1</position>
+    <go1>לָכֵן֩</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Final Nun - Telisha Qetana</go1names>
+    <go2>לָ/כֵן֩</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Final Nun - Telisha Qetana</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>7</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Isaiah</bookname>
+  <bookabbrev>Isa</bookabbrev>
+  <firstbook>
+    <filename>Isaiah</filename>
+    <version>4.8</version>
+    <date>30 July 2007</date>
+    <transcriptiondate>1 Jul 2007</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Isaiah</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="true">
+    <position>Isa 1:24.1</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Isa 5:13.1</position>
+    <go1>לָכֵ֛ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Tevir - Final Nun</go1names>
+    <go2>לָ/כֵ֛ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Tevir - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Isa 5:14.1</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Isa 5:24.1</position>
+    <go1>לָכֵן֩</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Final Nun - Telisha Qetana</go1names>
+    <go2>לָ/כֵן֩</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Final Nun - Telisha Qetana</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Isa 7:11.8</position>
+    <go1>שְׁאָ֔לָ/ה</go1>
+    <go1names>Shin - Shin Dot - Sheva - Alef - Qamats - Zaqef Qatan - Lamed - Qamats - Slash - He</go1names>
+    <go2>שְׁאָ֔לָה</go2>
+    <go2names>Shin - Shin Dot - Sheva - Alef - Qamats - Zaqef Qatan - Lamed - Qamats - He</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Isa 7:14.1</position>
+    <go1>לָ֠כֵן</go1>
+    <go1names>Lamed - Qamats - Telisha Gedola - Kaf - Tsere - Final Nun</go1names>
+    <go2>לָ֠/כֵן</go2>
+    <go2names>Lamed - Qamats - Telisha Gedola - Slash - Kaf - Tsere - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Isa 8:7.1</position>
+    <go1>וְ/לָכֵ֡ן</go1>
+    <go1names>Vav - Sheva - Slash - Lamed - Qamats - Kaf - Tsere - Pazer - Final Nun</go1names>
+    <go2>וְ/לָ/כֵ֡ן</go2>
+    <go2names>Vav - Sheva - Slash - Lamed - Qamats - Slash - Kaf - Tsere - Pazer - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Isa 10:16.1</position>
+    <go1>לָ֠כֵן</go1>
+    <go1names>Lamed - Qamats - Telisha Gedola - Kaf - Tsere - Final Nun</go1names>
+    <go2>לָ֠/כֵן</go2>
+    <go2names>Lamed - Qamats - Telisha Gedola - Slash - Kaf - Tsere - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Isa 10:24.1</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Isa 16:7.1</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Isa 26:14.7</position>
+    <go1>לָכֵ֤ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Mahapakh - Final Nun</go1names>
+    <go2>לָ/כֵ֤ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Mahapakh - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Isa 27:8.1</position>
+    <go1>בְּ/סַאסְּאָ֖/ה</go1>
+    <go1names>Bet - Dagesh - Sheva - Slash - Samekh - Patah - Alef - Samekh - Dagesh - Sheva - Alef - Qamats - Tipeha - Slash - He</go1names>
+    <go2>בְּ/סַּאסְּאָ֖ה<x>3</x></go2>
+    <go2names>Bet - Dagesh - Sheva - Slash - Samekh - Dagesh - Patah - Alef - Samekh - Dagesh - Sheva - Alef - Qamats - Tipeha - He</go2names>
+    <change>Morphological divisions are different. Vowels are different. Different number of notes. A note, 3, has been added.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Isa 27:9.1</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Isa 28:14.1</position>
+    <go1>לָכֵ֛ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Tevir - Final Nun</go1names>
+    <go2>לָ/כֵ֛ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Tevir - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Isa 28:16.1</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Isa 29:14.1</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Isa 29:22.1</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Isa 30:7.5</position>
+    <go1>לָכֵן֙</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Final Nun - Pashta</go1names>
+    <go2>לָ/כֵן֙</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Final Nun - Pashta</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Isa 30:12.1</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Isa 30:13.1</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Isa 30:18.1</position>
+    <go1>וְ/לָכֵ֞ן</go1>
+    <go1names>Vav - Sheva - Slash - Lamed - Qamats - Kaf - Tsere - Gereshayim - Final Nun</go1names>
+    <go2>וְ/לָ/כֵ֞ן</go2>
+    <go2names>Vav - Sheva - Slash - Lamed - Qamats - Slash - Kaf - Tsere - Gereshayim - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Isa 30:18.5</position>
+    <go1>וְ/לָכֵ֥ן</go1>
+    <go1names>Vav - Sheva - Slash - Lamed - Qamats - Kaf - Tsere - Merkha - Final Nun</go1names>
+    <go2>וְ/לָ/כֵ֥ן</go2>
+    <go2names>Vav - Sheva - Slash - Lamed - Qamats - Slash - Kaf - Tsere - Merkha - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Isa 30:28.7</position>
+    <go1>לַ/הֲנָפָ֥/ה</go1>
+    <go1names>Lamed - Patah - Slash - He - Hataf Patah - Nun - Qamats - Pe - Qamats - Merkha - Slash - He</go1names>
+    <go2>לַ/הֲנָפָ֥ה</go2>
+    <go2names>Lamed - Patah - Slash - He - Hataf Patah - Nun - Qamats - Pe - Qamats - Merkha - He</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Isa 32:11.3</position>
+    <go1>רְגָ֖זָ/ה</go1>
+    <go1names>Resh - Sheva - Gimel - Qamats - Tipeha - Zayin - Qamats - Slash - He</go1names>
+    <go2>רְגָ֖זָה</go2>
+    <go2names>Resh - Sheva - Gimel - Qamats - Tipeha - Zayin - Qamats - He</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Isa 32:11.5</position>
+    <go1>פְּשֹׁ֣טָֽ/ה</go1>
+    <go1names>Pe - Dagesh - Sheva - Shin - Shin Dot - Holam - Munah - Tet - Qamats - Meteg - Slash - He</go1names>
+    <go2>פְּשֹׁ֣טָֽה</go2>
+    <go2names>Pe - Dagesh - Sheva - Shin - Shin Dot - Holam - Munah - Tet - Qamats - Meteg - He</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Isa 32:11.6</position>
+    <go1>וְ/עֹ֔רָ/ה</go1>
+    <go1names>Vav - Sheva - Slash - Ayin - Holam - Zaqef Qatan - Resh - Qamats - Slash - He</go1names>
+    <go2>וְ/עֹ֔רָה</go2>
+    <go2names>Vav - Sheva - Slash - Ayin - Holam - Zaqef Qatan - Resh - Qamats - He</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Isa 32:11.7</position>
+    <go1>וַ/חֲג֖וֹרָ/ה</go1>
+    <go1names>Vav - Patah - Slash - Het - Hataf Patah - Gimel - Tipeha - Vav - Holam - Resh - Qamats - Slash - He</go1names>
+    <go2>וַ/חֲג֖וֹרָה</go2>
+    <go2names>Vav - Patah - Slash - Het - Hataf Patah - Gimel - Tipeha - Vav - Holam - Resh - Qamats - He</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Isa 37:13.7</position>
+    <go1>לָ/עִ֣יר</go1>
+    <go1names>Lamed - Qamats - Slash - Ayin - Hiriq - Munah - Yod - Resh</go1names>
+    <go2>לָעִ֣יר</go2>
+    <go2names>Lamed - Qamats - Ayin - Hiriq - Munah - Yod - Resh</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Isa 37:33.1</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Isa 43:14.11</position>
+    <go1>בָֽרִיחִים֙</go1>
+    <go1names>Bet - Qamats - Meteg - Resh - Hiriq - Yod - Het - Hiriq - Yod - Final Mem - Pashta</go1names>
+    <go2>בָֽ/רִיחִים֙</go2>
+    <go2names>Bet - Qamats - Meteg - Slash - Resh - Hiriq - Yod - Het - Hiriq - Yod - Final Mem - Pashta</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Isa 44:9.9</position>
+    <go1>הֵׅ֗מָּׅהׅ<x>4</x></go1>
+    <go1names>He - Tsere - Lower Dot - Revia - Mem - Dagesh - Qamats - Lower Dot - He - Lower Dot</go1names>
+    <go2>הֵׄ֗מָּׄהׄ<x>4</x></go2>
+    <go2names>He - Tsere - Upper Dot - Revia - Mem - Dagesh - Qamats - Upper Dot - He - Upper Dot</go2names>
+    <change>Accents are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Isa 51:21.1</position>
+    <go1>לָכֵ֛ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Tevir - Final Nun</go1names>
+    <go2>לָ/כֵ֛ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Tevir - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Isa 52:6.1</position>
+    <go1>לָכֵ֛ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Tevir - Final Nun</go1names>
+    <go2>לָ/כֵ֛ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Tevir - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Isa 52:6.5</position>
+    <go1>לָכֵן֙</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Final Nun - Pashta</go1names>
+    <go2>לָ/כֵן֙</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Final Nun - Pashta</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Isa 53:12.1</position>
+    <go1>לָכֵ֞ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Gereshayim - Final Nun</go1names>
+    <go2>לָ/כֵ֞ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Gereshayim - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Isa 61:7.7</position>
+    <go1>לָכֵ֤ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Mahapakh - Final Nun</go1names>
+    <go2>לָ/כֵ֤ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Mahapakh - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Isa 65:13.1</position>
+    <go1>לָכֵ֞ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Gereshayim - Final Nun</go1names>
+    <go2>לָ/כֵ֞ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Gereshayim - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>36</mdchange>
+    <accentchange>1</accentchange>
+    <vowelchange>1</vowelchange>
+    <notechange>1</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Jeremiah</bookname>
+  <bookabbrev>Jer</bookabbrev>
+  <firstbook>
+    <filename>Jeremiah</filename>
+    <version>4.8</version>
+    <date>30 July 2007</date>
+    <transcriptiondate>1 Jul 2007</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Jeremiah</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="true">
+    <position>Jer 2:9.1</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Jer 2:33.6</position>
+    <go1>לָכֵן֙</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Final Nun - Pashta</go1names>
+    <go2>לָ/כֵן֙</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Final Nun - Pashta</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Jer 5:2.5</position>
+    <go1>לָכֵ֥ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Merkha - Final Nun</go1names>
+    <go2>לָ/כֵ֥ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Merkha - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Jer 5:14.1</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Jer 6:15.13</position>
+    <go1>לָכֵ֞ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Gereshayim - Final Nun</go1names>
+    <go2>לָ/כֵ֞ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Gereshayim - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Jer 6:18.1</position>
+    <go1>לָכֵ֖ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Tipeha - Final Nun</go1names>
+    <go2>לָ/כֵ֖ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Tipeha - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Jer 6:21.1</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Jer 7:20.1</position>
+    <go1>לָכֵ֞ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Gereshayim - Final Nun</go1names>
+    <go2>לָ/כֵ֞ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Gereshayim - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Jer 7:32.1</position>
+    <go1>לָכֵ֞ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Gereshayim - Final Nun</go1names>
+    <go2>לָ/כֵ֞ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Gereshayim - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Jer 8:10.1</position>
+    <go1>לָכֵן֩</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Final Nun - Telisha Qetana</go1names>
+    <go2>לָ/כֵן֩</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Final Nun - Telisha Qetana</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Jer 8:12.12</position>
+    <go1>לָכֵ֞ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Gereshayim - Final Nun</go1names>
+    <go2>לָ/כֵ֞ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Gereshayim - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Jer 9:6.1</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Jer 9:14.1</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Jer 11:11.1</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Jer 11:21.1</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Jer 11:22.1</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Jer 14:15.1</position>
+    <go1>לָכֵ֞ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Gereshayim - Final Nun</go1names>
+    <go2>לָ/כֵ֞ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Gereshayim - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Jer 15:19.1</position>
+    <go1>לָכֵ֞ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Gereshayim - Final Nun</go1names>
+    <go2>לָ/כֵ֞ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Gereshayim - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Jer 16:14.1</position>
+    <go1>לָכֵ֛ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Tevir - Final Nun</go1names>
+    <go2>לָ/כֵ֛ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Tevir - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Jer 16:21.1</position>
+    <go1>לָכֵן֙</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Final Nun - Pashta</go1names>
+    <go2>לָ/כֵן֙</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Final Nun - Pashta</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Jer 18:13.1</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Jer 18:21.1</position>
+    <go1>לָכֵן֩</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Final Nun - Telisha Qetana</go1names>
+    <go2>לָ/כֵן֩</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Final Nun - Telisha Qetana</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Jer 19:6.1</position>
+    <go1>לָכֵ֞ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Gereshayim - Final Nun</go1names>
+    <go2>לָ/כֵ֞ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Gereshayim - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Jer 22:18.1</position>
+    <go1>לָכֵ֞ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Gereshayim - Final Nun</go1names>
+    <go2>לָ/כֵ֞ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Gereshayim - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Jer 23:2.1</position>
+    <go1>לָ֠כֵן</go1>
+    <go1names>Lamed - Qamats - Telisha Gedola - Kaf - Tsere - Final Nun</go1names>
+    <go2>לָ֠/כֵן</go2>
+    <go2names>Lamed - Qamats - Telisha Gedola - Slash - Kaf - Tsere - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Jer 23:7.1</position>
+    <go1>לָכֵ֛ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Tevir - Final Nun</go1names>
+    <go2>לָ/כֵ֛ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Tevir - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Jer 23:12.1</position>
+    <go1>לָכֵן֩</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Final Nun - Telisha Qetana</go1names>
+    <go2>לָ/כֵן֩</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Final Nun - Telisha Qetana</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Jer 23:15.1</position>
+    <go1>לָכֵ֞ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Gereshayim - Final Nun</go1names>
+    <go2>לָ/כֵ֞ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Gereshayim - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Jer 23:30.1</position>
+    <go1>לָכֵ֛ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Tevir - Final Nun</go1names>
+    <go2>לָ/כֵ֛ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Tevir - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Jer 23:38.5</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Jer 23:39.1</position>
+    <go1>לָכֵ֣ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Munah - Final Nun</go1names>
+    <go2>לָ/כֵ֣ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Munah - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Jer 25:8.1</position>
+    <go1>לָכֵ֕ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Zaqef Gadol - Final Nun</go1names>
+    <go2>לָ/כֵ֕ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Zaqef Gadol - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Jer 28:16.1</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Jer 29:32.1</position>
+    <go1>לָכֵ֞ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Gereshayim - Final Nun</go1names>
+    <go2>לָ/כֵ֞ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Gereshayim - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Jer 30:16.1</position>
+    <go1>לָכֵ֞ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Gereshayim - Final Nun</go1names>
+    <go2>לָ/כֵ֞ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Gereshayim - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Jer 32:28.1</position>
+    <go1>לָכֵ֕ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Zaqef Gadol - Final Nun</go1names>
+    <go2>לָ/כֵ֕ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Zaqef Gadol - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Jer 32:36.2</position>
+    <go1>לָכֵ֛ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Tevir - Final Nun</go1names>
+    <go2>לָ/כֵ֛ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Tevir - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Jer 34:17.1</position>
+    <go1>לָכֵן֮</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Final Nun - Zinor</go1names>
+    <go2>לָ/כֵן֮</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Final Nun - Zinor</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Jer 35:17.1</position>
+    <go1>לָ֠כֵן</go1>
+    <go1names>Lamed - Qamats - Telisha Gedola - Kaf - Tsere - Final Nun</go1names>
+    <go2>לָ֠/כֵן</go2>
+    <go2names>Lamed - Qamats - Telisha Gedola - Slash - Kaf - Tsere - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Jer 35:19.1</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Jer 36:30.1</position>
+    <go1>לָכֵ֞ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Gereshayim - Final Nun</go1names>
+    <go2>לָ/כֵ֞ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Gereshayim - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Jer 37:7.6</position>
+    <go1>כֹּ֚ה</go1>
+    <go1names>Kaf - Dagesh - Holam - Yetiv - He</go1names>
+    <go2>כֹּ֤ה<x>c</x></go2>
+    <go2names>Kaf - Dagesh - Holam - Mahapakh - He</go2names>
+    <change>Accents are different. Different number of notes. A note, c, has been added.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Jer 42:15.2</position>
+    <go1>לָכֵ֛ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Tevir - Final Nun</go1names>
+    <go2>לָ/כֵ֛ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Tevir - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Jer 44:11.1</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Jer 44:26.1</position>
+    <go1>לָכֵן֙</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Final Nun - Pashta</go1names>
+    <go2>לָ/כֵן֙</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Final Nun - Pashta</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Jer 48:12.1</position>
+    <go1>לָכֵ֞ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Gereshayim - Final Nun</go1names>
+    <go2>לָ/כֵ֞ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Gereshayim - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Jer 49:2.1</position>
+    <go1>לָכֵ֡ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Pazer - Final Nun</go1names>
+    <go2>לָ/כֵ֡ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Pazer - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Jer 49:20.1</position>
+    <go1>לָכֵ֞ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Gereshayim - Final Nun</go1names>
+    <go2>לָ/כֵ֞ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Gereshayim - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Jer 49:26.1</position>
+    <go1>לָכֵ֛ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Tevir - Final Nun</go1names>
+    <go2>לָ/כֵ֛ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Tevir - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Jer 50:11.9</position>
+    <go1>כִּ֚י</go1>
+    <go1names>Kaf - Dagesh - Hiriq - Yetiv - Yod</go1names>
+    <go2>כִּ֤י</go2>
+    <go2names>Kaf - Dagesh - Hiriq - Mahapakh - Yod</go2names>
+    <change>Accents are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Jer 50:18.1</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Jer 50:30.1</position>
+    <go1>לָכֵ֛ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Tevir - Final Nun</go1names>
+    <go2>לָ/כֵ֛ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Tevir - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Jer 50:39.1</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Jer 50:45.1</position>
+    <go1>לָכֵ֞ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Gereshayim - Final Nun</go1names>
+    <go2>לָ/כֵ֞ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Gereshayim - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Jer 51:36.1</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Jer 51:47.1</position>
+    <go1>לָכֵן֙</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Final Nun - Pashta</go1names>
+    <go2>לָ/כֵן֙</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Final Nun - Pashta</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Jer 51:52.1</position>
+    <go1>לָכֵ֞ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Gereshayim - Final Nun</go1names>
+    <go2>לָ/כֵ֞ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Gereshayim - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>55</mdchange>
+    <accentchange>2</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>1</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Ezekiel</bookname>
+  <bookabbrev>Ezek</bookabbrev>
+  <firstbook>
+    <filename>Ezekiel</filename>
+    <version>4.8</version>
+    <date>30 July 2007</date>
+    <transcriptiondate>1 Jul 2007</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Ezekiel</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="true">
+    <position>Ezek 5:7.1</position>
+    <go1>לָכֵ֞ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Gereshayim - Final Nun</go1names>
+    <go2>לָ/כֵ֞ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Gereshayim - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 5:8.1</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 5:10.1</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 5:11.1</position>
+    <go1>לָכֵ֣ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Munah - Final Nun</go1names>
+    <go2>לָ/כֵ֣ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Munah - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 11:4.1</position>
+    <go1>לָכֵ֖ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Tipeha - Final Nun</go1names>
+    <go2>לָ/כֵ֖ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Tipeha - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 11:7.1</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 11:16.1</position>
+    <go1>לָכֵ֣ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Munah - Final Nun</go1names>
+    <go2>לָ/כֵ֣ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Munah - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 11:17.1</position>
+    <go1>לָכֵ֣ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Munah - Final Nun</go1names>
+    <go2>לָ/כֵ֣ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Munah - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 12:23.1</position>
+    <go1>לָכֵ֞ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Gereshayim - Final Nun</go1names>
+    <go2>לָ/כֵ֞ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Gereshayim - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 12:28.1</position>
+    <go1>לָכֵ֞ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Gereshayim - Final Nun</go1names>
+    <go2>לָ/כֵ֞ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Gereshayim - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 13:8.1</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 13:8.11</position>
+    <go1>לָכֵן֙</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Final Nun - Pashta</go1names>
+    <go2>לָ/כֵן֙</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Final Nun - Pashta</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 13:13.1</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 13:20.1</position>
+    <go1>לָכֵ֞ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Gereshayim - Final Nun</go1names>
+    <go2>לָ/כֵ֞ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Gereshayim - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 13:23.1</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 14:4.1</position>
+    <go1>לָכֵ֣ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Munah - Final Nun</go1names>
+    <go2>לָ/כֵ֣ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Munah - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 14:6.1</position>
+    <go1>לָכֵ֞ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Gereshayim - Final Nun</go1names>
+    <go2>לָ/כֵ֞ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Gereshayim - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 15:6.1</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 16:5.9</position>
+    <go1>לְ/חֻמְלָ֣/ה</go1>
+    <go1names>Lamed - Sheva - Slash - Het - Qubuts - Mem - Sheva - Lamed - Qamats - Munah - Slash - He</go1names>
+    <go2>לְ/חֻמְלָ֣ה</go2>
+    <go2names>Lamed - Sheva - Slash - Het - Qubuts - Mem - Sheva - Lamed - Qamats - Munah - He</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 16:35.1</position>
+    <go1>לָכֵ֣ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Munah - Final Nun</go1names>
+    <go2>לָ/כֵ֣ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Munah - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 16:37.1</position>
+    <go1>לָ֠כֵן</go1>
+    <go1names>Lamed - Qamats - Telisha Gedola - Kaf - Tsere - Final Nun</go1names>
+    <go2>לָ֠/כֵן</go2>
+    <go2names>Lamed - Qamats - Telisha Gedola - Slash - Kaf - Tsere - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 17:19.1</position>
+    <go1>לָכֵ֞ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Gereshayim - Final Nun</go1names>
+    <go2>לָ/כֵ֞ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Gereshayim - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 18:30.1</position>
+    <go1>לָכֵן֩</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Final Nun - Telisha Qetana</go1names>
+    <go2>לָ/כֵן֩</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Final Nun - Telisha Qetana</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 20:27.1</position>
+    <go1>לָכֵ֞ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Gereshayim - Final Nun</go1names>
+    <go2>לָ/כֵ֞ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Gereshayim - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 20:30.1</position>
+    <go1>לָכֵ֞ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Gereshayim - Final Nun</go1names>
+    <go2>לָ/כֵ֞ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Gereshayim - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 21:9.7</position>
+    <go1>לָ֠כֵן</go1>
+    <go1names>Lamed - Qamats - Telisha Gedola - Kaf - Tsere - Final Nun</go1names>
+    <go2>לָ֠/כֵן</go2>
+    <go2names>Lamed - Qamats - Telisha Gedola - Slash - Kaf - Tsere - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 21:17.19</position>
+    <go1>לָכֵ֖ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Tipeha - Final Nun</go1names>
+    <go2>לָ/כֵ֖ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Tipeha - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 21:29.1</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 22:19.1</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 22:19.10</position>
+    <go1>לָכֵן֙</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Final Nun - Pashta</go1names>
+    <go2>לָ/כֵן֙</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Final Nun - Pashta</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 23:9.1</position>
+    <go1>לָכֵ֥ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Merkha - Final Nun</go1names>
+    <go2>לָ/כֵ֥ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Merkha - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 23:22.1</position>
+    <go1>לָכֵ֣ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Munah - Final Nun</go1names>
+    <go2>לָ/כֵ֣ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Munah - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 23:35.1</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 24:6.1</position>
+    <go1>לָכֵ֞ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Gereshayim - Final Nun</go1names>
+    <go2>לָ/כֵ֞ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Gereshayim - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 24:9.1</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 25:4.1</position>
+    <go1>לָכֵ֡ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Pazer - Final Nun</go1names>
+    <go2>לָ/כֵ֡ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Pazer - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 25:7.1</position>
+    <go1>לָכֵ֡ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Pazer - Final Nun</go1names>
+    <go2>לָ/כֵ֡ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Pazer - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 25:9.1</position>
+    <go1>לָכֵן֩</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Final Nun - Telisha Qetana</go1names>
+    <go2>לָ/כֵן֩</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Final Nun - Telisha Qetana</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 25:13.1</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 25:16.1</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 26:3.1</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 28:6.1</position>
+    <go1>לָכֵ֕ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Zaqef Gadol - Final Nun</go1names>
+    <go2>לָ/כֵ֕ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Zaqef Gadol - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 28:7.1</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 29:8.1</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 29:10.1</position>
+    <go1>לָכֵ֛ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Tevir - Final Nun</go1names>
+    <go2>לָ/כֵ֛ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Tevir - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 29:19.1</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 30:22.1</position>
+    <go1>לָכֵ֞ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Gereshayim - Final Nun</go1names>
+    <go2>לָ/כֵ֞ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Gereshayim - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 31:10.1</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 33:25.1</position>
+    <go1>לָכֵן֩</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Final Nun - Telisha Qetana</go1names>
+    <go2>לָ/כֵן֩</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Final Nun - Telisha Qetana</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 34:7.1</position>
+    <go1>לָכֵ֣ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Munah - Final Nun</go1names>
+    <go2>לָ/כֵ֣ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Munah - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 34:9.1</position>
+    <go1>לָכֵן֙</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Final Nun - Pashta</go1names>
+    <go2>לָ/כֵן֙</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Final Nun - Pashta</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 34:20.1</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 35:6.1</position>
+    <go1>לָכֵ֣ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Munah - Final Nun</go1names>
+    <go2>לָ/כֵ֣ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Munah - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 35:11.1</position>
+    <go1>לָכֵ֣ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Munah - Final Nun</go1names>
+    <go2>לָ/כֵ֣ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Munah - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 36:3.1</position>
+    <go1>לָכֵן֙</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Final Nun - Pashta</go1names>
+    <go2>לָ/כֵן֙</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Final Nun - Pashta</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 36:4.1</position>
+    <go1>לָכֵן֙</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Final Nun - Pashta</go1names>
+    <go2>לָ/כֵן֙</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Final Nun - Pashta</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 36:5.1</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 36:6.1</position>
+    <go1>לָכֵ֕ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Zaqef Gadol - Final Nun</go1names>
+    <go2>לָ/כֵ֕ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Zaqef Gadol - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 36:7.1</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 36:14.1</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 36:22.1</position>
+    <go1>לָכֵ֞ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Gereshayim - Final Nun</go1names>
+    <go2>לָ/כֵ֞ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Gereshayim - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 37:12.1</position>
+    <go1>לָכֵן֩</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Final Nun - Telisha Qetana</go1names>
+    <go2>לָ/כֵן֩</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Final Nun - Telisha Qetana</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 38:14.1</position>
+    <go1>לָכֵן֙</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Final Nun - Pashta</go1names>
+    <go2>לָ/כֵן֙</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Final Nun - Pashta</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezek 39:25.1</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ezek 41:20.9</position>
+    <go1>הַׅהֵׅיׅכָֽׅלׅ׃<x>4</x></go1>
+    <go1names>He - Patah - Lower Dot - He - Tsere - Lower Dot - Yod - Lower Dot - Kaf - Qamats - Meteg - Lower Dot - Lamed - Lower Dot - Sof Pasuq</go1names>
+    <go2>הַׄהֵׄיׄכָֽׄלׄ׃<x>4</x></go2>
+    <go2names>He - Patah - Upper Dot - He - Tsere - Upper Dot - Yod - Upper Dot - Kaf - Qamats - Meteg - Upper Dot - Lamed - Upper Dot - Sof Pasuq</go2names>
+    <change>Accents are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ezek 46:22.13</position>
+    <go1>מְׅהֻׅקְׅצָׅעֽׅוֹׅתׅ׃<x>4</x></go1>
+    <go1names>Mem - Sheva - Lower Dot - He - Qubuts - Lower Dot - Qof - Sheva - Lower Dot - Tsadi - Qamats - Lower Dot - Ayin - Meteg - Lower Dot - Vav - Holam - Lower Dot - Tav - Lower Dot - Sof Pasuq</go1names>
+    <go2>מְׄהֻׄקְׄצָׄעֽׄוֹׄתׄ׃<x>4</x></go2>
+    <go2names>Mem - Sheva - Upper Dot - He - Qubuts - Upper Dot - Qof - Sheva - Upper Dot - Tsadi - Qamats - Upper Dot - Ayin - Meteg - Upper Dot - Vav - Holam - Upper Dot - Tav - Upper Dot - Sof Pasuq</go2names>
+    <change>Accents are different.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>64</mdchange>
+    <accentchange>2</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Hosea</bookname>
+  <bookabbrev>Hos</bookabbrev>
+  <firstbook>
+    <filename>Hosea</filename>
+    <version>4.8</version>
+    <date>30 July 2007</date>
+    <transcriptiondate>1 Jul 2007</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Hosea</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="true">
+    <position>Hos 2:8.1</position>
+    <go1>לָכֵ֛ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Tevir - Final Nun</go1names>
+    <go2>לָ/כֵ֛ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Tevir - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Hos 2:11.1</position>
+    <go1>לָכֵ֣ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Munah - Final Nun</go1names>
+    <go2>לָ/כֵ֣ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Munah - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Hos 2:16.1</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Hos 13:3.1</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>4</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Joel</bookname>
+  <bookabbrev>Joel</bookabbrev>
+  <firstbook>
+    <filename>Joel</filename>
+    <version>4.8</version>
+    <date>30 July 2007</date>
+    <transcriptiondate>1 Jul 2007</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Joel</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </secondbook>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Amos</bookname>
+  <bookabbrev>Am</bookabbrev>
+  <firstbook>
+    <filename>Amos</filename>
+    <version>4.8</version>
+    <date>30 July 2007</date>
+    <transcriptiondate>1 Jul 2007</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Amos</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="true">
+    <position>Am 3:11.1</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Am 4:12.1</position>
+    <go1>לָכֵ֕ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Zaqef Gadol - Final Nun</go1names>
+    <go2>לָ/כֵ֕ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Zaqef Gadol - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Am 5:11.1</position>
+    <go1>לָ֠כֵן</go1>
+    <go1names>Lamed - Qamats - Telisha Gedola - Kaf - Tsere - Final Nun</go1names>
+    <go2>לָ֠/כֵן</go2>
+    <go2names>Lamed - Qamats - Telisha Gedola - Slash - Kaf - Tsere - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Am 5:13.1</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Am 5:16.1</position>
+    <go1>לָ֠כֵן</go1>
+    <go1names>Lamed - Qamats - Telisha Gedola - Kaf - Tsere - Final Nun</go1names>
+    <go2>לָ֠/כֵן</go2>
+    <go2names>Lamed - Qamats - Telisha Gedola - Slash - Kaf - Tsere - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Am 6:7.1</position>
+    <go1>לָכֵ֛ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Tevir - Final Nun</go1names>
+    <go2>לָ/כֵ֛ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Tevir - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Am 7:17.1</position>
+    <go1>לָכֵ֞ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Gereshayim - Final Nun</go1names>
+    <go2>לָ/כֵ֞ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Gereshayim - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>7</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Obadiah</bookname>
+  <bookabbrev>Ob</bookabbrev>
+  <firstbook>
+    <filename>Obadiah</filename>
+    <version>4.8</version>
+    <date>30 July 2007</date>
+    <transcriptiondate>1 Jul 2007</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Obadiah</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </secondbook>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Jonah</bookname>
+  <bookabbrev>Jon</bookabbrev>
+  <firstbook>
+    <filename>Jonah</filename>
+    <version>4.8</version>
+    <date>30 July 2007</date>
+    <transcriptiondate>1 Jul 2007</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Jonah</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </secondbook>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Micah</bookname>
+  <bookabbrev>Mic</bookabbrev>
+  <firstbook>
+    <filename>Micah</filename>
+    <version>4.8</version>
+    <date>30 July 2007</date>
+    <transcriptiondate>1 Jul 2007</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Micah</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="true">
+    <position>Mic 1:14.1</position>
+    <go1>לָכֵן֙</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Final Nun - Pashta</go1names>
+    <go2>לָ/כֵן֙</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Final Nun - Pashta</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Mic 2:3.1</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Mic 2:5.1</position>
+    <go1>לָכֵן֙</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Final Nun - Pashta</go1names>
+    <go2>לָ/כֵן֙</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Final Nun - Pashta</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Mic 3:6.1</position>
+    <go1>לָכֵ֞ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Gereshayim - Final Nun</go1names>
+    <go2>לָ/כֵ֞ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Gereshayim - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Mic 3:12.1</position>
+    <go1>לָכֵן֙</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Final Nun - Pashta</go1names>
+    <go2>לָ/כֵן֙</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Final Nun - Pashta</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Mic 5:2.1</position>
+    <go1>לָכֵ֣ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Munah - Final Nun</go1names>
+    <go2>לָ/כֵ֣ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Munah - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>6</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Nahum</bookname>
+  <bookabbrev>Nah</bookabbrev>
+  <firstbook>
+    <filename>Nahum</filename>
+    <version>4.8</version>
+    <date>30 July 2007</date>
+    <transcriptiondate>1 Jul 2007</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Nahum</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </secondbook>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Habakkuk</bookname>
+  <bookabbrev>Hab</bookabbrev>
+  <firstbook>
+    <filename>Habakkuk</filename>
+    <version>4.8</version>
+    <date>30 July 2007</date>
+    <transcriptiondate>1 Jul 2007</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Habakkuk</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </secondbook>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Zephaniah</bookname>
+  <bookabbrev>Zeph</bookabbrev>
+  <firstbook>
+    <filename>Zephaniah</filename>
+    <version>4.8</version>
+    <date>30 July 2007</date>
+    <transcriptiondate>1 Jul 2007</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Zephaniah</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="true">
+    <position>Zeph 2:9.1</position>
+    <go1>לָכֵ֣ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Munah - Final Nun</go1names>
+    <go2>לָ/כֵ֣ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Munah - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Zeph 2:15.9</position>
+    <go1>וְ/אַפְסִ֣י</go1>
+    <go1names>Vav - Sheva - Slash - Alef - Patah - Pe - Sheva - Samekh - Hiriq - Munah - Yod</go1names>
+    <go2>וְ/אַפְסִ֣/י</go2>
+    <go2names>Vav - Sheva - Slash - Alef - Patah - Pe - Sheva - Samekh - Hiriq - Munah - Slash - Yod</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Zeph 3:8.1</position>
+    <go1>לָכֵ֤ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Mahapakh - Final Nun</go1names>
+    <go2>לָ/כֵ֤ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Mahapakh - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>3</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Haggai</bookname>
+  <bookabbrev>Hag</bookabbrev>
+  <firstbook>
+    <filename>Haggai</filename>
+    <version>4.8</version>
+    <date>30 July 2007</date>
+    <transcriptiondate>1 Jul 2007</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Haggai</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </secondbook>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Zechariah</bookname>
+  <bookabbrev>Zech</bookabbrev>
+  <firstbook>
+    <filename>Zechariah</filename>
+    <version>4.8</version>
+    <date>30 July 2007</date>
+    <transcriptiondate>1 Jul 2007</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Zechariah</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="true">
+    <position>Zech 1:16.1</position>
+    <go1>לָכֵ֞ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Gereshayim - Final Nun</go1names>
+    <go2>לָ/כֵ֞ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Gereshayim - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Zech 11:7.5</position>
+    <go1>לָכֵ֖ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Tipeha - Final Nun</go1names>
+    <go2>לָ/כֵ֖ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Tipeha - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>2</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Malachi</bookname>
+  <bookabbrev>Mal</bookabbrev>
+  <firstbook>
+    <filename>Malachi</filename>
+    <version>4.8</version>
+    <date>30 July 2007</date>
+    <transcriptiondate>1 Jul 2007</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Malachi</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </secondbook>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Psalms</bookname>
+  <bookabbrev>Ps</bookabbrev>
+  <firstbook>
+    <filename>Psalms</filename>
+    <version>4.8</version>
+    <date>30 July 2007</date>
+    <transcriptiondate>1 Jul 2007</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Psalms</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="true">
+    <position>Ps 16:9.1</position>
+    <go1>לָכֵ֤ן ׀</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Mahapakh - Final Nun - Space - Paseq</go1names>
+    <go2>לָ/כֵ֤ן ׀</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Mahapakh - Final Nun - Space - Paseq</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 27:13.1</position>
+    <go1>לׅׄוּלֵׅ֗ׄאׅׄ<x>4</x></go1>
+    <go1names>Lamed - Lower Dot - Upper Dot - Vav - Dagesh - Lamed - Tsere - Lower Dot - Revia - Upper Dot - Alef - Lower Dot - Upper Dot</go1names>
+    <go2>לׅׄוּלֵׅׄ֗אׅׄ<x>4</x></go2>
+    <go2names>Lamed - Upper Dot - Lower Dot - Vav - Dagesh - Lamed - Tsere - Upper Dot - Revia - Lower Dot - Alef - Upper Dot - Lower Dot</go2names>
+    <change>Accents are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 69:9.1</position>
+    <go1>מ֖וּזָר<x>1</x></go1>
+    <go1names>Mem - Tipeha - Vav - Dagesh - Zayin - Qamats - Resh</go1names>
+    <go2>מ֭וּזָר<x>c</x></go2>
+    <go2names>Mem - Dehi - Vav - Dagesh - Zayin - Qamats - Resh</go2names>
+    <change>Accents are different. A transcription note has been changed.  Note 1 becomes a note c.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ps 73:6.1</position>
+    <go1>לָ֭כֵן</go1>
+    <go1names>Lamed - Qamats - Dehi - Kaf - Tsere - Final Nun</go1names>
+    <go2>לָ֭/כֵן</go2>
+    <go2names>Lamed - Qamats - Dehi - Slash - Kaf - Tsere - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ps 73:10.1</position>
+    <go1>לָכֵ֤ן ׀</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Mahapakh - Final Nun - Space - Paseq</go1names>
+    <go2>לָ/כֵ֤ן ׀</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Mahapakh - Final Nun - Space - Paseq</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 77:18.4</position>
+    <go1>ק֖וֹל</go1>
+    <go1names>Qof - Tipeha - Vav - Holam - Lamed</go1names>
+    <go2>ק֭וֹל<x>c</x></go2>
+    <go2names>Qof - Dehi - Vav - Holam - Lamed</go2names>
+    <change>Accents are different. Different number of notes. A note, c, has been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 78:17.2</position>
+    <go1>ע֖וֹד</go1>
+    <go1names>Ayin - Tipeha - Vav - Holam - Dalet</go1names>
+    <go2>ע֭וֹד<x>c</x></go2>
+    <go2names>Ayin - Dehi - Vav - Holam - Dalet</go2names>
+    <change>Accents are different. Different number of notes. A note, c, has been added.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ps 78:21.1</position>
+    <go1>לָכֵ֤ן ׀</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Mahapakh - Final Nun - Space - Paseq</go1names>
+    <go2>לָ/כֵ֤ן ׀</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Mahapakh - Final Nun - Space - Paseq</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 87:1.2</position>
+    <go1>קֹ֖רַח</go1>
+    <go1names>Qof - Holam - Tipeha - Resh - Patah - Het</go1names>
+    <go2>קֹ֭רַח<x>c</x></go2>
+    <go2names>Qof - Holam - Dehi - Resh - Patah - Het</go2names>
+    <change>Accents are different. Different number of notes. A note, c, has been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 92:15.1</position>
+    <go1>ע֖וֹד</go1>
+    <go1names>Ayin - Tipeha - Vav - Holam - Dalet</go1names>
+    <go2>ע֭וֹד</go2>
+    <go2names>Ayin - Dehi - Vav - Holam - Dalet</go2names>
+    <change>Accents are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 94:9.2</position>
+    <go1>אֹ֖זֶן</go1>
+    <go1names>Alef - Holam - Tipeha - Zayin - Segol - Final Nun</go1names>
+    <go2>אֹ֭זֶן<x>c</x></go2>
+    <go2names>Alef - Holam - Dehi - Zayin - Segol - Final Nun</go2names>
+    <change>Accents are different. Different number of notes. A note, c, has been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 94:13.2</position>
+    <go1>ל֖וֹ</go1>
+    <go1names>Lamed - Tipeha - Vav - Holam</go1names>
+    <go2>ל֭וֹ<x>c</x></go2>
+    <go2names>Lamed - Dehi - Vav - Holam</go2names>
+    <change>Accents are different. Different number of notes. A note, c, has been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 97:11.1</position>
+    <go1>א֖וֹר</go1>
+    <go1names>Alef - Tipeha - Vav - Holam - Resh</go1names>
+    <go2>א֭וֹר<x>c</x></go2>
+    <go2names>Alef - Dehi - Vav - Holam - Resh</go2names>
+    <change>Accents are different. Different number of notes. A note, c, has been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 105:2.2</position>
+    <go1>ל֖וֹ</go1>
+    <go1names>Lamed - Tipeha - Vav - Holam</go1names>
+    <go2>ל֭וֹ<x>c</x></go2>
+    <go2names>Lamed - Dehi - Vav - Holam</go2names>
+    <change>Accents are different. Different number of notes. A note, c, has been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 106:46.4</position>
+    <go1>לִ֝פְנֵ֛י</go1>
+    <go1names>Lamed - Hiriq - Geresh Muqdam - Pe - Sheva - Nun - Tsere - Tevir - Yod</go1names>
+    <go2>לִ֝פְנֵ֗י</go2>
+    <go2names>Lamed - Hiriq - Geresh Muqdam - Pe - Sheva - Nun - Tsere - Revia - Yod</go2names>
+    <change>Accents are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 109:12.3</position>
+    <go1>ל֖וֹ</go1>
+    <go1names>Lamed - Tipeha - Vav - Holam</go1names>
+    <go2>ל֭וֹ<x>c</x></go2>
+    <go2names>Lamed - Dehi - Vav - Holam</go2names>
+    <change>Accents are different. Different number of notes. A note, c, has been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 109:19.2</position>
+    <go1>ל֖וֹ</go1>
+    <go1names>Lamed - Tipeha - Vav - Holam</go1names>
+    <go2>ל֭וֹ<x>c</x></go2>
+    <go2names>Lamed - Dehi - Vav - Holam</go2names>
+    <change>Accents are different. Different number of notes. A note, c, has been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 110:3.6</position>
+    <go1>קֹ֖דֶשׁ</go1>
+    <go1names>Qof - Holam - Tipeha - Dalet - Segol - Shin - Shin Dot</go1names>
+    <go2>קֹ֭דֶשׁ<x>c</x></go2>
+    <go2names>Qof - Holam - Dehi - Dalet - Segol - Shin - Shin Dot</go2names>
+    <change>Accents are different. Different number of notes. A note, c, has been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 111:10.6</position>
+    <go1>ט֖וֹב</go1>
+    <go1names>Tet - Tipeha - Vav - Holam - Bet</go1names>
+    <go2>ט֭וֹב<x>c</x></go2>
+    <go2names>Tet - Dehi - Vav - Holam - Bet</go2names>
+    <change>Accents are different. Different number of notes. A note, c, has been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 112:4.3</position>
+    <go1>א֖וֹר</go1>
+    <go1names>Alef - Tipeha - Vav - Holam - Resh</go1names>
+    <go2>א֭וֹר<x>c</x></go2>
+    <go2names>Alef - Dehi - Vav - Holam - Resh</go2names>
+    <change>Accents are different. Different number of notes. A note, c, has been added.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ps 119:119.6</position>
+    <go1>לָ֝כֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Geresh Muqdam - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ֝/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Geresh Muqdam - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 138:7.8</position>
+    <go1>אֹ֖יְבַי<x>1</x></go1>
+    <go1names>Alef - Holam - Tipeha - Yod - Sheva - Bet - Patah - Yod</go1names>
+    <go2>אֹ֭יְבַי<x>c</x></go2>
+    <go2names>Alef - Holam - Dehi - Yod - Sheva - Bet - Patah - Yod</go2names>
+    <change>Accents are different. A transcription note has been changed.  Note 1 becomes a note c.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Ps 147:1.4</position>
+    <go1>ט֖וֹב</go1>
+    <go1names>Tet - Tipeha - Vav - Holam - Bet</go1names>
+    <go2>ט֭וֹב</go2>
+    <go2names>Tet - Dehi - Vav - Holam - Bet</go2names>
+    <change>Accents are different.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>5</mdchange>
+    <accentchange>18</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>12</notechange>
+    <notevaluechange>2</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Proverbs</bookname>
+  <bookabbrev>Prov</bookabbrev>
+  <firstbook>
+    <filename>Proverbs</filename>
+    <version>4.8</version>
+    <date>30 July 2007</date>
+    <transcriptiondate>1 Jul 2007</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Proverbs</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="false">
+    <position>Prov 7:13.2</position>
+    <go1>בּ֖וֹ</go1>
+    <go1names>Bet - Dagesh - Tipeha - Vav - Holam</go1names>
+    <go2>בּ֭וֹ<x>c</x></go2>
+    <go2names>Bet - Dagesh - Dehi - Vav - Holam</go2names>
+    <change>Accents are different. Different number of notes. A note, c, has been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Prov 12:1.2</position>
+    <go1>מ֖וּסָר<x>1</x></go1>
+    <go1names>Mem - Tipeha - Vav - Dagesh - Samekh - Qamats - Resh</go1names>
+    <go2>מ֭וּסָר<x>c</x></go2>
+    <go2names>Mem - Dehi - Vav - Dagesh - Samekh - Qamats - Resh</go2names>
+    <change>Accents are different. A transcription note has been changed.  Note 1 becomes a note c.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Prov 12:18.2</position>
+    <go1>בּ֖וֹטֶה</go1>
+    <go1names>Bet - Dagesh - Tipeha - Vav - Holam - Tet - Segol - He</go1names>
+    <go2>בּ֭וֹטֶה<x>c</x></go2>
+    <go2names>Bet - Dagesh - Dehi - Vav - Holam - Tet - Segol - He</go2names>
+    <change>Accents are different. Different number of notes. A note, c, has been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Prov 15:31.2</position>
+    <go1>שֹׁ֖מַעַת<x>1</x></go1>
+    <go1names>Shin - Shin Dot - Holam - Tipeha - Mem - Patah - Ayin - Patah - Tav</go1names>
+    <go2>שֹׁ֭מַעַת<x>c</x></go2>
+    <go2names>Shin - Shin Dot - Holam - Dehi - Mem - Patah - Ayin - Patah - Tav</go2names>
+    <change>Accents are different. A transcription note has been changed.  Note 1 becomes a note c.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Prov 24:2.2</position>
+    <go1>שֹׁ֖ד</go1>
+    <go1names>Shin - Shin Dot - Holam - Tipeha - Dalet</go1names>
+    <go2>שֹׁ֭ד<x>c</x></go2>
+    <go2names>Shin - Shin Dot - Holam - Dehi - Dalet</go2names>
+    <change>Accents are different. Different number of notes. A note, c, has been added.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>5</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>3</notechange>
+    <notevaluechange>2</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Job</bookname>
+  <bookabbrev>Job</bookabbrev>
+  <firstbook>
+    <filename>Job</filename>
+    <version>4.8</version>
+    <date>30 July 2007</date>
+    <transcriptiondate>1 Jul 2007</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Job</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="false">
+    <position>Job 3:3.2</position>
+    <go1>י֖וֹם</go1>
+    <go1names>Yod - Tipeha - Vav - Holam - Final Mem</go1names>
+    <go2>י֭וֹם<x>c</x></go2>
+    <go2names>Yod - Dehi - Vav - Holam - Final Mem</go2names>
+    <change>Accents are different. Different number of notes. A note, c, has been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Job 8:16.2</position>
+    <go1>ה֖וּא</go1>
+    <go1names>He - Tipeha - Vav - Dagesh - Alef</go1names>
+    <go2>ה֭וּא<x>c</x></go2>
+    <go2names>He - Dehi - Vav - Dagesh - Alef</go2names>
+    <change>Accents are different. Different number of notes. A note, c, has been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Job 13:1.2</position>
+    <go1>כֹּ֖ל</go1>
+    <go1names>Kaf - Dagesh - Holam - Tipeha - Lamed</go1names>
+    <go2>כֹּ֭ל</go2>
+    <go2names>Kaf - Dagesh - Holam - Dehi - Lamed</go2names>
+    <change>Accents are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Job 15:29.2</position>
+    <go1>יֶ֖עְשַׁר</go1>
+    <go1names>Yod - Segol - Tipeha - Ayin - Sheva - Shin - Shin Dot - Patah - Resh</go1names>
+    <go2>יֶ֭עְשַׁר</go2>
+    <go2names>Yod - Segol - Dehi - Ayin - Sheva - Shin - Shin Dot - Patah - Resh</go2names>
+    <change>Accents are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Job 18:6.1</position>
+    <go1>א֖וֹר<x>1</x></go1>
+    <go1names>Alef - Tipeha - Vav - Holam - Resh</go1names>
+    <go2>א֭וֹר<x>c</x></go2>
+    <go2names>Alef - Dehi - Vav - Holam - Resh</go2names>
+    <change>Accents are different. A transcription note has been changed.  Note 1 becomes a note c.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Job 18:20.2</position>
+    <go1>י֖וֹמוֹ</go1>
+    <go1names>Yod - Tipeha - Vav - Holam - Mem - Vav - Holam</go1names>
+    <go2>י֭וֹמוֹ<x>c</x></go2>
+    <go2names>Yod - Dehi - Vav - Holam - Mem - Vav - Holam</go2names>
+    <change>Accents are different. Different number of notes. A note, c, has been added.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Job 20:2.1</position>
+    <go1>לָ֭כֵן</go1>
+    <go1names>Lamed - Qamats - Dehi - Kaf - Tsere - Final Nun</go1names>
+    <go2>לָ֭/כֵן</go2>
+    <go2names>Lamed - Qamats - Dehi - Slash - Kaf - Tsere - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Job 20:23.5</position>
+    <go1>בּ֖וֹ</go1>
+    <go1names>Bet - Dagesh - Tipeha - Vav - Holam</go1names>
+    <go2>בּ֭וֹ<x>c</x></go2>
+    <go2names>Bet - Dagesh - Dehi - Vav - Holam</go2names>
+    <change>Accents are different. Different number of notes. A note, c, has been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Job 22:14.3</position>
+    <go1>ל֖וֹ</go1>
+    <go1names>Lamed - Tipeha - Vav - Holam</go1names>
+    <go2>ל֭וֹ<x>c</x></go2>
+    <go2names>Lamed - Dehi - Vav - Holam</go2names>
+    <change>Accents are different. Different number of notes. A note, c, has been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Job 22:28.2</position>
+    <go1>א֖וֹמֶר</go1>
+    <go1names>Alef - Tipeha - Vav - Holam - Mem - Segol - Resh</go1names>
+    <go2>א֭וֹמֶר<x>c</x></go2>
+    <go2names>Alef - Dehi - Vav - Holam - Mem - Segol - Resh</go2names>
+    <change>Accents are different. Different number of notes. A note, c, has been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Job 23:6.2</position>
+    <go1>כֹּ֖חַ</go1>
+    <go1names>Kaf - Dagesh - Holam - Tipeha - Het - Patah</go1names>
+    <go2>כֹּ֭חַ<x>c</x></go2>
+    <go2names>Kaf - Dagesh - Holam - Dehi - Het - Patah</go2names>
+    <change>Accents are different. Different number of notes. A note, c, has been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Job 28:24.2</position>
+    <go1>ה֖וּא</go1>
+    <go1names>He - Tipeha - Vav - Dagesh - Alef</go1names>
+    <go2>ה֭וּא<x>c</x></go2>
+    <go2names>He - Dehi - Vav - Dagesh - Alef</go2names>
+    <change>Accents are different. Different number of notes. A note, c, has been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Job 30:18.2</position>
+    <go1>כֹּ֖חַ</go1>
+    <go1names>Kaf - Dagesh - Holam - Tipeha - Het - Patah</go1names>
+    <go2>כֹּ֭חַ<x>c</x></go2>
+    <go2names>Kaf - Dagesh - Holam - Dehi - Het - Patah</go2names>
+    <change>Accents are different. Different number of notes. A note, c, has been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Job 30:22.3</position>
+    <go1>ר֖וּחַ</go1>
+    <go1names>Resh - Tipeha - Vav - Dagesh - Het - Patah</go1names>
+    <go2>ר֭וּחַ<x>c</x></go2>
+    <go2names>Resh - Dehi - Vav - Dagesh - Het - Patah</go2names>
+    <change>Accents are different. Different number of notes. A note, c, has been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Job 31:4.2</position>
+    <go1>ה֖וּא</go1>
+    <go1names>He - Tipeha - Vav - Dagesh - Alef</go1names>
+    <go2>ה֭וּא<x>c</x></go2>
+    <go2names>He - Dehi - Vav - Dagesh - Alef</go2names>
+    <change>Accents are different. Different number of notes. A note, c, has been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Job 31:28.2</position>
+    <go1>ה֖וּא</go1>
+    <go1names>He - Tipeha - Vav - Dagesh - Alef</go1names>
+    <go2>ה֭וּא<x>c</x></go2>
+    <go2names>He - Dehi - Vav - Dagesh - Alef</go2names>
+    <change>Accents are different. Different number of notes. A note, c, has been added.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Job 32:10.1</position>
+    <go1>לָכֵ֣ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Munah - Final Nun</go1names>
+    <go2>לָ/כֵ֣ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Munah - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Job 34:10.1</position>
+    <go1>לָכֵ֤ן ׀</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Mahapakh - Final Nun - Space - Paseq</go1names>
+    <go2>לָ/כֵ֤ן ׀</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Mahapakh - Final Nun - Space - Paseq</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Job 34:19.8</position>
+    <go1>שׁ֖וֹעַ</go1>
+    <go1names>Shin - Shin Dot - Tipeha - Vav - Holam - Ayin - Patah</go1names>
+    <go2>שׁ֭וֹעַ<x>c</x></go2>
+    <go2names>Shin - Shin Dot - Dehi - Vav - Holam - Ayin - Patah</go2names>
+    <change>Accents are different. Different number of notes. A note, c, has been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Job 34:22.2</position>
+    <go1>חֹ֖שֶׁךְ</go1>
+    <go1names>Het - Holam - Tipeha - Shin - Shin Dot - Segol - Final Kaf - Sheva</go1names>
+    <go2>חֹ֭שֶׁךְ<x>c</x></go2>
+    <go2names>Het - Holam - Dehi - Shin - Shin Dot - Segol - Final Kaf - Sheva</go2names>
+    <change>Accents are different. Different number of notes. A note, c, has been added.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Job 34:25.1</position>
+    <go1>לָכֵ֗ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Revia - Final Nun</go1names>
+    <go2>לָ/כֵ֗ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Revia - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Job 35:14.3</position>
+    <go1>תֹ֖אמַר</go1>
+    <go1names>Tav - Holam - Tipeha - Alef - Mem - Patah - Resh</go1names>
+    <go2>תֹ֭אמַר<x>c</x></go2>
+    <go2names>Tav - Holam - Dehi - Alef - Mem - Patah - Resh</go2names>
+    <change>Accents are different. Different number of notes. A note, c, has been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Job 36:19.2</position>
+    <go1>שׁ֖וּעֲךָ</go1>
+    <go1names>Shin - Shin Dot - Tipeha - Vav - Dagesh - Ayin - Hataf Patah - Final Kaf - Qamats</go1names>
+    <go2>שׁ֭וּעֲךָ<x>c</x></go2>
+    <go2names>Shin - Shin Dot - Dehi - Vav - Dagesh - Ayin - Hataf Patah - Final Kaf - Qamats</go2names>
+    <change>Accents are different. Different number of notes. A note, c, has been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Job 37:19.1</position>
+    <go1>ה֖וֹדִיעֵנוּ</go1>
+    <go1names>He - Tipeha - Vav - Holam - Dalet - Hiriq - Yod - Ayin - Tsere - Nun - Vav - Dagesh</go1names>
+    <go2>ה֭וֹדִיעֵנוּ<x>c</x></go2>
+    <go2names>He - Dehi - Vav - Holam - Dalet - Hiriq - Yod - Ayin - Tsere - Nun - Vav - Dagesh</go2names>
+    <change>Accents are different. Different number of notes. A note, c, has been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Job 37:20.2</position>
+    <go1>ל֖וֹ</go1>
+    <go1names>Lamed - Tipeha - Vav - Holam</go1names>
+    <go2>ל֭וֹ<x>c</x></go2>
+    <go2names>Lamed - Dehi - Vav - Holam</go2names>
+    <change>Accents are different. Different number of notes. A note, c, has been added.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Job 37:24.1</position>
+    <go1>לָ֭כֵן</go1>
+    <go1names>Lamed - Qamats - Dehi - Kaf - Tsere - Final Nun</go1names>
+    <go2>לָ֭/כֵן</go2>
+    <go2names>Lamed - Qamats - Dehi - Slash - Kaf - Tsere - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Job 39:11.2</position>
+    <go1>בּ֖וֹ</go1>
+    <go1names>Bet - Dagesh - Tipeha - Vav - Holam</go1names>
+    <go2>בּ֭וֹ<x>c</x></go2>
+    <go2names>Bet - Dagesh - Dehi - Vav - Holam</go2names>
+    <change>Accents are different. Different number of notes. A note, c, has been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Job 39:12.2</position>
+    <go1>בּ֖וֹ</go1>
+    <go1names>Bet - Dagesh - Tipeha - Vav - Holam</go1names>
+    <go2>בּ֭וֹ<x>c</x></go2>
+    <go2names>Bet - Dagesh - Dehi - Vav - Holam</go2names>
+    <change>Accents are different. Different number of notes. A note, c, has been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Job 40:19.1</position>
+    <go1>ה֖וּא</go1>
+    <go1names>He - Tipeha - Vav - Dagesh - Alef</go1names>
+    <go2>ה֭וּא<x>c</x></go2>
+    <go2names>He - Dehi - Vav - Dagesh - Alef</go2names>
+    <change>Accents are different. Different number of notes. A note, c, has been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Job 40:29.2</position>
+    <go1>בּ֖וֹ</go1>
+    <go1names>Bet - Dagesh - Tipeha - Vav - Holam</go1names>
+    <go2>בּ֭וֹ<x>c</x></go2>
+    <go2names>Bet - Dagesh - Dehi - Vav - Holam</go2names>
+    <change>Accents are different. Different number of notes. A note, c, has been added.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Job 42:3.7</position>
+    <go1>לָכֵ֣ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Munah - Final Nun</go1names>
+    <go2>לָ/כֵ֣ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Munah - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>6</mdchange>
+    <accentchange>25</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>22</notechange>
+    <notevaluechange>1</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Song of Songs</bookname>
+  <bookabbrev>Song</bookabbrev>
+  <firstbook>
+    <filename>Song_of_Songs</filename>
+    <version>4.8</version>
+    <date>30 July 2007</date>
+    <transcriptiondate>1 Jul 2007</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Song_of_Songs</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="true">
+    <position>Song 6:12.6</position>
+    <go1>עַמִּ/י־</go1>
+    <go1names>Ayin - Patah - Mem - Dagesh - Hiriq - Slash - Yod - Maqaf</go1names>
+    <go2>עַמִּי־</go2>
+    <go2names>Ayin - Patah - Mem - Dagesh - Hiriq - Yod - Maqaf</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>1</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Ruth</bookname>
+  <bookabbrev>Ruth</bookabbrev>
+  <firstbook>
+    <filename>Ruth</filename>
+    <version>4.8</version>
+    <date>30 July 2007</date>
+    <transcriptiondate>1 Jul 2007</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Ruth</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="false">
+    <position>Ruth 3:4.19</position>
+    <go1>תַּעֲשִֽׂין׃</go1>
+    <go1names>Tav - Dagesh - Patah - Ayin - Hataf Patah - Shin - Sin Dot - Hiriq - Meteg - Yod - Final Nun - Sof Pasuq</go1names>
+    <go2>תַּעַשִֽׂין׃<x>3</x></go2>
+    <go2names>Tav - Dagesh - Patah - Ayin - Patah - Shin - Sin Dot - Hiriq - Meteg - Yod - Final Nun - Sof Pasuq</go2names>
+    <change>Vowels are different. Different number of notes. A note, 3, has been added.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>1</vowelchange>
+    <notechange>1</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Lamentations</bookname>
+  <bookabbrev>Lam</bookabbrev>
+  <firstbook>
+    <filename>Lamentations</filename>
+    <version>4.8</version>
+    <date>30 July 2007</date>
+    <transcriptiondate>1 Jul 2007</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Lamentations</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </secondbook>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Ecclesiastes</bookname>
+  <bookabbrev>Eccl</bookabbrev>
+  <firstbook>
+    <filename>Ecclesiastes</filename>
+    <version>4.8</version>
+    <date>30 July 2007</date>
+    <transcriptiondate>1 Jul 2007</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Ecclesiastes</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </secondbook>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Esther</bookname>
+  <bookabbrev>Esth</bookabbrev>
+  <firstbook>
+    <filename>Esther</filename>
+    <version>4.8</version>
+    <date>30 July 2007</date>
+    <transcriptiondate>1 Jul 2007</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Esther</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </secondbook>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Daniel</bookname>
+  <bookabbrev>Dan</bookabbrev>
+  <firstbook>
+    <filename>Daniel</filename>
+    <version>4.8</version>
+    <date>30 July 2007</date>
+    <transcriptiondate>1 Jul 2007</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Daniel</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="true">
+    <position>Dan 2:8.12</position>
+    <go1>כָּל־</go1>
+    <go1names>Kaf - Dagesh - Qamats - Lamed - Maqaf</go1names>
+    <go2>כָּ/ל־</go2>
+    <go2names>Kaf - Dagesh - Qamats - Slash - Lamed - Maqaf</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Dan 2:10.17</position>
+    <go1>כָּל־</go1>
+    <go1names>Kaf - Dagesh - Qamats - Lamed - Maqaf</go1names>
+    <go2>כָּ/ל־</go2>
+    <go2names>Kaf - Dagesh - Qamats - Slash - Lamed - Maqaf</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Dan 2:12.1</position>
+    <go1>כָּל־</go1>
+    <go1names>Kaf - Dagesh - Qamats - Lamed - Maqaf</go1names>
+    <go2>כָּ/ל־</go2>
+    <go2names>Kaf - Dagesh - Qamats - Slash - Lamed - Maqaf</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Dan 2:24.1</position>
+    <go1>כָּל־</go1>
+    <go1names>Kaf - Dagesh - Qamats - Lamed - Maqaf</go1names>
+    <go2>כָּ/ל־</go2>
+    <go2names>Kaf - Dagesh - Qamats - Slash - Lamed - Maqaf</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Dan 2:40.7</position>
+    <go1>כָּל־</go1>
+    <go1names>Kaf - Dagesh - Qamats - Lamed - Maqaf</go1names>
+    <go2>כָּ/ל־</go2>
+    <go2names>Kaf - Dagesh - Qamats - Slash - Lamed - Maqaf</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Dan 2:41.22</position>
+    <go1>כָּל־</go1>
+    <go1names>Kaf - Dagesh - Qamats - Lamed - Maqaf</go1names>
+    <go2>כָּ/ל־</go2>
+    <go2names>Kaf - Dagesh - Qamats - Slash - Lamed - Maqaf</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Dan 2:45.1</position>
+    <go1>כָּל־</go1>
+    <go1names>Kaf - Dagesh - Qamats - Lamed - Maqaf</go1names>
+    <go2>כָּ/ל־</go2>
+    <go2names>Kaf - Dagesh - Qamats - Slash - Lamed - Maqaf</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Dan 3:7.1</position>
+    <go1>כָּל־</go1>
+    <go1names>Kaf - Dagesh - Qamats - Lamed - Maqaf</go1names>
+    <go2>כָּ/ל־</go2>
+    <go2names>Kaf - Dagesh - Qamats - Slash - Lamed - Maqaf</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Dan 3:8.1</position>
+    <go1>כָּל־</go1>
+    <go1names>Kaf - Dagesh - Qamats - Lamed - Maqaf</go1names>
+    <go2>כָּ/ל־</go2>
+    <go2names>Kaf - Dagesh - Qamats - Slash - Lamed - Maqaf</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Dan 3:22.1</position>
+    <go1>כָּל־</go1>
+    <go1names>Kaf - Dagesh - Qamats - Lamed - Maqaf</go1names>
+    <go2>כָּ/ל־</go2>
+    <go2names>Kaf - Dagesh - Qamats - Slash - Lamed - Maqaf</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Dan 3:29.25</position>
+    <go1>כָּל־</go1>
+    <go1names>Kaf - Dagesh - Qamats - Lamed - Maqaf</go1names>
+    <go2>כָּ/ל־</go2>
+    <go2names>Kaf - Dagesh - Qamats - Slash - Lamed - Maqaf</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Dan 4:15.12</position>
+    <go1>כָּל־</go1>
+    <go1names>Kaf - Dagesh - Qamats - Lamed - Maqaf</go1names>
+    <go2>כָּ/ל־</go2>
+    <go2names>Kaf - Dagesh - Qamats - Slash - Lamed - Maqaf</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Dan 5:12.1</position>
+    <go1>כָּל־</go1>
+    <go1names>Kaf - Dagesh - Qamats - Lamed - Maqaf</go1names>
+    <go2>כָּ/ל־</go2>
+    <go2names>Kaf - Dagesh - Qamats - Slash - Lamed - Maqaf</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Dan 5:22.8</position>
+    <go1>כָּל־</go1>
+    <go1names>Kaf - Dagesh - Qamats - Lamed - Maqaf</go1names>
+    <go2>כָּ/ל־</go2>
+    <go2names>Kaf - Dagesh - Qamats - Slash - Lamed - Maqaf</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Dan 6:4.9</position>
+    <go1>כָּל־</go1>
+    <go1names>Kaf - Dagesh - Qamats - Lamed - Maqaf</go1names>
+    <go2>כָּ/ל־</go2>
+    <go2names>Kaf - Dagesh - Qamats - Slash - Lamed - Maqaf</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Dan 6:5.17</position>
+    <go1>כָּל־</go1>
+    <go1names>Kaf - Dagesh - Qamats - Lamed - Maqaf</go1names>
+    <go2>כָּ/ל־</go2>
+    <go2names>Kaf - Dagesh - Qamats - Slash - Lamed - Maqaf</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Dan 6:10.1</position>
+    <go1>כָּל־</go1>
+    <go1names>Kaf - Dagesh - Qamats - Lamed - Maqaf</go1names>
+    <go2>כָּ/ל־</go2>
+    <go2names>Kaf - Dagesh - Qamats - Slash - Lamed - Maqaf</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Dan 6:11.26</position>
+    <go1>כָּל־</go1>
+    <go1names>Kaf - Dagesh - Qamats - Lamed - Maqaf</go1names>
+    <go2>כָּ/ל־</go2>
+    <go2names>Kaf - Dagesh - Qamats - Slash - Lamed - Maqaf</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Dan 6:23.9</position>
+    <go1>כָּל־</go1>
+    <go1names>Kaf - Dagesh - Qamats - Lamed - Maqaf</go1names>
+    <go2>כָּ/ל־</go2>
+    <go2names>Kaf - Dagesh - Qamats - Slash - Lamed - Maqaf</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>19</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Ezra</bookname>
+  <bookabbrev>Ezra</bookabbrev>
+  <firstbook>
+    <filename>Ezra</filename>
+    <version>4.8</version>
+    <date>30 July 2007</date>
+    <transcriptiondate>1 Jul 2007</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Ezra</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="true">
+    <position>Ezra 4:14.2</position>
+    <go1>כָּל־</go1>
+    <go1names>Kaf - Dagesh - Qamats - Lamed - Maqaf</go1names>
+    <go2>כָּ/ל־</go2>
+    <go2names>Kaf - Dagesh - Qamats - Slash - Lamed - Maqaf</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezra 7:14.1</position>
+    <go1>כָּל־</go1>
+    <go1names>Kaf - Dagesh - Qamats - Lamed - Maqaf</go1names>
+    <go2>כָּ/ל־</go2>
+    <go2names>Kaf - Dagesh - Qamats - Slash - Lamed - Maqaf</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>Ezra 7:17.1</position>
+    <go1>כָּל־</go1>
+    <go1names>Kaf - Dagesh - Qamats - Lamed - Maqaf</go1names>
+    <go2>כָּ/ל־</go2>
+    <go2names>Kaf - Dagesh - Qamats - Slash - Lamed - Maqaf</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>3</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Nehemiah</bookname>
+  <bookabbrev>Neh</bookabbrev>
+  <firstbook>
+    <filename>Nehemiah</filename>
+    <version>4.8</version>
+    <date>30 July 2007</date>
+    <transcriptiondate>1 Jul 2007</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Nehemiah</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="true">
+    <position>Neh 12:39.6</position>
+    <go1>הַ/יְשָׁנָ֜ה</go1>
+    <go1names>He - Patah - Slash - Yod - Sheva - Shin - Shin Dot - Qamats - Nun - Qamats - Geresh - He</go1names>
+    <go2>הַיְשָׁנָ֜ה</go2>
+    <go2names>He - Patah - Yod - Sheva - Shin - Shin Dot - Qamats - Nun - Qamats - Geresh - He</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>1</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>1 Chronicles</bookname>
+  <bookabbrev>1 Chr</bookabbrev>
+  <firstbook>
+    <filename>Chronicles_1</filename>
+    <version>4.8</version>
+    <date>30 July 2007</date>
+    <transcriptiondate>1 Jul 2007</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Chronicles_1</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="false">
+    <position>1 Chr 11:20.4</position>
+    <go1>ה֚וּא</go1>
+    <go1names>He - Yetiv - Vav - Dagesh - Alef</go1names>
+    <go2>ה֤וּא<x>c</x></go2>
+    <go2names>He - Mahapakh - Vav - Dagesh - Alef</go2names>
+    <change>Accents are different. Different number of notes. A note, c, has been added.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>1</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>1</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>2 Chronicles</bookname>
+  <bookabbrev>2 Chr</bookabbrev>
+  <firstbook>
+    <filename>Chronicles_2</filename>
+    <version>4.8</version>
+    <date>30 July 2007</date>
+    <transcriptiondate>1 Jul 2007</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Chronicles_2</filename>
+    <version>4.10</version>
+    <date>1 Jul 2008</date>
+    <transcriptiondate>12 Aug 2008</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="true">
+    <position>2 Chr 18:18.2</position>
+    <go1>לָכֵ֖ן</go1>
+    <go1names>Lamed - Qamats - Kaf - Tsere - Tipeha - Final Nun</go1names>
+    <go2>לָ/כֵ֖ן</go2>
+    <go2names>Lamed - Qamats - Slash - Kaf - Tsere - Tipeha - Final Nun</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="true">
+    <position>2 Chr 28:15.25</position>
+    <go1>הַתְּמָרִ֖ים</go1>
+    <go1names>He - Patah - Tav - Dagesh - Sheva - Mem - Qamats - Resh - Hiriq - Tipeha - Yod - Final Mem</go1names>
+    <go2>הַ/תְּמָרִ֖ים</go2>
+    <go2names>He - Patah - Slash - Tav - Dagesh - Sheva - Mem - Qamats - Resh - Hiriq - Tipeha - Yod - Final Mem</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>2 Chr 30:6.15</position>
+    <go1>שׁ֤וּבוּ<x>1</x></go1>
+    <go1names>Shin - Shin Dot - Mahapakh - Vav - Dagesh - Bet - Vav - Dagesh</go1names>
+    <go2>שׁ֚וּבוּ<x>c</x></go2>
+    <go2names>Shin - Shin Dot - Yetiv - Vav - Dagesh - Bet - Vav - Dagesh</go2names>
+    <change>Accents are different. A transcription note has been changed.  Note 1 becomes a note c.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>2</mdchange>
+    <accentchange>1</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>1</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<summary>
+  <books>39</books>
+  <invalidgo1>0</invalidgo1>
+  <invalidgo2>0</invalidgo2>
+  <differentword>0</differentword>
+  <mdchange>244</mdchange>
+  <accentchange>71</accentchange>
+  <vowelchange>4</vowelchange>
+  <notechange>46</notechange>
+  <notevaluechange>7</notevaluechange>
+  <gocountchange>0</gocountchange>
+</summary>
+</Differences>

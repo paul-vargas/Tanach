@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsl:stylesheet version="1.0"  xmlns:xsl="http://www.w3.org/1999/XSL/Transform" >
+<xsl:output method="html"/>
+<xsl:strip-space elements="*"/>
+<!--========================================================================-->
+<!--========================================================================-->
+<!-- Copyright C.V.Kimball 2006                                            -->
+<!--
+
+           XSLT file for all DH marking files, i.e.
+           DHSpecification.Genesis.xml in the DH subdirectory.
+
+-->
+<!--========================================================================-->
+<!--========================================================================-->
+<!--*** 1 ***  
+                   User specifiable constants (Use care!)
+                                                                            -->
+<!-- Variable xsldate is the date of this xsl file.                         -->
+<xsl:variable name="xsldate">13 Dec 2009</xsl:variable>  
+<!-- Variable build is the build date of the complete site as set by ant.   -->
+<xsl:variable name="build">25.1</xsl:variable>  
+
+<!-- Color for emphasized text.                                             -->
+<xsl:variable name="emphasiscolor">black</xsl:variable> 
+
+<!-- Color for de-emphasized text.                                          -->
+<xsl:variable name="deemphasiscolor">gray</xsl:variable> 
+<!-- English font size controlled from fontsize through JavaScript          -->
+
+<xsl:variable name="Englishfontsize">20</xsl:variable>
+
+<!-- Variable fontfamily gives the family name of the Hebrew fonts.         -->
+<xsl:variable name="fontfamily" >SBL Hebrew</xsl:variable> 
+
+<!-- Word for DH legend.                                                    -->
+<xsl:variable name="testword">&#x05d0;&#x05b6;&#x05ea;</xsl:variable>  
+
+<!-- Variable fontsize gives the size of the fonts in points.               -->
+<xsl:variable name="fontsize">20</xsl:variable> 
+ 
+<!-- The file name of the file containing the page background.              -->
+<xsl:variable name="background">http://www.tanach.us/Background</xsl:variable>
+
+<!-- Variable creativecommons is a URL pointing to the CreativeCommons.gif file. -->
+<xsl:variable name="creativecommons">http://www.tanach.us/Images/CreativeCommons.gif</xsl:variable>  
+
+<!-- The background color if the background file isn't available.           -->
+<xsl:variable name="bgcolor">#FFFFF8</xsl:variable>
+
+<!-- The MIME type of the favicon icon.           -->
+<xsl:variable name="icontype">image.x-icon</xsl:variable>
+
+<!-- URL of the favicon icon.           -->
+<xsl:variable name="iconURL">http://www.tanach.us/Images/TanachIcon.ico</xsl:variable>
+<!--========================================================================-->
+<!--========================================================================-->
+<!--
+
+           Templates for /Marking files.
+           
+                                                                            -->
+<!--========================================================================-->
+<xsl:template match="/Marking" >
+<!-- Variable markcount gives the number of marks applied.                  -->
+<xsl:variable name="markcount" select="count(/Marking/DHbook/marking/marks/mark)"/>
+<!-- Font for Hebrew text                                                   -->
+<xsl:variable name="fontfamily">SBL Hebrew</xsl:variable>
+<!-- Font for English text                                                   -->
+<xsl:variable name="englishfontfamily">Times New Roman</xsl:variable>
+
+<html>
+<header profile="http://www.w3.org/2005/11/profile" > 
+  <link rel="icon" type="{$icontype}" href="{$iconURL}"/>
+  <title>DH markings for 
+    <xsl:value-of select="/Marking/DHbook/names/name"/>
+  </title>
+<!-- Force the default font so that the site looks the same on all systems.  -->
+  <style>
+     body {font-family:{$englishfontfamily} }
+  </style>    
+</header>
+<body style="background-image:url('{$background}');margin-right:10pt; 
+              margin-left:10pt; margin-top:10pt; margin-bottom:0">
+
+<xsl:for-each select="/Marking/DHheader">    
+
+<table align="center">
+    <tr><td align="center">
+         <span style="font-family:{$englishfontfamily};font-size:12pt">
+             <xsl:value-of select="title"/></span>    
+    </td></tr>
+    <tr><td align="center">
+            <span style="font-size:250%;font-weight:bold">
+            <xsl:value-of select= "/Marking/DHheader/name"/><xsl:text>  -  </xsl:text></span>
+               <span  style="font-family:{$fontfamily};font-size:250%">
+                   <xsl:value-of select= "/Marking/DHbook/names/hebrewname"/> </span>
+    </td></tr>
+    <tr><td align="center">
+        <span style="font-family:{$englishfontfamily};font-size:12pt">
+            <xsl:value-of select="shortdescription"/></span></td></tr>
+    <tr><td align="center">
+    <span style="font-family:{$englishfontfamily};font-size:12pt">
+        <xsl:text>[</xsl:text><xsl:value-of select="date"/>
+        <xsl:text>]</xsl:text></span>
+    </td></tr>
+    </table>    
+</xsl:for-each>
+<h4>Marking information:</h4>
+<table align="center" border="1" cellpadding="5" width="70%">
+  <tr>
+    <td>
+      <table>
+        <tr>
+          <th align="left">
+            Title: <xsl:value-of select="/Marking/DHbook/marking/title"/>
+          </th>
+        </tr>
+        <tr>
+          <td>
+            Shorttitle: <xsl:value-of select="/Marking/DHbook/marking/shorttitle"/>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Description: <xsl:value-of select="/Marking/DHbook/marking/description"/>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Date: <xsl:value-of select="/Marking/DHbook/marking/date"/>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<p/>
+<hr/>
+<!--========================================================================-->
+<center>
+<h2>
+Marks
+</h2>
+</center>
+<p/>
+<table align="center" width="90%" border="1">
+  <tr>
+  <xsl:for-each select="/Marking/DHbook/marking/marks/mark">
+    <th align="center" ><xsl:value-of select="label"/></th>
+  </xsl:for-each>
+  </tr>
+  <tr>
+    <xsl:for-each select="/Marking/DHbook/marking/marks/mark">
+      <td align="left">Code: <xsl:value-of select="code"/></td>
+    </xsl:for-each>
+  </tr>
+  <tr>
+    <xsl:for-each select="/Marking/DHbook/marking/marks/mark">
+      <td align="left" ><xsl:value-of select="description"/></td>
+    </xsl:for-each>
+  </tr>
+  <tr>
+    <xsl:for-each select="/Marking/DHbook/marking/marks/mark">
+      <td align="left" >Color: <xsl:value-of select="color"/></td>
+    </xsl:for-each>
+  </tr>
+  <tr>
+    <xsl:for-each select="/Marking/DHbook/marking/marks/mark">
+      <td align="left" >Weight: <xsl:value-of select="style"/></td>
+    </xsl:for-each>
+  </tr>
+  <tr>
+    <xsl:for-each select="/Marking/DHbook/marking/marks/mark">
+      <td align="left" >Relative font size: <xsl:value-of select="relativesize"/></td>
+    </xsl:for-each>
+  </tr>
+  <tr>
+    <xsl:for-each select="/Marking/DHbook/marking/marks/mark">
+      <td align="left" >Background color: <xsl:value-of select="backgroundcolor"/></td>
+    </xsl:for-each>
+  </tr>
+  <tr>
+    <xsl:for-each select="/Marking/DHbook/marking/marks/mark">
+      <td align="left" >Text decoration: <xsl:value-of select="textdecoration"/></td>
+    </xsl:for-each>
+  </tr>
+  <tr>
+    <xsl:for-each select="/Marking/DHbook/marking/marks/mark">
+      <td align="center" >
+        <span style="font-size:{$Englishfontsize}pt;font-weight:bold">
+          <xsl:value-of select="label"/>:
+        </span> 
+        <xsl:variable name="size" select="$fontsize*relativesize"/>
+        <span style="font-weight:{style}; text-decoration:{textdecoration};font-family:{$fontfamily};font-size:{$size}pt;color:{color};background-color:{backgroundcolor}">
+          <xsl:value-of select="$testword"/>
+        </span>
+      </td>
+    </xsl:for-each>
+  </tr>
+</table>
+<p/>
+<hr/>
+<!--========================================================================-->
+<center>
+<h2>
+Text markings
+</h2>
+</center>
+<table align="center" width="90%" border="1">
+  <tr>
+    <th align="center" colspan="{$markcount}">
+      Marks </th>
+  </tr>
+  <tr>
+  <xsl:for-each select="/Marking/DHbook/marking/marks/mark">
+    <th align="center" ><xsl:value-of select="label"/></th>
+  </xsl:for-each>
+  </tr>
+  <tr>
+    <xsl:for-each select="/Marking/DHbook/marking/marks/mark">
+      <xsl:variable name="currentmark" select="code"/>
+      <td valign="top">
+        <xsl:for-each select="/Marking/excerpts/excerpt[./source=$currentmark]">
+          <b><xsl:value-of select="range"/></b>
+          <xsl:if test="not(position()=last())">
+            <b><xsl:text>, </xsl:text><br/></b>
+          </xsl:if>
+          <xsl:if test="position()=last()">
+              <b><xsl:text>.</xsl:text><br/></b>
+          </xsl:if>
+        </xsl:for-each>
+      </td>
+    </xsl:for-each>
+  </tr>
+</table>
+<p/>
+<hr/>
+<!--========================================================================-->
+<center>
+<h2>
+Text markings with special notes
+</h2>
+</center>
+<table align="center" width="90%" border="1">
+<tr>
+  <th align="center" width="20%">
+    <b>Excerpt</b>
+  </th>
+  <th align="center" width="80%">
+    <b>Note</b>
+  </th>
+</tr>
+<xsl:for-each select="/Marking/excerpts/excerpt">
+  <xsl:if test="not(./note='')">
+    <tr>
+      <td>
+        <b>
+          <xsl:value-of select="./range"/>
+        </b>
+      </td>
+      <td>
+          <xsl:value-of select="./note"/>
+      </td>
+    </tr>
+  </xsl:if>
+</xsl:for-each>
+</table>
+<!--========================================================================-->
+<p/>
+<hr/>
+<h4>Range marking formats:</h4>
+<table align="center" width="50%" border="1" >
+<tr><td><b>C:V.W - C.V.W</b></td><td><b>Full specification</b></td></tr>
+<tr><td><b>C:V - C.V</b></td><td><b>Chapter verse range</b></td></tr>
+<tr><td><b>C:V - V</b></td><td><b>Verse range</b></td></tr>
+<tr><td><b>C:V</b></td><td><b>Single verse</b></td></tr>
+</table>
+<p/>
+The position of the last word in any verse can be specified by 99.
+
+<xsl:call-template name="PageFooter">
+  <xsl:with-param name="license" select="'../License.html'"/>
+  <xsl:with-param name="xmldate" select="/Marking/DHheader/date"/>
+  </xsl:call-template>
+</body>
+</html>
+</xsl:template>
+<!--========================================================================-->
+
+<!-- Template to end descriptive pages. -->
+
+<!--========================================================================-->
+<xsl:template name="PageFooter">
+  <xsl:param name="xmldate" select="'XML date not available'"/>   
+  <xsl:param name="license" select="'License.html'"/>   
+<p/>
+<table width="100%">
+  <tr>
+    <td align="left">      
+      <a  title="License information." href="{$license}" alt="License information">
+        <img src="{$creativecommons}" alt="License information" border="0"/>
+      </a>
+    </td>
+    <td align="right">
+      <b>
+        <a title="Build number."><xsl:value-of select="$build"/></a>
+      </b>
+    </td>
+  </tr>
+</table>
+<hr/>
+</xsl:template>
+</xsl:stylesheet>
+<!--========================================================================-->
+<!--========================================================================-->

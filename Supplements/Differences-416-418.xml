@@ -1,0 +1,1363 @@
+<?xml version = "1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="XSL/Differences.xsl.xml"?>
+<!-- Copyright C.V.Kimball 2013 -->
+<Differences>
+<header>
+  <title>Differences between versions of the Westminster Leningrad Codex</title>
+  <description>Two versions of the Westminster Leningrad Codex (WLC), in the format of the Unicode/XML Tanach, are compared, looking for any differences between them. The basic element of the Unicode/XML Tanach is the Graphical Object, or GO. GOs have 6 types: w, a single word; q, a word representing a qere variant; k, a word representing a ketib variant; pe, an empty tag representing an open paragraph marker; samekh, an empty tag representing a closed paragraph marker, reversednun, an empty tag representing a reversed nun. w, q, and k type GOs contain Unicode Hebrew text with consonants, vowels, accents, morphological division marks (/), blanks, and the Unicode Zero Width Joiner.  Any other content is invalid in these tags. Any GO may have a transcription note associated with it. The comparison is (normally) made between corresponding GOs from the two different versions. Each pair of GOs is examined for changes in morphological divisions, accents, vowels, consonants and notes and the results are indexed in the format Book C:V.GO, where Book is the book, C is the chapter, V is the verse, and GO is the index of the GO in the verse. All indices, C, V, and GO start with 1. Very infrequently, changes in the text produce different numbers of GOs in a given chapter and verse.  In this case, the entire verse is displayed and a simple analysis is given. The output file documents and summarizes all differences between the versions.</description>
+  <creationdate>31 May 2012</creationdate>
+  <notes>
+  <note>
+    <code>1</code>
+    <gccode>1</gccode>
+    <note>BHS has been faithful to the Leningrad Codex where there might be a question of the validity of the form and we keep the same form as BHS. </note>
+  </note>
+  <note>
+    <code>2</code>
+    <gccode>4</gccode>
+    <note>Puncta extraordinaria -- a \u05c4 is used to mark such marks in the text when they are above the line and a \u05c5 when they are below the line. </note>
+  </note>
+  <note>
+    <code>3</code>
+    <gccode>5</gccode>
+    <note>Large letter(s). Shown as large letters without a superscript note number. </note>
+  </note>
+  <note>
+    <code>4</code>
+    <gccode>6</gccode>
+    <note>Small letter(s). Shown as small letters without a superscript note number. </note>
+  </note>
+  <note>
+    <code>5</code>
+    <gccode>7</gccode>
+    <note>Suspended letter(s). Shown as suspended letters without a superscript note number. </note>
+  </note>
+  <note>
+    <code>6</code>
+    <gccode>8</gccode>
+    <note>Inverted nun in the text. </note>
+  </note>
+  <note>
+    <code>7</code>
+    <gccode>a</gccode>
+    <note>Adaptations to a Qere which L and BHS, by their design, do not indicate. </note>
+  </note>
+  <note>
+    <code>8</code>
+    <gccode>c</gccode>
+    <note>We read one or more accents in L differently than BHS. Often this notation indicates a typographical error in BHS. </note>
+  </note>
+  <note>
+    <code>9</code>
+    <gccode>k</gccode>
+    <note>We read one or more consonants in L differently from BHS. </note>
+  </note>
+  <note>
+    <code>10</code>
+    <gccode>n</gccode>
+    <note>Marks an anomalous form. </note>
+  </note>
+  <note>
+    <code>11</code>
+    <gccode>p</gccode>
+    <note>We read punctuation in L differently from BHS. </note>
+  </note>
+  <note>
+    <code>12</code>
+    <gccode>q</gccode>
+    <note>We have abandoned or added a ketib/qere relative to BHS. In doing this we agree with L against BHS. </note>
+  </note>
+  <note>
+    <code>13</code>
+    <gccode>v</gccode>
+    <note>We read one or more vowels in L differently from BHS. </note>
+  </note>
+  <note>
+    <code>14</code>
+    <gccode>y</gccode>
+    <note>Yathir readings in L which we have designated as Qeres when both Dothan and BHS list a Qere. </note>
+  </note>
+  <note>
+    <code>15</code>
+    <gccode>C</gccode>
+    <note>We read one or more accents in L differently from BHQ. </note>
+  </note>
+  <note>
+    <code>16</code>
+    <gccode>F</gccode>
+    <note>Marks a consonant with an anomalous final form that is word-medial.</note>
+  </note>
+  <note>
+    <code>17</code>
+    <gccode>K</gccode>
+    <note>We read one or more consonants in L differently from BHQ. </note>
+  </note>
+  <note>
+    <code>18</code>
+    <gccode>M</gccode>
+    <note>Marks a word with a final consonant that is a medial (not a final) form. </note>
+  </note>
+  <note>
+    <code>19</code>
+    <gccode>P</gccode>
+    <note>We read the punctuation in L differently from BHQ. </note>
+  </note>
+  <note>
+    <code>20</code>
+    <gccode>Q</gccode>
+    <note>Marks a place where we agree with BHQ against BHS in reading L. </note>
+  </note>
+  <note>
+    <code>21</code>
+    <gccode>U</gccode>
+    <note>We agree with both BHS 1997 and BHQ on an unexpected reading. </note>
+  </note>
+  <note>
+    <code>22</code>
+    <gccode>V</gccode>
+    <note>We read one or more vowels in L differently from BHQ. </note>
+  </note>
+</notes>
+</header>
+<book>
+  <bookname>Genesis</bookname>
+  <bookabbrev>Gen</bookabbrev>
+  <firstbook>
+    <filename>Genesis</filename>
+    <version>4.16</version>
+    <date>30 Apr 2012</date>
+    <transcriptiondate>05 Jun 2012</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Genesis</filename>
+    <version>4.18</version>
+    <date>13 Jun 2013</date>
+    <transcriptiondate>02 Dec 2015</transcriptiondate>
+  </secondbook>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Exodus</bookname>
+  <bookabbrev>Ex</bookabbrev>
+  <firstbook>
+    <filename>Exodus</filename>
+    <version>4.16</version>
+    <date>30 Apr 2012</date>
+    <transcriptiondate>05 Jun 2012</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Exodus</filename>
+    <version>4.18</version>
+    <date>13 Jun 2013</date>
+    <transcriptiondate>02 Dec 2015</transcriptiondate>
+  </secondbook>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Leviticus</bookname>
+  <bookabbrev>Lev</bookabbrev>
+  <firstbook>
+    <filename>Leviticus</filename>
+    <version>4.16</version>
+    <date>30 Apr 2012</date>
+    <transcriptiondate>05 Jun 2012</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Leviticus</filename>
+    <version>4.18</version>
+    <date>13 Jun 2013</date>
+    <transcriptiondate>02 Dec 2015</transcriptiondate>
+  </secondbook>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Numbers</bookname>
+  <bookabbrev>Num</bookabbrev>
+  <firstbook>
+    <filename>Numbers</filename>
+    <version>4.16</version>
+    <date>30 Apr 2012</date>
+    <transcriptiondate>05 Jun 2012</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Numbers</filename>
+    <version>4.18</version>
+    <date>13 Jun 2013</date>
+    <transcriptiondate>02 Dec 2015</transcriptiondate>
+  </secondbook>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Deuteronomy</bookname>
+  <bookabbrev>Deut</bookabbrev>
+  <firstbook>
+    <filename>Deuteronomy</filename>
+    <version>4.16</version>
+    <date>30 Apr 2012</date>
+    <transcriptiondate>05 Jun 2012</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Deuteronomy</filename>
+    <version>4.18</version>
+    <date>13 Jun 2013</date>
+    <transcriptiondate>02 Dec 2015</transcriptiondate>
+  </secondbook>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Joshua</bookname>
+  <bookabbrev>Josh</bookabbrev>
+  <firstbook>
+    <filename>Joshua</filename>
+    <version>4.16</version>
+    <date>30 Apr 2012</date>
+    <transcriptiondate>05 Jun 2012</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Joshua</filename>
+    <version>4.18</version>
+    <date>13 Jun 2013</date>
+    <transcriptiondate>02 Dec 2015</transcriptiondate>
+  </secondbook>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Judges</bookname>
+  <bookabbrev>Judg</bookabbrev>
+  <firstbook>
+    <filename>Judges</filename>
+    <version>4.16</version>
+    <date>30 Apr 2012</date>
+    <transcriptiondate>05 Jun 2012</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Judges</filename>
+    <version>4.18</version>
+    <date>13 Jun 2013</date>
+    <transcriptiondate>02 Dec 2015</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="false">
+    <position>Judg 1:19.3</position>
+    <go1>אֶת־</go1>
+    <go1names>Alef - Segol - Tav - Maqaf</go1names>
+    <go2>אֶתּ־</go2>
+    <go2names>Alef - Segol - Tav - Dagesh - Maqaf</go2names>
+    <change>Vowels are different.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Judg 3:25.4</position>
+    <go1>וְהִנֵּ֛ה</go1>
+    <go1names>Vav - Sheva - He - Hiriq - Nun - Dagesh - Tsere - Tevir - He</go1names>
+    <go2>וְהְנֵּ֛ה<x>Q</x><x>n</x><x>v</x></go2>
+    <go2names>Vav - Sheva - He - Sheva - Nun - Dagesh - Tsere - Tevir - He</go2names>
+    <change>Vowels are different. Different number of notes. 3 notes, Q, n, v,  have been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Judg 4:9.24</position>
+    <go1>וַתֵּ֥לֶךְ</go1>
+    <go1names>Vav - Patah - Tav - Dagesh - Tsere - Merkha - Lamed - Segol - Final Kaf - Sheva</go1names>
+    <go2>וַתֵּ֥לֶך<x>Q</x><x>n</x><x>v</x></go2>
+    <go2names>Vav - Patah - Tav - Dagesh - Tsere - Merkha - Lamed - Segol - Final Kaf</go2names>
+    <change>Vowels are different. Different number of notes. 3 notes, Q, n, v,  have been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Judg 4:17.7</position>
+    <go1>אֵ֖שֶׁת</go1>
+    <go1names>Alef - Tsere - Tipeha - Shin - Shin Dot - Segol - Tav</go1names>
+    <go2>אֵ֖שֶּׁת<x>Q</x><x>n</x><x>p</x></go2>
+    <go2names>Alef - Tsere - Tipeha - Shin - Shin Dot - Dagesh - Segol - Tav</go2names>
+    <change>Vowels are different. Different number of notes. 3 notes, Q, n, p,  have been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Judg 6:12.3</position>
+    <go1>מַלְאַ֣ךְ</go1>
+    <go1names>Mem - Patah - Lamed - Sheva - Alef - Patah - Munah - Final Kaf - Sheva</go1names>
+    <go2>מַלְּאַ֣ךְ<x>Q</x><x>n</x><x>p</x></go2>
+    <go2names>Mem - Patah - Lamed - Dagesh - Sheva - Alef - Patah - Munah - Final Kaf - Sheva</go2names>
+    <change>Vowels are different. Different number of notes. 3 notes, Q, n, p,  have been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Judg 6:34.8</position>
+    <go1>וַיִּזָּעֵ֥ק</go1>
+    <go1names>Vav - Patah - Yod - Dagesh - Hiriq - Zayin - Dagesh - Qamats - Ayin - Tsere - Merkha - Qof</go1names>
+    <go2>וַיִזָּעֵ֥ק<x>Q</x><x>n</x><x>p</x></go2>
+    <go2names>Vav - Patah - Yod - Hiriq - Zayin - Dagesh - Qamats - Ayin - Tsere - Merkha - Qof</go2names>
+    <change>Vowels are different. Different number of notes. 3 notes, Q, n, p,  have been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Judg 6:35.5</position>
+    <go1>וַיִּזָּעֵ֥ק</go1>
+    <go1names>Vav - Patah - Yod - Dagesh - Hiriq - Zayin - Dagesh - Qamats - Ayin - Tsere - Merkha - Qof</go1names>
+    <go2>וַיִזָּעֵ֥ק<x>Q</x><x>n</x><x>p</x></go2>
+    <go2names>Vav - Patah - Yod - Hiriq - Zayin - Dagesh - Qamats - Ayin - Tsere - Merkha - Qof</go2names>
+    <change>Vowels are different. Different number of notes. 3 notes, Q, n, p,  have been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Judg 8:18.11</position>
+    <go1>וַֽיֹּאמְרוּ֙</go1>
+    <go1names>Vav - Patah - Meteg - Yod - Dagesh - Holam - Alef - Mem - Sheva - Resh - Vav - Dagesh - Pashta</go1names>
+    <go2>וַֽיֹּאמרוּ֙<x>Q</x><x>n</x><x>v</x></go2>
+    <go2names>Vav - Patah - Meteg - Yod - Dagesh - Holam - Alef - Mem - Resh - Vav - Dagesh - Pashta</go2names>
+    <change>Vowels are different. Different number of notes. 3 notes, Q, n, v,  have been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Judg 9:4.5</position>
+    <go1>מִבֵּ֖ית</go1>
+    <go1names>Mem - Hiriq - Bet - Dagesh - Tsere - Tipeha - Yod - Tav</go1names>
+    <go2>מִבֵּ֖יתּ<x>P</x><x>n</x><x>p</x></go2>
+    <go2names>Mem - Hiriq - Bet - Dagesh - Tsere - Tipeha - Yod - Tav - Dagesh</go2names>
+    <change>Vowels are different. Different number of notes. 3 notes, P, n, p,  have been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Judg 9:4.6</position>
+    <go1>בַּ֣עַל</go1>
+    <go1names>Bet - Dagesh - Patah - Munah - Ayin - Patah - Lamed</go1names>
+    <go2>בַ֣עַל<x>P</x><x>n</x><x>p</x></go2>
+    <go2names>Bet - Patah - Munah - Ayin - Patah - Lamed</go2names>
+    <change>Vowels are different. Different number of notes. 3 notes, P, n, p,  have been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Judg 9:5.10</position>
+    <go1>שִׁבְעִ֥ים</go1>
+    <go1names>Shin - Shin Dot - Hiriq - Bet - Sheva - Ayin - Hiriq - Merkha - Yod - Final Mem</go1names>
+    <go2>שִׁבְּעִ֥ים<x>P</x><x>n</x><x>p</x></go2>
+    <go2names>Shin - Shin Dot - Hiriq - Bet - Dagesh - Sheva - Ayin - Hiriq - Merkha - Yod - Final Mem</go2names>
+    <change>Vowels are different. Different number of notes. 3 notes, P, n, p,  have been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Judg 11:32.8</position>
+    <go1>וַיִּתְּנֵ֥ם</go1>
+    <go1names>Vav - Patah - Yod - Dagesh - Hiriq - Tav - Dagesh - Sheva - Nun - Tsere - Merkha - Final Mem</go1names>
+    <go2>וַיִתְּנֵ֥ם<x>Q</x><x>n</x><x>p</x></go2>
+    <go2names>Vav - Patah - Yod - Hiriq - Tav - Dagesh - Sheva - Nun - Tsere - Merkha - Final Mem</go2names>
+    <change>Vowels are different. Different number of notes. 3 notes, Q, n, p,  have been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Judg 12:3.4</position>
+    <go1>מוֹשִׁ֗יעַ</go1>
+    <go1names>Mem - Vav - Holam - Shin - Shin Dot - Hiriq - Revia - Yod - Ayin - Patah</go1names>
+    <go2>מוֹשִׁ֗יע<x>Q</x><x>n</x><x>v</x></go2>
+    <go2names>Mem - Vav - Holam - Shin - Shin Dot - Hiriq - Revia - Yod - Ayin</go2names>
+    <change>Vowels are different. Different number of notes. 3 notes, Q, n, v,  have been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Judg 13:18.2</position>
+    <go1>לוֹ֙</go1>
+    <go1names>Lamed - Vav - Holam - Pashta</go1names>
+    <go2>לּוֹ֙<x>Q</x><x>n</x><x>p</x></go2>
+    <go2names>Lamed - Dagesh - Vav - Holam - Pashta</go2names>
+    <change>Vowels are different. Different number of notes. 3 notes, Q, n, p,  have been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Judg 13:18.10</position>
+    <go1>פֶֽלִאי׃</go1>
+    <go1names>Pe - Segol - Meteg - Lamed - Hiriq - Alef - Yod - Sof Pasuq</go1names>
+    <go2>פֶ֛לִאי׃<x>Q</x><x>c</x><x>n</x></go2>
+    <go2names>Pe - Segol - Tevir - Lamed - Hiriq - Alef - Yod - Sof Pasuq</go2names>
+    <change>Accents are different. Different number of notes. 3 notes, Q, c, n,  have been added.</change>
+  </difference>
+  <difference MDOnly="false">
+    <position>Judg 15:14.5</position>
+    <go1>וּפְלִשְׁתִּ֖ים</go1>
+    <go1names>Vav - Dagesh - Pe - Sheva - Lamed - Hiriq - Shin - Shin Dot - Sheva - Tav - Dagesh - Hiriq - Tipeha - Yod - Final Mem</go1names>
+    <go2>וּפְלִשִׁתִּ֖ים<x>Q</x><x>n</x><x>v</x></go2>
+    <go2names>Vav - Dagesh - Pe - Sheva - Lamed - Hiriq - Shin - Shin Dot - Hiriq - Tav - Dagesh - Hiriq - Tipeha - Yod - Final Mem</go2names>
+    <change>Vowels are different. Different number of notes. 3 notes, Q, n, v,  have been added.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>1</accentchange>
+    <vowelchange>15</vowelchange>
+    <notechange>15</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>1 Samuel</bookname>
+  <bookabbrev>1 Sam</bookabbrev>
+  <firstbook>
+    <filename>Samuel_1</filename>
+    <version>4.16</version>
+    <date>30 Apr 2012</date>
+    <transcriptiondate>05 Jun 2012</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Samuel_1</filename>
+    <version>4.18</version>
+    <date>13 Jun 2013</date>
+    <transcriptiondate>02 Dec 2015</transcriptiondate>
+  </secondbook>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>2 Samuel</bookname>
+  <bookabbrev>2 Sam</bookabbrev>
+  <firstbook>
+    <filename>Samuel_2</filename>
+    <version>4.16</version>
+    <date>30 Apr 2012</date>
+    <transcriptiondate>05 Jun 2012</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Samuel_2</filename>
+    <version>4.18</version>
+    <date>13 Jun 2013</date>
+    <transcriptiondate>02 Dec 2015</transcriptiondate>
+  </secondbook>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>1 Kings</bookname>
+  <bookabbrev>1 Kings</bookabbrev>
+  <firstbook>
+    <filename>Kings_1</filename>
+    <version>4.16</version>
+    <date>30 Apr 2012</date>
+    <transcriptiondate>05 Jun 2012</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Kings_1</filename>
+    <version>4.18</version>
+    <date>13 Jun 2013</date>
+    <transcriptiondate>02 Dec 2015</transcriptiondate>
+  </secondbook>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>2 Kings</bookname>
+  <bookabbrev>2 Kings</bookabbrev>
+  <firstbook>
+    <filename>Kings_2</filename>
+    <version>4.16</version>
+    <date>30 Apr 2012</date>
+    <transcriptiondate>05 Jun 2012</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Kings_2</filename>
+    <version>4.18</version>
+    <date>13 Jun 2013</date>
+    <transcriptiondate>02 Dec 2015</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="false">
+    <position>2 Kings 17:13.12</position>
+    <go1>שֻׁ֝֩בוּ<x>1</x></go1>
+    <go1names>Shin - Shin Dot - Qubuts - Geresh Muqdam - Telisha Qetana - Bet - Vav - Dagesh</go1names>
+    <go2>שֻׁ֝֠בוּ</go2>
+    <go2names>Shin - Shin Dot - Qubuts - Geresh Muqdam - Telisha Gedola - Bet - Vav - Dagesh</go2names>
+    <change>Accents are different. Different number of notes. A note, 1, has been removed.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>1</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>1</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Isaiah</bookname>
+  <bookabbrev>Isa</bookabbrev>
+  <firstbook>
+    <filename>Isaiah</filename>
+    <version>4.16</version>
+    <date>30 Apr 2012</date>
+    <transcriptiondate>05 Jun 2012</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Isaiah</filename>
+    <version>4.18</version>
+    <date>13 Jun 2013</date>
+    <transcriptiondate>02 Dec 2015</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="true">
+    <position>Isa 52:5.22</position>
+    <go1>מִ/נֹּאָֽץ׃</go1>
+    <go1names>Mem - Hiriq - Slash - Nun - Dagesh - Holam - Alef - Qamats - Meteg - Final Tsadi - Sof Pasuq</go1names>
+    <go2>מִנֹּאָֽץ׃</go2>
+    <go2names>Mem - Hiriq - Nun - Dagesh - Holam - Alef - Qamats - Meteg - Final Tsadi - Sof Pasuq</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>1</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Jeremiah</bookname>
+  <bookabbrev>Jer</bookabbrev>
+  <firstbook>
+    <filename>Jeremiah</filename>
+    <version>4.16</version>
+    <date>30 Apr 2012</date>
+    <transcriptiondate>05 Jun 2012</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Jeremiah</filename>
+    <version>4.18</version>
+    <date>13 Jun 2013</date>
+    <transcriptiondate>02 Dec 2015</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="true">
+    <position>Jer 48:44.1</position>
+    <go1>ה/ניס</go1>
+    <go1names>He - Slash - Nun - Yod - Samekh</go1names>
+    <go2>הניס</go2>
+    <go2names>He - Nun - Yod - Samekh</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>1</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Ezekiel</bookname>
+  <bookabbrev>Ezek</bookabbrev>
+  <firstbook>
+    <filename>Ezekiel</filename>
+    <version>4.16</version>
+    <date>30 Apr 2012</date>
+    <transcriptiondate>05 Jun 2012</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Ezekiel</filename>
+    <version>4.18</version>
+    <date>13 Jun 2013</date>
+    <transcriptiondate>02 Dec 2015</transcriptiondate>
+  </secondbook>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Hosea</bookname>
+  <bookabbrev>Hos</bookabbrev>
+  <firstbook>
+    <filename>Hosea</filename>
+    <version>4.16</version>
+    <date>30 Apr 2012</date>
+    <transcriptiondate>05 Jun 2012</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Hosea</filename>
+    <version>4.18</version>
+    <date>13 Jun 2013</date>
+    <transcriptiondate>02 Dec 2015</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="true">
+    <position>Hos 13:4.12</position>
+    <go1>בִּלְתִּֽי׃</go1>
+    <go1names>Bet - Dagesh - Hiriq - Lamed - Sheva - Tav - Dagesh - Hiriq - Meteg - Yod - Sof Pasuq</go1names>
+    <go2>בִּלְתִּֽ/י׃</go2>
+    <go2names>Bet - Dagesh - Hiriq - Lamed - Sheva - Tav - Dagesh - Hiriq - Meteg - Slash - Yod - Sof Pasuq</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>1</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Joel</bookname>
+  <bookabbrev>Joel</bookabbrev>
+  <firstbook>
+    <filename>Joel</filename>
+    <version>4.16</version>
+    <date>30 Apr 2012</date>
+    <transcriptiondate>05 Jun 2012</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Joel</filename>
+    <version>4.18</version>
+    <date>13 Jun 2013</date>
+    <transcriptiondate>02 Dec 2015</transcriptiondate>
+  </secondbook>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Amos</bookname>
+  <bookabbrev>Am</bookabbrev>
+  <firstbook>
+    <filename>Amos</filename>
+    <version>4.16</version>
+    <date>30 Apr 2012</date>
+    <transcriptiondate>05 Jun 2012</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Amos</filename>
+    <version>4.18</version>
+    <date>13 Jun 2013</date>
+    <transcriptiondate>02 Dec 2015</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="true">
+    <position>Am 6:14.14</position>
+    <go1>מִ/לְּ/ב֥וֹא</go1>
+    <go1names>Mem - Hiriq - Slash - Lamed - Dagesh - Sheva - Slash - Bet - Merkha - Vav - Holam - Alef</go1names>
+    <go2>מִ/לְּב֥וֹא</go2>
+    <go2names>Mem - Hiriq - Slash - Lamed - Dagesh - Sheva - Bet - Merkha - Vav - Holam - Alef</go2names>
+    <change>Morphological divisions are different.</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>1</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Obadiah</bookname>
+  <bookabbrev>Ob</bookabbrev>
+  <firstbook>
+    <filename>Obadiah</filename>
+    <version>4.16</version>
+    <date>30 Apr 2012</date>
+    <transcriptiondate>05 Jun 2012</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Obadiah</filename>
+    <version>4.18</version>
+    <date>13 Jun 2013</date>
+    <transcriptiondate>02 Dec 2015</transcriptiondate>
+  </secondbook>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Jonah</bookname>
+  <bookabbrev>Jon</bookabbrev>
+  <firstbook>
+    <filename>Jonah</filename>
+    <version>4.16</version>
+    <date>30 Apr 2012</date>
+    <transcriptiondate>05 Jun 2012</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Jonah</filename>
+    <version>4.18</version>
+    <date>13 Jun 2013</date>
+    <transcriptiondate>02 Dec 2015</transcriptiondate>
+  </secondbook>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Micah</bookname>
+  <bookabbrev>Mic</bookabbrev>
+  <firstbook>
+    <filename>Micah</filename>
+    <version>4.16</version>
+    <date>30 Apr 2012</date>
+    <transcriptiondate>05 Jun 2012</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Micah</filename>
+    <version>4.18</version>
+    <date>13 Jun 2013</date>
+    <transcriptiondate>02 Dec 2015</transcriptiondate>
+  </secondbook>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Nahum</bookname>
+  <bookabbrev>Nah</bookabbrev>
+  <firstbook>
+    <filename>Nahum</filename>
+    <version>4.16</version>
+    <date>30 Apr 2012</date>
+    <transcriptiondate>05 Jun 2012</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Nahum</filename>
+    <version>4.18</version>
+    <date>13 Jun 2013</date>
+    <transcriptiondate>02 Dec 2015</transcriptiondate>
+  </secondbook>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Habakkuk</bookname>
+  <bookabbrev>Hab</bookabbrev>
+  <firstbook>
+    <filename>Habakkuk</filename>
+    <version>4.16</version>
+    <date>30 Apr 2012</date>
+    <transcriptiondate>05 Jun 2012</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Habakkuk</filename>
+    <version>4.18</version>
+    <date>13 Jun 2013</date>
+    <transcriptiondate>02 Dec 2015</transcriptiondate>
+  </secondbook>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Zephaniah</bookname>
+  <bookabbrev>Zeph</bookabbrev>
+  <firstbook>
+    <filename>Zephaniah</filename>
+    <version>4.16</version>
+    <date>30 Apr 2012</date>
+    <transcriptiondate>05 Jun 2012</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Zephaniah</filename>
+    <version>4.18</version>
+    <date>13 Jun 2013</date>
+    <transcriptiondate>02 Dec 2015</transcriptiondate>
+  </secondbook>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Haggai</bookname>
+  <bookabbrev>Hag</bookabbrev>
+  <firstbook>
+    <filename>Haggai</filename>
+    <version>4.16</version>
+    <date>30 Apr 2012</date>
+    <transcriptiondate>05 Jun 2012</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Haggai</filename>
+    <version>4.18</version>
+    <date>13 Jun 2013</date>
+    <transcriptiondate>02 Dec 2015</transcriptiondate>
+  </secondbook>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Zechariah</bookname>
+  <bookabbrev>Zech</bookabbrev>
+  <firstbook>
+    <filename>Zechariah</filename>
+    <version>4.16</version>
+    <date>30 Apr 2012</date>
+    <transcriptiondate>05 Jun 2012</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Zechariah</filename>
+    <version>4.18</version>
+    <date>13 Jun 2013</date>
+    <transcriptiondate>02 Dec 2015</transcriptiondate>
+  </secondbook>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Malachi</bookname>
+  <bookabbrev>Mal</bookabbrev>
+  <firstbook>
+    <filename>Malachi</filename>
+    <version>4.16</version>
+    <date>30 Apr 2012</date>
+    <transcriptiondate>05 Jun 2012</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Malachi</filename>
+    <version>4.18</version>
+    <date>13 Jun 2013</date>
+    <transcriptiondate>02 Dec 2015</transcriptiondate>
+  </secondbook>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Psalms</bookname>
+  <bookabbrev>Ps</bookabbrev>
+  <firstbook>
+    <filename>Psalms</filename>
+    <version>4.16</version>
+    <date>30 Apr 2012</date>
+    <transcriptiondate>05 Jun 2012</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Psalms</filename>
+    <version>4.18</version>
+    <date>13 Jun 2013</date>
+    <transcriptiondate>02 Dec 2015</transcriptiondate>
+  </secondbook>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Proverbs</bookname>
+  <bookabbrev>Prov</bookabbrev>
+  <firstbook>
+    <filename>Proverbs</filename>
+    <version>4.16</version>
+    <date>30 Apr 2012</date>
+    <transcriptiondate>05 Jun 2012</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Proverbs</filename>
+    <version>4.18</version>
+    <date>13 Jun 2013</date>
+    <transcriptiondate>02 Dec 2015</transcriptiondate>
+  </secondbook>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Job</bookname>
+  <bookabbrev>Job</bookabbrev>
+  <firstbook>
+    <filename>Job</filename>
+    <version>4.16</version>
+    <date>30 Apr 2012</date>
+    <transcriptiondate>05 Jun 2012</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Job</filename>
+    <version>4.18</version>
+    <date>13 Jun 2013</date>
+    <transcriptiondate>02 Dec 2015</transcriptiondate>
+  </secondbook>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Song of Songs</bookname>
+  <bookabbrev>Song</bookabbrev>
+  <firstbook>
+    <filename>Song_of_Songs</filename>
+    <version>4.16</version>
+    <date>30 Apr 2012</date>
+    <transcriptiondate>05 Jun 2012</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Song_of_Songs</filename>
+    <version>4.18</version>
+    <date>13 Jun 2013</date>
+    <transcriptiondate>02 Dec 2015</transcriptiondate>
+  </secondbook>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Ruth</bookname>
+  <bookabbrev>Ruth</bookabbrev>
+  <firstbook>
+    <filename>Ruth</filename>
+    <version>4.16</version>
+    <date>30 Apr 2012</date>
+    <transcriptiondate>05 Jun 2012</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Ruth</filename>
+    <version>4.18</version>
+    <date>13 Jun 2013</date>
+    <transcriptiondate>02 Dec 2015</transcriptiondate>
+  </secondbook>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Lamentations</bookname>
+  <bookabbrev>Lam</bookabbrev>
+  <firstbook>
+    <filename>Lamentations</filename>
+    <version>4.16</version>
+    <date>30 Apr 2012</date>
+    <transcriptiondate>05 Jun 2012</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Lamentations</filename>
+    <version>4.18</version>
+    <date>13 Jun 2013</date>
+    <transcriptiondate>02 Dec 2015</transcriptiondate>
+  </secondbook>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Ecclesiastes</bookname>
+  <bookabbrev>Eccl</bookabbrev>
+  <firstbook>
+    <filename>Ecclesiastes</filename>
+    <version>4.16</version>
+    <date>30 Apr 2012</date>
+    <transcriptiondate>05 Jun 2012</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Ecclesiastes</filename>
+    <version>4.18</version>
+    <date>13 Jun 2013</date>
+    <transcriptiondate>02 Dec 2015</transcriptiondate>
+  </secondbook>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Esther</bookname>
+  <bookabbrev>Esth</bookabbrev>
+  <firstbook>
+    <filename>Esther</filename>
+    <version>4.16</version>
+    <date>30 Apr 2012</date>
+    <transcriptiondate>05 Jun 2012</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Esther</filename>
+    <version>4.18</version>
+    <date>13 Jun 2013</date>
+    <transcriptiondate>02 Dec 2015</transcriptiondate>
+  </secondbook>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Daniel</bookname>
+  <bookabbrev>Dan</bookabbrev>
+  <firstbook>
+    <filename>Daniel</filename>
+    <version>4.16</version>
+    <date>30 Apr 2012</date>
+    <transcriptiondate>05 Jun 2012</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Daniel</filename>
+    <version>4.18</version>
+    <date>13 Jun 2013</date>
+    <transcriptiondate>02 Dec 2015</transcriptiondate>
+  </secondbook>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Ezra</bookname>
+  <bookabbrev>Ezra</bookabbrev>
+  <firstbook>
+    <filename>Ezra</filename>
+    <version>4.16</version>
+    <date>30 Apr 2012</date>
+    <transcriptiondate>05 Jun 2012</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Ezra</filename>
+    <version>4.18</version>
+    <date>13 Jun 2013</date>
+    <transcriptiondate>02 Dec 2015</transcriptiondate>
+  </secondbook>
+  <difference MDOnly="false">
+    <position>Ezra 4:12.21</position>
+    <go1>שַׁכְלִ֔לוּ</go1>
+    <go1names>Shin - Shin Dot - Patah - Kaf - Sheva - Lamed - Hiriq - Zaqef Qatan - Lamed - Vav - Dagesh</go1names>
+    <go2>שַׁכְלִ֔ילוּ</go2>
+    <go2names>Shin - Shin Dot - Patah - Kaf - Sheva - Lamed - Hiriq - Zaqef Qatan - Yod - Lamed - Vav - Dagesh</go2names>
+    <change>Consonants don't match!</change>
+  </difference>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>1</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>Nehemiah</bookname>
+  <bookabbrev>Neh</bookabbrev>
+  <firstbook>
+    <filename>Nehemiah</filename>
+    <version>4.16</version>
+    <date>30 Apr 2012</date>
+    <transcriptiondate>05 Jun 2012</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Nehemiah</filename>
+    <version>4.18</version>
+    <date>13 Jun 2013</date>
+    <transcriptiondate>02 Dec 2015</transcriptiondate>
+  </secondbook>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>1 Chronicles</bookname>
+  <bookabbrev>1 Chr</bookabbrev>
+  <firstbook>
+    <filename>Chronicles_1</filename>
+    <version>4.16</version>
+    <date>30 Apr 2012</date>
+    <transcriptiondate>05 Jun 2012</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Chronicles_1</filename>
+    <version>4.18</version>
+    <date>13 Jun 2013</date>
+    <transcriptiondate>02 Dec 2015</transcriptiondate>
+  </secondbook>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<book>
+  <bookname>2 Chronicles</bookname>
+  <bookabbrev>2 Chr</bookabbrev>
+  <firstbook>
+    <filename>Chronicles_2</filename>
+    <version>4.16</version>
+    <date>30 Apr 2012</date>
+    <transcriptiondate>05 Jun 2012</transcriptiondate>
+  </firstbook>
+  <secondbook>
+    <filename>Chronicles_2</filename>
+    <version>4.18</version>
+    <date>13 Jun 2013</date>
+    <transcriptiondate>02 Dec 2015</transcriptiondate>
+  </secondbook>
+  <summary>
+    <invalidgo1>0</invalidgo1>
+    <invalidgo2>0</invalidgo2>
+    <differentword>0</differentword>
+    <mdchange>0</mdchange>
+    <accentchange>0</accentchange>
+    <vowelchange>0</vowelchange>
+    <notechange>0</notechange>
+    <notevaluechange>0</notevaluechange>
+    <gocountchange>0</gocountchange>
+  </summary>
+</book>
+<summary>
+  <books>39</books>
+  <invalidgo1>0</invalidgo1>
+  <invalidgo2>0</invalidgo2>
+  <differentword>1</differentword>
+  <mdchange>4</mdchange>
+  <accentchange>2</accentchange>
+  <vowelchange>15</vowelchange>
+  <notechange>16</notechange>
+  <notevaluechange>0</notevaluechange>
+  <gocountchange>0</gocountchange>
+</summary>
+</Differences>

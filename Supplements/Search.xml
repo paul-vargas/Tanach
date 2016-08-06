@@ -1,0 +1,11 @@
+<?xml version = "1.0" encoding="UTF-8"?>
+<!--===============================================================================
+
+                              Tanach search
+    This empty file causes the TanachSearch template to be launched. 
+    
+============================================================================-->
+<?xml-stylesheet type="text/xsl" href="XSL/Search.xsl.xml"?>
+<Search >
+<!-- Copyright C.V.Kimball 2005 -->
+</Search>

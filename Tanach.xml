@@ -1,0 +1,59 @@
+<?xml version = "1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="XSL/Tanach.xsl.xml"?>
+<Tanach>
+<!-- 
+     The following is a simplified version of the About page. 
+     and is intended to be read only by search engines.
+     Actual operation is through the XSLT transformation file,
+     XSL/Tanach.xsl.xml, specified above. 
+-->
+<html>
+
+<h1>Unicode/XML Westminster Leningrad Codex</h1>
+
+This Hebrew bible (the <b>Tanach</b>) has been derived from the 
+<a target="_blank" href="http://www.grovescenter.org/GC/projects/wlc-1">
+<b>Westminster Leningrad Codex </b></a> <b>(WLC)</b>
+maintained by the <a target="_blank" href="http://www.grovescenter.org">
+<b>J. Alan Groves Center for Advanced Biblical Research</b></a> 
+by Kirk E. Lowery and Stephen K. Salisbury 
+(<a href="WLCReleaseNotes.html" target="_blank">Release Notes</a>). 
+The <b>WLC</b> has been transcribed
+to a format with  <a href="Pages/Coding.xml"><b>Unicode</b> character coding</a> 
+and <b>XML</b> markup. The <a target="_blank" href="License.html">
+license of use</a> is very generous.<p/>
+
+Text can be rapidly accessed by providing a citation, i.e. Deut 26:5-9, 
+in a text field or by clicking on a succession of links. Text can be displayed 
+in a variety of formats and font sizes. Hebrew text may be highlighted, copied, 
+and pasted into Unicode compatible applications. Books of the <b>Torah</b> have 
+an option to display source markings of the <a href="Pages/DH.html">
+Documentary Hypothesis (DH)</a>. <p/>
+
+<ul>
+<li>The Hebrew text is freely available  in 5 formats: text, HTML, XML, ODT 
+(Open Document Text), or PDF (Portable Document Format). The text files are an official 
+repository of the Groves Center for the Westminster Leningrad Codex in Unicode.
+</li>
+
+<li>The site can be operated <i>without an internet connection</i>.
+See the <a href="Pages/Technical.html">Technical</a> page for instructions.</li>
+
+<li><a href="Pages/Links.html">Links</a> to external sites, such as translations,
+are available and other links may be requested. </li>
+
+<li>Files include a standard <a href="Pages/TEIHeader.xml">Text 
+Encoding Initiative (TEI) header</a> describing the provenance of the text. </li>
+</ul>
+
+Notices about the site are published on the <b>b-hebrew</b> mailing list at 
+<a target="_blank" href="http://lists.ibiblio.org/mailman/listinfo/b-hebrew">
+<b><tt>http://lists.ibiblio.org/mailman/listinfo/b-hebrew</tt></b></a>.  
+The subject line of the notices contains the phrase 
+"Unicode/XML Westminster Leningrad Codex".<p/>
+
+Transcriber: Christopher V. Kimball, West Redding, CT, USA .<p/>
+
+<hr/>
+</html>
+</Tanach>

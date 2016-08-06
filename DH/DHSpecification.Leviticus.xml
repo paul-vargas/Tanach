@@ -1,0 +1,75 @@
+<?xml version = "1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../XSL/DH.xsl.xml"?>
+<Marking xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:noNamespaceSchemaLocation ="../XSL/Tanach.xsd">
+<!-- Copyright C.V.Kimball 2004 -->
+<DHheader>
+  <name>LeviticusDH</name>
+  <hebrewname>תנ״ך</hebrewname>
+  <title>DH sources in Leviticus</title>
+  <shortdescription>Documentary Hypothesis source markings from A.E.Friedman.
+  </shortdescription>
+     <description>Documentary Hypothesis (DH) source markings from  Richard E. Friedman's 
+       "Who wrote the Bible, Second Edition", pages 246-253, 1997, have been added. 
+       These markings appear as the 's' attribute on each verse and are one of 
+       J, E, P, Dtr1, Dtr2, R, or Other. Friedman splits some verses between sources, 
+       the decision on where to split a verse in the Hebrew text has been made by the transcriber
+       and should be regarded as tentative.  Modified to count orthographic,
+       rather than prosodic, words.
+     </description>
+  <date>19 Dec 2005</date>
+  <copyright>© C. V. Kimball 2004</copyright>
+  <filename>DHSpecification.Leviticus.xml</filename>
+</DHheader>
+<DHbook>
+  <names>
+    <name>Leviticus</name>
+    <abbrev>Lv</abbrev>
+    <number>3</number>
+    <filename>Leviticus</filename>
+    <hebrewname>תנ״ך</hebrewname>
+  </names>
+  <marking>
+     <title>Documentary Hypothesis from R.E.Friedman's "Who wrote the Bible?".</title>
+     <shorttitle>DH</shorttitle>
+     <description>Documentary Hypothesis (DH) source markings from  Richard E. Friedman's 
+       "Who wrote the Bible, Second Edition", pages 246-253, 1997, have been added. 
+       These markings appear as the 's' attribute on each verse and are one of 
+       J, E, P, Dtr1, Dtr2, R, or Other. Friedman splits some verses between sources, 
+       the decision on where to split a verse in the Hebrew text has been made by the transcriber
+       and should be regarded as tentative.  Modified to count orthographic,
+       rather than prosodic, words.
+     </description>
+     <date>19 Dec 2005</date>
+     <marks>
+        <mark>
+           <code>P</code>
+           <label>P</label>
+           <description>Priestly source</description>
+           <color>black</color>
+           <style>normal</style>
+           <relativesize>1</relativesize>
+           <backgroundcolor>#ffffff</backgroundcolor>
+           <textdecoration>none</textdecoration>
+        </mark>
+        <mark>
+           <code>R</code>
+           <label>R</label>
+           <description>Redactor</description>
+           <color>green</color>
+           <style>normal</style>
+           <relativesize>.8</relativesize>
+           <backgroundcolor>#ffffff</backgroundcolor>
+           <textdecoration>none</textdecoration>
+        </mark>
+     </marks>
+  </marking>
+</DHbook>
+<excerpts>
+  <excerpt><range>1:1-23:38</range><source>P</source><note></note></excerpt>
+  <excerpt><range>23:39-43</range><source>R</source><note></note></excerpt>
+  <excerpt><range>23:44-26:38</range><source>P</source><note></note></excerpt>
+  <excerpt><range>26:39-45</range><source>R</source><note></note></excerpt>
+  <excerpt><range>26:46-27:34</range><source>P</source><note></note></excerpt>
+ </excerpts>
+</Marking>

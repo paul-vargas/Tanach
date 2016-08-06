@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  Copyright C.V.Kimball 2013  -->
+<html>
+<header profile="http://www.w3.org/2005/11/profile" > 
+  <meta http-equiv="X-UA-Compatible" content="IE=8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
+  <link rel="icon" type="image.x-icon" href="http://www.cvkimball.com/Tanach/TanachIcon.ico"/>
+  <title>Changes</title>
+<!-- Force the default font so that the site looks the same on all systems.  -->
+  <style>
+    body {font-family:Times New Roman}
+  </style>
+</header>
+<body style="background-image:url('../Images/Background');margin-right:10pt; 
+              margin-left:10pt; margin-top:10pt; margin-bottom:0">
+<table width="100%">
+  <tr>
+    <td align="left"> 
+      <span style="font-family:Times New Roman;font-weight:bold;font-size:200%">Changes</span>
+      <p/>     
+    </td>
+  </tr>
+</table>
+<p/>
+
+<h2>Build 25.1 - Minor corrections to the Unicode/XML WLC text (3 Aug 2016)</h2>
+
+<p/>
+Max Benson has pointed out 3 errors in the translation from the Michigan-Claremont coded text of the 
+Groves Center's
+Westminster Leningrad Codex to the Unicode/XML text of this site. These errors have been corrected in this build. 
+<p/>The corrected text for the first two errors, <a href="http://www.tanach.us/Server?Gen5:29-5:29" target="_blank" >Genesis 5:29</a> (word 6); 
+<a href="http://www.tanach.us/Server?Zeph2:15-2:15" target="_blank">Zephaniah 2:15<a> (word 1); 
+has two cantillation marks (<i>gerashayim, telisha-gedola</i>) on a single syllable word.
+The corrected text for the third error,  <a href="http://www.tanach.us/Server?2Kings 21:26-21:26" target="_blank">2 Kings 21:26</a> (word 1);
+has two vowels (<i>sheva, holam</i>) on a single consonant.  Though anomalous in grammar, 
+the corrected text matches the appearance of the Leningrad Codex.
+<p/>
+The underlying WLC text (4.20) and site operation is unchanged.
+<p/>
+<hr/>
+
+<h4>Build 25.0 - Westminster Leningrad Codex Version 4.20 (30 Jan 2016)</h4>
+
+<p/>
+The Westminster Leningrad Codex (WLC) is provided by the Groves Center, Glenside, PA.
+The Groves Center's President and Senior Research Fellow, <b>Kirk E. Lowery, Ph.D.</b>, has retired
+from the Groves Center as of November 1st, 2015. The Transcriber personally thanks
+Dr. Lowery for his 17 years of service to the Groves Center (the first half of which were under its
+previous name, “The Westminster Hebrew Institute”). The Groves Center's Research Fellow, 
+<b>Mr. Stephen K. Salisbury</b>, has been named the Executive Director of the Groves Center, 
+effective January 2nd, 2016.  
+<p/>
+The site has been updated to Version 4.20 of the WLC
+maintained at the  Groves Center by 
+Stephen K. Salisbury.
+ According to the  
+<a href="../WLCReleaseNotes.html" target="_blank">Release Notes</a>,
+this version has 4 changes to accents, 5 changes to punctuation, 
+5 changes to vowels, 1 change to a consonant, 
+18 changes to morphological slashes, and 60 changes to bracket notes. 
+<p/>
+The site operation is unchanged.
+<p/>
+<hr/>
+
+
+<h4>Build 24.2 - LC facsimiles (13 Nov 2014)</h4>
+<p/>
+The Westminster Leningrad Codex (WLC) is a digital representation of the Leningrad Codex (LC, Firkovich B 19 A)
+in the Russian National Library (Saltykov-Shchedrin), St. Petersburg. Occasionally, 
+controversy arises about the fidelity
+of the WLC to the LC.  In order to demonstrate this fidelity and resolve
+controversies, the site has been updated to offer an option to view a facsimile of the LC page corresponding 
+to any text selected in the WLC. 
+<p/>
+The option requires that your browser allow pop-up windows and be capable of viewing PDF files.
+<p/>
+See <a href="Facsimiles.html" target="_blank">Facsimiles</a> page for details.
+<p/>
+The pages in the <b>Supplements</b> directory have be normalized and upgraded to the Build 24.1 framework.
+<p/>
+The Hebrew text is unchanged.
+<p/>
+<hr/>
+<h4>Build 24.1 - Site consolidation (28 July 2013)</h4>
+<p/>
+The underlying framework of the site has been simplified. Site navigation is generally through
+the <i>browser</i> back/forward buttons.  An exception is from a Book page back to the Home page;
+this is done either pushing the "Home" button in the lower center of the page or 
+by entering a blank citation. Book pages can be
+bookmarked by clicking the "Bookmark" button in the upper left corner of the Book page and then
+bookmarking the page with the <i>browser</i> in the usual manner. 
+Files in the Supplements directory remain in the former framework.
+<p/>
+The site has been reduced from 372 files to 341 files. 
+The size of the <b><tt>Tanach.zip</tt></b> file has been reduced from  5.0 to 3.9 MB; 
+the size of the un-zipped local site has been reduced from 28.5 MB to 19.2 MB.
+<ul>
+<li>All hash URL parameters, ' <b>#</b> ', have been eliminated. Query parameters, ' <b>?</b> ', specifying a citation are available, i.e.
+<a href="../Tanach.xml?Deut26:5-9">Tanach.xml?Deut26:5-9</a> .</li>
+<p/>
+<li>The RSS feed has been eliminated.</li>
+<p/>
+<li>The Indices directory has been eliminated.  Index information is now contained in a single file,
+<b><tt>Books/TanachIndex.xml</tt></b>. Overall TEI header, notes, and coding information is contained in
+<b><tt>Books/TanachHeader.xml</tt></b>.</li>
+<p/>
+<li>A <a href="../Pages/">Pages</a> directory has been added to contain the informative pages.
+Three of these pages, <b><tt>FontTest.xml</tt></b>, <b><tt>TEIHeader.xml</tt></b>, and <b><tt>UnicodeRep.xml</tt></b> have meaningful default
+results, but accept query parameters provided by the Book page.</li>
+<p/>
+<li>External links can no longer be set by the viewer.  Contact the  
+<a href="Transcriber.html">Transcriber</a> if you'd like to have
+a particular link added. The external link controls are only
+available on a Book page.</li>
+<p/>
+<li>The "Simplify" button on the Book pages has been removed.  The "HTML" button
+   accomplishes the same thing.</li>
+<p/>
+<li>The Documentary Hypothesis single-source <b>Torah</b> files have been removed.
+Contact the  <a href="Transcriber.html">Transcriber</a> if you're interested in such files.</li>
+<p/>
+<li>
+The AdvancedInstructions, Cookies, LinkDisplay, LinkMarkers. LinkSet, Linux, MacOSX, Notes,
+RSS, Windows2000, WindowsVista, WindowsXP, and Windows7  pages have been removed since Build 23.0.
+</li>
+<p/>
+</ul>
+<p/>
+The Hebrew text is unchanged.
+<p/>
+<hr/>
+
+<h4>Build 24.0 - Westminster Leningrad Codex Version 4.18 (26 June 2013)</h4>
+
+The site has been updated to Version 4.18 of the Westminster Leningrad Codex (WLC) 
+maintained by the J. Alan Groves Center for Advanced Biblical Research by 
+Kirk E. Lowery and Stephen K. Salisbury. See the 
+<a href="../WLCReleaseNotes.html" target="_blank">Release Notes</a> for a
+detailed explanation of Version 4.18.
+This version was received 13 June 2012 and 
+contains 15 changes in vowels, 2 changes in accents, 
+and 4 changes in morphological divisions.
+Fifteen transcription notes of the WLC have been changed. 
+<p/>
+Morphological division markers in ODT and PDF formats have been changed from slash, ' / ', to broken bar, ' &#x00a6; ' , 
+U00A6, to provide
+more consistent representation of these markers and formats.
+<p/>
+Additional names have been assigned to the servers so that the "Save page as" menu item <i>in some browsers</i> produces
+a file with the correct extension. The preferred server names are: <b><tt>Server.xml</tt></b>, <b><tt>Server.txt</tt></b>,
+<b><tt>Server.html</tt></b>, and <b><tt>Server.odt</tt></b>.
+Previous server names remain valid, however. The <a href="Servers.html">Servers</a> page has additional details.  
+<p/>
+Demonstration external links are now provided by default.  If desired, they can be eliminated by following the "Links" link 
+on any Book page and pressing the "Clear all links" button on the resulting
+<a href="Links.html">Links</a> page.
+
+<h4>Site consolidation:</h4>
+In order to increase the sustainability of the site, the number of components of the site must be reduced. 
+<p/>
+The "Server"/"Local" button on the Home page has been eliminated. Web viewing is now always from the server;
+local operation with <b><tt>Tanach.zip</tt></b> is always from local text files. Eight descriptive pages have been eliminated to compact the site: AdvancedInstructions, Cookies, Linux, MacOSX,
+Windows2000, WindowsVista, WindowsXP, Windows7. 
+
+      
+<p/>
+<table width="100%">
+  <tr>
+    <td align="left">      
+      <a  target="_blank" title="License information." href="../License.html" alt="License information">
+        <img src="../Images/CreativeCommons.gif" alt="License information" border="0"/>
+      </a>
+    </td>
+    <td align="right">
+      <b>
+        <a title="Build number.">25.1</a>
+      </b>
+  </tr>
+</table>
+<hr/>
+</body>
+</html>
+<!--========================================================================-->
+<!--========================================================================-->

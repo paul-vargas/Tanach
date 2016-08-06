@@ -1,0 +1,1411 @@
+<?xml version = "1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="Resources/Site.xsl.xml"?>
+<!-- Copyright C.V.Kimball 2007 -->
+<Site>
+  <name>Unicode/XML Westminster Leningrad Codex</name>
+  <project>Tanach-25.1.eApps</project>
+  <filebase>/Users/kimball/Projects/Tanach</filebase>
+  
+  <server>drchristopherkimball.virtual.vps-host.net</server>
+  <serverlogin>**********</serverlogin>
+  <serverpassword>**********</serverpassword>
+  <serverreferencepath>/home/webadmin/drchristopherkimball.virtual.vps-host.net/html</serverreferencepath>
+  
+  <sitedirectory>\PreviousVersions.Tanach-2007-02-05</sitedirectory>
+  <mail>transcriber@tanach.us</mail>
+  <type>Definition</type>
+  <definitiondate>3 Aug 2016</definitiondate>
+  
+  <directory foldercheck="true">
+    <name>Home</name>
+    
+    <description>Home page.</description>    
+    <path>/</path>
+    <folders>15</folders>
+    <files>8</files>
+    
+    <folder foldercheck="true">
+      <name>Books</name>
+      <description>XML Tanach books.</description>
+    </folder>
+    <folder foldercheck="true">
+      <name>cgi-bin</name>
+      <description>Un-used and un-deleteable server directory.</description>
+    </folder>
+    <folder foldercheck="true">
+      <name>DH</name>
+      <description>Documentary Hypothesis files.</description>
+    </folder>
+    <folder foldercheck="true">
+      <name>Fonts</name>
+      <description>Font information.</description>
+    </folder>
+     <folder foldercheck="true">
+      <name>Images</name>
+      <description>Images and icons.</description>
+    </folder>
+    <folder foldercheck="true">
+      <name>Java</name>
+      <description>Java application jar files.</description>
+    </folder>
+    <folder foldercheck="true">
+      <name>Javascript</name>
+      <description>Javascript files.</description>
+    </folder>
+    <folder foldercheck="true">
+      <name>ODTFiles</name>
+      <description>ODT files of the Tanach books.</description>
+    </folder>
+    <folder foldercheck="true">
+      <name>Pages</name>
+      <description>Informative, HTML pages.</description>
+    </folder>
+    <folder foldercheck="true">
+      <name>PDFFiles</name>
+      <description>PDF files of the Tanach books.</description>
+    </folder>
+    <folder foldercheck="true">
+      <name>PreviousVersions</name>
+      <description>Previous versions of the site.</description>
+    </folder>
+    <folder foldercheck="true">
+      <name>Supplements</name>
+      <description>Supplements to the Tanach.</description>
+    </folder>
+    <folder foldercheck="true">
+      <name>TextFiles</name>
+      <description>Tanach books as UTF-8 text files.</description>
+    </folder>
+    <folder foldercheck="true">
+      <name>WEB-INF</name>
+      <description>Server directory.</description>
+    </folder>
+     <folder foldercheck="true">
+      <name>XSL</name>
+      <description>XSLT files.</description>
+    </folder>
+    
+    <file hashcheck="true">
+      <name>favicon.ico</name>
+      <description>Tanach icon.</description>
+    </file>
+    <file hashcheck="true">
+      <name>index.html</name>
+      <description>Default site entry re-directs immediately to Tanach.xml.</description>
+    </file>
+    <file hashcheck="true">
+      <name>License.html</name>
+      <description>Creative Commons license document.</description>
+    </file>
+    <file hashcheck="true">
+      <name>robots.txt</name>
+      <description>Internet robots control file.</description>
+    </file>
+    <file hashcheck="true">
+      <name>Tanach.xml</name>
+      <description>Primary site entry.</description>
+    </file>
+    <file hashcheck="true">
+      <name>Tanach.zip</name>
+      <description>Zipped site contents.</description>
+    </file>
+    <file hashcheck="true">
+      <name>WLCReleaseNotes.html</name>
+      <description>Groves Center release notes for the current WLC version.</description>
+    </file>
+    <file hashcheck="true">
+      <name>WLCManual.pdf</name>
+      <description>Current Groves Center manual for the WLC.</description>
+    </file>
+  </directory>
+  
+  
+  <directory foldercheck="true">
+    <name>Books</name>
+    
+    <description>Books of the Tanach, including 5 Documentary-Hypothesis-marked Torah books,
+      and the TanachHeader.xml, TanachIndex.xml files.</description>    
+    <path>/Books/</path>
+    <folders>0</folders>
+    <files>46</files>
+    
+    <file hashcheck="true">
+      <name>Amos.xml</name>
+    </file>
+    <file hashcheck="true">
+      <name>Chronicles_1.xml</name>
+    </file>
+    <file hashcheck="true">
+      <name>Chronicles_2.xml</name>
+    </file>
+    <file hashcheck="true">
+      <name>Daniel.xml</name>
+    </file>
+    <file hashcheck="true">
+      <name>Deuteronomy.DH.xml</name>
+    </file>
+    <file hashcheck="true">
+      <name>Deuteronomy.xml</name>
+    </file>
+    <file hashcheck="true">
+      <name>Ecclesiastes.xml</name>
+    </file>
+    <file hashcheck="true">
+      <name>Esther.xml</name>
+    </file>
+    <file hashcheck="true">
+      <name>Exodus.DH.xml</name>
+    </file>
+    <file hashcheck="true">
+      <name>Exodus.xml</name>
+    </file>
+    <file hashcheck="true">
+      <name>Ezekiel.xml</name>
+    </file>
+    <file hashcheck="true">
+      <name>Ezra.xml</name>
+    </file>
+    <file hashcheck="true">
+      <name>Genesis.DH.xml</name>
+    </file>
+    <file hashcheck="true">
+      <name>Genesis.xml</name>
+    </file>
+    <file hashcheck="true">
+      <name>Habakkuk.xml</name>
+    </file>
+    <file hashcheck="true">
+      <name>Haggai.xml</name>
+    </file>
+    <file hashcheck="true">
+      <name>Hosea.xml</name>
+    </file>
+    <file hashcheck="true">
+      <name>Isaiah.xml</name>
+    </file>
+    <file hashcheck="true">
+      <name>Jeremiah.xml</name>
+    </file>
+    <file hashcheck="true">
+      <name>Job.xml</name>
+    </file>
+    <file hashcheck="true">
+      <name>Joel.xml</name>
+    </file>
+    <file hashcheck="true">
+      <name>Jonah.xml</name>
+    </file>
+    <file hashcheck="true">
+      <name>Joshua.xml</name>
+    </file>
+    <file hashcheck="true">
+      <name>Judges.xml</name>
+    </file>
+    <file hashcheck="true">
+      <name>Kings_1.xml</name>
+    </file>
+    <file hashcheck="true">
+      <name>Kings_2.xml</name>
+    </file>
+    <file hashcheck="true">
+      <name>Lamentations.xml</name>
+    </file>
+    <file hashcheck="true">
+      <name>Leviticus.DH.xml</name>
+    </file>
+    <file hashcheck="true">
+      <name>Leviticus.xml</name>
+    </file>
+    <file hashcheck="true">
+      <name>Malachi.xml</name>
+    </file>
+    <file hashcheck="true">
+      <name>Micah.xml</name>
+    </file>
+    <file hashcheck="true">
+      <name>Nahum.xml</name>
+    </file>
+    <file hashcheck="true">
+      <name>Nehemiah.xml</name>
+    </file>
+    <file hashcheck="true">
+      <name>Numbers.DH.xml</name>
+    </file>
+    <file hashcheck="true">
+      <name>Numbers.xml</name>
+    </file>
+    <file hashcheck="true">
+      <name>Obadiah.xml</name>
+    </file>
+    <file hashcheck="true">
+      <name>Proverbs.xml</name>
+    </file>
+    <file hashcheck="true">
+      <name>Psalms.xml</name>
+    </file>
+    <file hashcheck="true">
+      <name>Ruth.xml</name>
+    </file>
+    <file hashcheck="true">
+      <name>Samuel_1.xml</name>
+    </file>
+    <file hashcheck="true">
+      <name>Samuel_2.xml</name>
+    </file>
+    <file hashcheck="true">
+      <name>Song_of_Songs.xml</name>
+    </file>
+    <file hashcheck="true">
+      <name>TanachHeader.xml</name>
+      <description>Tanach overall TEI header, notes and coding sections; no Books.</description>
+    </file>
+    <file hashcheck="true">
+      <name>TanachIndex.xml</name>
+      <description>Short index to Tanach chapters and verses for citation testing.</description>
+    </file>
+    <file hashcheck="true">
+      <name>Zechariah.xml</name>
+    </file>
+    <file hashcheck="true">
+      <name>Zephaniah.xml</name>
+    </file>
+  </directory>
+  
+   <directory foldercheck="false">
+    <name>cgi-bin</name>
+    
+    <description>Unused, un-deletable, and empty web hosting folder.</description>        
+    <path>/cgi-bin/</path>
+    <folders>0</folders>
+    <files>0</files>
+   </directory>
+   
+   <directory foldercheck="true">
+    <name>DH</name>
+    
+    <description>Documentary hypothesis files including multibook Torah files.</description>        
+    <path>/DH/</path>
+    <folders>0</folders>
+    <files>5</files>
+    
+    <file hashcheck="true">
+      <name>DHSpecification.Deuteronomy.xml</name>
+      <description>Documentary Hypothesis marking specification for Deuteronomy.</description>
+    </file>
+    <file hashcheck="true">
+      <name>DHSpecification.Exodus.xml</name>
+      <description>Documentary Hypothesis marking specification for Exodus.</description>
+    </file>
+    <file hashcheck="true">
+      <name>DHSpecification.Genesis.xml</name>
+      <description>Documentary Hypothesis marking specification for Genesis.</description>
+    </file>
+    <file hashcheck="true">
+      <name>DHSpecification.Leviticus.xml</name>
+      <description>Documentary Hypothesis marking specification for Leviticus.</description>
+    </file>
+    <file hashcheck="true">
+      <name>DHSpecification.Numbers.xml</name>
+      <description>Documentary Hypothesis marking specification for Numbers.</description>
+    </file>
+  </directory>
+ 
+   <directory foldercheck="true">
+    <name>Fonts</name>
+    
+    <description>Font files and HTML-only font test file.</description>        
+    <path>/Fonts/</path>
+    <folders>0</folders>
+    <files>2</files>
+    
+    <file hashcheck="true">
+      <name>SBL_Hbrw.ttf</name>
+      <description>Society of Biblical Literature (SBL) SBL Hebrew TrueType font.</description>
+    </file>
+    <file hashcheck="true">
+      <name>SBL_Hebrew_readme.txt</name>
+      <description>Readme file for the SBL Hebrew font.</description>
+    </file>
+  </directory>
+  
+   <directory foldercheck="true">
+    <name>Images</name>
+    
+    <description>Image files.</description>        
+    <path>/Images/</path>
+    <folders>0</folders>
+    <files>6</files>
+    
+    <file hashcheck="true">
+      <name>Background</name>
+      <description>Tiled background for site displays.</description>
+    </file>
+    <file hashcheck="true">
+      <name>CreativeCommons.gif</name>
+      <description>Creative Commons logo.</description>
+    </file>
+    <file hashcheck="true">
+      <name>Job7.11.jpg</name>
+      <description>JPG image of correctly  rendered Job 7:11.</description>
+    </file>
+    <file hashcheck="true">
+      <name>Ps27.13.jpg</name>
+      <description>JPG image of correctly  rendered Psalms 27:13.</description>
+    </file>
+    <file hashcheck="true">
+      <name>TanachIcon.ico</name>
+      <description>Site Tanach icon.</description>
+    </file>
+    <file hashcheck="true">
+      <name>Transcriber.png</name>
+      <description>Transcriber address.</description>
+    </file>
+  </directory>
+  
+   <directory foldercheck="true">
+    <name>Java</name>
+    
+    <description>Java archive (.jar) files of sources and classes for the software
+    that generated the site. The site is constructed by calling the applications in the order: WLC2XML, 
+    DHMarker, Splitter, Supplements. </description>        
+    <path>/Java/</path>
+    <folders>0</folders>
+    <files>8</files>
+    
+    <file hashcheck="true">
+      <name>DHMarker.jar</name>
+      <description>Application to apply Documentary Hypothesis markings to Torah book files.</description>
+    </file>
+    <file hashcheck="true">
+      <name>HTMLServer.jar</name>
+      <description>Application serving HTML Tanach texts from the server.</description>
+    </file>
+    <file hashcheck="true">
+      <name>MC2U.jar</name>
+      <description>Application converting MC coded text to Unicode/XML in Supplements directory.</description>
+    </file>
+    <file hashcheck="true">
+      <name>ODTServer.jar</name>
+      <description>Application serving ODT Tanach texts from the server.</description>
+    </file>
+    <file hashcheck="true">
+      <name>Supplements.jar</name>
+      <description>Application that generates the supplements files.</description>
+    </file>
+     <file hashcheck="true">
+      <name>TextServer.jar</name>
+      <description>Application serving text Tanach texts from the server.</description>
+    </file>
+    <file hashcheck="true">
+      <name>WLC2XML.jar</name>
+      <description>Application converting of Michigan-Claremont formated text to Unicode and XML.</description>
+    </file>
+    <file hashcheck="true">
+      <name>XMLServer.jar</name>
+      <description>Application serving XML Tanach texts from the server. For internal use only.</description>
+    </file>
+  </directory>
+  
+   <directory foldercheck="true">
+    <name>Javascript</name>
+    
+    <description>Javascript programs for site operation.</description>        
+    <path>/Javascript/</path>
+    <folders>0</folders>
+    <files>5</files>
+    
+    <file hashcheck="true">
+      <name>LCFacsimile.js</name>
+      <description>Javascript code to display LC facsimile pages.</description>
+    </file>
+    <file hashcheck="true">
+      <name>SarissaLib.js</name>
+      <description>Javascript code library for the Sarissa browser compatibility software.</description>
+    </file>
+    <file hashcheck="true">
+      <name>TanachHome.js</name>
+      <description>Javascript code the Home page.</description>
+    </file>
+    <file hashcheck="true">
+      <name>TanachBook.js</name>
+      <description>Javascript code the Book page.</description>
+    </file>
+    <file hashcheck="true">
+      <name>UtilityLib.js</name>
+      <description>General purpose Javascript utilities.</description>
+    </file>
+  </directory>
+  
+  <directory foldercheck="true">
+    <name>ODTFiles</name>
+    
+    <description>Books of the Tanach in PDF format.</description>    
+    <path>/ODTFiles/</path>
+    <folders>1</folders>
+    <files>4</files>
+    
+    <folder foldercheck="true">
+      <name>static</name>
+      <description>Fixed files in an ODT file bundle.</description>
+    </folder>
+    
+    <file hashcheck="true">
+      <name>Tanach.acc.odt.zip</name>
+      <description>Zipped archive of Tanach books with accents in ODT format.</description>
+    </file>
+    <file hashcheck="true">
+      <name>Tanach.vow.odt.zip</name>
+      <description>Zipped archive of Tanach books with vowels in ODT format.</description>
+    </file>
+    <file hashcheck="true">
+      <name>Tanach.con.odt.zip</name>
+      <description>Zipped archive of Tanach books with consonants in ODT format.</description>
+    </file>
+    <file hashcheck="true">
+      <name>Tanach.mor.odt.zip</name>
+      <description>Zipped archive of Tanach books with morphology in ODT format.</description>
+    </file>
+   </directory>
+  
+  <directory foldercheck="true">
+    <name>static</name>
+    
+    <description>Fixed files in ODT file bundle.</description>    
+    <path>/ODTFiles/static/</path>
+    <folders>1</folders>
+    <files>3</files>
+    
+    <folder foldercheck="true">
+      <name>META-INF</name>
+      <description>Directory for ODT manifest.xml file.</description>
+    </folder>
+    
+    <file hashcheck="true">
+      <name>meta.xml</name>
+    </file>
+    <file hashcheck="true">
+      <name>mimetype</name>
+    </file>
+    <file hashcheck="true">
+      <name>settings.xml</name>
+    </file>
+  </directory>
+
+  <directory foldercheck="true">
+    <name>META-INF</name>
+    
+    <description>Directory for ODT manifest.xml file.</description>    
+    <path>/ODTFiles/static/META-INF/</path>
+    <folders>0</folders>
+    <files>1</files>
+    <file hashcheck="true">
+      <name>manifest.xml</name>
+    </file>
+  </directory>
+
+  <directory foldercheck="true">
+    <name>Pages</name>
+    
+    <description>Informative HTML pages.</description>    
+    <path>/Pages/</path>
+    <folders>0</folders>
+    <files>25</files>
+    
+    <file hashcheck="true">
+      <name>About.html</name>
+      <description>About the site.</description>
+    </file>
+    <file hashcheck="true">
+      <name>Changes.html</name>
+      <description>Zipped archive of Tanach books with vowels in PDF format.</description>
+    </file>
+    <file hashcheck="true">
+      <name>CitationSyntax.html</name>
+      <description>Correct syntax for citations of the biblical text.</description>
+    </file>
+    <file hashcheck="true">
+      <name>Coding.xml</name>
+      <description>Unicode coding description.</description>
+    </file>
+    <file hashcheck="true">
+      <name>Contents.xml</name>
+      <description>Detailed list of site contents from Tanach.def.xml.</description>
+    </file>
+    <file hashcheck="true">
+      <name>DH.html</name>
+      <description>Documentary Hypothesis (DH) description.</description>
+    </file>
+    <file hashcheck="true">
+      <name>Facsimiles.html</name>
+      <description>Description of the LC facsimile presentation.</description>
+    </file>
+    <file hashcheck="true">
+      <name>FontTest.xml</name>
+      <description>Tests the Hebrew font given as a query parameter.</description>
+    </file>
+    <file hashcheck="true">
+      <name>HTMLFiles.html</name>
+      <description>HTML file information..</description>
+     </file>
+    <file hashcheck="true">
+      <name>HTMLServerParameters.html</name>
+      <description>Parameters for the Server.html server.</description>
+     </file>
+    <file hashcheck="true">
+      <name>Installation.html</name>
+      <description>Installation instructions.</description>
+    </file>
+    <file hashcheck="true">
+      <name>Instructions.html</name>
+      <description>How to use the site.</description>
+    </file>
+    <file hashcheck="true">
+      <name>Links.html</name>
+      <description>How to use the external links feature.</description>
+    </file>
+    <file hashcheck="true">
+      <name>ODTFiles.html</name>
+      <description>ODT file information.</description>
+    </file>
+    <file hashcheck="true">
+      <name>ODTServerParameters.html</name>
+      <description>Parameters for the Server.odt server.</description>
+    </file>
+    <file hashcheck="true">
+      <name>PageIndex.html</name>
+      <description>Index of informative pages.</description>
+    </file>
+     <file hashcheck="true">
+      <name>PDFFiles.html</name>
+      <description>PDF file information.</description>
+    </file>
+      <file hashcheck="true">
+      <name>Servers.html</name>
+      <description>General information about the 4 servers.</description>
+    </file>
+    <file hashcheck="true">
+      <name>Supplements.html</name>
+      <description>Index of the Supplements.</description>
+    </file>
+    <file hashcheck="true">
+      <name>Technical.html</name>
+      <description>Technical details of the site.</description>
+    </file>
+    <file hashcheck="true">
+      <name>TEIHeader.xml</name>
+      <description>Displays TEI header information.</description>
+    </file>
+    <file hashcheck="true">
+      <name>TextFiles.html</name>
+      <description>Text file information.</description>
+    </file>
+    <file hashcheck="true">
+      <name>Transcriber.html</name>
+      <description>Name and address of the Transcriber.</description>
+    </file>
+    <file hashcheck="true">
+      <name>UnicodeRep.xml</name>
+      <description>Unicode representations of selected text.</description>
+    </file>
+    <file hashcheck="true">
+      <name>XMLFiles.html</name>
+      <description>XML file information.</description>
+    </file>
+  </directory>
+  
+  
+  <directory foldercheck="true">
+    <name>PDFFiles</name>
+    
+    <description>Books of the Tanach in PDF format.</description>    
+    <path>/PDFFiles/</path>
+    <folders>0</folders>
+    <files>160</files>
+    
+    <file hashcheck="true">
+      <name>Tanach.acc.pdf.zip</name>
+      <description>Zipped archive of Tanach books with accents in PDF format.</description>
+    </file>
+    <file hashcheck="true">
+      <name>Tanach.vow.pdf.zip</name>
+      <description>Zipped archive of Tanach books with vowels in PDF format.</description>
+    </file>
+    <file hashcheck="true">
+      <name>Tanach.con.pdf.zip</name>
+      <description>Zipped archive of Tanach books with consonants in PDF format.</description>
+    </file>
+    <file hashcheck="true">
+      <name>Tanach.mor.pdf.zip</name>
+      <description>Zipped archive of Tanach books with morphology in PDF format.</description>
+    </file>
+    
+    
+    <file hashcheck="true">
+      <name>Amos.acc.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Chronicles_1.acc.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Chronicles_2.acc.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Daniel.acc.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Deuteronomy.acc.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Ecclesiastes.acc.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Esther.acc.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Exodus.acc.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Ezekiel.acc.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Ezra.acc.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Genesis.acc.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Habakkuk.acc.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Haggai.acc.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Hosea.acc.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Isaiah.acc.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Jeremiah.acc.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Job.acc.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Joel.acc.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Jonah.acc.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Joshua.acc.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Judges.acc.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Kings_1.acc.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Kings_2.acc.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Lamentations.acc.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Leviticus.acc.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Malachi.acc.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Micah.acc.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Nahum.acc.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Nehemiah.acc.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Numbers.acc.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Obadiah.acc.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Proverbs.acc.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Psalms.acc.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Ruth.acc.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Samuel_1.acc.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Samuel_2.acc.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Song_of_Songs.acc.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Zechariah.acc.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Zephaniah.acc.pdf</name>
+    </file>
+<!-- Vowels only -->
+    <file hashcheck="true">
+      <name>Amos.vow.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Chronicles_1.vow.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Chronicles_2.vow.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Daniel.vow.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Deuteronomy.vow.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Ecclesiastes.vow.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Esther.vow.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Exodus.vow.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Ezekiel.vow.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Ezra.vow.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Genesis.vow.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Habakkuk.vow.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Haggai.vow.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Hosea.vow.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Isaiah.vow.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Jeremiah.vow.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Job.vow.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Joel.vow.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Jonah.vow.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Joshua.vow.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Judges.vow.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Kings_1.vow.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Kings_2.vow.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Lamentations.vow.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Leviticus.vow.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Malachi.vow.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Micah.vow.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Nahum.vow.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Nehemiah.vow.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Numbers.vow.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Obadiah.vow.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Proverbs.vow.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Psalms.vow.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Ruth.vow.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Samuel_1.vow.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Samuel_2.vow.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Song_of_Songs.vow.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Zechariah.vow.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Zephaniah.vow.pdf</name>
+    </file>
+<!-- Consonants only -->
+    <file hashcheck="true">
+      <name>Amos.con.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Chronicles_1.con.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Chronicles_2.con.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Daniel.con.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Deuteronomy.con.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Ecclesiastes.con.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Esther.con.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Exodus.con.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Ezekiel.con.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Ezra.con.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Genesis.con.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Habakkuk.con.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Haggai.con.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Hosea.con.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Isaiah.con.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Jeremiah.con.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Job.con.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Joel.con.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Jonah.con.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Joshua.con.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Judges.con.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Kings_1.con.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Kings_2.con.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Lamentations.con.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Leviticus.con.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Malachi.con.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Micah.con.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Nahum.con.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Nehemiah.con.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Numbers.con.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Obadiah.con.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Proverbs.con.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Psalms.con.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Ruth.con.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Samuel_1.con.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Samuel_2.con.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Song_of_Songs.con.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Zechariah.con.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Zephaniah.con.pdf</name>
+    </file>
+<!-- Morphology -->
+    <file hashcheck="true">
+      <name>Amos.mor.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Chronicles_1.mor.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Chronicles_2.mor.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Daniel.mor.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Deuteronomy.mor.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Ecclesiastes.mor.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Esther.mor.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Exodus.mor.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Ezekiel.mor.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Ezra.mor.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Genesis.mor.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Habakkuk.mor.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Haggai.mor.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Hosea.mor.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Isaiah.mor.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Jeremiah.mor.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Job.mor.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Joel.mor.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Jonah.mor.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Joshua.mor.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Judges.mor.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Kings_1.mor.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Kings_2.mor.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Lamentations.mor.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Leviticus.mor.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Malachi.mor.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Micah.mor.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Nahum.mor.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Nehemiah.mor.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Numbers.mor.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Obadiah.mor.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Proverbs.mor.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Psalms.mor.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Ruth.mor.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Samuel_1.mor.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Samuel_2.mor.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Song_of_Songs.mor.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Zechariah.mor.pdf</name>
+    </file>
+    <file hashcheck="true">
+      <name>Zephaniah.mor.pdf</name>
+    </file>
+    
+  </directory>
+  
+  
+  <directory foldercheck="false">
+    <name>PreviousVersions</name>
+    
+    <description>Recent previous versions of the site.  Empty in Tanach.zip file.</description>        
+    <path>/PreviousVersions/</path>
+    <folders>0</folders>
+    <files>0</files>
+  </directory>
+  
+    
+
+   <directory foldercheck="true">
+    <name>Supplements</name>
+    
+    <description>Supplemental information about the Tanach.</description>        
+    <path>/Supplements/</path>
+    <folders>2</folders>
+    <files>12</files>
+    
+    <file hashcheck="true">
+      <name>Differences-408-410.xml</name>
+      <description>Differences between WLC versions 4.08 and 4.10.</description>
+    </file>
+    <file hashcheck="true">
+      <name>Differences-410-412.xml</name>
+      <description>Differences between WLC versions 4.10 and 4.12.</description>
+    </file>
+    <file hashcheck="true">
+      <name>Differences-412-414.xml</name>
+      <description>Differences between WLC versions 4.12 and 4.14.</description>
+    </file>
+    <file hashcheck="true">
+      <name>Differences-414-416.xml</name>
+      <description>Differences between WLC versions 4.14 and 4.16 .</description>
+    </file>
+    <file hashcheck="true">
+      <name>Differences-416-418.xml</name>
+      <description>Differences between WLC versions 4.16 and 4.18 .</description>
+    </file>
+    <file hashcheck="true">
+      <name>Differences-418-420.xml</name>
+      <description>Differences between WLC versions 4.18 and 4.20 (the current version).</description>
+    </file>
+    <file hashcheck="true">
+      <name>MC2U.html</name>
+      <description>HTML framework for MC2U converter facility.</description>
+    </file>
+    <file hashcheck="true">
+      <name>Notes.xml</name>
+      <description>Description and book-by-book display of transcription notes in the WLC.</description>
+    </file>
+    <file hashcheck="true">
+      <name>Search.xml</name>
+      <description>Search facility.</description>
+    </file>
+    <file hashcheck="true">
+      <name>Statistics.xml</name>
+      <description>Statistics of chapters, verses, and many, many other items in the WLC.</description>
+    </file>
+    <file hashcheck="true">
+      <name>Variants.xml</name>
+      <description>Statistics and book-by-book display of qere / ketib variants in the WLC.</description>
+    </file>
+    <file hashcheck="true">
+      <name>Verses.xml</name>
+      <description>Statistics of verses and name verse finder in Supplements directory.</description>
+    </file>
+    <folder foldercheck="true">
+      <name>Javascript</name>
+      <description>Javascript files.</description>
+    </folder>
+    <folder foldercheck="true">
+      <name>XSL</name>
+      <description>Javascript files.</description>
+    </folder>
+  </directory>
+  
+  
+  <directory foldercheck="true">
+    <name>Javascript</name>
+    
+    <description>Javascript files for Supplements.</description>    
+    <path>/Supplements/Javascript/</path>
+    <folders>0</folders>
+    <files>6</files>
+   
+    <file hashcheck="true">
+      <name>Differences.js</name>
+      <description>Javascript code for the Differences files in the Supplements directory.</description>
+    </file>
+    <file hashcheck="true">
+      <name>Notes.js</name>
+      <description>Javascript code for the Notes file in the Supplements directory.</description>
+    </file>
+    <file hashcheck="true">
+      <name>Search.js</name>
+      <description>Javascript code for the Search file in the Supplements directory.</description>
+    </file>
+    <file hashcheck="true">
+      <name>Statistics.js</name>
+      <description>Javascript code for the Statistics file in the Supplements directory.</description>
+    </file>
+    <file hashcheck="true">
+      <name>Variants.js</name>
+      <description>Javascript code for the Variants file in the Supplements directory.</description>
+    </file>
+    <file hashcheck="true">
+      <name>Verses.js</name>
+      <description>Javascript code for the Verses file in the Supplements directory.</description>
+    </file>
+    
+    
+  </directory>
+  
+  
+  <directory foldercheck="true">
+    <name>XSL</name>
+    
+    <description>XSL files for Supplements.</description>    
+    <path>/Supplements/XSL/</path>
+    <folders>0</folders>
+    <files>6</files>
+    
+    <file hashcheck="true">
+      <name>Differences.xsl.xml</name>
+      <description>XSL transformation file for the Supplements Differences page.</description>
+    </file>
+    <file hashcheck="true">
+      <name>Notes.xsl.xml</name>
+      <description>XSL transformation file for the Supplements Notes page.</description>
+    </file>
+    <file hashcheck="true">
+      <name>Statistics.xsl.xml</name>
+      <description>XSL transformation file for the Supplements Statistics page.</description>
+    </file>
+    <file hashcheck="true">
+      <name>Search.xsl.xml</name>
+      <description>XSL transformation file for the Supplements Search page.</description>
+    </file>
+    <file hashcheck="true">
+      <name>Variants.xsl.xml</name>
+      <description>XSL transformation file for the Supplements Variants page.</description>
+    </file>
+    <file hashcheck="true">
+      <name>Verses.xsl.xml</name>
+      <description>XSL transformation file for the Supplements Verses page.</description>
+    </file>
+  </directory>
+  
+  
+  
+  
+  
+  
+  
+  <directory foldercheck="true">
+    <name>TextFiles</name>
+    
+    <description>Books of the Tanach as UTF-8 text files.</description>    
+    <path>/TextFiles/</path>
+    <folders>0</folders>
+    <files>4</files>
+    
+    <file hashcheck="true">
+      <name>Tanach.acc.txt.zip</name>
+      <description>Zipped archive of Tanach books with accents in UTF-8 text format.</description>
+    </file>
+    <file hashcheck="true">
+      <name>Tanach.vow.txt.zip</name>
+      <description>Zipped archive of Tanach books with vowels in UTF-8 text format.</description>
+    </file>
+    <file hashcheck="true">
+      <name>Tanach.con.txt.zip</name>
+      <description>Zipped archive of Tanach books with consonants in UTF-8 text format.</description>
+    </file>
+    <file hashcheck="true">
+      <name>Tanach.mor.txt.zip</name>
+      <description>Zipped archive of Tanach books with morphology in UTF-8 text format.</description>
+    </file>
+  </directory>
+
+  <directory foldercheck="false">
+    <name>WEB-INF</name>
+    
+    <description>Server software.  Empty in the Tanach.zip archive.</description>        
+    <path>/WEB-INF/</path>
+    <folders>0</folders>
+    <files>0</files>
+  </directory>
+  
+   <directory foldercheck="true">
+    <name>XSL</name>
+    
+    <description>XSL transfomation files for the site. Also contains supporting secondary XML files. 
+    Some included files are for the server only and are not needed for client viewing.</description>        
+    <path>/XSL/</path>
+    <folders>0</folders>
+    <files>23</files>
+    
+    <file hashcheck="true">
+      <name>404.shtml</name>
+      <description>Server response for type 404, "File not found" errors.</description>
+    </file>
+    <file hashcheck="true">
+      <name>500.shtml</name>
+      <description>Server response for type 500, "Internal server" errors.</description>
+    </file>
+    <file hashcheck="true">
+      <name>503.shtml</name>
+      <description>Server response for type 503, "Server overload" errors.</description>
+    </file>
+    <file hashcheck="true">
+      <name>Coding.xsl.xml</name>
+      <description>XSL transformation file for Coding.xml page.</description>
+    </file>
+    <file hashcheck="true">
+      <name>Contents.xsl.xml</name>
+      <description>XSL transformation file for Contents.xml page.</description>
+    </file>
+    <file hashcheck="true">
+      <name>DH.xsl.xml</name>
+      <description>XSL transformation file for Documentary Hypothesis marking specification files in the DH directory.</description>
+    </file>
+    <file hashcheck="true">
+      <name>FontTest.xsl.xml</name>
+      <description>XSL transformation file for the FontTest.xml page.</description>
+    </file>
+    <file hashcheck="true">
+      <name>LCIndex.xml</name>
+      <description>Folio index to the LC facsimiles (actually in HTML format).</description>
+    </file>
+    <file hashcheck="true">
+      <name>Links.xsl.xml</name>
+      <description>XSL transformation file for links to external sites pages.</description>
+    </file>
+    <file hashcheck="true">
+      <name>Links.xml</name>
+      <description>XML definition of markers for external link specifications.</description>
+    </file>
+    <file hashcheck="true">
+      <name>ServerError.xml</name>
+      <description>XML stub for launching error reporting for any of the servers.</description>
+    </file>
+    <file hashcheck="true">
+      <name>ServerError.xsl.xml</name>
+      <description>XSL transformation for writing error responses for any of the servers.</description>
+    </file>
+   <file hashcheck="true">
+      <name>Tanach.def.xml</name>
+      <description>XML SiteChecker definition of site contents.</description>
+    </file>
+    <file hashcheck="true">
+      <name>Tanach.xsd</name>
+      <description>XSD format definition for Tanach XML files.</description>
+    </file>
+    <file hashcheck="true">
+      <name>Tanach.xsl.xml</name>
+      <description>XSL transformation file for the multibook files in the DH directory.</description>
+    </file>
+    <file hashcheck="true">
+      <name>TEIHeader.xsl.xml</name>
+      <description>XSL transformation file for the TEIHeader.xml page file.</description>
+    </file>
+    <file hashcheck="true">
+      <name>Text.xsl.xml</name>
+      <description>Key XSL transformation file to display Hebrew text from Tanach XML markup.</description>
+    </file>
+    <file hashcheck="true">
+      <name>UnicodeRep.xsl.xml</name>
+      <description>XSL transformation file for UnicodeRep.xml.</description>
+    </file>
+    <file hashcheck="true">
+      <name>XML2XHTML.xsl.xml</name>
+      <description>XSL transformation file conversion of XML files to XHTML for the Server server.</description>
+    </file>
+    <file hashcheck="true">
+      <name>XML2ODT.content.xsl.xml</name>
+      <description>XSL transformation file conversion of XML files to ODT content.xml files for the ODTServer server.</description>
+    </file>
+    <file hashcheck="true">
+      <name>XML2ODT.styles.xsl.xml</name>
+      <description>XSL transformation file conversion of XML files to ODT styles.xml files for the ODTServer server.</description>
+    </file>
+    <file hashcheck="true">
+      <name>XML2Text.xsl.xml</name>
+      <description>XSL transformation file conversion of XML files to text files for the TextServer server.</description>
+    </file>
+    <file hashcheck="true">
+      <name>XML2XML.xsl.xml</name>
+      <description>XSL transformation file used by XMLServer to extract citations from XML book files. </description>
+    </file>
+  </directory>
+  
+</Site>

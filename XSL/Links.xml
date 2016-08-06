@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="Markers.xsl.xml"?>
+<!-- Copyright C.V.Kimball 2013 -->
+<Links>
+  <date>12 Nov 2014</date>
+  
+  
+  <links>
+    
+    <!-- Watch out for '&' in formats!  They must be replaced by '&amp;'.  -->
+    
+    <link>
+      <name>LC facsimile</name>
+      <site>null</site>
+      <format>null</format>
+    </link>
+    <link>
+      <name>New Revised Standard (AE)</name>
+      <site>http://bible.oremus.org</site>
+      <format>/bible.cgi?passage={$B}%20{$C}:{$V}-{$Vlast}&amp;version=nrsvae</format>
+    </link>
+    <link>
+      <name>Revised Standard</name>
+      <site>http://www.hti.umich.edu</site>
+      <format>/cgi/r/rsv/rsv-idx?type=citation&amp;book={$Bniv}&amp;chapno={$C}&amp;startverse={$V}&amp;endverse={$Vlast}</format>
+    </link>
+    <link>
+      <name>BibleGateway: King James</name>
+      <site>http://www.biblegateway.com</site>
+      <format>/passage/?search={$Ba}{$C}:{$V}-{$Clast}:{$Vlast}&amp;version=9</format>
+    </link>
+    <link>
+      <name>English Standard</name>
+      <site>http://www.gnpcb.org</site>
+      <format>/esv/search/?q={$Ba}+{$C}%3A{$V}-{$Clast}%3A{$Vlast}</format>
+    </link>
+    <link>
+      <name>Mechon Mamre: JPS 1917</name>
+      <site>http://www.mechon-mamre.org</site>
+      <format>/e/et/et{$Bmm}{$Cmm}.htm</format>
+    </link>
+    <link>
+      <name>Mechon Mamre (he)</name>
+      <site>http://www.mechon-mamre.org</site>
+      <format>/c/ct/c{$Bmm}{$Cmm}.htm</format>
+    </link>
+    <link>
+      <name>Wikipedia</name>
+      <site>http://en.wikipedia.org</site>
+      <format>/wiki/{$Bnn}</format>
+    </link>
+  </links>
+  
+  
+  
+  
+  <markers>
+    <marker>
+      <code>B</code>
+      <site>-</site>
+      <description>Deblanked WLC book names</description>
+      <marks>
+        <mark name="Genesis">Genesis</mark>
+        <mark name="Exodus">Exodus</mark>
+        <mark name="Leviticus">Leviticus</mark>
+        <mark name="Numbers">Numbers</mark>
+        <mark name="Deuteronomy">Deuteronomy</mark>
+        <mark name="Joshua">Joshua</mark>
+        <mark name="Judges">Judges</mark>
+        <mark name="1 Samuel">1Samuel</mark>
+        <mark name="2 Samuel">2Samuel</mark>
+        <mark name="1 Kings">1Kings</mark>
+        <mark name="2 Kings">2Kings</mark>
+        <mark name="Isaiah">Isaiah</mark>
+        <mark name="Jeremiah">Jeremiah</mark>
+        <mark name="Ezekiel">Ezekiel</mark>
+        <mark name="Hosea">Hosea</mark>
+        <mark name="Joel">Joel</mark>
+        <mark name="Amos">Amos</mark>
+        <mark name="Obadiah">Obadiah</mark>
+        <mark name="Jonah">Jonah</mark>
+        <mark name="Micah">Micah</mark>
+        <mark name="Nahum">Nahum</mark>
+        <mark name="Habakkuk">Habakkuk</mark>
+        <mark name="Zephaniah">Zephaniah</mark>
+        <mark name="Haggai">Haggai</mark>
+        <mark name="Zechariah">Zechariah</mark>
+        <mark name="Malachi">Malachi</mark>
+        <mark name="1 Chronicles">1Chronicles</mark>
+        <mark name="2 Chronicles">2Chronicles</mark>
+        <mark name="Psalms">Psalms</mark>
+        <mark name="Job">Job</mark>
+        <mark name="Proverbs">Proverbs</mark>
+        <mark name="Ruth">Ruth</mark>
+        <mark name="Song of Songs">SongofSongs</mark>
+        <mark name="Ecclesiastes">Ecclesiastes</mark>
+        <mark name="Lamentations">Lamentations</mark>
+        <mark name="Esther">Esther</mark>
+        <mark name="Daniel">Daniel</mark>
+        <mark name="Ezra">Ezra</mark>
+        <mark name="Nehemiah">Nehemiah</mark>
+      </marks>
+    </marker>
+
+    <marker>
+      <code>Ba</code>
+      <site>-</site>
+      <description>Deblanked WLC abbreviated book names</description>
+      <marks>
+        <mark name="Genesis">Gen</mark>
+        <mark name="Exodus">Ex</mark>
+        <mark name="Leviticus">Lev</mark>
+        <mark name="Numbers">Num</mark>
+        <mark name="Deuteronomy">Deut</mark>
+        <mark name="Joshua">Josh</mark>
+        <mark name="Judges">Judg</mark>
+        <mark name="1 Samuel">1 Sam</mark>
+        <mark name="2 Samuel">2 Sam</mark>
+        <mark name="1 Kings">1 Kings</mark>
+        <mark name="2 Kings">2 Kings</mark>
+        <mark name="Isaiah">Isa</mark>
+        <mark name="Jeremiah">Jer</mark>
+        <mark name="Ezekiel">Ezek</mark>
+        <mark name="Hosea">Hos</mark>
+        <mark name="Joel">Joel</mark>
+        <mark name="Amos">Am</mark>
+        <mark name="Obadiah">Ob</mark>
+        <mark name="Jonah">Jon</mark>
+        <mark name="Micah">Mic</mark>
+        <mark name="Nahum">Nah</mark>
+        <mark name="Habakkuk">Hab</mark>
+        <mark name="Zephaniah">Zeph</mark>
+        <mark name="Haggai">Hag</mark>
+        <mark name="Zechariah">Zech</mark>
+        <mark name="Malachi">Mal</mark>
+        <mark name="1 Chronicles">1 Chr</mark>
+        <mark name="2 Chronicles">2 Chr</mark>
+        <mark name="Psalms">Ps</mark>
+        <mark name="Job">Job</mark>
+        <mark name="Proverbs">Prov</mark>
+        <mark name="Ruth">Ruth</mark>
+        <mark name="Song of Songs">Song</mark>
+        <mark name="Ecclesiastes">Eccl</mark>
+        <mark name="Lamentations">Lam</mark>
+        <mark name="Esther">Esth</mark>
+        <mark name="Daniel">Dan</mark>
+        <mark name="Ezra">Ezra</mark>
+        <mark name="Nehemiah">Neh</mark>
+      </marks>
+    </marker>
+
+    <marker>
+      <code>Bn</code>
+      <site>-</site>
+      <description>WLC book numbers</description>
+      <marks>
+        <mark name="Genesis">1</mark>
+        <mark name="Exodus">2</mark>
+        <mark name="Leviticus">3</mark>
+        <mark name="Numbers">4</mark>
+        <mark name="Deuteronomy">5</mark>
+        <mark name="Joshua">6</mark>
+        <mark name="Judges">7</mark>
+        <mark name="1 Samuel">8</mark>
+        <mark name="2 Samuel">9</mark>
+        <mark name="1 Kings">10</mark>
+        <mark name="2 Kings">11</mark>
+        <mark name="Isaiah">12</mark>
+        <mark name="Jeremiah">13</mark>
+        <mark name="Ezekiel">14</mark>
+        <mark name="Hosea">15</mark>
+        <mark name="Joel">16</mark>
+        <mark name="Amos">17</mark>
+        <mark name="Obadiah">18</mark>
+        <mark name="Jonah">19</mark>
+        <mark name="Micah">20</mark>
+        <mark name="Nahum">21</mark>
+        <mark name="Habakkuk">22</mark>
+        <mark name="Zephaniah">23</mark>
+        <mark name="Haggai">24</mark>
+        <mark name="Zechariah">25</mark>
+        <mark name="Malachi">26</mark>
+        <mark name="1 Chronicles">38</mark>
+        <mark name="2 Chronicles">39</mark>
+        <mark name="Psalms">27</mark>
+        <mark name="Job">29</mark>
+        <mark name="Proverbs">28</mark>
+        <mark name="Ruth">31</mark>
+        <mark name="Song of Songs">30</mark>
+        <mark name="Ecclesiastes">33</mark>
+        <mark name="Lamentations">32</mark>
+        <mark name="Esther">34</mark>
+        <mark name="Daniel">35</mark>
+        <mark name="Ezra">36</mark>
+        <mark name="Nehemiah">37</mark>
+      </marks>
+    </marker>
+
+    <marker>
+      <code>Bnn</code>
+  
+      <site>en.wikipedia.org</site>
+      <description>WLC book names without numbers.</description>
+      <marks>
+        <mark name="Genesis">Genesis</mark>
+        <mark name="Exodus">Exodus</mark>
+        <mark name="Leviticus">Leviticus</mark>
+        <mark name="Numbers">Numbers</mark>
+        <mark name="Deuteronomy">Deuteronomy</mark>
+        <mark name="Joshua">Joshua</mark>
+        <mark name="Judges">Judges</mark>
+        <mark name="1 Samuel">Samuel</mark>
+        <mark name="2 Samuel">Samuel</mark>
+        <mark name="1 Kings">Kings</mark>
+        <mark name="2 Kings">Kings</mark>
+        <mark name="Isaiah">Isaiah</mark>
+        <mark name="Jeremiah">Jeremiah</mark>
+        <mark name="Ezekiel">Ezekiel</mark>
+        <mark name="Hosea">Hosea</mark>
+        <mark name="Joel">Joel</mark>
+        <mark name="Amos">Amos</mark>
+        <mark name="Obadiah">Obadiah</mark>
+        <mark name="Jonah">Jonah</mark>
+        <mark name="Micah">Micah</mark>
+        <mark name="Nahum">Nahum</mark>
+        <mark name="Habakkuk">Habakkuk</mark>
+        <mark name="Zephaniah">Zephaniah</mark>
+        <mark name="Haggai">Haggai</mark>
+        <mark name="Zechariah">Zechariah</mark>
+        <mark name="Malachi">Malachi</mark>
+        <mark name="1 Chronicles">Chronicles</mark>
+        <mark name="2 Chronicles">Chronicles</mark>
+        <mark name="Psalms">Psalms</mark>
+        <mark name="Job">Job</mark>
+        <mark name="Proverbs">Proverbs</mark>
+        <mark name="Ruth">Ruth</mark>
+        <mark name="Song of Songs">SongofSongs</mark>
+        <mark name="Ecclesiastes">Ecclesiastes</mark>
+        <mark name="Lamentations">Lamentations</mark>
+        <mark name="Esther">Esther</mark>
+        <mark name="Daniel">Daniel</mark>
+        <mark name="Ezra">Ezra</mark>
+        <mark name="Nehemiah">Nehemiah</mark>
+      </marks>
+    </marker>
+
+    <marker>
+      <code>Bmm</code>
+  
+      <site>mechon-mamre.org</site>
+      <description>Book numbers, 1 ... 35.  Numbered books have appended a, b indicating book 1 or 2. Chronicles 1, 2
+        are book numbers 25a, 25b. Ezra and Nehemiah are 35a and 35b.</description>
+      <marks>
+        <mark name="Genesis">01</mark>
+        <mark name="Exodus">02</mark>
+        <mark name="Leviticus">03</mark>
+        <mark name="Numbers">04</mark>
+        <mark name="Deuteronomy">05</mark>
+        <mark name="Joshua">06</mark>
+        <mark name="Judges">07</mark>
+        <mark name="1 Samuel">08a</mark>
+        <mark name="2 Samuel">08b</mark>
+        <mark name="1 Kings">9a</mark>
+        <mark name="2 Kings">9b</mark>
+        <mark name="Isaiah">10</mark>
+        <mark name="Jeremiah">11</mark>
+        <mark name="Ezekiel">12</mark>
+        <mark name="Hosea">13</mark>
+        <mark name="Joel">14</mark>
+        <mark name="Amos">15</mark>
+        <mark name="Obadiah">16</mark>
+        <mark name="Jonah">17</mark>
+        <mark name="Micah">18</mark>
+        <mark name="Nahum">19</mark>
+        <mark name="Habakkuk">20</mark>
+        <mark name="Zephaniah">21</mark>
+        <mark name="Haggai">22</mark>
+        <mark name="Zechariah">23</mark>
+        <mark name="Malachi">24</mark>
+        <mark name="1 Chronicles">25a</mark>
+        <mark name="2 Chronicles">25b</mark>
+        <mark name="Psalms">26</mark>
+        <mark name="Job">27</mark>
+        <mark name="Proverbs">28</mark>
+        <mark name="Ruth">29</mark>
+        <mark name="Song of Songs">30</mark>
+        <mark name="Ecclesiastes">31</mark>
+        <mark name="Lamentations">32</mark>
+        <mark name="Esther">33</mark>
+        <mark name="Daniel">34</mark>
+        <mark name="Ezra">35a</mark>
+        <mark name="Nehemiah">35b</mark>
+      </marks>
+    </marker>
+
+    <marker>
+      <code>Bniv</code>
+
+      <site>tniv.inf</site>
+      <description>WLC book names with + between book number and book name, i.e. 1+Samuel.</description>
+      <marks>
+        <mark name="Genesis">Genesis</mark>
+        <mark name="Exodus">Exodus</mark>
+        <mark name="Leviticus">Leviticus</mark>
+        <mark name="Numbers">Numbers</mark>
+        <mark name="Deuteronomy">Deuteronomy</mark>
+        <mark name="Joshua">Joshua</mark>
+        <mark name="Judges">Judges</mark>
+        <mark name="1 Samuel">1+Samuel</mark>
+        <mark name="2 Samuel">2+Samuel</mark>
+        <mark name="1 Kings">1+Kings</mark>
+        <mark name="2 Kings">2+Kings</mark>
+        <mark name="Isaiah">Isaiah</mark>
+        <mark name="Jeremiah">Jeremiah</mark>
+        <mark name="Ezekiel">Ezekiel</mark>
+        <mark name="Hosea">Hosea</mark>
+        <mark name="Joel">Joel</mark>
+        <mark name="Amos">Amos</mark>
+        <mark name="Obadiah">Obadiah</mark>
+        <mark name="Jonah">Jonah</mark>
+        <mark name="Micah">Micah</mark>
+        <mark name="Nahum">Nahum</mark>
+        <mark name="Habakkuk">Habakkuk</mark>
+        <mark name="Zephaniah">Zephaniah</mark>
+        <mark name="Haggai">Haggai</mark>
+        <mark name="Zechariah">Zechariah</mark>
+        <mark name="Malachi">Malachi</mark>
+        <mark name="1 Chronicles">1+Chronicles</mark>
+        <mark name="2 Chronicles">2+Chronicles</mark>
+        <mark name="Psalms">Psalms</mark>
+        <mark name="Job">Job</mark>
+        <mark name="Proverbs">Proverbs</mark>
+        <mark name="Ruth">Ruth</mark>
+        <mark name="Song of Songs">Song+of+Songs</mark>
+        <mark name="Ecclesiastes">Ecclesiastes</mark>
+        <mark name="Lamentations">Lamentations</mark>
+        <mark name="Esther">Esther</mark>
+        <mark name="Daniel">Daniel</mark>
+        <mark name="Ezra">Ezra</mark>
+        <mark name="Nehemiah">Nehemiah</mark>
+      </marks>
+    </marker>
+
+    <marker>
+      <code>Bba</code>
+  
+      <site>epelorient.free.fr</site>
+      <description>Book names in lowercase French, no blanks between book number and book name, i.e. 1rois.</description>
+      <marks>
+        <mark name="Genesis">gen</mark>
+        <mark name="Exodus">exo</mark>
+        <mark name="Leviticus">lev</mark>
+        <mark name="Numbers">nom</mark>
+        <mark name="Deuteronomy">deu</mark>
+        <mark name="Joshua">josue</mark>
+        <mark name="Judges">juges</mark>
+        <mark name="1 Samuel">1samuel</mark>
+        <mark name="2 Samuel">2samuel</mark>
+        <mark name="1 Kings">1rois</mark>
+        <mark name="2 Kings">2rois</mark>
+        <mark name="Isaiah">esaie</mark>
+        <mark name="Jeremiah">jeremie</mark>
+        <mark name="Ezekiel">ezechiel</mark>
+        <mark name="Hosea">osee</mark>
+        <mark name="Joel">joel</mark>
+        <mark name="Amos">amos</mark>
+        <mark name="Obadiah">abdias</mark>
+        <mark name="Jonah">jonas</mark>
+        <mark name="Micah">michee</mark>
+        <mark name="Nahum">nahum</mark>
+        <mark name="Habakkuk">habakuk</mark>
+        <mark name="Zephaniah">sophorie</mark>
+        <mark name="Haggai">aggee</mark>
+        <mark name="Zechariah">zacharie</mark>
+        <mark name="Malachi">malachie</mark>
+        <mark name="1 Chronicles">1chroniques</mark>
+        <mark name="2 Chronicles">2chroniques</mark>
+        <mark name="Psalms">psaumes</mark>
+        <mark name="Job">job</mark>
+        <mark name="Proverbs">proverbes</mark>
+        <mark name="Ruth">ruth</mark>
+        <mark name="Song of Songs">cantique</mark>
+        <mark name="Ecclesiastes">ecclesiastes</mark>
+        <mark name="Lamentations">lamentations</mark>
+        <mark name="Esther">esther</mark>
+        <mark name="Daniel">daniel</mark>
+        <mark name="Ezra">esdras</mark>
+        <mark name="Nehemiah">nehemie</mark>
+      </marks>
+    </marker>
+
+    <marker>
+      <code>Bt</code>
+    
+      <site>bible.org/netbible</site>
+      <description>Book names in lowercase, 3 characters, no blanks between book number and book name</description>
+      <marks>
+        <mark name="Genesis">gen</mark>
+        <mark name="Exodus">exo</mark>
+        <mark name="Leviticus">lev</mark>
+        <mark name="Numbers">num</mark>
+        <mark name="Deuteronomy">deut</mark>
+        <mark name="Joshua">jos</mark>
+        <mark name="Judges">jdg</mark>
+        <mark name="1 Samuel">1sa</mark>
+        <mark name="2 Samuel">2sa</mark>
+        <mark name="1 Kings">1ki</mark>
+        <mark name="2 Kings">2ki</mark>
+        <mark name="Isaiah">isa</mark>
+        <mark name="Jeremiah">jer</mark>
+        <mark name="Ezekiel">eze</mark>
+        <mark name="Hosea">hos</mark>
+        <mark name="Joel">joe</mark>
+        <mark name="Amos">amo</mark>
+        <mark name="Obadiah">oba</mark>
+        <mark name="Jonah">jon</mark>
+        <mark name="Micah">mic</mark>
+        <mark name="Nahum">nah</mark>
+        <mark name="Habakkuk">hab</mark>
+        <mark name="Zephaniah">zep</mark>
+        <mark name="Haggai">hag</mark>
+        <mark name="Zechariah">zec</mark>
+        <mark name="Malachi">mal</mark>
+        <mark name="1 Chronicles">1ch</mark>
+        <mark name="2 Chronicles">2ch</mark>
+        <mark name="Psalms">psa</mark>
+        <mark name="Job">job</mark>
+        <mark name="Proverbs">pro</mark>
+        <mark name="Ruth">rut</mark>
+        <mark name="Song of Songs">sos</mark>
+        <mark name="Ecclesiastes">ecc</mark>
+        <mark name="Lamentations">lam</mark>
+        <mark name="Esther">est</mark>
+        <mark name="Daniel">dan</mark>
+        <mark name="Ezra">ezr</mark>
+        <mark name="Nehemiah">neh</mark>
+      </marks>
+    </marker>
+
+    <marker>
+      <code>Btod</code>
+      <site>lashon.net</site>
+      <description>WLC book names with underbars on numbered books. Suitable for the "Tanach on Demand" site.</description>
+      <marks>
+        <mark name="Genesis">Genesis</mark>
+        <mark name="Exodus">Exodus</mark>
+        <mark name="Leviticus">Leviticus</mark>
+        <mark name="Numbers">Numbers</mark>
+        <mark name="Deuteronomy">Deuteronomy</mark>
+        <mark name="Joshua">Joshua</mark>
+        <mark name="Judges">Judges</mark>
+        <mark name="1 Samuel">Samuel_1</mark>
+        <mark name="2 Samuel">Samuel_2</mark>
+        <mark name="1 Kings">Kings_1</mark>
+        <mark name="2 Kings">Kings_2</mark>
+        <mark name="Isaiah">Isaiah</mark>
+        <mark name="Jeremiah">Jeremiah</mark>
+        <mark name="Ezekiel">Ezekiel</mark>
+        <mark name="Hosea">Hosea</mark>
+        <mark name="Joel">Joel</mark>
+        <mark name="Amos">Amos</mark>
+        <mark name="Obadiah">Obadiah</mark>
+        <mark name="Jonah">Jonah</mark>
+        <mark name="Micah">Micah</mark>
+        <mark name="Nahum">Nahum</mark>
+        <mark name="Habakkuk">Habakkuk</mark>
+        <mark name="Zephaniah">Zephaniah</mark>
+        <mark name="Haggai">Haggai</mark>
+        <mark name="Zechariah">Zechariah</mark>
+        <mark name="Malachi">Malachi</mark>
+        <mark name="1 Chronicles">Chronicles_1</mark>
+        <mark name="2 Chronicles">Chronicles_2</mark>
+        <mark name="Psalms">Psalms</mark>
+        <mark name="Job">Job</mark>
+        <mark name="Proverbs">Proverbs</mark>
+        <mark name="Ruth">Ruth</mark>
+        <mark name="Song of Songs">SongofSongs</mark>
+        <mark name="Ecclesiastes">Ecclesiastes</mark>
+        <mark name="Lamentations">Lamentations</mark>
+        <mark name="Esther">Esther</mark>
+        <mark name="Daniel">Daniel</mark>
+        <mark name="Ezra">Ezra</mark>
+        <mark name="Nehemiah">Nehemiah</mark>
+      </marks>
+    </marker>
+
+    <marker>
+      <code>Babb</code>
+    
+      <site>bijbelaantekeningen.nl</site>
+      <description>Aantekeningen bij de Bijbel (Bible notes) of Jan Pieter Giessen</description>
+      <marks>
+        <mark name="Genesis">1</mark>
+        <mark name="Exodus">2</mark>
+        <mark name="Leviticus">3</mark>
+        <mark name="Numbers">4</mark>
+        <mark name="Deuteronomy">5</mark>
+        <mark name="Joshua">6</mark>
+        <mark name="Judges">7</mark>
+        <mark name="1 Samuel">9</mark>
+        <mark name="2 Samuel">10</mark>
+        <mark name="1 Kings">11</mark>
+        <mark name="2 Kings">12</mark>
+        <mark name="Isaiah">23</mark>
+        <mark name="Jeremiah">24</mark>
+        <mark name="Ezekiel">26</mark>
+        <mark name="Hosea">28</mark>
+        <mark name="Joel">29</mark>
+        <mark name="Amos">30</mark>
+        <mark name="Obadiah">31</mark>
+        <mark name="Jonah">32</mark>
+        <mark name="Micah">33</mark>
+        <mark name="Nahum">34</mark>
+        <mark name="Habakkuk">35</mark>
+        <mark name="Zephaniah">36</mark>
+        <mark name="Haggai">37</mark>
+        <mark name="Zechariah">38</mark>
+        <mark name="Malachi">39</mark>
+        <mark name="1 Chronicles">13</mark>
+        <mark name="2 Chronicles">14</mark>
+        <mark name="Psalms">19</mark>
+        <mark name="Job">18</mark>
+        <mark name="Proverbs">20</mark>
+        <mark name="Ruth">8</mark>
+        <mark name="SongofSongs">22</mark>
+        <mark name="Ecclesiastes">21</mark>
+        <mark name="Lamentations">25</mark>
+        <mark name="Esther">17</mark>
+        <mark name="Daniel">27</mark>
+        <mark name="Ezra">15</mark>
+        <mark name="Nehemiah">16</mark>
+      </marks>
+    </marker>
+  
+    <marker>
+      <code>C</code>
+      <site>-</site>
+      <description>WLC first chapter number, 1 ... .</description>
+    </marker>
+
+    <marker>
+      <code>Clast</code>
+      <site>-</site>
+      <description>WLC last chapter number.</description>
+    </marker>
+
+    <marker>
+      <code>Cmm</code>
+      <site>mechon-mamre.org</site>
+      <description>Two digit first chapter number. Chapter 100 is a0, chapter 110 is b0, etc.</description>
+    </marker>
+
+    <marker>
+      <code>V</code>
+     <site>-</site>
+     <description>WLC first verse number, 1 ... .</description>
+    </marker>
+
+    <marker>
+      <code>Vlast</code>
+      <site>-</site>
+      <description>WLC last verse number.</description>
+    </marker>
+  </markers>  
+</Links>

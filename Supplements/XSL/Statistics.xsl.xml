@@ -1,0 +1,1061 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsl:stylesheet version="1.0"  xmlns:xsl="http://www.w3.org/1999/XSL/Transform" >
+<xsl:output method="html" />
+<xsl:strip-space elements="*"/>
+<!--  HTMLOutput.xml - 2010.08.04  =========================================-->
+<!--========================================================================-->
+<!--  StatisticsLabel.xml - 2014.10.27  ====================================-->
+<!--========================================================================-->
+<!--
+
+* * *  CAUTION:  This file is automatically composed by TanachXSLBuild.  * * * 
+      
+      Edits to this file will disappear when the site is re-built!
+      
+      Edit the component pieces in the ComposeXSL directory instead.
+      
+-->
+<!--========================================================================-->
+<!--========================================================================-->
+<!--========================================================================-->
+<!-- Copyright C.V.Kimball 2006                                             -->
+<!--   
+
+     XSLT file for display of the Statistics file, Statistics.xml,
+     in the Supplements subdirectory.        
+
+-->
+<!--========================================================================-->
+<!--========================================================================-->
+
+<!-- Variable xsldate is the date of this xsl file.                         -->
+<xsl:variable name="xsldate">26 Oct 2014</xsl:variable>  
+<!-- Variable build is the build date of the complete site as set by ant.   -->
+<xsl:variable name="build">25.1</xsl:variable>  
+
+
+<xsl:param name="template">Dispatcher</xsl:param>  
+<xsl:param name="baseURL">http://www.tanach.us/</xsl:param>
+<xsl:param name="backbutton">false</xsl:param>
+<xsl:param name="invalidpage">UnspecifiedStatistics19</xsl:param>
+
+<!-- Font for Hebrew text                                                   -->
+<xsl:param name="fontfamily">SBL Hebrew</xsl:param>
+<!-- Font for English text                                                   -->
+<xsl:param name="englishfontfamily">Times New Roman</xsl:param>
+<!-- English font size controlled from fontsize through JavaScript          -->
+<xsl:param name="Englishfontsize">20</xsl:param>
+<!-- Smaller font size controlled from fontsize through JavaScript          -->
+<xsl:param name="reducedfontsize">12</xsl:param> 
+<!-- Variable fontsize gives the size of the fonts in points.               -->
+<xsl:param name="fontsize">20</xsl:param> 
+
+
+<!-- Variable creativecommons is a URL pointing to the CreativeCommons.gif file. -->
+<xsl:variable name="creativecommons"><xsl:value-of select="$baseURL"/>../Images/CreativeCommons.gif</xsl:variable>  
+<!-- The file name of the file containing the page background.              -->
+<xsl:variable name="background">../Images/Background</xsl:variable>
+<!-- The MIME type of the favicon icon.           -->
+<xsl:variable name="icontype">image.x-icon</xsl:variable>
+<!-- URL of the favicon icon.           -->
+<xsl:variable name="iconURL">http://www.tanach.us/Images/TanachIcon.ico</xsl:variable>
+
+<!-- Content specification set by JavaScript.                               -->
+<!-- Variable mdivider contains the morphogical divider, /.                 -->
+<xsl:variable name="mdivider">/</xsl:variable>
+<!-- Variable consonants contains consonants ONLY -->
+<xsl:variable   name="consonants">&#x05d0;&#x05d1;&#x05d2;&#x05d3;&#x05d4;&#x05d5;&#x05d6;&#x05d7;&#x05d8;&#x05d9;&#x05da;&#x05db;&#x05dc;&#x05dd;&#x05de;&#x05df;&#x05e0;&#x05e1;&#x05e2;&#x05e3;&#x05e4;&#x05e5;&#x05e6;&#x05e7;&#x05e8;&#x05e9;&#x05ea;</xsl:variable>  
+<!-- Variable maqafsofpasuq contains ONLY maqaf and the sof passuq.                    -->
+<xsl:variable   name="maqafsofpasuq">&#x05be;&#x05c3;</xsl:variable>  
+<!-- Variable vowels contains vowels and shin/sin dots.                    -->
+<xsl:variable   name="vowels">&#x05b0;&#x05b1;&#x05b2;&#x05b3;&#x05b4;&#x05b5;&#x05b6;&#x05b7;&#x05b8;&#x05b9;&#x05ba;&#x05bb;&#x05bc;&#x05c1;&#x05c2;</xsl:variable>  
+<!-- Variable accents contains accents including ZWJ and blank.             -->
+<xsl:variable name="accents">&#x0591;&#x0592;&#x0593;&#x0594;&#x0595;&#x0596;&#x0596;&#x0597;&#x0598;&#x0599;&#x059a;&#x059b;&#x059c;&#x059d;&#x059e;&#x059f;&#x05a0;&#x05a1;&#x05a2;&#x05a3;&#x05a4;&#x05a5;&#x05a6;&#x05a7;&#x05a8;&#x05a9;&#x05aa;&#x05ab;&#x05ac;&#x05ad;&#x05ae;&#x05af;&#x05bd;&#x05bf;&#x05c0;&#x05c4;&#x0397;&#x05c5;&#x05c6;</xsl:variable>
+<!-- Variable pseudoaccents contains accents including ZWJ and blank.             -->
+<xsl:variable name="pseudoaccents"> &#x200d;</xsl:variable>
+<!-- Variable all contains all of the above.                                -->
+<xsl:variable name="all" 
+  select="concat($consonants, $maqafsofpasuq, $vowels,  $accents, $pseudoaccents, $mdivider)"/>
+<!-- Variable no morphology eliminates the /.                               -->
+<xsl:variable name="nomorphology" 
+  select="concat($consonants,  $maqafsofpasuq, $vowels, $accents)"/>
+<!-- Variable noaccents eliminates the accents except for the sof passuq and maqaf.   -->
+<xsl:variable name="noaccents" select="concat($consonants,  $maqafsofpasuq, $vowels)"/>
+<!-- Variable novowels eliminates the vowels and replaces the maqaf with a blank.   -->
+<xsl:variable name="novowels" select="concat($consonants, ' ')"/>
+
+<!--========================================================================-->
+<!--========================================================================-->
+<!--  SupplementStyles.xml - 2014.10.27  ====================================-->
+<!--========================================================================-->
+<!--========================================================================-->
+<!-- Copyright C.V.Kimball 2014                                             -->
+<!--   
+
+     Styles as XSL variables for Supplements.        
+
+-->
+<!--========================================================================-->
+<!--========================================================================-->
+
+<xsl:variable name="span.title">font-size:20pt;font-weight:bold</xsl:variable>
+<xsl:variable name="span.subtitle">font-size:16pt;font-weight:bold</xsl:variable>
+<xsl:variable name="span.boldtext">font-size:12pt;font-weight:bold</xsl:variable>
+<xsl:variable name="span.text">font-size:14pt;</xsl:variable>
+<xsl:variable name="span.redtext">font-size:14pt;color:red</xsl:variable>
+<xsl:variable name="span.smalltext">font-size:12pt;</xsl:variable>
+<xsl:variable name="span.pd">font-size:14pt;font-weight:bold</xsl:variable>
+<xsl:variable name="span.pdlist">font-size:10pt;font-weight:bold</xsl:variable>
+<xsl:variable name="span.link">font-size:14pt;font-style:italic; font-weight:bold</xsl:variable>
+
+<!--========================================================================-->
+<!--========================================================================-->
+<!--=====  StatisticsDispatch.xml  2014.10.27  =============================-->
+<!--========================================================================-->
+<xsl:template match="/Statistics">
+  <xsl:choose> 
+  
+<!-- The following 2 dispatched templates are required for SarissaTools: -->
+<!-- The "BackButton" template is also required, but not dispatched.  -->
+  <xsl:when test="$template = 'Dispatcher'">
+    <xsl:call-template name="Dispatcher"/>
+  </xsl:when>
+  
+  <xsl:when test="$template = 'InvalidPage'">
+    <xsl:call-template name="InvalidPage"/>
+  </xsl:when>
+  <xsl:when test="$template = 'Statistics'">
+    <xsl:call-template name="Statistics"/>
+  </xsl:when>
+  <xsl:when test="$template = 'Chapters'">
+    <xsl:call-template name="Chapters"/>
+  </xsl:when>
+  <xsl:when test="$template = 'CharacterTypes'">
+    <xsl:call-template name="CharacterTypes"/>
+  </xsl:when>
+  <xsl:when test="$template = 'Characters'">
+    <xsl:call-template name="Characters"/>
+  </xsl:when>
+  <xsl:when test="$template = 'Assertions'">
+    <xsl:call-template name="Assertions"/>
+  </xsl:when>
+  <xsl:when test="$template = 'InvalidURL'">
+    <xsl:call-template name="InvalidURL"/>
+  </xsl:when>
+  <xsl:otherwise>
+    <xsl:call-template name="InvalidTemplate"/>
+  </xsl:otherwise>
+  </xsl:choose>
+</xsl:template>
+<!--========================================================================-->
+<!--========================================================================-->
+<!--=====  Statistics.xml 2014.10.27  ======================================-->
+<!--========================================================================-->
+<!--
+
+       Dispatcher
+            
+                                                                            -->          
+<!--========================================================================-->
+<xsl:template name="Dispatcher">
+<html>
+<head profile="http://www.w3.org/2005/11/profile" > 
+  <meta http-equiv="X-UA-Compatible" content="IE=8"/>
+  <link rel="icon" type="{$icontype}" href="{$iconURL}"/>
+  <title>Westminster Leningrad Codex</title>
+  <META NAME="description" CONTENT="Unicode/XML Westminster Leningrad Codex"/>
+  <META NAME="keywords" CONTENT="Bible, Hebrew, Tanach, Unicode, XML, Documentary Hypothesis"/>
+  <script type="text/javascript" src="../Javascript/SarissaLib.js"> </script>
+  <script type="text/javascript" src="../Javascript/UtilityLib.js"> </script>
+  <script type="text/javascript" src="Javascript/Statistics.js">&#x00a0;</script>
+<!-- Force the default font so that the site looks the same on all systems.  -->
+  <style>
+     body {font-family:${englishfontfamily} }
+  </style>
+</head>
+<body onload="Javascript:init()"  background='{$background}'>&#x00a0;</body>
+</html>
+</xsl:template>
+<!--========================================================================-->
+<!--========================================================================-->
+<!--
+
+  Initial Statistics page.
+  
+-->
+<!--========================================================================-->
+<xsl:template name="Statistics">
+<html>
+<xsl:call-template name="Header"/>
+<table align="center" width="75%">
+  <tr>
+    <td>
+      <span style="{$span.redtext}">
+      The statistics presented here differ from those gathered from other sources and by other methods. </span>
+      <p/>
+      <span style="{$span.text}">
+      The Java software which generated this data is available in <b><tt>Supplements.jar</tt></b> in
+      the <b><tt>/Java</tt></b> subdirectory of the home directory.
+      </span>
+      
+    </td>
+  </tr>
+</table>  
+<p/>
+  
+<table align="center" cellpadding="10" width="40%">
+  <tr><td ><span style="{$span.subtitle}">
+    <a href="Javascript:showChapters()">Chapter, verse, and XML tag counts</a>
+  </span></td></tr>
+  <tr><td><span style="{$span.subtitle}">
+    <a href="Javascript:showCharacterTypes()">Character type counts</a>
+  </span></td></tr>
+  <tr><td><span style="{$span.subtitle}">
+    <a href="Javascript:showCharacters()">Character counts</a>
+  </span></td></tr>
+  <tr><td><span style="{$span.subtitle}">
+    <a href="Javascript:showAssertions()">Assertions about XML tags</a>
+  </span></td></tr>
+</table>
+<p/>
+<xsl:call-template name="PageFooter">
+  <xsl:with-param name="xmldate" select="/Statistics/header/creationdate"/>
+</xsl:call-template>
+</html>
+</xsl:template>
+<!--========================================================================-->
+<!--============================================================================-->
+<!--
+        Display of Chapters results
+-->
+<!--============================================================================-->
+<xsl:template name="Chapters">
+<html>
+<xsl:variable name="title">Chapter, verse, and XML tag counts</xsl:variable>
+<xsl:call-template name="PageHeader">
+  <xsl:with-param name="title" select="$title"/>
+</xsl:call-template>
+<blockquote><span style="{$span.text}">
+Counts of the chapters, verses, each of 8 verse XML tag types: <b>w</b>, word; <b>k</b>, 
+kethib variant; <b>q</b>, qere variant; 
+<b><span style="font-family:{$fontfamily}">&#x05e1;</span></b>, closed paragraph marker;
+<b><span style="font-family:{$fontfamily}">&#x05e4;</span></b>, open paragraph marker;
+<b><span style="font-family:{$fontfamily}">&#x05c6;</span></b>, reversed nun marker;
+<b>x</b>, note; and <b>s</b>, text decoration; are given. Note tags, <b>x</b>, can occur
+inside or outside <b>w</b>, <b>k</b>, and <b>q</b> XML tags. Text decoration tags, <b>s</b>,
+occur only within <b>w</b>, <b>k</b>, and <b>q</b> tags.
+The number of qere (<b>q</b>)/kethib (<b>k</b>) orthographic words in a book 
+are not necessarily equal. Instances of differing qere/kethib counts are shown in red.
+A <a target="_blank" href="Variants.xml">list of qere/kethib variants</a> by book is available.
+</span>
+</blockquote>
+
+
+  <table width="90%" border="1" cellpadding="5" align="center">
+    <thead>
+     <tr>
+      <td align="center" colspan="3"><b>&#x00a0;</b></td>
+      <td align="center" colspan="9"><b>XML tags</b></td>
+    </tr>
+   <tr>
+      <td align="center"><b>Book</b></td>
+      <td align="center"> <b>Chapters</b></td>
+      <td align="center"> <b>Verses</b></td>
+      <td align="center"> <b>Total</b></td>
+      <td align="center"> <b>w</b></td>
+      <td align="center"> <b>k</b></td>
+      <td align="center"> <b>q</b></td>
+      <td align="center"> <b><span style="font-family:{$fontfamily}">&#x05e1;</span></b></td>
+      <td align="center"> <b><span style="font-family:{$fontfamily}">&#x05e4;</span></b></td>
+      <td align="center"> <b><span style="font-family:{$fontfamily}">&#x05c6;</span></b></td>
+      <td align="center"> <b>x</b></td>
+      <td align="center"> <b>s</b></td>
+    </tr>
+    </thead>  
+    <tbody>
+  <xsl:for-each select="/Statistics/book">
+    <tr>
+      <td><b><xsl:value-of select="bookname"/></b></td>
+      <td align="right"><xsl:value-of select="format-number(summary/chapters, '###,###,##0')"/></td>
+      <td align="right"><xsl:value-of select="format-number(summary/verses, '###,###,##0')"/></td>
+      <td align="right"><xsl:value-of select="format-number(summary/gos, '###,###,##0')"/></td>
+      <td align="right"><xsl:value-of select="format-number(summary/ws, '###,###,##0')"/></td>
+      <td align="right">
+          <xsl:if test="summary/ks=summary/qs">
+            <xsl:value-of select="format-number(summary/ks, '###,###,##0')"/>
+          </xsl:if>
+          <xsl:if test="summary/ks!=summary/qs">
+            <span style="color:red"><xsl:value-of select="format-number(summary/ks, '###,###,##0')"/></span>
+          </xsl:if>
+      </td>
+      <td align="right">
+          <xsl:if test="summary/ks=summary/qs">
+            <xsl:value-of select="format-number(summary/qs, '###,###,##0')"/>
+          </xsl:if>
+          <xsl:if test="summary/ks!=summary/qs">
+            <span style="color:red"><xsl:value-of select="format-number(summary/qs, '###,###,##0')"/></span>
+          </xsl:if>
+      </td>
+      <td align="right"><xsl:value-of select="format-number(summary/samekhs, '###,###,##0')"/></td>
+      <td align="right"><xsl:value-of select="format-number(summary/pes, '###,###,##0')"/></td>
+      <td align="right"><xsl:value-of select="format-number(summary/reversednuns, '###,###,##0')"/></td>
+      <td align="right"><xsl:value-of select="format-number(summary/notes, '###,###,##0')"/></td>
+      <td align="right"><xsl:value-of select="format-number(summary/textdecorations, '###,###,##0')"/></td>
+    </tr>
+    <xsl:if test="position() = 5">
+      <tr bgcolor="yellow">
+        <td><b>Over all <xsl:value-of select="/Statistics/summary/torah/books"/> Torah books:</b></td>
+        <td align="right"><xsl:value-of select="format-number(/Statistics/summary/torah/chapters, '###,###,##0')"/></td>
+        <td align="right"><xsl:value-of select="format-number(/Statistics/summary/torah/verses, '###,###,##0')"/></td>
+        <td align="right"><xsl:value-of select="format-number(/Statistics/summary/torah/gos, '###,###,##0')"/></td>
+        <td align="right"><xsl:value-of select="format-number(/Statistics/summary/torah/ws, '###,###,##0')"/></td>
+        <td align="right">
+          <xsl:if test="/Statistics/summary/torah/ks=/Statistics/summary/torah/qs">
+            <xsl:value-of select="format-number(/Statistics/summary/torah/ks, '###,###,##0')"/>
+          </xsl:if>
+          <xsl:if test="/Statistics/summary/torah/ks!=/Statistics/summary/torah/qs">
+            <span style="color:red"><xsl:value-of select="format-number(/Statistics/summary/torah/ks, '###,###,##0')"/></span>
+          </xsl:if>
+        </td>
+        <td align="right">
+          <xsl:if test="/Statistics/summary/torah/ks=/Statistics/summary/torah/qs">
+            <xsl:value-of select="format-number(/Statistics/summary/torah/qs, '###,###,##0')"/>
+          </xsl:if>
+          <xsl:if test="/Statistics/summary/torah/ks!=/Statistics/summary/torah/qs">
+            <span style="color:red"><xsl:value-of select="format-number(/Statistics/summary/torah/qs, '###,###,##0')"/></span>
+          </xsl:if>
+        </td>
+        <td align="right"><xsl:value-of select="format-number(/Statistics/summary/torah/samekhs, '###,###,##0')"/></td>
+        <td align="right"><xsl:value-of select="format-number(/Statistics/summary/torah/pes, '###,###,##0')"/></td>
+        <td align="right"><xsl:value-of select="format-number(/Statistics/summary/torah/reversednuns, '###,###,##0')"/></td>
+        <td align="right"><xsl:value-of select="format-number(/Statistics/summary/torah/notes, '###,###,##0')"/></td>
+        <td align="right"><xsl:value-of select="format-number(/Statistics/summary/torah/textdecorations, '###,###,##0')"/></td>
+      </tr>
+    </xsl:if>
+  </xsl:for-each>
+
+    <tr bgcolor="yellow">
+      <td><b>Over all <xsl:value-of select="/Statistics/summary/books"/> Tanach books:</b></td>
+      <td align="right"><b><xsl:value-of select="format-number(/Statistics/summary/chapters, '###,###,##0')"/></b></td>
+      <td align="right"><b><xsl:value-of select="format-number(/Statistics/summary/verses, '###,###,##0')"/></b></td>
+      <td align="right"><b><xsl:value-of select="format-number(/Statistics/summary/gos, '###,###,##0')"/></b></td>
+      <td align="right"><b><xsl:value-of select="format-number(/Statistics/summary/ws, '###,###,##0')"/></b></td>
+      <td align="right"><b><xsl:value-of select="format-number(/Statistics/summary/ks, '###,###,##0')"/></b></td>
+      <td align="right"><b><xsl:value-of select="format-number(/Statistics/summary/qs, '###,###,##0')"/></b></td>
+      <td align="right"><b><xsl:value-of select="format-number(/Statistics/summary/samekhs, '###,###,##0')"/></b></td>
+      <td align="right"><b><xsl:value-of select="format-number(/Statistics/summary/pes, '###,###,##0')"/></b></td>
+      <td align="right"><b><xsl:value-of select="format-number(/Statistics/summary/reversednuns, '###,###,##0')"/></b></td>
+      <td align="right"><b><xsl:value-of select="format-number(/Statistics/summary/notes, '###,###,##0')"/></b></td>
+      <td align="right"><b><xsl:value-of select="format-number(/Statistics/summary/textdecorations, '###,###,##0')"/></b></td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+      <td align="center"><b>Book</b></td>
+      <td align="center"> <b>Chapters</b></td>
+      <td align="center"> <b>Verses</b></td>
+      <td align="center"> <b>Total</b></td>
+      <td align="center"> <b>w</b></td>
+      <td align="center"> <b>k</b></td>
+      <td align="center"> <b>q</b></td>
+      <td align="center"> <b><span style="font-family:{$fontfamily}">&#x05e1;</span></b></td>
+      <td align="center"> <b><span style="font-family:{$fontfamily}">&#x05e4;</span></b></td>
+      <td align="center"> <b><span style="font-family:{$fontfamily}">&#x05c6;</span></b></td>
+      <td align="center"> <b>x</b></td>
+      <td align="center"> <b>s</b></td>
+    </tr>
+     <tr>
+      <td align="center" colspan="3"><b>&#x00a0;</b></td>
+      <td align="center" colspan="9"><b>XML tags</b></td>
+    </tr>
+    </tfoot>
+  </table>
+  <p/>
+<xsl:call-template name="PageFooter">
+  <xsl:with-param name="xmldate" select="/Statistics/header/creationdate"/>
+</xsl:call-template>
+</html>
+</xsl:template>
+<!--========================================================================-->
+<!--============================================================================-->
+<!--
+        Display of CharacterTypes results
+-->
+<!--============================================================================-->
+<xsl:template name="CharacterTypes">
+<html>
+<xsl:variable name="title">Character type counts</xsl:variable>
+<xsl:call-template name="PageHeader">
+  <xsl:with-param name="title" select="$title"/>
+</xsl:call-template>
+
+<blockquote><span style="{$span.text}">
+Statistics of Hebrew consonants, vowels, and accents, and non-Hebrew characters for
+the pseudo accents and morphological divsion markers (/, \u002f).  
+Pseudo accents are blanks(' ', \u0020) and Zero Width Joiners (ZWJ, \u200d) which
+are used to position accents properly.
+The biblical paragraph marking XML tags, 
+<span style="font-family:{$fontfamily}">&#x05e1;</span> , 
+<span style="font-family:{$fontfamily}">&#x05e4;</span> 
+and <span style="font-family:{$fontfamily}">&#x05c6;</span>, are <i>not</i> counted as characters
+of any type. 
+<p/>
+Columns marked "Ketiv" indicate combined results from <b>k</b> and <b>w</b> tags;
+columns marked "Qere" indicate combined results from <b>q</b> and <b>w</b> tags.  
+Columns marked "Total" indicate combined results from <b>k</b>, <b>q</b>, and <b>w</b> tags. 
+</span>
+</blockquote>
+
+  <table border="2" cellpadding="5" width="90%" align="center">
+    <thead>
+    <tr>
+      <td align="center" rowspan="3"><b>Book</b></td>
+      <td align="center" rowspan="3"><b>Overall</b></td>
+      <td align="center" colspan="6"><b>Hebrew characters</b></td>
+      <td align="center" colspan="4"><b>Other</b></td>
+    </tr>
+    <tr>
+      <td align="center" rowspan="2"> <b>Total</b></td>
+      <td align="center" colspan="3"> <b>Consonants</b></td>
+      <td align="center" rowspan="2"> <b>Vowels</b></td>
+      <td align="center" rowspan="2"> <b>Accents</b></td>
+      <td align="center" rowspan="2"> <b>Pseudo<br/> accents</b></td>
+      <td align="center" rowspan="2"> <b>MDs</b></td>
+    </tr>
+    <tr>
+      <td align="center"><b>Ketiv</b></td>
+      <td align="center"><b>Qere</b></td>
+      <td align="center"><b>Total</b></td>
+    </tr>
+    </thead>  
+    <tbody>
+    
+  <xsl:for-each select="/Statistics/book">
+    <tr>
+      <td><b><xsl:value-of select="bookname"/></b></td>
+      <td align="right"><xsl:value-of select="format-number(summary/characters, '###,###,##0')"/></td>
+      <td align="right"><xsl:value-of select="format-number(summary/hcharacters, '###,###,##0')"/></td>
+      <td align="right"><xsl:value-of select="format-number(summary/ketivconsonants, '###,###,##0')"/></td>
+      <td align="right"><xsl:value-of select="format-number(summary/qereconsonants, '###,###,##0')"/></td>
+      <td align="right"><xsl:value-of select="format-number(summary/consonants, '###,###,##0')"/></td>
+      <td align="right"><xsl:value-of select="format-number(summary/vowels, '###,###,##0')"/></td>
+      <td align="right"><xsl:value-of select="format-number(summary/accents, '###,###,##0')"/></td>
+      <td align="right"><xsl:value-of select="format-number(summary/pseudoaccents, '###,###,##0')"/></td>
+      <td align="right"><xsl:value-of select="format-number(summary/mds, '###,###,##0')"/></td>
+    </tr>
+    <xsl:if test="position() = 5">
+      <tr bgcolor="yellow">
+        <td><b>Over all <xsl:value-of select="/Statistics/summary/torah/books"/> Torah books:</b></td>
+        <td align="right"><xsl:value-of select="format-number(/Statistics/summary/torah/characters, '###,###,##0')"/></td>
+        <td align="right"><xsl:value-of select="format-number(/Statistics/summary/torah/hcharacters, '###,###,##0')"/></td>
+        <td align="right"><xsl:value-of select="format-number(/Statistics/summary/torah/ketivconsonants, '###,###,##0')"/></td>
+        <td align="right"><xsl:value-of select="format-number(/Statistics/summary/torah/qereconsonants, '###,###,##0')"/></td>
+        <td align="right"><xsl:value-of select="format-number(/Statistics/summary/torah/consonants, '###,###,##0')"/></td>
+        <td align="right"><xsl:value-of select="format-number(/Statistics/summary/torah/vowels, '###,###,##0')"/></td>
+        <td align="right"><xsl:value-of select="format-number(/Statistics/summary/torah/accents, '###,###,##0')"/></td>
+        <td align="right"><xsl:value-of select="format-number(/Statistics/summary/torah/pseudoaccents, '###,###,##0')"/></td>
+        <td align="right"><xsl:value-of select="format-number(/Statistics/summary/torah/mds, '###,###,##0')"/></td>
+      </tr>
+    </xsl:if>
+    
+  </xsl:for-each>
+
+    <tr bgcolor="yellow">
+      <td><b>Over all <xsl:value-of select="/Statistics/summary/books"/> Tanach books:</b></td>
+      <td align="right"><b><xsl:value-of select="format-number(/Statistics/summary/characters, '###,###,##0')"/></b></td>
+      <td align="right"><b><xsl:value-of select="format-number(/Statistics/summary/hcharacters, '###,###,##0')"/></b></td>
+      <td align="right"><b><xsl:value-of select="format-number(/Statistics/summary/ketivconsonants, '###,###,##0')"/></b></td>
+      <td align="right"><b><xsl:value-of select="format-number(/Statistics/summary/qereconsonants, '###,###,##0')"/></b></td>
+      <td align="right"><b><xsl:value-of select="format-number(/Statistics/summary/consonants, '###,###,##0')"/></b></td>
+      <td align="right"><b><xsl:value-of select="format-number(/Statistics/summary/vowels, '###,###,##0')"/></b></td>
+      <td align="right"><b><xsl:value-of select="format-number(/Statistics/summary/accents, '###,###,##0')"/></b></td>
+      <td align="right"><b><xsl:value-of select="format-number(/Statistics/summary/pseudoaccents, '###,###,##0')"/></b></td>
+      <td align="right"><b><xsl:value-of select="format-number(/Statistics/summary/mds, '###,###,##0')"/></b></td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+      <td align="center" rowspan="3"><b>Book</b></td>
+      <td align="center" rowspan="3"><b>Overall</b></td>
+      <td align="center" rowspan="2"><b>Total</b></td>
+      <td align="center"><b>Ketiv</b></td>
+      <td align="center"><b>Qere</b></td>
+      <td align="center"><b>Total</b></td>
+      <td align="center" rowspan="2"><b>Vowels</b></td>
+      <td align="center" rowspan="2"><b>Accents</b></td>
+      <td align="center" rowspan="2"><b>Pseudo accents</b></td>  
+      <td align="center" rowspan="2"><b>MDs</b></td>
+    </tr>
+    <tr>
+      <td align="center" colspan="3"> <b>Consonants</b></td>
+    </tr>  
+    <tr>
+      <td align="center" colspan="6"> <b>Hebrew characters</b></td>
+      <td align="center" colspan="2"> <b>Other</b></td>
+    </tr>
+   </tfoot>
+  </table>
+<p/>
+
+<xsl:call-template name="PageFooter">
+  <xsl:with-param name="xmldate" select="/Statistics/header/creationdate"/>
+</xsl:call-template>
+</html>
+</xsl:template>
+<!--========================================================================-->
+<!--============================================================================-->
+<!--
+        Display of Characters results
+-->
+<!--============================================================================-->
+<xsl:template name="Characters">
+<html>
+<xsl:variable name="title">Character counts</xsl:variable>
+<xsl:call-template name="PageHeader">
+  <xsl:with-param name="title" select="$title"/>
+</xsl:call-template>
+
+<blockquote><span style="{$span.text}">
+<xsl:value-of select="/Statistics/summary/charcount"/> Unicode characters were present in the
+<b>w</b>, <b>k</b>, and <b>q</b> XML tags.
+( <xsl:value-of select="/Statistics/summary/torah/charcount"/> in the <b>Torah</b>.)
+Some browsers won't show vowels or accents without
+having them attached to a consonant.  The second column, "with <span style="font-family:{$fontfamily}">&#1505;</span>"
+shows the vowel or accent applied to a  <span style="font-family:{$fontfamily}">&#1505;</span> in the current
+<b><tt><xsl:value-of select="$fontfamily"/></tt></b> font.  (<a href="Javascript:changeFont()">Change  font</a>)
+<p/>
+Columns marked "Ketiv" indicate combined results from <b>k</b> and <b>w</b> tags;
+columns marked "Qere" indicate combined results from <b>q</b> and <b>w</b> tags.  
+Results marked "Ketiv" contain non-zero accent counts because of the included <b>w</b> tags (<b>k</b> tags have no accents). 
+</span></blockquote>
+<p/>  
+  
+    <xsl:for-each select="coding">
+
+    <table cellpadding="5" border="1" width="90%" align="center">
+        <tr>
+          <th rowspan="2">Char</th>
+          <th rowspan="2">with &#1505;</th>
+          <th rowspan="2">Name</th>
+          <th colspan="3">Count in<br/>Tanach</th>
+          <th colspan="3">Count in<br/>Torah</th>
+          <th rowspan="2">Hex</th>
+          <th rowspan="2">Content<br/>type</th>
+        </tr>
+         <tr>
+          <th>Ketiv</th>
+          <th>Qere</th>
+          <th>Total</th>
+          <th>Ketiv</th>
+          <th>Qere</th>
+          <th>Total</th>
+        </tr>
+       
+        <xsl:for-each select="char">
+            <xsl:if test="./value!='?'">
+                <tr>
+                <td><div align="center" style="font-family:{$fontfamily};font-size:{$fontsize}pt;font-weight:bold">
+                  <xsl:value-of select="value"/></div>
+                </td>
+             
+                <td>
+                    <xsl:choose>
+                        <xsl:when test="./type = 'Accent'">
+                            <div align="center" style="font-family:{$fontfamily};font-size:{$fontsize}pt;font-weight:bold">
+                              &#1505;<xsl:value-of select="value"/></div>
+                        </xsl:when>
+                        <xsl:when test="./type = 'Point'">
+                            <div align="center" style="font-family:{$fontfamily};font-size:{$fontsize}pt;font-weight:bold">
+                              &#1505;<xsl:value-of select="value"/></div>
+                        </xsl:when>
+                        <xsl:when test="./type = 'Mark'">
+                            <div align="center" style="font-family:{$fontfamily};font-size:{$fontsize}pt;font-weight:bold">
+                              &#1505;<xsl:value-of select="value"/></div>
+                        </xsl:when>
+                        <xsl:otherwise>
+                           &#160;
+                        </xsl:otherwise>
+                    </xsl:choose>     
+                </td> 
+                    
+                <td><b><xsl:value-of select="name"/></b>
+                </td>
+                
+                <xsl:variable name="value" select="value"/>
+                
+                
+                <td align="right">
+                  <xsl:if test="/Statistics/summary/ketivcharacters/char/char = $value">
+                      <xsl:value-of select="format-number(/Statistics/summary/ketivcharacters/char/count[../char=$value], '###,###,##0')" />
+                  </xsl:if>
+                  <xsl:if test="not(/Statistics/summary/ketivcharacters/char/char = $value)" >
+                      <xsl:value-of select="format-number(0, '###,###,##0')" />
+                  </xsl:if>
+                </td>
+                <td align="right">
+                  <xsl:if test="/Statistics/summary/qerecharacters/char/char = $value">
+                      <xsl:value-of select="format-number(/Statistics/summary/qerecharacters/char/count[../char=$value], '###,###,##0')" />
+                  </xsl:if>
+                  <xsl:if test="not(/Statistics/summary/qerecharacters/char/char = $value)" >
+                      <xsl:value-of select="format-number(0, '###,###,##0')" />
+                  </xsl:if>
+                </td>
+                <td align="right">
+                  <xsl:if test="/Statistics/summary/characters/char/char = $value">
+                      <xsl:value-of select="format-number(/Statistics/summary/characters/char/count[../char=$value], '###,###,##0')" />
+                  </xsl:if>
+                  <xsl:if test="not(/Statistics/summary/characters/char/char = $value)" >
+                      <xsl:value-of select="format-number(0, '###,###,##0')" />
+                  </xsl:if>
+                </td>
+                
+                 <td align="right">
+                  <xsl:if test="/Statistics/summary/torah/ketivcharacters/char/char = $value">
+                      <xsl:value-of select="format-number(/Statistics/summary/torah/ketivcharacters/char/count[../char=$value], '###,###,##0')" />
+                  </xsl:if>
+                  <xsl:if test="not(/Statistics/summary/torah/ketivcharacters/char/char = $value)" >
+                      <xsl:value-of select="format-number(0, '###,###,##0')" />
+                  </xsl:if>
+                </td>
+                 <td align="right">
+                  <xsl:if test="/Statistics/summary/torah/qerecharacters/char/char = $value">
+                      <xsl:value-of select="format-number(/Statistics/summary/torah/qerecharacters/char/count[../char=$value], '###,###,##0')" />
+                  </xsl:if>
+                  <xsl:if test="not(/Statistics/summary/torah/qerecharacters/char/char = $value)" >
+                      <xsl:value-of select="format-number(0, '###,###,##0')" />
+                  </xsl:if>
+                </td>
+                 <td align="right">
+                  <xsl:if test="/Statistics/summary/torah/characters/char/char = $value">
+                      <xsl:value-of select="format-number(/Statistics/summary/torah/characters/char/count[../char=$value], '###,###,##0')" />
+                  </xsl:if>
+                  <xsl:if test="not(/Statistics/summary/torah/characters/char/char = $value)" >
+                      <xsl:value-of select="format-number(0, '###,###,##0')" />
+                  </xsl:if>
+                </td>
+                
+                <td align="right"><b><xsl:value-of select="hexvalue"/></b></td>
+               
+                
+                <td align="center">
+                    <xsl:if test="contains($maqafsofpasuq, ./value)">Accent</xsl:if> 
+                    <xsl:if test="contains($accents, ./value)">Accent</xsl:if> 
+                    <xsl:if test="contains($vowels, ./value)">Vowel</xsl:if> 
+                    <xsl:if test="contains($consonants, ./value)">Consonant</xsl:if> 
+                    <xsl:if test="contains($mdivider, ./value)">M. divider</xsl:if> 
+                 </td>
+                 </tr>
+            </xsl:if>
+        </xsl:for-each>
+        
+        
+        <xsl:for-each select="specialchar">
+            <xsl:if test="./value!='?'">
+                <tr>
+                <td>
+                    <xsl:if test="./value!=''">
+                        <xsl:choose>
+                           <xsl:when test="./value=' '">
+                               &#160;
+                           </xsl:when>
+                           <xsl:otherwise>
+                               <div align="center" 
+                                   style="font-family:{$fontfamily};font-size:{$fontsize}pt;font-weight:bold">
+                                   <xsl:value-of select="value"/>
+                               </div>
+                           </xsl:otherwise>
+                        </xsl:choose>
+                    </xsl:if>
+                    <xsl:if test="./value=''">
+                        &#160;
+                    </xsl:if>
+                </td> 
+               <td align="center">
+                    <xsl:choose>
+                        <xsl:when test="./type = 'Accent'">
+                            <div align="center" style="font-family:{$fontfamily};font-size:{$fontsize}pt;font-weight:bold">
+                              &#1505;<xsl:value-of select="value"/></div>
+                        </xsl:when>
+                        <xsl:when test="./type = 'Point'">
+                            <div align="center" style="font-family:{$fontfamily};font-size:{$fontsize}pt;font-weight:bold">
+                              &#1505;<xsl:value-of select="value"/></div>
+                        </xsl:when>
+                        <xsl:when test="./type = 'PrepositiveMark'">
+                            <div dir="rtl" align="center" style="font-family:{$fontfamily};font-size:{$fontsize}pt;font-weight:bold">
+                              <xsl:value-of select="value"/>&#1505;</div>
+                        </xsl:when>
+                        <xsl:when test="./type = 'Mark'">
+                            <div dir="rtl" align="center" style="font-family:{$fontfamily};font-size:{$fontsize}pt;font-weight:bold">
+                              &#1505;<xsl:value-of select="value"/></div>
+                        </xsl:when>
+                        <xsl:otherwise>
+                           &#160;
+                        </xsl:otherwise>
+                    </xsl:choose>     
+                </td>  
+                   
+                <td><b><xsl:value-of select="name"/></b></td>
+                
+                <xsl:variable name="svalue" select="value"/>
+                
+                <td align="right">
+                  <xsl:if test="/Statistics/summary/torah/ketivcharacters/char/char = $svalue">
+                      <xsl:value-of select="format-number(/Statistics/summary/ketivcharacters/char/count[../char=$svalue], '###,###,##0')" />
+                  </xsl:if>
+                  <xsl:if test="not(/Statistics/summary/torah/ketivcharacters/char/char = $svalue)" >
+                      <xsl:value-of select="format-number(0, '###,###,##0')" />
+                  </xsl:if>
+                </td>
+                <td align="right">
+                  <xsl:if test="/Statistics/summary/torah/qerecharacters/char/char = $svalue">
+                      <xsl:value-of select="format-number(/Statistics/summary/qerecharacters/char/count[../char=$svalue], '###,###,##0')" />
+                  </xsl:if>
+                  <xsl:if test="not(/Statistics/summary/torah/qerecharacters/char/char = $svalue)" >
+                      <xsl:value-of select="format-number(0, '###,###,##0')" />
+                  </xsl:if>
+                </td>
+                <td align="right">
+                  <xsl:if test="/Statistics/summary/torah/characters/char/char = $svalue">
+                      <xsl:value-of select="format-number(/Statistics/summary/characters/char/count[../char=$svalue], '###,###,##0')" />
+                  </xsl:if>
+                  <xsl:if test="not(/Statistics/summary/torah/characters/char/char = $svalue)" >
+                      <xsl:value-of select="format-number(0, '###,###,##0')" />
+                  </xsl:if>
+                </td>
+                
+                
+                <td align="right">
+                  <xsl:if test="/Statistics/summary/ketivcharacters/char/char = $svalue">
+                      <xsl:value-of select="format-number(/Statistics/summary/torah/ketivcharacters/char/count[../char=$svalue], '###,###,##0')" />
+                  </xsl:if>
+                  <xsl:if test="not(/Statistics/summary/ketivcharacters/char/char = $svalue)" >
+                      <xsl:value-of select="format-number(0, '###,###,##0')" />
+                  </xsl:if>
+                </td>
+                <td align="right">
+                  <xsl:if test="/Statistics/summary/qerecharacters/char/char = $svalue">
+                      <xsl:value-of select="format-number(/Statistics/summary/torah/qerecharacters/char/count[../char=$svalue], '###,###,##0')" />
+                  </xsl:if>
+                  <xsl:if test="not(/Statistics/summary/qerecharacters/char/char = $svalue)" >
+                      <xsl:value-of select="format-number(0, '###,###,##0')" />
+                  </xsl:if>
+                </td>
+                <td align="right">
+                  <xsl:if test="/Statistics/summary/characters/char/char = $svalue">
+                      <xsl:value-of select="format-number(/Statistics/summary/torah/characters/char/count[../char=$svalue], '###,###,##0')" />
+                  </xsl:if>
+                  <xsl:if test="not(/Statistics/summary/characters/char/char = $svalue)" >
+                      <xsl:value-of select="format-number(0, '###,###,##0')" />
+                  </xsl:if>
+                </td>
+               
+                <td align="right"><b><xsl:value-of select="hexvalue"/></b></td>
+                
+                 <td align="center">
+                    <xsl:choose>
+                    <xsl:when test="./value=''">
+                        <xsl:if test="contains($accents, ' ')">Accent</xsl:if> 
+                        <xsl:if test="contains($pseudoaccents, ' ')">Pseudo<br/>accent</xsl:if> 
+                        <xsl:if test="contains($vowels, ' ')">Vowel</xsl:if> 
+                        <xsl:if test="contains($consonants, ' ')">Consonant</xsl:if> 
+                        <xsl:if test="contains($mdivider, ' ')">M. divider</xsl:if> 
+                     </xsl:when>
+                    <xsl:otherwise>
+                       <xsl:if test="contains($accents, ./value)">Accent</xsl:if> 
+                       <xsl:if test="contains($pseudoaccents, ./value)">Pseudo<br/>accent</xsl:if> 
+                       <xsl:if test="contains($vowels, ./value)">Vowel</xsl:if> 
+                       <xsl:if test="contains($consonants, ./value)">Consonant</xsl:if> 
+                       <xsl:if test="contains($mdivider, ./value)">M. divider</xsl:if> 
+                    </xsl:otherwise>
+                    </xsl:choose>
+                         &#160;
+                   </td>
+                </tr>
+            </xsl:if>
+        </xsl:for-each>
+        <tr>
+          <td colspan="3"><b>Independent sums:</b></td>  
+          <td>
+            <b>
+              <xsl:value-of select="format-number(sum(/Statistics/summary/ketivcharacters/char/count), '###,###,##0')" />
+            </b>         
+          </td>
+          <td>
+            <b>
+              <xsl:value-of select="format-number(sum(/Statistics/summary/qerecharacters/char/count), '###,###,##0')" />
+            </b>         
+          </td>
+          <td>
+            <b>
+              <xsl:value-of select="format-number(sum(/Statistics/summary/characters/char/count), '###,###,##0')" />
+            </b>         
+          </td>
+          
+          <td>
+            <b>
+              <xsl:value-of select="format-number(sum(/Statistics/summary/torah/ketivcharacters/char/count), '###,###,##0')" />
+            </b>         
+          
+          </td>
+          <td>
+            <b>
+              <xsl:value-of select="format-number(sum(/Statistics/summary/torah/qerecharacters/char/count), '###,###,##0')" />
+            </b>         
+          
+          </td>
+          <td>
+            <b>
+              <xsl:value-of select="format-number(sum(/Statistics/summary/torah/characters/char/count), '###,###,##0')" />
+            </b>         
+          
+          </td>
+          <td colspan="2">&#x00a0;</td>
+       </tr>
+
+        <tfoot>
+        <tr>
+          <th rowspan="2">Char</th>
+          <th rowspan="2">with &#1505;</th>
+          <th rowspan="2">Name</th>
+          <th>Ketiv</th>
+          <th>Qere</th>
+          <th>Total</th>
+          <th>Ketiv</th>
+          <th>Qere</th>
+          <th>Total</th>
+          <th rowspan="2">Hex</th>
+          <th rowspan="2">Content<br/>type</th>
+        </tr>
+        <tr>
+          <th colspan="3">Count in<br/>Tanach</th>
+          <th colspan="3">Count in<br/>Torah</th>
+       </tr>
+        </tfoot>
+    </table>
+    
+    </xsl:for-each>
+<p/>
+<xsl:call-template name="PageFooter">
+  <xsl:with-param name="xmldate" select="/Statistics/header/creationdate"/>
+</xsl:call-template>
+</html>
+</xsl:template>
+<!--========================================================================-->
+<!--============================================================================-->
+<!--
+        Display of Assertions results
+-->
+<!--============================================================================-->
+<xsl:template name="Assertions">
+<html>
+<xsl:variable name="title">Assertions about XML tags</xsl:variable>
+<xsl:call-template name="PageHeader">
+  <xsl:with-param name="title" select="$title"/>
+</xsl:call-template>
+<blockquote><span style="{$span.text}">
+XML tags <b>w</b>, <b>k</b>, and <b>q</b> contain Hebrew text and are called "text tags". The
+following table lists characterstics of these tags. Text decoration, <b>s</b>, tags contain
+characters from text tags. Note, <b>x</b>, tags do <i>not</i> contain
+Hebrew text and are not subject to these assertions. The biblical paragraph marking XML tags, 
+<span style="font-family:{$fontfamily}">&#x05e1;</span> , 
+<span style="font-family:{$fontfamily}">&#x05e4;</span> 
+and <span style="font-family:{$fontfamily}">&#x05c6;</span> are always empty.
+</span></blockquote>
+<p/>
+<table align="center" width="90%" border="1" cellpadding="5">
+<tr>
+   <th> <b>Assertion</b> </th>
+   <th> <b>Contradictions</b> </th>
+</tr>
+<tr>
+   <td>Text XML tags are never empty.</td>
+   <td align="center"><xsl:value-of select="/Statistics/summary/assertions/textgosnotempty" /></td>
+</tr>
+<tr>
+   <td>Only the <xsl:value-of select="/Statistics/summary/charcount"/> characters,
+   <b><tt>0020, 002f, 0591-05bd, 05b8-05c5, 05d0-05ea, 200f hexadecimal</tt></b>,
+   occur in text XML tags.</td>
+   <td align="center"><xsl:value-of select="/Statistics/summary/assertions/charactersinrange" /></td>
+</tr>
+<tr>
+   <td>Maqafs occur only at the end of text XML tags.</td>
+   <td align="center"><xsl:value-of select="/Statistics/summary/assertions/maqafsonlyatend" /></td>
+</tr>
+<tr>
+   <td>Morphological divisions (MD) <i>usually</i> do not occur at the start or end 
+    of a text XML tag.
+    An MD occurs 3 times at the end of a ketiv text tag, <b>k</b>, (Num 23:13, Ezra 4:12, 2 Chr 25:17) and
+    once at the end of a non-variant text tag,  <b>w</b> (Judg 19:13). 
+    There are <xsl:value-of select="format-number(/Statistics/summary/mds, '###,###,##0')"/> MDs in the Tanach.
+   </td>
+   <td align="center"><xsl:value-of select="/Statistics/summary/assertions/mdsareinternal" /></td>
+</tr>
+</table>
+<p/>
+
+<xsl:call-template name="PageFooter">
+  <xsl:with-param name="xmldate" select="/Statistics/header/creationdate"/>
+</xsl:call-template>
+</html>
+</xsl:template>
+<!--========================================================================-->
+<!-- 
+                Header label.
+                
+     Enter with context node of file type.
+                                                                            -->
+<!--========================================================================-->
+<xsl:template name="Header">  
+  <xsl:param name="FontSize" select="false()"/>              
+  <xsl:param name="DateString" select="''"/>
+<!-- Overall label table  -->   
+<table width="100%" align="center">
+  <tr>
+    <td width="20%" align="left" valign="top">
+      <table align="left" valign="top"> <!-- Link to Tanach table -->
+          <tr>
+            <td align="left" valign="top">
+              <a  href="../Tanach.xml" title="Go to the Tanach home page.">
+                <span style="{$span.link}">Home</span>
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td align="left" valign="top">
+              &#x00a0;
+            </td>
+          </tr>
+           <tr>
+            <td align="left" valign="top">
+              <a  href="../Pages/Supplements.html" title="Go to the Supplements page.">
+                <span style="{$span.link}">Supplements</span>
+              </a>
+            </td>
+          </tr>
+       </table>
+    </td>
+
+    <td align="center" width="60%" valign="top">
+      <table align="center">  <!-- Center label table -->
+          <tr>
+            <td align="center">
+              <span style="{$span.title}">
+                 <xsl:value-of select="header/title"/>  <xsl:text> [</xsl:text> <xsl:value-of select="/Statistics/header/version"/><xsl:text>] </xsl:text>
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td align="center">
+              &#x00a0;
+            </td>
+          </tr>
+          <tr>
+            <td align="center">
+              <span style="{$span.subtitle}">
+                <xsl:for-each select="header/description">
+                  <xsl:value-of select="."/>
+                  <p/>
+                </xsl:for-each>
+              </span>
+            </td>
+          </tr>
+     </table>
+  </td>  
+  <td width="20%" align="right" valign="top">
+    
+  </td>
+</tr>
+</table>
+<p/>
+</xsl:template>
+<!--========================================================================-->
+
+<!-- Template to head descriptive pages. -->
+
+<!--========================================================================-->
+<xsl:template name="PageHeader">
+  <xsl:param name="title" select="'Title not specified'"/>   
+<table width="100%">
+  <tr>
+    <td align="left"> 
+      <span style="{$span.title}">
+        <xsl:value-of select="$title"/>   <xsl:text> [WLC version </xsl:text> <xsl:value-of select="/Statistics/header/version"/><xsl:text>] </xsl:text>
+      </span>
+      <p/>     
+    </td>
+    <td align="right">
+      <xsl:call-template name="BackButton"/>
+    </td>
+  </tr>
+</table>
+</xsl:template>
+<!--========================================================================-->
+
+<!-- Template to end descriptive pages. -->
+
+<!--========================================================================-->
+<xsl:template name="PageFooter">
+  <xsl:param name="xmldate" select="'XML date not available'"/>   
+  <xsl:param name="license" select="'../License.html'"/>   
+<p/>
+<table width="100%">
+  <tr>
+    <td align="left">      
+      <a  title="License information." href="{$license}" alt="License information">
+        <img src="{$creativecommons}" alt="License information" border="0"/>
+      </a>
+    </td>
+    <td align="right">
+      <b>
+        <a title="Build number."><xsl:value-of select="$build"/></a>
+      </b>
+      <xsl:call-template name="BackButton"/>
+    </td>
+  </tr>
+</table>
+<hr/>
+</xsl:template>
+<!--========================================================================-->
+<xsl:template name="InvalidURL" >
+<html>
+  <h1>Invalid URL parameter on Statistics.xml</h1>
+  <p/>
+  <h4><b>Statistics.xml</b> doesn't accept <b>'<xsl:value-of select="$invalidpage"/>'</b> 
+    or any other URL parameter. </h4>
+  <p/>
+<hr/>
+</html>        
+</xsl:template>
+<!--========================================================================-->
+<xsl:template name="InvalidTemplate" >
+<html>
+  <h1>Invalid URL parameter on Differences.xml</h1>
+  <p/>
+  <h4><b>Statistics.xsl.xml</b> doesn't accept <b>'<xsl:value-of select="$template"/>'</b> 
+    as a template value.</h4>
+  <p/>
+    <hr/>
+</html>        
+</xsl:template>
+<!--========================================================================-->
+<xsl:template name="InvalidPage" >
+    <h1>An invalid page, <xsl:value-of select="$invalidpage"/>, was requested.</h1>
+    <p/>
+    <b>Statistics.xml</b> doesn't have <b><xsl:value-of select="$invalidpage"/></b> 
+    as a defined page. 
+    <p/>
+    <hr/>        
+</xsl:template>
+<!--========================================================================-->
+<xsl:template name="BackButton" >
+  <xsl:if test="$backbutton='true'">
+      &#x00a0;&#x00a0;&#x00a0;&#x00a0;
+    <button title="Return to previous page." style="font-weight:bold;color:blue;font-size:12pt" onclick="Javascript:previousPage()">Back</button>
+  </xsl:if>
+</xsl:template>
+<!--========================================================================-->
+<!--========================================================================-->
+<!--  EndStylesheet.xml - 2010.08.04  ======================================-->
+</xsl:stylesheet>
+<!--========================================================================-->
+<!--========================================================================-->

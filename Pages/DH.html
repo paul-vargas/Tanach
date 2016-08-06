@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  Copyright C.V.Kimball 2013  -->
+<html>
+<header profile="http://www.w3.org/2005/11/prjavaofile" > 
+  <meta http-equiv="X-UA-Compatible" content="IE=8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
+  <link rel="icon" type="image.x-icon" href="http://www.cvkimball.com/Tanach/TanachIcon.ico"/>
+  <title>Documentary Hypothesis (DH)</title>
+<!-- Force the default font so that the site looks the same on all systems.  -->
+  <style>
+    body {font-family:Times New Roman}
+  </style>
+</header>
+<body style="background-image:url('../Images/Background');margin-right:10pt; 
+              margin-left:10pt; margin-top:10pt; margin-bottom:0">
+<table width="100%">
+  <tr>
+    <td align="left"> 
+      <span style="font-family:Times New Roman;font-weight:bold;font-size:200%">Documentary Hypothesis (DH)</span>
+      <p/>     
+    </td>
+  </tr>
+</table>
+<p/>
+
+<center>
+  <i>
+  DH markings are invisible and have no effect when the "DH" pull down list is set to "Off". 
+  </i>
+</center>
+<p/>
+<h2 id="General">General</h2>
+<p/>
+<blockquote>
+
+  <i>.... But today, it must be conceded, the majority of biblical scholars in American 
+  and European universities are convinced
+  by the idea of the Pentateuch's multiple authorship.  
+  Even if no absolute proof exists,
+  they say, some theory of different authors is the most logical and parsimonius way to 
+  make sense of the evidence. ...</i>
+  
+  <p align="right">
+
+  <i>James L. Kugel, How to read the Bible, <br/>ISBN-13: 978-0-7432-3586-0,<br/> 2007, p 42.</i>
+  </p>
+  </blockquote>
+The Documentary Hypothesis (<b>DH</b>) holds that the <b>Torah</b> is composed of texts by 4 or more
+authors ("sources") plus some text added by one or more redactors to make the texts fit together.
+The DH is over 100 years old and is a usual starting point in study of Bible origins.  
+It is plausible and self-consistent;
+it is also unprovable as none of the component texts have been found separately.
+<p/>
+The DH markings are those of Richard Elliott Friedman's book, <i>Who Wrote the Bible (Second Edition)</i> (WWB),
+HarperCollins Publishers, New York, NY, 1997, ISBN 0-06-063035-3, using the tables and associated notes on pages 246-260.  
+This a fascinating and inexpensive ($12) book. These tables and notes do not indicate the splitting of the 
+Hebrew verses into subsections and, in some places, have ambiguities as to text markings.  
+The transcriber has tried to resolve these matters through
+Friedman's later book, <i>The Bible with Sources Revealed</i> (BSR),
+HarperCollins Publishers, New York, NY, 2003, ISBN 0-06-053069-5, which describes slightly different text markings.
+The markings of the texts and their associated notes are given in a table below. 
+The transcriber would appreciate suggestions on these matters relative to the WWB. 
+Please note that in accordance with WWB, the set of markings depends on the book.  
+That is, Genesis, Exodus, and Numbers have different markings than Leviticus and Deuteronomy
+as shown in the table below.
+<p/>
+Two methods of viewing the DH markings are provided in the DH pull down list 
+in the righthand column of each <b>Torah</b> book page.
+
+<h2 id="Details">Marking details:</h2>
+The markings are applied by the Java application <b><tt>DHMarker</tt></b>,
+which is included in the <b><tt>/Java</tt></b> directory. <b><tt>DHMarker</tt></b> reads the five book files,
+<b><tt>Genesis.xml ... Deuteronomy.xml</tt></b> and five
+marking specification files
+<b><tt>DHSpecification.Genesis.xml ... DHSpecification.Deuteronomy.xml</tt></b> 
+to produce the five marked book files in the <b><tt>Books</tt></b> subdirectory 
+as indicated in the table below.
+<p/>
+<table width="90%" border="1" cellpadding="5" align="center">
+  <tr>
+    <th>Unmarked book</th>
+    <th>Marking specification file</th>
+    <th>Sources</th>
+    <th>Marked book</th>
+  </tr>
+  <tr>
+    <td><b><tt>Genesis.xml</tt></b></td>
+    <td><b><tt><a  target="_blank" href="../DH/DHSpecification.Genesis.xml">DHSpecification.Genesis.xml</a></tt></b></td>
+    <td><b>J, E, P, and R</b></td>
+    <td><b><tt>Genesis.DH.xml</tt></b></td>
+  </tr>
+  <tr>
+    <td><b><tt>Exodus.xml</tt></b></td>
+    <td><b><tt><a  target="_blank" href="../DH/DHSpecification.Exodus.xml">DHSpecification.Exodus.xml</a></tt></b></td>
+    <td><b>J, E, P, and R</b></td>
+    <td><b><tt>Exodus.DH.xml</tt></b></td>
+  </tr>
+  <tr>
+    <td ><b><tt>Leviticus.xml</tt></b></td>
+    <td><b><tt><a  target="_blank" href="../DH/DHSpecification.Leviticus.xml">DHSpecification.Leviticus.xml</a></tt></b></td>
+    <td><b>P and R</b></td>
+    <td><b><tt>Leviticus.DH.xml</tt></b></td>
+  </tr>
+  <tr>
+    <td><b><tt>Numbers.xml</tt></b></td>
+    <td><b><tt><a  target="_blank" href="../DH/DHSpecification.Numbers.xml">DHSpecification.Numbers.xml</a></tt></b></td>
+    <td><b>J, E, P, and R</b></td>
+    <td><b><tt>Numbers.DH.xml</tt></b></td>
+  </tr>
+  <tr>
+    <td><b><tt>Deuteronomy.xml</tt></b></td>
+    <td><b><tt><a  target="_blank" href="../DH/DHSpecification.Deuteronomy.xml">DHSpecification.Deuteronomy.xml</a></tt></b></td>
+    <td><b>Dtr1, Dtr2, Dtn, E, P, and Other</b></td>
+    <td><b><tt>Deuteronomy.DH.xml</tt></b></td>
+  </tr>
+</table>
+<p/>
+These markings are checked by the software for uniqueness and completeness.  
+That is, every verse is marked with one and only one marking. In cases in which WWB is
+ambiguous or has special notes, these files contain notes to the the markings.
+
+
+<p/>
+<table width="100%">
+  <tr>
+    <td align="left">      
+      <a  target="_blank" title="License information." href="../License.html" alt="License information">
+        <img src="../Images/CreativeCommons.gif" alt="License information" border="0"/>
+      </a>
+    </td>
+    <td align="right">
+      <b>
+        <a title="Build number.">25.1</a>
+      </b>
+  </tr>
+</table>
+<hr/>
+</body>
+</html>
+<!--========================================================================-->
+<!--========================================================================-->

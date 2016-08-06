@@ -1,0 +1,19 @@
+<hr/>
+<h2>The server at:</h2>
+<h1><!--#echo var="HTTP_HOST" --></h1>
+<h2>is unable to handle your request due to a temporary overload or server maintenance!</h2>
+<b>Error Details:</b><br/>
+<blockquote>
+Redirect status code: <!--#echo var="REDIRECT_STATUS" --><br/>
+Requested URL: <!--#echo var="REQUEST_URI" --><br/>
+Visitor's browser: <!--#echo var="HTTP_USER_AGENT" --><br/>
+Visitor's IP address: <!--#echo var="REMOTE_ADDR" --><br/>
+Referring URL: <!--#echo var="HTTP_REFERER" --><br/>
+</blockquote>
+<center>
+<h4>Please send the date and time of this event to <a href="mailto:transcriber@tanach.us"><i>transcriber@tanach.us</i></a> to help fix the problem.</h4>
+Paste the entire contents of this page into the message.
+</center>
+<p/>
+<hr/>
+

@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsl:stylesheet version="1.0"  xmlns:xsl="http://www.w3.org/1999/XSL/Transform" >
+<xsl:output method="html"/>
+<xsl:strip-space elements="*"/>
+<!--========================================================================-->
+<!--========================================================================-->
+<!-- Copyright C.V.Kimball 2007                                             -->
+<!--
+
+    Content.xsl.xml -  XSLT file for Content.html page.
+          
+-->
+<!--========================================================================-->
+<!--========================================================================-->    
+<xsl:variable name="xsldate">14 Jun 2013</xsl:variable>
+<!-- Variable build is the build date of the complete site as set by ant.   -->
+<xsl:variable name="build">25.1</xsl:variable>  
+<xsl:param name="template" >Dispatcher</xsl:param>  
+<xsl:param name="englishfontfamily">Times New Roman</xsl:param>
+
+<!-- The MIME type of the favicon icon.           -->
+<!-- This is loaded BEFORE the baseURL is defined.                          -->
+<xsl:variable name="icontype">image.x-icon</xsl:variable>
+<!-- URL of the favicon icon.           -->
+<!-- This is loaded BEFORE the baseURL is defined.                          -->
+<xsl:variable name="iconURL">Images/TanachIcon.ico</xsl:variable>
+<!--========================================================================-->
+<!--
+                              Template dispatching
+-->                              
+<!--========================================================================-->
+<xsl:template match="/Contents">
+    <xsl:call-template name="Dispatcher"/>
+</xsl:template>
+<!--========================================================================-->
+<xsl:template match="/Site">
+    <xsl:call-template name="Contents"/>
+</xsl:template>
+<!--========================================================================-->
+<xsl:template name="Dispatcher">
+<html>
+<head> 
+  <meta http-equiv="X-UA-Compatible" content="IE=8"/>
+  <link href="{$iconURL}" rel="icon" type="{$icontype}"/>
+  <title>Contents</title>
+  <script src="../Javascript/SarissaLib.js" type="text/javascript"> </script>
+  <script src="../Javascript/UtilityLib.js" type="text/javascript"> </script>
+  <script  type="text/javascript"> 
+    var baseURL ;
+    function init(){
+        baseURL = getBaseURL("Tanach.xml") ;
+        contentsXSL = loadSarissaDoc("../XSL/Contents.xsl.xml") ;
+        contentsXML = loadSarissaDoc("../XSL/Tanach.def.xml") ;
+        setAsXSL(contentsXSL) ;
+        setTemplateToNode(contentsXML, contentsXSL, "Contents", document.body)        
+    }
+  </script>
+</head>
+<body  onload="Javascript:init()"
+       style="background-image:url('../Images/Background');margin-right:10pt; 
+              margin-left:10pt; margin-top:10pt; margin-bottom:0">
+      &#x00a0;
+</body>
+</html>
+</xsl:template>
+<!--========================================================================-->
+<!--========================================================================-->
+
+<!-- html template to show the site contents 
+     from SiteChecker definitions file Tanach.def.xml. -->
+
+<!--========================================================================-->
+<xsl:template name="Contents">
+<html>
+<xsl:call-template name="PageHeader">
+  <xsl:with-param name="title" select="'Contents'"/>
+</xsl:call-template>
+<b><xsl:value-of select="count(/Site/directory/file) + count(//directory)"/></b> objects are contained in the site. 
+In this inventory <xsl:value-of select="count(//directory)"/>  folders are counted as objects. 
+The primary directory, <b><tt>Tanach</tt></b>,  
+the web hosting system folders, <b><tt>cgi-bin</tt></b> and <b><tt>WEB-INF</tt></b>,
+the <b><tt>PreviousVersions</tt></b> folder, the <b><tt>TextFiles</tt></b> folder, 
+and the archive file, <b><tt>Tanach.zip</tt></b>, are counted in the total.
+
+<p/>
+The site is available for operation <i>without</i> the internet in a zipped archive, 
+<a href="../Tanach.zip"><b><tt>Tanach.zip</tt></b></a>, of <b><xsl:value-of select="count(/Site/directory/file) - 1"/></b> files 
+(Folders aren't counted in the archive, and the archive <b><tt>Tanach.zip</tt></b> isn't in the archive.)
+<i>Text, ODT, and PDF files are not included in  <b><tt>Tanach.zip</tt></b>.</i> See "Zipped archives of Tanach books" section on the 
+<a href="Technical.html">Technical</a> page to download archives of complete books with different content and formats.
+The folders <b><tt>cgi-bin</tt></b>, <b><tt>ODTFiles</tt></b>, <b><tt>PDFFiles</tt></b>, 
+<b><tt>PreviousVersions</tt></b>,
+<b><tt>TextFiles</tt></b>, and <b><tt>WEB-INF</tt></b>,
+are empty in the <b><tt>Tanach.zip</tt></b> archive.
+<p/>
+<b><tt>Tanach.zip</tt></b> contains about <b>3.9 Mb</b> and expands to about <b>19.2 Mb</b> 
+when un-zipped. 
+
+<p/>
+<xsl:for-each select="/Site/directory">
+
+  <b><tt><font size="+2"><xsl:value-of select="name"/> </font> (<xsl:value-of select="path"/>): </tt></b>
+     <xsl:value-of select="description"/> (<xsl:value-of select="count(file)"/> files, <xsl:value-of select="count(folder)"/> folders) 
+           
+   <p/>
+  <xsl:if test="(count(folder) &gt; 0 or count(file) &gt; 0) 
+     and not(name='Books' or  name='PDFFiles'  )">
+  <table border="1" width="90%" cellpadding="5" align="center">
+    <xsl:if test="count(folder) &gt; 0">
+      <tr>
+        <th colspan="2">Folders</th>
+      </tr>
+      <tr>
+        <th>Folder</th>
+        <th>Description</th>
+      </tr>
+      <xsl:for-each select="folder">
+        <tr>
+          <td width="25%" >
+            <b><tt><xsl:value-of select="name"/></tt></b>
+          </td>
+          <td >
+            <xsl:value-of select="description"/>
+          </td>
+        </tr>
+      </xsl:for-each>
+      </xsl:if>
+    <xsl:if test= "count(file) &gt; 0">
+      <tr>
+        <th colspan="2">Files</th>
+      </tr>
+      <tr>
+        <th>File</th>
+        <th>Description</th>
+      </tr>
+      <xsl:for-each select="file">
+        <tr>
+          <td width="25%" >
+            <b><tt><xsl:value-of select="name"/></tt></b>
+          </td>
+          <td >
+            <xsl:value-of select="description"/>
+          </td>
+        </tr>
+    </xsl:for-each>
+    </xsl:if>
+  </table>
+  </xsl:if>
+  <p/>
+</xsl:for-each>
+<p/>
+<xsl:call-template name="PageFooter">
+  <xsl:with-param name="xmldate" select="/Site/definitiondate"/>
+  </xsl:call-template>
+</html>
+</xsl:template>
+<!--========================================================================-->
+
+<!-- Template to head descriptive pages. -->
+
+<!--========================================================================-->
+<xsl:template name="PageHeader">
+  <xsl:param name="title" select="'Title not specified'"/>   
+<table width="100%">
+  <tr>
+    <td align="left"> 
+      <span style="font-family:{$englishfontfamily};font-weight:bold;font-size:200%">
+        <xsl:value-of select="$title"/>
+      </span>
+      <p/>     
+    </td>
+  </tr>
+</table>
+</xsl:template>
+<!--========================================================================-->
+
+<!-- Template to end descriptive pages. -->
+
+<!--========================================================================-->
+<xsl:template name="PageFooter">
+  <xsl:param name="license" select="'License.html'"/>   
+<p/>
+<table width="100%">
+  <tr>
+    <td align="left">      
+      <a  target="_blank" title="License information." href="../License.html" alt="License information">
+        <img src="../Images/CreativeCommons.gif" alt="License information" border="0"/>
+      </a>
+    </td>
+    <td align="right">
+      <b>
+        <a title="Build number."><xsl:value-of select="$build"/></a>
+      </b>
+    </td>
+  </tr>
+</table>
+<hr/>
+</xsl:template>
+</xsl:stylesheet>
+<!--========================================================================-->
+<!--========================================================================-->

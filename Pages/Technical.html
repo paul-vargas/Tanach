@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  Copyright C.V.Kimball 2013  -->
+<html>
+<header profile="http://www.w3.org/2005/11/profile" > 
+  <meta http-equiv="X-UA-Compatible" content="IE=8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
+  <link rel="icon" type="image.x-icon" href="http://www.cvkimball.com/Tanach/TanachIcon.ico"/>
+  <title>Technical</title>
+<!-- Force the default font so that the site looks the same on all systems.  -->
+  <style>
+    body {font-family:Times New Roman}
+  </style>
+</header>
+<body style="background-image:url('../Images/Background');margin-right:10pt; 
+              margin-left:10pt; margin-top:10pt; margin-bottom:0">
+<table width="100%">
+  <tr>
+    <td align="left"> 
+      <span style="font-family:Times New Roman;font-weight:bold;font-size:200%">Technical</span>
+      <p/>     
+    </td>
+  </tr>
+</table>
+<p/>
+
+<table align="center">
+<tr><td><a href="#General">General.</a></td></tr>
+<tr><td><a href="#Offline">Operation without the internet.</a></td></tr>
+<tr><td><a href="#zipfiles">Zipped archives of Tanach books.</a></td></tr>
+<tr><td><a href="#Version">Determining the version of the site.</a></td></tr>
+<tr><td><a href="#Software">Software.</a></td></tr>
+</table>
+<h2 id="General">General</h2>
+The Westminster Leningrad Codex (WLC) has been 
+transcribed to files in the <b><tt>Books</tt></b> directory 
+having <a href="Coding.xml">Unicode</a> Hebrew characters 
+with <b>XML</b> markup.  The <i>displayed</i> Tanach text is obtained from these <i>formal</i> electronic 
+files.  The files are formal
+in the following sense:
+<ul>
+<li>The provenance of the text is fully documented in each file's 
+Text Encoding Initiative (TEI) header which can be seen by clicking on the page header.</li>
+<p/>
+<li>The <b>XML</b> markup of each book file is validated with the W3C-Schema file, 
+<a href="../XSL/Tanach.xsd" target="_blank"><b><tt>Tanach.xsd</tt></b></a>.</li>
+<p/>
+<li>A secure hash (<b>SHA-1</b>) of each file is calculated on generation and checked periodically.
+These checksums are available from the <a href="Transcriber.html"><b>Transcriber</b></a> on request.</li>
+</ul>
+Additional technical details are given in the <a href="XMLFiles.html"><b>XML files</b></a> page. 
+<p/>
+If permitted by your browser, this site will install a "cookie" on your machine
+to remember the setting of the pull down lists and text input fields. 
+This cookie is  <i>not</i> used to gather information 
+about you. The site operates correctly, though awkwardly, if cookies are blocked.
+
+<p/>
+When viewed as a remote web site, text is provided by the server <b><tt>Server.xml</tt></b> to reduce
+download volumes. 
+
+<h2 id="Offline">Operation without the internet: </h2>
+
+A local version of the site can be installed on your computer for situations in which an internet connection
+isn't available. The local version will <i>not</i> include complete books with alternative contents and formats. 
+It also will not include the Leningrad Codex facsimile files. 
+To setup operation without the internet, download  <a href="../Tanach.zip"><b><tt>Tanach.zip</tt></b></a> 
+(about 3.9 megabytes) 
+into a convenient directory, say <b><tt>/MyDirectory</tt></b>.  Unzip <b><tt>Tanach.zip</tt></b> into 
+that directory so that a new directory <b><tt>/MyDirectory/Tanach</tt></b>
+of about 19.2 megabytes is created. 
+Open <b><tt>/MyDirectory/Tanach/Tanach.xml</tt></b> with the <b>Firefox</b> or Safari browser to view the local site.
+<span style="color:blue">The Internet Explorer and the Chrome browsers will not open this file.</span>
+  
+<p/>
+The primary <a href="Contents.xml">contents</a>
+of the site can be viewed from the expanded <b><tt>Tanach.zip</tt></b>.  
+Text, ODT, and PDF files are not included in <b><tt>Tanach.zip</tt></b>. 
+A secure (SHA1) hash for <b><tt>Tanach.zip</tt></b> and other files 
+can be provided on request.
+
+<h2 id="zipfiles">Zipped archives of Tanach books:</h2>
+
+Zipped archives of Tanach books are available for a variety of contents and formats:
+<p/>
+
+<table align="center" width="90%" border="1" cellpadding="5pt">
+  <tr>
+    <th rowspan="2">Format</th>
+    <th colspan="4">Contents</th>
+  </tr>
+  <tr>
+    <th>Accents</th>
+    <th>Vowels</th>
+    <th>Consonants</th>
+    <th>Morphology</th>
+  </tr>
+  <tr>
+    <th>Text</th>
+    <th><a target="_blank" href="../TextFiles/Tanach.acc.txt.zip">Tanach.acc.txt.zip</a></th>
+    <th><a target="_blank" href="../TextFiles/Tanach.vow.txt.zip">Tanach.vow.txt.zip</a></th>
+    <th><a target="_blank" href="../TextFiles/Tanach.con.txt.zip">Tanach.con.txt.zip</a></th>
+    <th><a target="_blank" href="../TextFiles/Tanach.mor.txt.zip">Tanach.mor.txt.zip</a></th>  
+  </tr>
+  <tr>
+    <th>ODT</th>
+    <th><a target="_blank" href="../ODTFiles/Tanach.acc.odt.zip">Tanach.acc.odt.zip</a></th>
+    <th><a target="_blank" href="../ODTFiles/Tanach.vow.odt.zip">Tanach.vow.odt.zip</a></th>
+    <th><a target="_blank" href="../ODTFiles/Tanach.con.odt.zip">Tanach.con.odt.zip</a></th>
+    <th><a target="_blank" href="../ODTFiles/Tanach.mor.odt.zip">Tanach.mor.odt.zip</a></th>  
+  </tr>
+  <tr>
+    <th>PDF</th>
+    <th><a target="_blank" href="../PDFFiles/Tanach.acc.pdf.zip">Tanach.acc.pdf.zip</a></th>
+    <th><a target="_blank" href="../PDFFiles/Tanach.vow.pdf.zip">Tanach.vow.pdf.zip</a></th>
+    <th><a target="_blank" href="../PDFFiles/Tanach.con.pdf.zip">Tanach.con.pdf.zip</a></th>
+    <th><a target="_blank" href="../PDFFiles/Tanach.mor.pdf.zip">Tanach.mor.pdf.zip</a></th>  
+  </tr>
+</table>
+<p/>
+XML files are contained in the <b><tt>Books</tt></b> directory of <b><tt>Tanach.zip</tt></b>.  HTML files 
+are <i>not</i> available in an archive file and must be downloaded from the <b><tt>Server.html</tt></b> server.
+
+
+<h2 id="Version">Determining the version of the site:</h2>
+  
+The build number at the bottom right of each page 
+consists of a major version number,
+a decimal point (<b>.</b>),
+and a minor version number ). 
+Changes in major version are described on the  <a href="Changes.html">Changes</a> page.  
+Minor version changes are undocumented.   They usually
+consist of corrections imperceptible to the average user. The version of the WLC 
+appears in square brackets on text pages. 
+<a href="Supplements.html">Differences</a> between WLC versions are documented.
+<p/>
+The "Previous versions" link in the upper, left corner of the Home page allows access to recent versions of the site.
+A <a href="http://www.cvkimball.com/Tanach/PreviousVersions/PreviousVersions.html" target="_blank">historical perspective</a> of
+all versions is available.
+
+<h2 id="Software">Software:</h2>
+
+Eight Java applications that are part of the site are provided in the <b><tt>Java</tt></b> subdirectory:
+<p/>
+<table align="center" width="80%" border="1" cellpadding="5">
+  <tr>
+    <td>
+      <a href="../Java/DHMarker.jar"><b><tt>DHMarker</tt></b></a>
+    </td>
+    <td>
+      Applies Documentary Hypothesis markings to the <b>Torah</b> XML files.
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <a href="../Java/HTMLServer.jar"><b><tt>HTMLServer</tt></b></a>
+    </td>
+    <td>
+      Java servlet <b><tt>Server.html</tt></b> which serves user-formattable HTML text.
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <a href="../Java/MC2U.jar"><b><tt>MC2U</tt></b></a>
+    </td>
+    <td>
+      Java application to convert <i>short</i> MC-coded strings to Unicode/XML text. In the Supplements directory.
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <a href="../Java/ODTServer.jar"><b><tt>ODTServer</tt></b></a>
+    </td>
+    <td>
+      Java servlet <b><tt>Server.odt</tt></b> which serves ODT files.
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <a href="../Java/Supplements.jar"><b><tt>Supplements</tt></b></a>
+    </td>
+    <td>
+      Generates the supplementary files in the <b><tt>Supplements</tt></b> subdirectory
+      from the XML files.
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <a href="../Java/TextServer.jar"><b><tt>TextServer</tt></b></a>
+    </td>
+    <td>
+      Java servlet <b><tt>Server.txt</tt></b> which serves text files.
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <a href="../Java/WLC2XML.jar"><b><tt>WLC2XML</tt></b></a>
+    </td>
+    <td>
+      Transcribes the Michigan-Claremont encoded J. Alan Groves Center for Advanced Biblical Research text to Unicode with XML tags.
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <a href="../Java/XMLServer.jar"><b><tt>XMLServer</tt></b></a>
+    </td>
+    <td>
+      Java servlet <b><tt>Server.xml</tt></b> which serves XML text. 
+    </td>
+  </tr></table>
+<p/>
+Source and class files for each application are given in a Java archive (jar) file. Contact 
+the transcriber if you need assistance in using them.
+
+<p/>
+<table width="100%">
+  <tr>
+    <td align="left">      
+      <a  target="_blank" title="License information." href="../License.html" alt="License information">
+        <img src="../Images/CreativeCommons.gif" alt="License information" border="0"/>
+      </a>
+    </td>
+    <td align="right">
+      <b>
+        <a title="Build number.">25.1</a>
+      </b>
+  </tr>
+</table>
+<hr/>
+</body>
+</html>
+<!--========================================================================-->
+<!--========================================================================-->

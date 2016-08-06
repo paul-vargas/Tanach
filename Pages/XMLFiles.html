@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  Copyright C.V.Kimball 2013  -->
+<html>
+<header profile="http://www.w3.org/2005/11/profile" > 
+  <meta http-equiv="X-UA-Compatible" content="IE=8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
+  <link rel="icon" type="image.x-icon" href="http://www.cvkimball.com/Tanach/TanachIcon.ico"/>
+  <title>XML files</title>
+<!-- Force the default font so that the site looks the same on all systems.  -->
+  <style>
+    body {font-family:Times New Roman}
+  </style>
+</header>
+<body style="background-image:url('../Images/Background');margin-right:10pt; 
+              margin-left:10pt; margin-top:10pt; margin-bottom:0">
+<table width="100%">
+  <tr>
+    <td align="left"> 
+      <span style="font-family:Times New Roman;font-weight:bold;font-size:200%">XML files</span>
+      <p/>     
+    </td>
+  </tr>
+</table>
+<p/>
+
+XML files combine of Unicode and <b>XML</b> markup providing an ideal format for customized displays 
+and machine processing of the text.  Tools for processing <b>XML</b> files are widely available without cost.  
+Working with the <b>XML</b> files is less error prone than attempting to parse  
+<a href="TextFiles.html">text files</a>. XML files include a descriptive TEI header
+and may include Documentary Hypothesis (DH) markings.
+<p/>
+XML files can be obtained in one of 3 ways:
+<ol>
+<li>When viewing biblical text press the "XML" button
+at the bottom of a text page.  The file will be displayed by the browser and can be saved
+ via the browser's "Save Page as ..." command. The output always includes DH markings.</li>
+<p/>
+<li>XML files for <i>entire biblical books</i> can be obtained by clicking on the book name on the Home
+page. The middle row of the resulting page offers a table of available formats and contents.
+In the row labelled "XML", click the only available link. XML files always have full ("Morphology") content, 
+however, the default <i>display</i> is "Accents". <i>Files obtained
+this way do not include DH markings.</i> Files with and without DH markings are stored in the  
+<a href="../Books/" target="_blank"><b><tt>Books</tt></b></a> subdirectory as described below.  
+</li>
+<p/>
+<li>XML files can also be obtained from the <b>Server.xml</b> server by entering a <i>query</i> URL into a
+browser address bar.  <i>No parameters other than the text citation are permitted.</i>  For example,
+<blockquote>
+<a target="_blank" href="http://www.tanach.us/Server.xml?Deut26:5-9" target="_blank">
+  http://www.tanach.us/Server.xml?Deut26:5-9</a>
+</blockquote>
+contains Deuteronomy 26:5-9. The <b>Server.xml</b> output always includes DH markings.
+See the <a href="Servers.html">Servers</a> page for more information 
+about using the <b>Server.xml</b> server.
+</li>
+</ol>
+<p/>
+<h4>XML file directories:</h4>
+The <b>XML</b> files for each Tanach book are contained in the 
+<a href="../Books/" target="_blank"><b><tt>Books</tt></b></a> subdirectory.  It contains
+the 39 un-marked book files, <b><tt>Genesis.xml</tt></b>
+<b><tt>...</tt></b> <b><tt>Chronicles 2.xml</tt></b>,
+and 5 DH-marked book files <b><tt>Genesis.DH.xml</tt></b>
+<b><tt>...</tt></b> <b><tt>Deuteronomy.DH.xml</tt></b>.  Examination of a typical file,
+<a href="../Books/Habakkuk.xml" target="_blank"><b><tt>Habakkuk.xml</tt></b></a>,  
+provides insight into the file structure.
+<p/>
+The <b><tt>Books</tt></b> directory also has a header file, <a href="../Books/TanachHeader.xml" target="_blank"><b><tt>TanachHeader.xml</tt></b></a>,
+containing the overall TEI header, transcription notes, and a character coding table,
+and an index file, <a href="../Books/TanachIndex.xml" target="_blank"><b><tt>TanachIndex.xml</tt></b></a>,
+containing the number of chapters and verses in each book. 
+The brevity of the <b><tt>TanachIndex.xml</tt></b> file speeds determination
+of whether a citation is valid or not; the same information 
+is obtainable on a book-by-book basis from the longer book files, however.
+
+
+<h4>Assistance available:</h4>
+The <a href="Transcriber.html"><b>transcriber</b></a> will provide assistance in
+working with <b>XML</b> files.
+
+
+<p/>
+<table width="100%">
+  <tr>
+    <td align="left">      
+      <a  target="_blank" title="License information." href="../License.html" alt="License information">
+        <img src="../Images/CreativeCommons.gif" alt="License information" border="0"/>
+      </a>
+    </td>
+    <td align="right">
+      <b>
+        <a title="Build number.">25.1</a>
+      </b>
+  </tr>
+</table>
+<hr/>
+</body>
+</html>
+<!--========================================================================-->
+<!--========================================================================-->

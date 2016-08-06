@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:output method="html"/>
+<xsl:strip-space elements="*"/>
+<!--========================================================================-->
+<!--========================================================================-->
+<!-- Copyright C.V.Kimball 2007                                             -->
+<!--
+
+    FontTest.xsl.xml -  XSLT file for FontTest.xml page.
+    
+    Enter with query parameter giving the name of the font to be tested.
+    Without a query parameter, the results for SBL Hebrew are returned.
+          
+-->
+<!--========================================================================-->
+<!--========================================================================-->    
+<xsl:variable name="xsldate">24 Jun 2013</xsl:variable>
+<!-- Variable build is the build date of the complete site as set by ant.   -->
+<xsl:variable name="build">25.1</xsl:variable>  
+<xsl:param name="template" >Dispatcher</xsl:param>  
+<!-- Font for Hebrew text                                                   -->
+<xsl:param name="fontfamily">SBL Hebrew</xsl:param>
+<xsl:param name="englishfontfamily">Times New Roman</xsl:param>
+
+<!-- The MIME type of the favicon icon.           -->
+<!-- This is loaded BEFORE the baseURL is defined.                          -->
+<xsl:variable name="icontype">image.x-icon</xsl:variable>
+<!-- URL of the favicon icon.           -->
+<!-- This is loaded BEFORE the baseURL is defined.                          -->
+<xsl:variable name="iconURL">Images/TanachIcon.ico</xsl:variable>
+<!-- Variable creativecommons is a URL pointing to the CreativeCommons.gif file. -->
+<xsl:variable name="creativecommons">../Images/CreativeCommons.gif</xsl:variable>
+<!--========================================================================-->
+<!--
+                              Template dispatching
+-->                              
+<!--========================================================================-->
+<xsl:template match="/FontTest">
+    <xsl:call-template name="Dispatcher"/>
+</xsl:template>
+<!--========================================================================-->
+<xsl:template match="/Tanach">
+    <xsl:call-template name="FontTest"/>
+</xsl:template>
+<!--========================================================================-->
+<xsl:template name="Dispatcher">
+<html>
+<head> 
+  <meta http-equiv="X-UA-Compatible" content="IE=8"/>
+  <link href="{$iconURL}" rel="icon" type="{$icontype}"/>
+  <title>Font test</title>
+  <script src="../Javascript/SarissaLib.js" type="text/javascript"> </script>
+  <script src="../Javascript/UtilityLib.js" type="text/javascript"> </script>
+  <script  type="text/javascript"> 
+    var baseURL ;
+    function init(){
+        baseURL = getBaseURL("Tanach.xml") ;
+        var fontTestXSL = loadSarissaDoc("../XSL/FontTest.xsl.xml") ;
+        setAsXSL(fontTestXSL) ;
+        var fontTestXML = loadSarissaDoc("../Books/TanachHeader.xml") ;
+        
+        if(window.location.search.substring(1).length != 0){
+          var fontfamily = window.location.search.substring(1) ;
+          fontfamily = fontfamily.replace(/%20/g, ' ') ;
+          setXSLParam(fontTestXSL, "fontfamily", fontfamily) ;
+        }
+       
+        setTemplateToNode(fontTestXML, fontTestXSL, "FontTest", document.body)        
+    }
+  </script>
+</head>
+<body  onload="Javascript:init()"
+       style="background-image:url('../Images/Background');margin-right:10pt; 
+              margin-left:10pt; margin-top:10pt; margin-bottom:0">
+      &#x00a0;
+</body>
+</html>
+</xsl:template>
+<!--========================================================================-->
+
+<!-- Template to provide a test of installed fonts. -->
+
+<!--========================================================================-->
+<xsl:template name="FontTest">
+
+<html>
+<xsl:call-template name="PageHeader">
+  <xsl:with-param name="title" select="concat('Font test for the ', $fontfamily,  ' font')"/>
+</xsl:call-template>
+<p/>
+<table width="90%" align="center" cellpadding="5" border="1">
+  <tr>
+    <td>
+      <h4>
+       Comparison of system vs. <xsl:value-of select="$fontfamily"/> font
+      </h4>
+      <p/>With the <xsl:value-of select="$fontfamily"/> font installed, the two results will be different and
+      the text in the "<xsl:value-of select="$fontfamily"/> font" column should have vowels and
+      accents.  Normally, the text in the "System font" column will be defective. (Jer 28:11.14)
+    </td>
+    <td width="50%">
+      <table  border="1" align="center" width="100%">
+       <tr>
+         <th>System font</th>
+         <th><xsl:value-of select="$fontfamily"/> font</th>
+       </tr>
+       <tr>
+        <td width="50%" align="right">
+          <span style="font-size:30pt">&#x05e0;&#x05b0;&#x05d1;&#x05bb;&#x05bd;&#x05db;&#x05b7;&#x05d3;&#x05b0;&#x05e0;&#x05b6;&#x05d0;&#x05e6;&#x05bc;&#x05b7;&#x05a3;&#x05e8;</span>
+        </td>
+        <td width="50%" align="right">
+<span style="font-size:30pt;font-family:{$fontfamily}">&#x05e0;&#x05b0;&#x05d1;&#x05bb;&#x05bd;&#x05db;&#x05b7;&#x05d3;&#x05b0;&#x05e0;&#x05b6;&#x05d0;&#x05e6;&#x05bc;&#x05b7;&#x05a3;&#x05e8;</span>
+        </td>
+       </tr>
+      </table>
+       <blockquote>On your system undefined font symbols are indicated by the character between the &gt; and &lt; here:
+         &gt;<span  style="font-size:150%; font-family:{$englishfontfamily}">&#x059f;</span>&lt;.</blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <h4>
+       Rendering tests
+      </h4>
+      <p/>
+      Psalms 27:13 has many special marks.
+      Job 7:11 has an intricate set of marks under the first letter.
+      <p/>
+      "Broken" rendering is often indicated by a dotted circle (<b><tt>\u25cc</tt></b>): 
+      <p align="center"><span style="font-family:Lucida Sans Unicode;font-size:200%">&#x25cc;</span> 
+      </p>
+      <sup><b>*</b></sup> The screen images shown in the "Correct rendering" column are 
+      obtainable on any Windows system with either Firefox or Internet Explorer.
+    </td>
+    <td width="50%">
+      <table  border="1" align="center" width="100%" cellpadding="10">
+       <tr>
+         <th rowspan="2">Citation</th>
+         <th colspan="2">Text</th>
+       </tr>
+       <tr>
+         <th>Your rendering</th>
+         <th>Correct
+         rendering<sup><b>*</b></sup></th>
+       </tr>
+       <tr>
+        <td width="20%" align="left">
+          <b>Psalms 27:13</b>
+        </td>
+        <td width="80%" align="right">
+<span style="font-size:30pt;font-family:{$fontfamily}">&#x05dc;&#x05c5;&#x05c4;&#x05d5;&#x05bc;&#x05dc;&#x05b5;&#x05c5;&#x0597;&#x05c4;&#x05d0;&#x05c5;&#x05c4;</span>
+</td>
+         <td align="right">
+            <img src="../Images/Ps27.13.jpg"/>
+         </td>
+       </tr>
+       <tr>
+        <td width="20%" align="left">
+          <b>Job 7:11</b>
+        </td>
+        <td width="80%" align="right">
+<span style="font-size:30pt;font-family:{$fontfamily}">&#x05d0;&#x05b2;&#x200d;&#x05bd;&#x05ad;&#x05d3;&#x05b7;&#x05d1;&#x05bc;&#x05b0;&#x05e8;&#x05b8;&#x05d4; </span>
+        </td>
+         <td align="right">
+            <img src="../Images/Job7.11.jpg"/>
+         </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td><b>Holam haser after vav tests</b>
+        <p/>
+        A <i>slight</i> difference between the holams should be apparent.  If no holam appears in the
+        upper example or if some other mark appears, your font lacks a code point for the holam haser for vav, <b><tt>x05ba</tt></b>.
+    </td>
+    <td>
+      <table  border="1" align="center" width="100%" cellpadding="10pt">
+        <tr>
+          <td width="20%" align="left" rowspan="2"><b>Genesis 26:5</b></td>
+          <td><b>Holam haser:</b></td>
+          <td><span style="font-size:30pt;font-family:{$fontfamily}">&#x05de;&#x05b4;&#x05e6;&#x05b0;&#x05d5;&#x05ba;&#x05ea;</span></td>
+        </tr>
+        <tr>
+          <td><b>Holam</b></td>
+          <td><span style="font-size:30pt;font-family:{$fontfamily}">&#x05de;&#x05b4;&#x05e6;&#x05b0;&#x05d5;&#x05b9;&#x05ea;</span></td>
+        
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table> 
+<p/>
+<xsl:call-template name="PageFooter">
+  <xsl:with-param name="xmldate" select="/Tanach/teiHeader/profileDesc/creation/date"/>
+</xsl:call-template>
+
+</html>
+</xsl:template>
+<!--========================================================================-->
+
+<!-- Template to head descriptive pages. -->
+
+<!--========================================================================-->
+<xsl:template name="PageHeader">
+  <xsl:param name="title" select="'Title not specified'"/>   
+  <xsl:param name="wlcversion" select="''"/>
+<table width="100%">
+  <tr>
+    <td align="left"> 
+      <span style="font-family:{$englishfontfamily};font-weight:bold;font-size:200%">
+        <xsl:value-of select="$title"/>
+          <xsl:if test="not($wlcversion='')">
+            <xsl:text> [</xsl:text><xsl:value-of select="$wlcversion"/><xsl:text>] </xsl:text>
+          </xsl:if>
+      </span>
+      <p/>     
+    </td>
+  </tr>
+</table>
+</xsl:template>
+<!--========================================================================-->
+
+<!-- Template to end descriptive pages. -->
+
+<!--========================================================================-->
+<xsl:template name="PageFooter">
+  <xsl:param name="xmldate" select="'XML date not available'"/>   
+  <xsl:param name="license" select="'../License.html'"/>   
+<p/>
+<table width="100%">
+  <tr>
+    <td align="left">      
+      <a  target="_blank" title="License information." href="{$license}" alt="License information">
+        <img src="../Images/CreativeCommons.gif" alt="License information" border="0"/>
+      </a>
+    </td>
+    <td align="right">
+      <b>
+        <a title="Build number."><xsl:value-of select="$build"/></a>
+      </b>
+      </td>
+  </tr>
+</table>
+<hr/>
+</xsl:template>
+</xsl:stylesheet>
+<!--========================================================================-->
+<!--========================================================================-->

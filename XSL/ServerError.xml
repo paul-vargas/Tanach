@@ -1,0 +1,21 @@
+<?xml version = "1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="Server.xsl.xml"?>
+<!-- Copyright C.V.Kimball 2006 -->
+<!--========================================================================-->
+<!--========================================================================-->
+<!--
+
+          Input XML file Server responses.
+          
+          
+          This file is read and transformed by the Server HttpServlet
+          using the Server.xsl.xml XSLT file.  The combination outputs
+          the Server home page and Server error messages.
+          
+          There's nothing here except the empty Server tag.
+
+-->
+<!--========================================================================-->
+<!--========================================================================-->
+<Server>
+</Server>

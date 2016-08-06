@@ -1,0 +1,304 @@
+<?xml version = "1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../XSL/DH.xsl.xml"?>
+<Marking xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+   xsi:noNamespaceSchemaLocation ="../XSL/Tanach.xsd">
+<!-- Copyright C.V.Kimball 2004 -->
+<DHheader>
+  <name>GenesisDH</name>
+  <hebrewname>תנ״ך</hebrewname>
+  <title>DH sources in Genesis</title>
+  <shortdescription>Documentary Hypothesis source markings from A.E.Friedman.
+  </shortdescription>
+  <description>Documentary Hypothesis (DH) source markings from  Richard E. Friedman's 
+    "Who wrote the Bible, Second Edition", pages 246-253, 1997, have been added. 
+    These markings appear as the 's' attribute on each verse and are one of 
+    J, E, P, Dtr1, Dtr2, R, or Other. Friedman splits some verses between sources, 
+    the decision on where to split a verse in the Hebrew text has been made by the transcriber
+    and should be regarded as tentative.  Modified to count orthographic,
+     rather than prosodic, words.</description>
+  <date>16 December 2005</date>
+  <copyright>© C. V. Kimball 2004</copyright>
+  <filename>DHSpecification.Genesis.xml</filename>
+</DHheader>
+<DHbook>
+  <names>
+   <name>Genesis</name>
+   <abbrev>Gen</abbrev>
+   <number>1</number>
+   <filename>Genesis</filename>
+   <hebrewname>בראשית</hebrewname>
+  </names>
+  <marking>
+     <title>Documentary Hypothesis from R.E.Friedman's "Who wrote the Bible?".</title>
+     <shorttitle>DH</shorttitle>
+     <description>Documentary Hypothesis (DH) source markings from  Richard E. Friedman's 
+        "Who wrote the Bible, Second Edition", pages 246-253, 1997, have been added. 
+        These markings appear as the 's' attribute on each verse and are one of 
+        J, E, P, Dtr1, Dtr2, R, or Other. Friedman splits some verses between sources, 
+        the decision on where to split a verse in the Hebrew text has been made by the transcriber
+        and should be regarded as tentative.  Modified to count orthographic,
+        rather than prosodic, words.
+     </description>
+     <date>16 December 2005</date>
+     <marks>
+        <mark>
+           <code>J</code>
+           <label>J</label>
+           <description>Judean source</description>
+           <color>maroon</color>
+           <style>normal</style>
+           <relativesize>1</relativesize>
+           <backgroundcolor>#ffffff</backgroundcolor>
+           <textdecoration>none</textdecoration>
+        </mark>
+        <mark>
+           <code>E</code>
+           <label>E</label>
+           <description>E (Shiloh) source</description>
+           <color>blue</color>
+           <style>normal</style>
+           <relativesize>1</relativesize>
+           <backgroundcolor>#ffffff</backgroundcolor>
+           <textdecoration>none</textdecoration>
+        </mark>
+        <mark>
+           <code>P</code>
+           <label>P</label>
+           <description>Priestly source</description>
+           <color>black</color>
+           <style>normal</style>
+           <relativesize>1</relativesize>
+           <backgroundcolor>#ffffff</backgroundcolor>
+           <textdecoration>none</textdecoration>
+        </mark>
+        <mark>
+           <code>R</code>
+           <label>R</label>
+           <description>Redactor</description>
+           <color>green</color>
+           <style>normal</style>
+           <relativesize>.8</relativesize>
+           <backgroundcolor>#ffffff</backgroundcolor>
+           <textdecoration>none</textdecoration>
+        </mark>
+     </marks>
+  </marking>
+</DHbook>
+<excerpts>
+    <excerpt><range>1:1 - 2:3</range><source>P</source><note></note></excerpt>
+    <excerpt><range>2:4.1 - 2:4.5</range><source>R</source><note>Split verse: CVK 6 Aug 2004</note></excerpt>
+    <excerpt><range>2:4.6 - 2:25.99</range><source>J</source><note></note></excerpt>
+    <excerpt><range>3:1 - 24</range><source>J</source><note></note></excerpt>
+    <excerpt><range>4:1 - 16</range><source>J</source><note></note></excerpt>
+    <excerpt><range>4:17 - 26</range><source>J</source><note></note></excerpt>
+    <excerpt><range>5:1-28</range><source>R</source><note>*WWB: "Book of Generations".</note></excerpt>
+    <excerpt><range>5:29</range><source>J</source><note></note></excerpt>
+    <excerpt><range>5:30-32</range><source>R</source><note>*WWB: "Book of Generations".</note></excerpt>
+    <excerpt><range>6:1-4</range><source>J</source><note></note></excerpt>
+    <excerpt><range>6:5-8</range><source>J</source><note></note></excerpt>
+    <excerpt><range>6:9-22</range><source>P</source><note></note></excerpt>
+    <excerpt><range>7:1-5</range><source>J</source><note></note></excerpt>
+    <excerpt><range>7:6</range><source>R</source><note>*WWB: "Book of Generations".</note></excerpt>
+    <excerpt><range>7:7</range><source>J</source><note></note></excerpt>
+    <excerpt><range>7:8-9</range><source>P</source><note></note></excerpt>
+    <excerpt><range>7:10</range><source>J</source><note></note></excerpt>
+    <excerpt><range>7:11</range><source>P</source><note></note></excerpt>
+    <excerpt><range>7:12</range><source>J</source><note></note></excerpt>
+    <excerpt><range>7:13.1- 7:16.9</range><source>P</source><note>Split verse: CVK 6 Aug 2004</note></excerpt>
+    <excerpt><range>7:16.10 - 7:20.99</range><source>J</source><note></note></excerpt>
+    <excerpt><range>7:21</range><source>P</source><note></note></excerpt>
+    <excerpt><range>7:22-23</range><source>J</source><note></note></excerpt>
+    <excerpt><range>7:24</range><source>P</source><note></note></excerpt>
+    <excerpt><range>8:1.1-8:2.5</range><source>P</source><note>Split verse: CVK 6 Aug 2004</note></excerpt>
+    <excerpt><range>8:2.6 - 8:3.6</range><source>J</source><note>Split verse: CVK 6 Aug 2004</note></excerpt>
+    <excerpt><range>8:3.7-8:5.99</range><source>P</source><note></note></excerpt>
+    <excerpt><range>8:6</range><source>J</source><note></note></excerpt>
+    <excerpt><range>8:7</range><source>P</source><note></note></excerpt>
+    <excerpt><range>8:8-12</range><source>J</source><note></note></excerpt>
+    <excerpt><range>8:13.1-8:13.12</range><source>P</source><note>Split verse: CVK 16 Dec 2005</note></excerpt>
+    <excerpt><range>8:13.13-8:13.99</range><source>J</source><note></note></excerpt>
+    <excerpt><range>8:14-19</range><source>P</source><note></note></excerpt>
+    <excerpt><range>8:20-22</range><source>J</source><note></note></excerpt>
+    <excerpt><range>9:1-17</range><source>P</source><note></note></excerpt>
+    <excerpt><range>9:18-27</range><source>J</source><note></note></excerpt>
+    <excerpt><range>9:28-29</range><source>R</source><note>*WWB: "Book of Generations".</note></excerpt>
+    <excerpt><range>10:1.1-10:1.7</range><source>R</source><note>Split verse: CVK 16 Dec 2005</note></excerpt>
+    <excerpt><range>10:1.8-10:7.99</range><source>P</source><note></note></excerpt>
+    <excerpt><range>10:8-19</range><source>J</source><note></note></excerpt>
+    <excerpt><range>10:20</range><source>P</source><note></note></excerpt>
+    <excerpt><range>10:21</range><source>J</source><note></note></excerpt>
+    <excerpt><range>10:22-23</range><source>P</source><note></note></excerpt>
+    <excerpt><range>10:24-30</range><source>J</source><note></note></excerpt>
+    <excerpt><range>10:31-32</range><source>P</source><note></note></excerpt>
+    <excerpt><range>11:1-9</range><source>J</source><note></note></excerpt>
+    <excerpt><range>11:10.1-11:10.3</range><source>R</source><note>Split verse: CVK 6 Aug 2004</note></excerpt>
+    <excerpt><range>11:10.4-11:26.99</range><source>R</source><note>* WWB "Book of Generations".</note></excerpt>
+    <excerpt><range>11:27.1-11:27.3</range><source>R</source><note>Split verse: CVK 6 Aug 2004</note></excerpt>
+    <excerpt><range>11:27.4-11:31.99</range><source>P</source><note></note></excerpt>
+    <excerpt><range>11:32</range><source>R</source><note>*WWB: "Book of Generations".</note></excerpt>
+    <excerpt><range>12:1.1-12:4.9</range><source>J</source><note>Split verse: CVK 6 Aug 2004</note></excerpt>
+    <excerpt><range>12:4.10-12:5.99</range><source>P</source><note></note></excerpt>
+    <excerpt><range>12:6-9</range><source>J</source><note></note></excerpt>
+    <excerpt><range>12:10-20</range><source>J</source><note></note></excerpt>
+    <excerpt><range>13:1-5</range><source>J</source><note></note></excerpt>
+    <excerpt><range>13:6</range><source>P</source><note></note></excerpt>
+    <excerpt><range>13:7.1-13:11.10</range><source>J</source><note>Split verse: CVK 16 Dec 2005</note></excerpt>
+    <excerpt><range>13:11.11-13:12.8</range><source>P</source><note>Split verse: CVK 16 Dec 2005</note></excerpt>
+    <excerpt><range>13:12.9-13:18.99</range><source>J</source><note></note></excerpt>
+    <excerpt><range>14:1-24</range><source>J</source><note></note></excerpt>
+    <excerpt><range>15:1-21</range><source>J</source><note>*WWB: A difficult passage.</note></excerpt>
+    <excerpt><range>16:1-2</range><source>J</source><note></note></excerpt>
+    <excerpt><range>16:3</range><source>P</source><note></note></excerpt>
+    <excerpt><range>16:4-14</range><source>J</source><note></note></excerpt>
+    <excerpt><range>16:15-16</range><source>P</source><note></note></excerpt>
+    <excerpt><range>17:1-27</range><source>P</source><note></note></excerpt>
+    <excerpt><range>18:1-33</range><source>J</source><note></note></excerpt>
+    <excerpt><range>19:1-28</range><source>J</source><note></note></excerpt>
+    <excerpt><range>19:29</range><source>P</source><note></note></excerpt>
+    <excerpt><range>19:30-38</range><source>J</source><note></note></excerpt>
+    <excerpt><range>20:1-18</range><source>E</source><note></note></excerpt>
+    <excerpt><range>21:1.1-21:1.6</range><source>J</source><note>Split verse: CVK 16 Dec 2005</note></excerpt>
+    <excerpt><range>21:1.7-21:1.99</range><source>P</source><note></note></excerpt>
+    <excerpt><range>21:2.1-21:2.6</range><source>J</source><note>Split verse: CVK 6 Aug 2004</note></excerpt>
+    <excerpt><range>21:2.7-21:5.99</range><source>P</source><note></note></excerpt>
+    <excerpt><range>21:6</range><source>E</source><note></note></excerpt>
+    <excerpt><range>21:7</range><source>J</source><note></note></excerpt>
+    <excerpt><range>21:8-21</range><source>E</source><note></note></excerpt>
+    <excerpt><range>21:22-34</range><source>E</source><note></note></excerpt>
+    <excerpt><range>22:1-10</range><source>E</source><note></note></excerpt>
+    <excerpt><range>22:11.1-22:16.5</range><source>R</source><note>*WWB: Special note. Split verse: CVK 16 Dec 2005</note></excerpt>
+    <excerpt><range>22:16.6-22:19.99</range><source>E</source><note></note></excerpt>
+    <excerpt><range>22:20-24</range><source>J</source><note></note></excerpt>
+    <excerpt><range>23:1-20</range><source>P</source><note></note></excerpt>
+    <excerpt><range>24:1-67</range><source>J</source><note></note></excerpt>
+    <excerpt><range>25:1-4</range><source>E</source><note></note></excerpt>
+    <excerpt><range>25:5-6</range><source>R</source><note></note></excerpt>
+    <excerpt><range>25:7</range><source>P</source><note></note></excerpt>
+    <excerpt><range>25:8.1-25:8.1</range><source>P</source><note>*WWB: Unusual verse splitting. Verse split according to WWB note and CVK 8 Aug 2004.</note></excerpt>
+    <excerpt><range>25:8.2-25:8.7</range><source>J</source><note></note></excerpt>
+    <excerpt><range>25:8.8-25:11.9</range><source>P</source>
+      <note>Split verse 25:11 CVK 16 Dec 2005.</note></excerpt>
+    <excerpt><range>25:11.10-25:11.99</range><source>J</source>
+       <note>WWB inconsistency: 25:11b appears as J or as P, taken as J, agreeing with BSR.</note></excerpt>
+    <excerpt><range>25:12</range><source>R</source><note></note></excerpt>
+    <excerpt><range>25:13-18</range><source>P</source><note></note></excerpt>
+    <excerpt><range>25:19</range><source>R</source><note></note></excerpt>
+    <excerpt><range>25:20</range><source>P</source><note></note></excerpt>
+    <excerpt><range>25:21-34</range><source>J</source><note></note></excerpt>
+    <excerpt><range>26:1-11</range><source>J</source><note></note></excerpt>
+    <excerpt><range>26:12-33</range><source>J</source><note></note></excerpt>
+    <excerpt><range>26:34-35</range><source>P</source><note></note></excerpt>
+    <excerpt><range>27:1-45</range><source>J</source><note></note></excerpt>
+    <excerpt><range>27:46</range><source>P</source><note></note></excerpt>
+    <excerpt><range>28:1-9</range><source>P</source><note></note></excerpt>
+    <excerpt><range>28:10.1-28:11.6</range><source>J</source><note></note></excerpt>
+    <excerpt><range>28:11.7-28:12.99</range><source>E</source><note></note></excerpt>
+    <excerpt><range>28:13-16</range><source>J</source><note></note></excerpt>
+    <excerpt><range>28:17-18</range><source>E</source><note></note></excerpt>
+    <excerpt><range>28:19</range><source>J</source><note></note></excerpt>
+    <excerpt><range>28:20-22</range><source>E</source><note></note></excerpt>
+    <excerpt><range>29:1-30</range><source>J</source><note></note></excerpt>
+    <excerpt><range>29:31-35</range><source>J</source><note></note></excerpt>
+    <excerpt><range>30:1.1-30:1.6</range><source>J</source><note>Split verse: CVK 6 Aug 2004</note></excerpt>
+    <excerpt><range>30:1.7-30:3.99</range><source>E</source><note></note></excerpt>
+    <excerpt><range>30:4.1-30:4.6</range><source>J</source><note>Split verse: CVK 16 Dec 2005</note></excerpt>
+    <excerpt><range>30:4.7-30:24.4</range><source>E</source><note>Split verse: CVK 16 Dec 2005</note></excerpt>
+    <excerpt><range>30:24.5-30:24.99</range><source>J</source><note></note></excerpt>
+    <excerpt><range>30:25-43</range><source>J</source><note></note></excerpt>
+    <excerpt><range>31:1-2</range><source>E</source><note></note></excerpt>
+    <excerpt><range>31:3</range><source>J</source><note></note></excerpt>
+    <excerpt><range>31:4-16</range><source>E</source><note></note></excerpt>
+    <excerpt><range>31:17</range><source>J</source><note></note></excerpt>
+    <excerpt><range>31:18</range><source>P</source>
+      <note>WWB splits verse with 31:18a as J, 31:18b as P. BSR has all P. Taken as all P. CVK 6 Aug 2004</note></excerpt>
+    <excerpt><range>31:19-48</range><source>E</source><note></note></excerpt>
+    <excerpt><range>31:49</range><source>J</source><note></note></excerpt>
+    <excerpt><range>31:50-54</range><source>E</source><note></note></excerpt>
+    <excerpt><range>32:1-3</range><source>E</source><note></note></excerpt>
+    <excerpt><range>32:4-13</range><source>J</source><note>*WWB: Difficult to identify.</note></excerpt>
+    <excerpt><range>32:14-24</range><source>E</source><note></note></excerpt>
+    <excerpt><range>32:25-33</range><source>E</source><note></note></excerpt>
+    <excerpt><range>33:1-17</range><source>E</source><note></note></excerpt>
+    <excerpt><range>33:18.1-33:18.5</range><source>E</source>
+      <note>*WWB: Special note. WWB has 33:18 both E and R. BSR has 33:18a as E. Taken as E. Single verse split into 3 parts. CVK 6 Aug 2004</note></excerpt>
+    <excerpt><range>33:18.6-33:18.11</range><source>R</source>
+      <note></note></excerpt>
+    <excerpt><range>33:18.12-33:18.99</range><source>E</source><note></note></excerpt>
+    <excerpt><range>33:19-20</range><source>E</source><note></note></excerpt>
+    <excerpt><range>34:1-31</range><source>J</source><note></note></excerpt>
+    <excerpt><range>35:1-8</range><source>E</source><note></note></excerpt>
+    <excerpt><range>35:9-15</range><source>P</source><note></note></excerpt>
+    <excerpt><range>35:16-20</range><source>E</source><note></note></excerpt>
+    <excerpt><range>35:21-22</range><source>J</source><note></note></excerpt>
+    <excerpt><range>35:23-26</range><source>P</source><note></note></excerpt>
+    <excerpt><range>35:27</range><source>P</source><note></note></excerpt>
+    <excerpt><range>35:28-29</range><source>P</source><note></note></excerpt>
+    <excerpt><range>36:1</range><source>R</source><note></note></excerpt>
+    <excerpt><range>36:2-30</range><source>P</source><note>*WWB: Special note.</note></excerpt>
+    <excerpt><range>36:31-43</range><source>J</source><note></note></excerpt>
+    <excerpt><range>37:1</range><source>P</source><note></note></excerpt>
+    <excerpt><range>37:2.1-37:2.3</range><source>R</source><note>Split verse: CVK 6 Aug 2004</note></excerpt>   
+    <excerpt><range>37:2.4-37:2.99</range><source>J</source><note></note></excerpt>
+    <excerpt><range>37:3.1-37:3.11</range><source>E</source><note>Split verse: CVK 16 Dec 2005</note></excerpt>
+    <excerpt><range>37:3.12-37:3.99</range><source>J</source><note></note></excerpt>
+    <excerpt><range>37:4</range><source>E</source><note></note></excerpt>
+    <excerpt><range>37:5-11</range><source>J</source><note></note></excerpt>
+    <excerpt><range>37:12-18</range><source>E</source><note></note></excerpt>
+    <excerpt><range>37:19-20</range><source>J</source><note></note></excerpt>
+    <excerpt><range>37:21-22</range><source>E</source><note></note></excerpt>
+    <excerpt><range>37:23</range><source>J</source><note></note></excerpt>
+    <excerpt><range>37:24</range><source>E</source><note></note></excerpt>
+    <excerpt><range>37:25.1-37:25.3</range><source>E</source><note>Split verse: CVK 16 Dec 2005</note></excerpt>
+    <excerpt><range>37:25.4-37:27:99</range><source>J</source><note></note></excerpt>
+    <excerpt><range>37:28.1-37:28.10</range><source>E</source><note></note></excerpt>
+    <excerpt><range>37:28.11-37:28.99</range><source>J</source><note></note></excerpt>
+    <excerpt><range>37:29-30</range><source>E</source><note></note></excerpt>
+    <excerpt><range>37:31-35</range><source>J</source><note></note></excerpt>
+    <excerpt><range>37:36</range><source>E</source><note></note></excerpt>
+    <excerpt><range>38:1-30</range><source>J</source><note></note></excerpt>
+    <excerpt><range>39:1-23</range><source>J</source><note></note></excerpt>
+    <excerpt><range>40:1-23</range><source>E</source><note></note></excerpt>
+    <excerpt><range>41:1-41:45</range><source>E</source>
+      <note>WWB splits verse 41:45 between E and P. 41:45 is all E in BSR. Taken as all E. CVK 6 Aug 2004</note></excerpt>
+    <excerpt><range>41:46.1-41:46.9</range><source>P</source><note>Split verse: CVK 16 Dec 2005</note></excerpt>
+    <excerpt><range>41:46.10-41:57.99</range><source>E</source><note></note></excerpt>
+    <excerpt><range>42:1-4</range><source>J</source><note></note></excerpt>
+    <excerpt><range>42:5-7</range><source>E</source><note></note></excerpt>
+    <excerpt><range>42:8-20</range><source>J</source><note></note></excerpt>
+    <excerpt><range>42:21-25</range><source>E</source><note></note></excerpt>
+    <excerpt><range>42:26-34</range><source>J</source><note></note></excerpt>
+    <excerpt><range>42:35-37</range><source>E</source><note></note></excerpt>
+    <excerpt><range>42:38</range><source>J</source><note></note></excerpt>
+    <excerpt><range>43:1-13</range><source>J</source><note></note></excerpt>
+    <excerpt><range>43:14</range><source>E</source><note></note></excerpt>
+    <excerpt><range>43:15-17</range><source>J</source><note></note></excerpt>
+    <excerpt><range>43:18-23</range><source>E</source><note></note></excerpt>
+    <excerpt><range>43:24-34</range><source>J</source><note></note></excerpt>
+    <excerpt><range>44:1-34</range><source>J</source><note></note></excerpt>
+    <excerpt><range>45:1-2</range><source>J</source><note></note></excerpt>
+    <excerpt><range>45:3</range><source>E</source><note></note></excerpt>
+    <excerpt><range>45:4-28</range><source>J</source><note></note></excerpt>
+    <excerpt><range>46:1.1-46:5.4</range><source>E</source><note>Split verse: CVK 6 Aug 2004</note></excerpt>
+    <excerpt><range>46:5.5-46:5.99</range><source>J</source><note></note></excerpt>
+    <excerpt><range>46:6-27</range><source>P</source><note></note></excerpt>
+    <excerpt><range>46:28-34</range><source>J</source><note></note></excerpt>
+    <excerpt><range>47:1-6</range><source>J</source><note></note></excerpt>
+    <excerpt><range>47:7-10</range><source>E</source><note></note></excerpt>
+    <excerpt><range>47:11.1-47:27.5</range><source>J</source><note></note></excerpt>
+    <excerpt><range>47:27.6-47:27.99</range><source>P</source><note></note></excerpt>
+    <excerpt><range>47:28</range><source>P</source><note></note></excerpt>
+    <excerpt><range>47:29-31</range><source>J</source><note></note></excerpt>
+    <excerpt><range>48:1-2</range><source>E</source><note></note></excerpt>
+    <excerpt><range>48:3-6</range><source>P</source><note></note></excerpt>
+    <excerpt><range>48:7</range><source>R</source><note>*WWB: Special note.</note></excerpt>
+    <excerpt><range>48:8-22</range><source>E</source><note></note></excerpt>
+    <excerpt><range>49:1-27</range><source>J</source><note>*WWB: Special note.</note></excerpt>
+    <excerpt><range>49:28</range><source>R</source><note></note></excerpt>
+    <excerpt><range>49:29-33</range><source>P</source><note></note></excerpt>
+    <excerpt><range>50:1-11</range><source>J</source><note></note></excerpt>
+    <excerpt><range>50:12-13</range><source>P</source><note></note></excerpt>
+    <excerpt><range>50:14-22</range><source>J</source><note></note></excerpt>
+    <excerpt><range>50:23-26</range><source>E</source>
+      <note>WWB inconsistency: 50:23 is marked as both J and E. BSR takes as E. Taken as E. CVK 6 Aug 2004</note></excerpt>
+</excerpts>
+</Marking>

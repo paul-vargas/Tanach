@@ -1,0 +1,17 @@
+<?xml version = "1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../XSL/TEIHeader.xsl.xml"?>
+<!--========================================================================-->
+<!--========================================================================-->
+<!-- Copyright C.V.Kimball 2013                                            -->
+<!--
+
+    TEIHeader.xml -  Launcher file for TEIHeader.xml page.
+    
+    Enter with query parameter giving the book filename without the .xml extension.
+    Without a query parameter, the overall TEIheader is returned.
+          
+-->
+<!--========================================================================-->
+<!--========================================================================-->    
+<TEIHeader>
+</TEIHeader>

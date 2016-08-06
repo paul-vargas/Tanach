@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsl:stylesheet version="1.0"  xmlns:xsl="http://www.w3.org/1999/XSL/Transform" >
+<xsl:output method="html"/>
+<xsl:strip-space elements="*"/>
+<!--========================================================================-->
+<!--========================================================================-->
+<!-- Copyright C.V.Kimball 2013                                            -->
+<!--
+
+    TEIHeader.xsl.xml -  XSLT file for TEIHeader.xml page.
+    
+    Enter with query parameter giving the book filename without the .xml extension.
+    Without a query parameter, the overall TEIheader is returned.
+          
+-->
+<!--========================================================================-->
+<!--========================================================================-->    
+<xsl:variable name="xsldate">24 Jun 2013</xsl:variable>
+<!-- Variable build is the build date of the complete site as set by ant.   -->
+<xsl:variable name="build">25.1</xsl:variable>  
+<xsl:param name="template" >Dispatcher</xsl:param>  
+<!-- Font for Hebrew text                                                   -->
+<xsl:param name="fontfamily">SBL Hebrew</xsl:param>
+<xsl:param name="englishfontfamily">Times New Roman</xsl:param>
+
+<!-- The MIME type of the favicon icon.                                     -->
+<!-- This is loaded BEFORE the baseURL is defined.                          -->
+<xsl:variable name="icontype">image.x-icon</xsl:variable>
+<!-- URL of the favicon icon.                                               -->
+<!-- This is loaded BEFORE the baseURL is defined.                          -->
+<xsl:variable name="iconURL">Images/TanachIcon.ico</xsl:variable>
+<!--========================================================================-->
+<!--
+                              Template dispatching
+-->                              
+<!--========================================================================-->
+<xsl:template match="/TEIHeader">
+    <xsl:call-template name="Dispatcher"/>
+</xsl:template>
+<!--========================================================================-->
+<xsl:template match="/Tanach">
+    <xsl:call-template name="TEIHeader"/>
+</xsl:template>
+<!--========================================================================-->
+<xsl:template name="Dispatcher">
+<html>
+<head> 
+  <meta http-equiv="X-UA-Compatible" content="IE=8"/>
+  <link href="{$iconURL}" rel="icon" type="{$icontype}"/>
+  <title>TEI header</title>
+  <script src="../Javascript/SarissaLib.js" type="text/javascript"> </script>
+  <script src="../Javascript/UtilityLib.js" type="text/javascript"> </script>
+  <script  type="text/javascript"> 
+    var baseURL ;
+    function init(){
+        baseURL = getBaseURL("Tanach.xml") ;
+        var headerXSL = loadSarissaDoc("../XSL/TEIHeader.xsl.xml") ;
+        setAsXSL(headerXSL) ;
+        
+        var headerXML ;
+        if(window.location.search.substring(1).length == 0){
+          headerXML = loadSarissaDoc("../Books/TanachHeader.xml") ;
+        }
+        else{
+          var queryString = window.location.search.substring(1) ;
+          var filename = "../Books/" + queryString + ".xml" ;
+          headerXML = loadSarissaDoc(filename) ;
+        }
+        
+        setTemplateToNode(headerXML, headerXSL, "TEIHeader", document.body)        
+    }
+  </script>
+</head>
+<body  onload="Javascript:init()"
+       style="background-image:url('../Images/Background');margin-right:10pt; 
+              margin-left:10pt; margin-top:10pt; margin-bottom:0">
+      &#x00a0;
+</body>
+</html>
+</xsl:template>
+<!--========================================================================-->
+<!--========================================================================-->
+
+<!-- html template to show the site contents 
+     from SiteChecker definitions file Tanach.def.xml. -->
+
+<!--========================================================================-->
+<xsl:template name="TEIHeader">
+<html>
+  <span style="font-family:Courier;font-size:10pt">
+  <center>
+  
+    <h2><xsl:value-of select="/Tanach/teiHeader/fileDesc/titleStmt/title[1]"/> - 
+    <span style="font-family:{$fontfamily}"><xsl:value-of select="/Tanach/teiHeader/fileDesc/titleStmt/title[2]"/></span></h2>
+    <h1><xsl:value-of select="/Tanach/teiHeader/fileDesc/titleStmt/title[3]"/></h1> 
+    <h2>Version <xsl:value-of select="/Tanach/teiHeader/fileDesc/editionStmt/edition/version"/></h2>
+    <xsl:if test="count(/Tanach/teiHeader/fileDesc/titleStmt/title)>4">
+        <h2><xsl:value-of select="/Tanach/teiHeader/fileDesc/titleStmt/title[4]"/> - <xsl:value-of select="/Tanach/teiHeader/fileDesc/titleStmt/title[5]"/></h2> <p/>
+    </xsl:if>
+    
+    Attributed to:<br/>
+    <i><xsl:value-of select="/Tanach/teiHeader/fileDesc/titleStmt/editor[1]"/></i> <br/>
+        <i><xsl:value-of select="/Tanach/teiHeader/fileDesc/titleStmt/editor[2]"/></i> 
+        <p/>
+        <b><xsl:value-of select="/Tanach/teiHeader/fileDesc/titleStmt/respStmt[1]/resp"/></b> <br/>
+        <i><xsl:value-of select="/Tanach/teiHeader/fileDesc/titleStmt/respStmt[1]/name[position()=1]"/></i>, 
+             <xsl:value-of select="/Tanach/teiHeader/fileDesc/titleStmt/respStmt[1]/name[position()=2]"/><br/>
+        <xsl:value-of select="/Tanach/teiHeader/fileDesc/titleStmt/respStmt[1]/name[position()=3]"/><br/>  
+        
+        
+        <xsl:value-of select="/Tanach/teiHeader/fileDesc/titleStmt/respStmt[1]/name[@type='org']"/><br/>
+        <p/>
+        <b><xsl:value-of select="/Tanach/teiHeader/fileDesc/titleStmt/respStmt[2]/resp"/></b> <br/>
+        <i><xsl:value-of select="/Tanach/teiHeader/fileDesc/titleStmt/respStmt[2]/name"/></i><br/>
+        <xsl:value-of select="/Tanach/teiHeader/fileDesc/titleStmt/respStmt[2]/name[@type='email']"/>  
+    <p/>
+
+
+    Filename: <b><tt><xsl:value-of select="/Tanach/teiHeader/fileDesc/titleStmt/title[@type='filename']"/>.xml</tt></b><p/>
+  </center>
+  <hr/>
+  
+  <h4 align="left">Edition:</h4>
+  <center>  
+     <b><xsl:for-each select="/Tanach/teiHeader/fileDesc/editionStmt/edition">
+        <xsl:value-of select="child::text()"/> 
+     </xsl:for-each></b><br/>
+     <a title="XML date."><xsl:value-of select="/Tanach/teiHeader/fileDesc/editionStmt/edition/date"/></a><p/>   
+  </center>
+  <div align="left">
+  <xsl:for-each select="/Tanach/teiHeader/profileDesc/creation">
+        <xsl:value-of select="child::text()"/> 
+  </xsl:for-each> 
+  
+  This XML file was produced by the Java application WLC2XML. Its
+  SHA-1 hash value can be obtained from the transcriber at
+  <xsl:value-of select="/Tanach/teiHeader/fileDesc/titleStmt/respStmt[2]/name[@type='email']"/>. <br/>
+  <xsl:for-each select="/Tanach/teiHeader/fileDesc/editionStmt/respStmt/resp"> 
+         <xsl:value-of select="."/><br/>
+  </xsl:for-each>
+  Language: <xsl:value-of select="/Tanach/teiHeader/profileDesc/langUsage/language"/><br/> 
+  File size: <xsl:value-of select="/Tanach/teiHeader/fileDesc/extent"/><p/>   
+  <xsl:for-each select="/Tanach/teiHeader/fileDesc/publicationStmt/authority">
+        <xsl:value-of select="child::text()"/> 
+  </xsl:for-each><br/>
+  <xsl:text>&#x00a0;&#x00a0;&#x00a0;&#x00a0;</xsl:text>  <xsl:value-of select="/Tanach/teiHeader/fileDesc/publicationStmt/authority/name"/> <br/>
+  <xsl:text>&#x00a0;&#x00a0;&#x00a0;&#x00a0;</xsl:text><xsl:value-of select="/Tanach/teiHeader/fileDesc/publicationStmt/authority/name[@type='org']"/> <br/>
+  <xsl:text>&#x00a0;&#x00a0;&#x00a0;&#x00a0;</xsl:text>   <xsl:value-of select="/Tanach/teiHeader/fileDesc/publicationStmt/authority/name[@type='email']"/> <br/>
+  <xsl:text>&#x00a0;&#x00a0;&#x00a0;&#x00a0;</xsl:text><xsl:value-of select="/Tanach/teiHeader/fileDesc/publicationStmt/authority/date"/> <br/>
+  <p/>
+  <xsl:for-each select="/Tanach/teiHeader/fileDesc/publicationStmt/distributor">
+        <xsl:value-of select="child::text()"/> 
+  </xsl:for-each><br/>
+  <xsl:text>&#x00a0;&#x00a0;&#x00a0;&#x00a0;</xsl:text>  <xsl:value-of select="/Tanach/teiHeader/fileDesc/publicationStmt/distributor/name"/> <br/>
+  <xsl:text>&#x00a0;&#x00a0;&#x00a0;&#x00a0;</xsl:text>   <b><xsl:value-of select="/Tanach/teiHeader/fileDesc/publicationStmt/distributor/name[@type='url']"/></b> <br/>
+  <xsl:text>&#x00a0;&#x00a0;&#x00a0;&#x00a0;</xsl:text><xsl:value-of select="/Tanach/teiHeader/fileDesc/publicationStmt/distributor/name[@type='email']"/> <br/>
+  
+  <p/>
+  Availability: <i><xsl:value-of select="/Tanach/teiHeader/fileDesc/publicationStmt/availability"/></i>
+  <p/>
+</div>  
+  
+  <hr/>
+<div align="left">
+<h4>Notes:</h4><p/>
+
+<xsl:for-each select="/Tanach/teiHeader/fileDesc/notesStmt/note">
+    <xsl:value-of select="."/><p/>
+</xsl:for-each> 
+<hr/> 
+<h4>Bibliography:</h4><p/>
+
+  <xsl:for-each select="/Tanach/teiHeader/fileDesc/sourceDesc/biblItem">
+      <xsl:for-each select="title">
+          <b><xsl:value-of select="."/><xsl:text>&#x00a0;&#x00a0;</xsl:text> </b>
+      </xsl:for-each><br/>
+      <xsl:for-each select="author">
+      Author: <xsl:value-of select="."/><br/>
+      </xsl:for-each>
+      <xsl:for-each select="editor">
+      Editor: <xsl:value-of select="."/><br/>
+      </xsl:for-each>
+      <xsl:if test="count(respStmt) > 0">
+          <xsl:value-of select="respStmt/resp"/> <br/>
+          <xsl:for-each select="respStmt/name">
+          &#x00a0;&#x00a0;&#x00a0;&#x00a0;<xsl:value-of select="."/><br/>
+          </xsl:for-each>
+      </xsl:if>
+      Edition: <xsl:value-of select="edition"/><br/>
+      Publisher: <xsl:value-of select="imprint/publisher"/><br/>
+      <xsl:text>&#x00a0;&#x00a0;&#x00a0;&#x00a0;&#x00a0;&#x00a0;&#x00a0;&#x00a0;&#x00a0;&#x00a0;&#x00a0;</xsl:text><xsl:value-of select="imprint/pubPlace"/><br/>
+      <xsl:text>&#x00a0;&#x00a0;&#x00a0;&#x00a0;&#x00a0;&#x00a0;&#x00a0;&#x00a0;&#x00a0;&#x00a0;&#x00a0;</xsl:text><xsl:value-of select="imprint/date"/><br/>
+      Reference (<xsl:value-of select="idno/@type"/>) : <b><xsl:value-of select="idno"/></b>
+      <p/>
+  </xsl:for-each>
+</div>
+</span>
+<xsl:call-template name="PageFooter">
+  <xsl:with-param name="xmldate" select="/Tanach/teiHeader/profileDesc/creation/date"/>
+</xsl:call-template>
+</html>
+</xsl:template>
+<!--========================================================================-->
+
+<!-- Template to end descriptive pages. -->
+
+<!--========================================================================-->
+<xsl:template name="PageFooter">
+  <xsl:param name="license" select="'License.html'"/>   
+<p/>
+<table width="100%">
+  <tr>
+    <td align="left">      
+      <a  target="_blank" title="License information." href="../License.html" alt="License information">
+        <img src="../Images/CreativeCommons.gif" alt="License information" border="0"/>
+      </a>
+    </td>
+    <td align="right">
+      <b>
+        <a title="Build number."><xsl:value-of select="$build"/></a>
+      </b>
+    </td>
+  </tr>
+</table>
+<hr/>
+</xsl:template>
+</xsl:stylesheet>
+<!--========================================================================-->
+<!--========================================================================-->

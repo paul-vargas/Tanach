@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsl:stylesheet version="1.0"  xmlns:xsl="http://www.w3.org/1999/XSL/Transform" >
+<xsl:output method="html" indent="yes"/>
+<!--========================================================================-->
+<!--========================================================================-->
+<!-- Copyright C.V.Kimball 2010                                            -->
+<!--
+
+          Server error response XSL file.
+          
+          Transforms ServerError.xml file into an error-reporting HTML file.
+
+-->
+<!--========================================================================-->
+<!--========================================================================-->
+<!-- Name of template to display. -->
+<xsl:variable name="xsldate" >15 Dec 2010</xsl:variable>  
+
+<xsl:param name="servername" >Not given.</xsl:param>  
+<xsl:param name="serverdate" >Not given.</xsl:param>  
+<xsl:param name="wlcversion" >&#x00a0;</xsl:param>  
+<xsl:param name="build">build</xsl:param>
+<xsl:param name="baseURL">UnsetbaseURL</xsl:param>
+
+<xsl:param name="errorheader" >&#x00a0;</xsl:param>  
+<xsl:param name="errortext" >&#x00a0;</xsl:param>  
+
+<!-- The file name of the file containing the page background.              -->
+<xsl:variable name="background"><xsl:value-of select="$baseURL"/>Images/Background</xsl:variable>
+<!-- Variable creativecommons is a URL pointing to the CreativeCommons.gif file. -->
+<xsl:variable name="creativecommons"><xsl:value-of select="$baseURL"/>Images/CreativeCommons.gif</xsl:variable>  
+<!-- Font for English text   -->                                          
+<xsl:variable name="englishfontfamily">Times New Roman</xsl:variable>
+<xsl:variable name="chapterwidth">90</xsl:variable>
+<xsl:variable name="servernameroot" select="substring-before($servername, 'Server')"/>
+
+<!--========================================================================-->
+<!--========================================================================-->
+<xsl:template match="/Server">
+<html>  
+<head>
+   <title><xsl:value-of select="$servername"/> error</title>  
+   <xsl:call-template name="Styles"/>
+</head>
+<xsl:call-template name="TextPageBody"/>
+</html> 
+</xsl:template>
+<!--========================================================================-->
+<!--
+        Common TextPage body tag.                                                                
+-->
+<!--========================================================================-->
+<xsl:template name="TextPageBody">
+<body>
+    <table class="header" >
+      <tr>
+        <td class="headerleft" >
+          <a title="Home page." href="{$baseURL}Tanach.xml" >Home page</a> 
+        </td>
+        <td class="headercenter">
+          <span class="headersmall">Westminster Leningrad Codex<xsl:text>[</xsl:text><xsl:value-of select="$wlcversion"/><xsl:text>] </xsl:text> 
+             </span> 
+        </td>
+        <td class="headerright">&#x00a0;</td>
+      </tr>
+    </table>
+    
+    <div class="centertext"> <!-- Two step centering thanks to IE.  -->
+      <div class="error">
+        <p class="errortitle"><xsl:value-of select="$errorheader"/></p>
+        <p/>  
+        <p class="errortext"><xsl:value-of select="$errortext"/></p>
+        <p/>  
+        <p class="lefterrortext">See the
+           <a href="{$baseURL}Pages/Servers.html"> Servers.html</a>
+           page for additional information.
+        </p>
+        <p/>  
+      </div>
+    </div>
+     
+  <table class="footer" >
+    <tr>
+      <td class="footerleft">
+        <a  href="{$baseURL}License.html" title="License information">
+          <img src="{$creativecommons}" alt="License information"/>          
+        </a>
+      </td>
+      <td class="footerright">
+        <span><a title="Build number."><xsl:value-of select="$build"/></a></span>
+      </td>
+    </tr>
+  </table> 
+  <hr/>
+</body>
+</xsl:template>
+<!--========================================================================-->
+<!--
+        Style tag                                                              
+-->
+<!--========================================================================-->
+<xsl:template name="Styles">
+  <style type="text/css">  
+    body { font-family:"<xsl:value-of select="$englishfontfamily"/>" ; background-image: url(<xsl:value-of select="$background"/>); }   
+    table.header { margin-right:0; margin-left:0; margin-bottom:10pt; width:100%; }
+    table.footer { margin-right:0; margin-left:0; margin-top:10pt; width:100%; }
+    td.headerleft { width:18%;text-align:left; }
+    td.headercenter { width:64%; text-align:center; }
+    td.headeright { width:18%;text-align:right; }
+    td.footerleft { width:50%;text-align:left; }
+    td.footerright { width:50%;text-align:right; font-weight:bold; }
+    span.headersmall { color:blue; font-family:'{$englishfontfamily}'; font-size:12pt}    
+    div.centerlabel { margin-left:auto; margin-right:auto; width:<xsl:value-of select="$chapterwidth"/>%; text-align:center; }
+    div.rightlabel { margin-left:auto; margin-right:auto; width:<xsl:value-of select="$chapterwidth"/>%; text-align:right; }
+    div.error { margin-right:auto; margin-left:auto; width:<xsl:value-of select="$chapterwidth"/>%; padding:10pt; border-style:double;}
+    div.centertext {text-align:center;}
+    h1.title { text-align:center; } 
+    h2.title{ text-align:center; } 
+    h4.title { text-align:center; } 
+    p.errortitle { color:red;font-size:18pt;font-weight:bold; text-align:center; }
+    p.errortext { font-size:14pt; font-weight:bold; text-align:left; }
+    p.lefterrortext { font-size:14pt; font-weight:bold; text-align:left;color:black }
+    img { border-style:none; }
+</style>                 
+</xsl:template>
+<!--========================================================================-->
+<!--========================================================================-->
+</xsl:stylesheet>
+<!--========================================================================-->
+<!--========================================================================-->

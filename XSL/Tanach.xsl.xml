@@ -1,0 +1,1434 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:output method="html" encoding="UTF-8"/>
+<xsl:strip-space elements="*"/>
+<!--========================================================================-->
+<!--========================================================================-->
+<!-- Copyright C.V.Kimball 2007                                             -->
+<!--
+
+    Tanach.xsl.xml - Main XSLT file for the Unicode/XML
+                     Westminster Leningrad Codex.
+                     
+    Two informative pages, BookTEIHeader, Unicode Representations,
+    and FontTest, appear in separate browser windows.
+    
+    One input-dependent page, ChangeFont, appears in the body element
+    and returns by an enter button.  
+    
+    Modified: 20 Sep 2014 - Text with Accents specifies content explicitly.         
+    
+-->
+<!--========================================================================-->
+<!--========================================================================-->
+<!--*** 1 ***  
+    
+    Variables
+                                                                            -->
+<!--========================================================================-->                                                                       
+
+<!-- Variable xsldate is the date of this xsl file.                         -->
+<xsl:variable name="xsldate">17 Jan 2016</xsl:variable>  
+<!-- Variable build is the build date of the complete site as set by ant.   -->
+<xsl:variable name="build">25.1</xsl:variable>  
+
+
+<xsl:param name="template">Dispatcher</xsl:param>  
+<xsl:param name="baseURL">UnspecifiedTanach23</xsl:param>
+<xsl:param name="invalidtemplate">UnspecifiedTanach24</xsl:param>
+
+<!-- Specification of the Book/Chapter/Verse/LastVerse table results.  -->
+<xsl:param name="clickbook"> </xsl:param>
+<xsl:param name="clickbookabbrev"> </xsl:param>
+<xsl:param name="clickbookindex"> </xsl:param>
+<xsl:param name="clickchapter"> </xsl:param>
+<xsl:param name="clickverse"> </xsl:param>
+<xsl:param name="clicklastverse"> </xsl:param>
+
+<!-- server indicates site is working with served text.                     -->
+<xsl:param name="server">false</xsl:param>
+<!-- queryURL indicates site is working with text from a query URL    -->
+<xsl:param name="queryURL">false</xsl:param>
+
+
+<!-- showDHlabelselector controls display the DHcode pulldown on 
+     the Book page.                                                         -->
+<xsl:param name="showDHlabelselector">false</xsl:param>
+<!-- Font for Hebrew text                                                   -->
+<xsl:param name="fontfamily">SBL Hebrew</xsl:param>
+<!-- Font for English text                                                  -->
+<xsl:param name="englishfontfamily">Times New Roman</xsl:param>
+<!-- Variable fontsize gives the size of the fonts in points.               -->
+<xsl:param name="fontsize">20</xsl:param> 
+<!-- Smaller font size controlled from fontsize through JavaScript          -->
+<xsl:param name="reducedfontsize">12</xsl:param> 
+
+<!-- Variable creativecommons is a URL pointing to the CreativeCommons.gif file. -->
+<xsl:variable name="creativecommons">
+<xsl:value-of select="$baseURL"/>Images/CreativeCommons.gif</xsl:variable>  
+<!-- The file name of the file containing the page background.              -->
+<!-- This is loaded BEFORE the baseURL is defined.                          -->
+<xsl:variable name="background">Images/Background</xsl:variable>
+<!-- The MIME type of the favicon icon.           -->
+<!-- This is loaded BEFORE the baseURL is defined.                          -->
+<xsl:variable name="icontype">image.x-icon</xsl:variable>
+<!-- URL of the favicon icon.           -->
+<!-- This is loaded BEFORE the baseURL is defined.                          -->
+<xsl:variable name="iconURL">Images/TanachIcon.ico</xsl:variable>
+
+<xsl:variable name="showprevious">true</xsl:variable>
+<xsl:variable name="shownext">true</xsl:variable>
+<xsl:variable name="rightarrow">Images/rightarrow.ico</xsl:variable>  
+<xsl:variable name="leftarrow">Images/leftarrow.ico</xsl:variable>  
+<!-- Variable GCWLCurl holds the URL of the WLC at the J. Alan Groves Center for Advanced Biblical Research.     -->
+<xsl:variable name="GCWLCurl">http://www.grovescenter.org/GC/projects/wlc-1</xsl:variable>  
+<!-- Variable previousversionurl is a URL pointing to the previous version. -->
+<xsl:variable name="previousversionurl">PreviousVersions/Tanach-24.2/Tanach.xml</xsl:variable>  
+<xsl:variable name="doublearrow">
+<xsl:value-of select="$baseURL"/>Images/doublearrow.ico</xsl:variable>
+<!-- Variable displaystring hold string to be displayed in Unicode.         -->
+<xsl:variable name="displaystring">אבגדהוזחט יךכלםמןנס עףפץצקרשת</xsl:variable>  
+<!--
+     Very basic definitions of Unicode Hebrew blocks
+-->
+<!-- Blank character -->
+<xsl:variable name="blank"> </xsl:variable>  
+<!-- Variable consonants contains consonants ONLY -->
+<xsl:variable name="consonants">אבגדהוזחטיךכלםמןנסעףפץצקרשת</xsl:variable>  
+<!-- Variable maqafsofpasuq contains ONLY maqaf and the sof passuq.                    -->
+<xsl:variable name="maqafsofpasuq">־׃</xsl:variable>  
+<!-- Variable vowels contains vowels and shin/sin dots.                    -->
+<xsl:variable name="vowels">ְֱֲֳִֵֶַָֹֺֻּׁׂ</xsl:variable>  
+<!-- Variable trueaccents contains accents less maqaf and sof pasuq plus ZWJ but without blank.             -->
+<xsl:variable name="trueaccents">ֽֿ֑֖֛֣֤֥֦֧֪֚֭֮֒֓֔֕֗֘֙֜֝֞֟֠֡֨֩֫֬׀ׅׄ‍</xsl:variable>
+<!-- Variable mdivider contains the morphogical divider, /.                 -->
+<xsl:variable name="mdivider">/</xsl:variable>
+<!--
+     Block definitions for book contents.
+-->
+<!-- Variable accents contains trueaccents plus blank.             -->
+<xsl:variable name="accents">ֽֿ֑֖֛֣֤֥֦֧֪֚֭֮֒֓֔֕֗֘֙֜֝֞֟֠֡֨֩֫֬׀ׅׄ‍ </xsl:variable>
+<!-- Variable all contains all of the above.                                -->
+<xsl:variable name="all" select="concat($consonants, $maqafsofpasuq, $vowels,  $accents, $mdivider)"/>
+<!-- These digits must exactly match the "all" string! -->
+<xsl:variable name="digit1">00000000000000000000000000000000000000000000000000000000000000000000000000000200</xsl:variable>
+<xsl:variable name="digit2">55555555555555555555555555555555555555555555555555555555555555555555555555555000</xsl:variable>
+<xsl:variable name="digit3">ddddddddddddddddeeeeeeeeeeebcbbbbbbbbbbbbcc999999999999999aaaaaaaaaaaaaabbccc022</xsl:variable>
+<xsl:variable name="digit4">0123456789abcdef0123456789ae30123456789bc12123456789abcdef013456789abcdedf045d0f</xsl:variable>
+<!-- Variable no morphology eliminates the /.                               -->
+<xsl:variable name="nomorphology" select="concat($consonants,  $maqafsofpasuq, $vowels, $accents)"/>
+<!-- Variable noaccents eliminates the accents except for the sof passuq and maqaf.   -->
+<xsl:variable name="noaccents" select="concat($consonants,  $maqafsofpasuq, $vowels)"/>
+<!-- Variable novowels eliminates the vowels and replaces the maqaf with a blank.   -->
+<xsl:variable name="novowels" select="concat($consonants,' ')"/>
+
+<xsl:variable name="t1"> </xsl:variable>
+<xsl:variable name="t2"> </xsl:variable>
+<xsl:variable name="t3"> </xsl:variable>
+<xsl:variable name="t4"> </xsl:variable>
+<xsl:variable name="t5"> </xsl:variable>
+
+<!--========================================================================-->
+<!--*** 2 ***
+
+                               Template dispatching
+  
+                                                                            -->
+<!--========================================================================-->
+<!--========================================================================-->
+<xsl:template match="/Tanach">
+
+<!-- Dispatching for Dispatcher and Home templates       -->
+
+<xsl:choose>
+  <xsl:when test="$template='Dispatcher'">
+    <xsl:call-template name="Dispatcher"/>
+  </xsl:when>
+  <xsl:when test="$template='Home'">
+    <xsl:call-template name="Home"/>
+  </xsl:when>  
+  <xsl:when test="$template='BookTable'">
+    <xsl:call-template name="BookTable"/>
+  </xsl:when>  
+  <xsl:when test="$template='ChapterTable'">
+    <xsl:call-template name="ChapterTable"/>
+  </xsl:when>  
+  <xsl:when test="$template='VerseTable'">
+    <xsl:call-template name="VerseTable"/>
+  </xsl:when>  
+  <xsl:when test="$template='LastVerseTable'">
+    <xsl:call-template name="LastVerseTable"/>
+  </xsl:when>  
+  <xsl:when test="$template='Book'">
+    <xsl:call-template name="Book"/>
+  </xsl:when>  
+  <xsl:when test="$template='ChangeFont'">
+    <xsl:call-template name="ChangeFont"/>
+  </xsl:when>  
+  <xsl:otherwise>
+    <xsl:call-template name="InvalidTemplate"/>
+  </xsl:otherwise>
+</xsl:choose>
+</xsl:template>
+<!--========================================================================-->
+<xsl:template name="Dispatcher">
+<html>
+<head> 
+  <meta charset="UTF-8"/>  
+  <meta http-equiv="X-UA-Compatible" content="IE=8"/>
+  <meta content="Unicode/XML Westminster Leningrad Codex" name="description"/>
+  <meta content="Bible, Hebrew, Tanach, Tanakh, Unicode,
+        XML, HTML, Text, ODT, PDF, Documentary Hypothesis, Open Document Format" name="keywords"/>
+  <link href="{$iconURL}" rel="icon" type="{$icontype}"/>
+  <title>Westminster Leningrad Codex</title>
+  <script src="Javascript/SarissaLib.js" type="text/javascript"> </script>
+  <script src="Javascript/UtilityLib.js" type="text/javascript"> </script>
+  <script src="Javascript/LCFacsimile.js" type="text/javascript"> </script> 
+  <script src="Javascript/TanachBook.js" type="text/javascript"> </script>
+  <script src="Javascript/TanachHome.js" type="text/javascript"> </script>
+</head>
+<body  onload="Javascript:init()" 
+       style="background-image:url('{$background}');margin-right:10pt; 
+              margin-left:10pt; margin-top:10pt; margin-bottom:0">
+  &#x00a0;
+</body>
+</html>
+</xsl:template>
+<!--========================================================================-->
+
+<!-- Home display -->
+
+<!--========================================================================-->
+<xsl:template name="Home"> 
+<html>
+<xsl:call-template name="Header"/>
+<span> </span>
+
+<span id="Text">
+  &#x00a0;
+</span>
+<span> </span>             
+<xsl:call-template name="Footer"/>
+</html>
+</xsl:template>
+<!--========================================================================-->
+
+<xsl:template name="Header">
+
+<!--========================================================================-->
+
+<table align="center" width="100%">
+  <tr>
+    <td align="left" valign="top" width="18%">
+      <table cellpadding="3">
+        <tr>
+          <td>
+            <a href="Pages/PageIndex.html" title="Index of available pages.">Page index</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+             
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a href="Pages/Supplements.html" title="Tools and data tables.">Supplements</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+             
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a href="{$previousversionurl}" style="font-style:italic" target="_blank" title="Go to the previous version.">Previous version</a>
+          </td>
+        </tr>
+      </table>
+    </td>
+    <td align="center" width="64%">
+      <table>
+        <tr>
+          <td align="center">
+            <span style="font-family:{$englishfontfamily};font-size:12pt">
+              <a href="{$GCWLCurl}" target="_blank" title="Go to the Groves Center that provided the Hebrew text.">
+                Unicode/XML Westminster Leningrad Codex
+                <xsl:text> [</xsl:text> 
+                <xsl:value-of select="/Tanach/teiHeader/fileDesc/editionStmt/edition/version"/>
+                <xsl:text>] </xsl:text> 
+              </a>
+            </span>
+          </td>
+        </tr>
+         <tr>
+          <td align="center">
+            <a href="JavaScript:showTEIHeader()" 
+              style="text-decoration:none;color:black" 
+              title="Click to see the Hebrew text's overall TEI header.">
+              <span style="font-family:{$englishfontfamily};font-weight:bold;font-size:200%">
+                <xsl:value-of select="teiHeader/fileDesc/titleStmt/title[./@level='s' and ./@type='uniform'] "/>
+                <xsl:text> - </xsl:text>
+              </span>
+              <span align="left" style="font-family:{$fontfamily};font-size:250%">
+                        <xsl:value-of select="teiHeader/fileDesc/titleStmt/title[./@level='s'                              and @type='uniformhebrew']"/>
+              </span>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td align="center">
+            <span style="font-family:{$englishfontfamily};font-size:10pt">
+              <xsl:value-of select="/Tanach/teiHeader/fileDesc/notesStmt/note[1]"/>
+            </span>
+           </td>
+        </tr>
+      </table>
+    </td>
+    <td valign="top" width="18%">
+       <table align="right" valign="top">
+        <tr>
+          <td align="right">
+            <a href="Pages/About.html" title="Site overview.">About</a>
+          </td>
+        </tr> 
+         <tr>
+          <td align="right">
+            <a href="Pages/Installation.html" title="How to install the site correctly on your machine.">Installation</a>
+          </td>
+        </tr> 
+        <tr>
+          <td align="right">
+            <a href="Pages/Instructions.html" title="How to view the text and use other site features.">Instructions</a>
+          </td>
+        </tr> 
+        <tr>
+          <td align="right">
+            <a href="Pages/Technical.html" title="Detailed technical information about site.">Technical</a>
+          </td>
+        </tr> 
+        <tr>
+          <td align="right">
+            <a href="Pages/DH.html" title="Documentary Hypothesis information">DH</a>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+<table align="center">
+  <tr>
+    <td align="left">
+            <table>
+              <tr>
+                <td align="right"> 
+                  <b>&#x00a0;Citation</b> 
+                </td>
+                <td rowspan="2">
+                  <form action="JavaScript:enterHomeCitation()" name="excerptinput">
+                    &#x00a0;&#x00a0;<input maxlength="32" name="textfield" size="20" 
+                        style="font-weight:bold;font-family:{$englishfontfamily};font-size:16pt;" 
+                        title="Enter the Tanach citation here, i.e. Deut 26:5." type="TEXT">
+                    </input> 
+                  </form>
+                </td>
+              </tr>
+              <tr>
+                <td align="right">
+                  <a href="Pages/CitationSyntax.html" title="See how to enter a citation">Syntax</a>
+                </td>
+              </tr>
+            </table>
+    </td>
+  </tr>
+</table>
+<span> </span>
+
+<table align="center">
+  <tr>
+    <td align="center">
+      <b><span id="excerpterror" style="color:red">
+      
+      </span></b>
+    </td>
+  </tr>
+</table>
+</xsl:template>
+<!--========================================================================-->
+
+<xsl:template name="BookTable">
+
+<!--========================================================================-->
+<html>
+<center>
+<table align="center" border="2" cellpadding="7pt" width="95%">
+<tr>
+<td>
+<center>
+<b>Torah</b>
+</center>
+</td>
+    <td>
+<center>
+<b>Prophets</b>
+</center>
+</td>
+    <td colspan="2">
+<center>
+<b>Minor prophets</b>
+</center>
+</td>
+    <td colspan="2">
+<center>
+<b>Writings</b>
+</center>
+</td>
+</tr>
+
+<tr>
+<td align="left">
+<a href="Javascript:setBookClick('1')">Genesis</a>
+</td>
+    <td align="left">
+<a href="Javascript:setBookClick('6')">Joshua</a>
+</td>
+    <td align="left">
+<a href="Javascript:setBookClick('15')">Hosea</a>
+</td>
+    <td align="left">
+<a href="Javascript:setBookClick('21')">Nahum</a>
+</td>
+    <td align="left">
+<a href="Javascript:setBookClick('29')">Psalms</a>
+</td>
+    <td align="left">
+<a href="Javascript:setBookClick('34')">Ecclesiastes</a>
+</td>
+</tr>
+    
+<tr>
+<td align="left">
+<a href="Javascript:setBookClick('2')">Exodus</a>
+</td>
+    <td align="left">
+<a href="Javascript:setBookClick('7')">Judges</a>
+</td>
+    <td align="left">
+<a href="Javascript:setBookClick('16')">Joel</a>
+</td>
+    <td align="left">
+<a href="Javascript:setBookClick('22')">Habakkuk</a>
+</td>
+    <td align="left">
+<a href="Javascript:setBookClick('31')">Proverbs</a>
+</td>
+    <td align="left">
+<a href="Javascript:setBookClick('36')">Esther</a>
+</td>
+</tr>
+    
+<tr>
+<td align="left">
+<a href="Javascript:setBookClick('3')">Leviticus</a>
+</td>
+    <td align="left">
+<a href="Javascript:setBookClick('8')">1 Samuel</a>
+</td>
+    <td align="left">
+<a href="Javascript:setBookClick('17')">Amos</a>
+</td>
+    <td align="left">
+<a href="Javascript:setBookClick('23')">Zephaniah</a>
+</td>
+    <td align="left">
+<a href="Javascript:setBookClick('30')">Job</a>
+</td>
+    <td align="left">
+<a href="Javascript:setBookClick('37')">Daniel</a>
+</td>
+</tr>
+
+<tr>
+<td align="left">
+<a href="Javascript:setBookClick('4')">Numbers</a>
+</td>
+    <td align="left">
+<a href="Javascript:setBookClick('9')">2 Samuel</a>
+</td>
+    <td align="left">
+<a href="Javascript:setBookClick('18')">Obadiah</a>
+</td>
+    <td align="left">
+<a href="Javascript:setBookClick('24')">Haggai</a>
+</td>
+    <td align="left">
+<a href="Javascript:setBookClick('33')">Song of songs</a>
+</td>
+    <td align="left">
+<a href="Javascript:setBookClick('38')">Ezra</a>
+</td>
+</tr>
+    
+<tr>
+<td align="left">
+<a href="Javascript:setBookClick('5')">Deuteronomy</a>
+</td>
+    <td align="left">
+<a href="Javascript:setBookClick('10')">1 Kings</a>
+</td>
+    <td align="left">
+<a href="Javascript:setBookClick('19')">Jonah</a>
+</td>
+    <td align="left">
+<a href="Javascript:setBookClick('25')">Zechariah</a>
+</td>
+    <td align="left">
+<a href="Javascript:setBookClick('32')">Ruth</a>
+</td>
+    <td align="left">
+<a href="Javascript:setBookClick('39')">Nehemiah</a>
+</td>
+</tr>
+    
+<tr>
+<td align="left"> </td>
+    <td align="left">
+<a href="Javascript:setBookClick('11')">2 Kings</a>
+</td>
+    <td align="left">
+<a href="Javascript:setBookClick('20')">Micah</a>
+</td>
+    <td align="left">
+<a href="Javascript:setBookClick('26')">Malachi</a>
+</td>
+    <td align="left">
+<a href="Javascript:setBookClick('35')">Lamentations</a>
+</td>
+    <td align="left">
+<a href="Javascript:setBookClick('27')">1 Chronicles</a>
+</td>
+</tr>
+
+<tr>
+<td align="left"> </td>
+    <td align="left">
+<a href="Javascript:setBookClick('12')">Isaiah</a>
+</td>
+    <td align="left" colspan="3"> </td>
+    <td align="left">
+<a href="Javascript:setBookClick('28')">2 Chronicles</a>
+</td>
+</tr>
+    
+    
+<tr>
+<td align="left"> </td>
+    <td align="left">
+<a href="Javascript:setBookClick('13')">Jeremiah</a>
+</td>
+    <td align="left" colspan="4"> </td>
+</tr>
+    
+<tr>
+<td align="left"> </td>
+    <td align="left">
+<a href="Javascript:setBookClick('14')">Ezekiel</a>
+</td>
+    <td align="left" colspan="4"> </td>
+</tr>
+</table>
+</center>
+</html>
+</xsl:template>
+<!--========================================================================-->
+
+<xsl:template name="ChapterTable">
+
+<!--========================================================================-->
+<html>
+<center>
+<table border="1" cellpadding="10" width="64%">
+  <tr>
+    <td>
+      <table border="1" cellpadding="10" width="100%">
+        <tr>
+          <th colspan="10"><xsl:value-of select="$clickbook"/> chapter:</th>
+        </tr>
+        <xsl:call-template name="ToTable2">
+          <xsl:with-param name="start" select="1"/>
+          <xsl:with-param name="end" select="/Tanach/tanach/book[position()=$clickbookindex]/cs"/>
+          <xsl:with-param name="format" select="'Chapter'"/>
+        </xsl:call-template>
+      </table>
+    </td>
+  </tr>
+  <xsl:if test="$server='true'">
+  <tr>
+    <td>
+     <center>
+<b>View the complete book of <xsl:value-of select="$clickbook"/>.</b>
+</center>
+     <p/>
+     
+     <table align="center" border="1" cellpadding="2pt" style="font-size:10pt" width="80%">
+       <tr>
+         <th>Format</th>
+         <th colspan="4">Content</th>
+       </tr>
+       <tr>
+         <th><b>Text</b></th>
+         <th><a href="{$baseURL}TextServer?{$clickbook}*&amp;content=Accents" target="_blank">Accents</a></th>
+         <th>
+           <a href="{$baseURL}TextServer?{$clickbook}*&amp;content=Vowels" target="_blank">Vowels</a>
+         </th>
+         <th>
+           <a href="{$baseURL}TextServer?{$clickbook}*&amp;content=Consonants" target="_blank">Consonants</a>
+         </th>
+         <th>
+           <a href="{$baseURL}TextServer?{$clickbook}*&amp;content=Morphology" target="_blank">Morphology</a>
+         </th>
+       </tr>
+       <tr>
+         <th>
+<b>HTML</b>
+</th>
+         <th>
+<a href="{$baseURL}Server?{$clickbook}*" target="_blank">Accents</a>
+</th>
+         <th>
+<a href="{$baseURL}Server?{$clickbook}*&amp;content=Vowels" target="_blank">Vowels</a>
+</th>
+         <th>
+<a href="{$baseURL}Server?{$clickbook}*&amp;content=Consonants" target="_blank">Consonants</a>
+</th>
+         <th>
+<a href="{$baseURL}Server?{$clickbook}*&amp;content=Morphology" target="_blank">Morphology</a>
+</th>
+       </tr>
+       <tr>
+         <th>
+<b>ODT</b>
+</th>
+         <th>
+<a href="{$baseURL}ODTServer?{$clickbook}*" target="_blank">Accents</a>
+</th>
+         <th>
+<a href="{$baseURL}ODTServer?{$clickbook}*&amp;content=Vowels" target="_blank">Vowels</a>
+</th>
+         <th>
+<a href="{$baseURL}ODTServer?{$clickbook}*&amp;content=Consonants" target="_blank">Consonants</a>
+</th>
+         <th>
+<a href="{$baseURL}ODTServer?{$clickbook}*&amp;content=Morphology" target="_blank">Morphology</a>
+</th>
+       </tr>
+       <tr>
+         <th>
+<b>PDF</b>
+</th>
+         <th>
+           <xsl:choose>
+             <xsl:when test="contains($clickbook,'1 ')">
+               <a href="/PDFFiles/{concat(substring($clickbook, 3, string-length($clickbook) - 2 ),'_1')}.acc.pdf" target="_blank">Accents</a>
+             </xsl:when>
+             <xsl:when test="contains($clickbook,'2 ')">
+               <a href="/PDFFiles/{concat(substring($clickbook, 3, string-length($clickbook) - 2 ),'_2')}.acc.pdf" target="_blank">Accents</a>
+             </xsl:when>
+             <xsl:when test="contains($clickbook,' of ')">
+               <a href="/PDFFiles/{translate($clickbook, ' ', '_')}.acc.pdf" target="_blank">Accents</a>
+             </xsl:when>
+             <xsl:otherwise>
+               <a href="/PDFFiles/{$clickbook}.acc.pdf" target="_blank">Accents</a>
+             </xsl:otherwise>
+           </xsl:choose>
+         </th>         
+         <th>
+           <xsl:choose>
+             <xsl:when test="contains($clickbook,'1 ')">
+               <a href="/PDFFiles/{concat(substring($clickbook, 3, string-length($clickbook) - 2 ),'_1')}.vow.pdf" target="_blank">Vowels</a>
+             </xsl:when>
+             <xsl:when test="contains($clickbook,'2 ')">
+               <a href="/PDFFiles/{concat(substring($clickbook, 3, string-length($clickbook) - 2 ),'_2')}.vow.pdf" target="_blank">Vowels</a>
+             </xsl:when>
+             <xsl:when test="contains($clickbook,' of ')">
+               <a href="/PDFFiles/{translate($clickbook, ' ', '_')}.vow.pdf" target="_blank">Vowels</a>
+             </xsl:when>
+             <xsl:otherwise>
+               <a href="/PDFFiles/{$clickbook}.vow.pdf" target="_blank">Vowels</a>
+             </xsl:otherwise>
+           </xsl:choose>
+         </th>
+         <th>
+           <xsl:choose>
+             <xsl:when test="contains($clickbook,'1 ')">
+               <a href="/PDFFiles/{concat(substring($clickbook, 3, string-length($clickbook) - 2 ),'_1')}.con.pdf" target="_blank">Consonants</a>
+             </xsl:when>
+             <xsl:when test="contains($clickbook,'2 ')">
+               <a href="/PDFFiles/{concat(substring($clickbook, 3, string-length($clickbook) - 2 ),'_2')}.con.pdf" target="_blank">Consonants</a>
+             </xsl:when>
+             <xsl:when test="contains($clickbook,' of ')">
+               <a href="/PDFFiles/{translate($clickbook, ' ', '_')}.con.pdf" target="_blank">Consonants</a>
+             </xsl:when>
+             <xsl:otherwise>
+               <a href="/PDFFiles/{$clickbook}.con.pdf" target="_blank">Consonants</a>
+             </xsl:otherwise>
+           </xsl:choose>
+         </th>
+         <th>
+           <xsl:choose>
+             <xsl:when test="contains($clickbook,'1 ')">
+               <a href="/PDFFiles/{concat(substring($clickbook, 3, string-length($clickbook) - 2 ),'_1')}.mor.pdf" target="_blank">Morphology</a>
+             </xsl:when>
+             <xsl:when test="contains($clickbook,'2 ')">
+               <a href="/PDFFiles/{concat(substring($clickbook, 3, string-length($clickbook) - 2 ),'_2')}.mor.pdf" target="_blank">Morphology</a>
+             </xsl:when>
+             <xsl:when test="contains($clickbook,' of ')">
+               <a href="/PDFFiles/{translate($clickbook, ' ', '_')}.mor.pdf" target="_blank">Morphology</a>
+             </xsl:when>
+             <xsl:otherwise>
+               <a href="/PDFFiles/{$clickbook}.mor.pdf" target="_blank">Morphology</a>
+             </xsl:otherwise>
+           </xsl:choose>
+         </th>
+       </tr>
+       <tr>
+         <th>
+<b>XML</b>
+</th>
+         <th colspan="3">
+<i>Not available.</i>
+</th>
+         <th>
+<a href="{$baseURL}XMLServer?{$clickbook}*" target="_blank">Morphology</a>
+</th>
+       </tr>
+     </table>
+     <p/>
+    </td>
+  </tr>
+  </xsl:if>
+  <xsl:if test="$server='false'">
+  <tr>
+    <th>Complete book files are not available in <span style="color:red">Local</span> mode.</th>
+  </tr>
+  </xsl:if>
+  <tr>
+    <td align="right">
+      <table cellpadding="5">
+        <tr>
+          <td>
+            <button onclick="Javascript:setBookTable()" style="font-weight:bold;color:blue;font-size:12pt" title="Return to the Home page.">Back</button>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</center>
+</html>
+</xsl:template>
+<!--=======================================================================================-->
+<!--
+
+                      Specialized TableCell template for use by ToTable template.
+                       
+-->
+<!--=======================================================================================-->
+<xsl:template name="TableCell2">
+ <xsl:param name="format" select="''"/>
+ <xsl:param name="value" select="''"/>
+  <td align="center" width="10%">
+   <xsl:if test="$format='Chapter'">
+     <b>
+<a href="JavaScript:setChapterClick( '{$value}' )">
+<xsl:value-of select="$value"/>
+</a>
+</b>
+   </xsl:if>
+   <xsl:if test="$format='Verse'">
+     <b>
+<a href="JavaScript:setVerseClick( '{$value}' )">
+<xsl:value-of select="$value"/>
+</a>
+</b>
+   </xsl:if>
+   <xsl:if test="$format='LastVerse'">
+     <b>
+<a href="JavaScript:setLastVerseClick( '{$value}' )">
+<xsl:value-of select="$value"/>
+</a>
+</b>
+   </xsl:if>
+  </td>
+</xsl:template>
+<!--=======================================================================================-->
+<xsl:template name="EmptyTableCell2">
+   <td width="10%">
+      
+   </td>
+</xsl:template>
+<!--========================================================================-->
+
+<xsl:template name="VerseTable">
+
+<!--========================================================================-->
+<html>
+<center>
+<table border="1" cellpadding="10" width="64%">
+  <tr>
+    <td>
+      <table border="1" cellpadding="10" width="100%">
+        <tr>
+<th colspan="10">
+<xsl:value-of select="$clickbook"/> chapter <xsl:value-of select="$clickchapter"/> verse:</th>
+</tr>
+         
+        <xsl:call-template name="ToTable2">
+          <xsl:with-param name="start" select="1"/>
+          <xsl:with-param name="end" select="/Tanach/tanach/book[position()=$clickbookindex]/c[position()=$clickchapter]/vs"/>          
+          <xsl:with-param name="format" select="'Verse'"/>          
+          
+        </xsl:call-template>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td align="right">
+      <button onclick="Javascript:setChapterTable()" style="font-weight:bold;color:blue;font-size:12pt" title="Return to the {$clickbook} chapter table.">Back</button>
+    </td>
+  </tr>
+</table>
+</center>
+</html>
+</xsl:template>
+<!--========================================================================-->
+
+<xsl:template name="LastVerseTable">
+
+<!--========================================================================-->
+<html>
+<center>
+<table border="1" cellpadding="15" width="64%">
+  <tr>
+    <td>
+      <b>
+         <a href="JavaScript:setLastVerseClick({$clickverse})">Show <xsl:value-of select="$clickbook"/> 
+           <xsl:value-of select="$clickchapter"/>:<xsl:value-of select="$clickverse"/> 
+         </a>
+      </b>
+    </td>
+  </tr>
+  <xsl:if test="$clickverse &lt; /Tanach/tanach/book[position()=$clickbookindex]/c[./@n=$clickchapter]/vs">
+  <tr>
+    <td>
+<b>Show <xsl:value-of select="$clickbook"/> <xsl:value-of select="$clickchapter"/>:<xsl:value-of select="$clickverse"/>
+       through verse:</b>
+       <p/>
+      <table border="1" cellpadding="2" width="100%">
+        
+        <xsl:call-template name="ToTable2">
+          <xsl:with-param name="start" select="$clickverse + 1"/>
+          <xsl:with-param name="end" select="/Tanach/tanach/book[position()=$clickbookindex]/c[position()=$clickchapter]/vs"/>
+          <xsl:with-param name="format" select="'LastVerse'"/>
+        </xsl:call-template>
+      </table>
+      <p/>
+    </td>
+  </tr>
+  </xsl:if>
+  <tr>
+    <td>
+      <b>
+<a href="JavaScript:setShowVerse()">Show <xsl:value-of select="$clickbook"/> <xsl:value-of select="$clickchapter"/>:<xsl:value-of select="$clickverse"/> 
+      within chapter <xsl:value-of select="$clickchapter"/>
+</a>
+</b>
+    </td>
+  </tr>
+  <tr>
+    <td align="right">
+      <button onclick="Javascript:setVerseTable()" style="font-weight:bold;color:blue;font-size:12pt" title="Return to the {$clickbook} chapter {$clickchapter} verse table">Back</button>
+    </td>
+  </tr>
+</table>
+</center>
+</html>
+</xsl:template>
+<!--========================================================================-->
+
+<xsl:template name="Footer">
+
+<!--========================================================================-->
+
+<table cellpadding="0" width="100%">
+<tr>
+  <td align="left" width="25%">
+      <span style="font-size:12pt">  
+        <a href="License.html" target="_blank" title="See the full license information">
+          <img border="0" src="{$creativecommons}"/>          
+        </a>
+      
+      </span>
+  </td>
+  
+  <td >
+      <center>
+      <font size="-1">
+        <i>
+          <span style="color:blue; text-align:center; " title="Contact the transcriber.">Your <a href="/Pages/Transcriber.html" style="color:blue">suggestions</a> 
+             will improve this resource.</span>
+        </i>
+      </font>
+      </center>
+  </td>
+
+<!-- Build numbers title changes with Server mode. -->
+  
+  <td align="right" width="25%">
+    <xsl:if test="$server='false'">
+      <span style="color:red;font-style:italic">Local mode</span>&#x00a0;&#x00a0;
+    </xsl:if>
+    <b><a title="Current build number."><xsl:value-of select="$build"/></a></b>
+  </td>
+</tr>
+</table>
+
+<hr/>
+
+</xsl:template>
+<!--========================================================================-->
+<!--*** 3 ***
+
+       Template for Book files.
+            
+                                                                            -->          
+<!--========================================================================-->
+<xsl:template name="Book">
+<html>
+
+<xsl:call-template name="BookHeader"/>
+
+<span id="Text">
+&#x00a0;
+</span>
+
+
+<xsl:call-template name="BookFooter">
+  <xsl:with-param name="xmldate" select="/Tanach/teiHeader/profileDesc/creation/date"/>
+</xsl:call-template>
+</html>
+</xsl:template>
+<!--========================================================================-->
+
+<!-- Template to show header for book and multibook files -->
+
+<!--========================================================================-->
+<xsl:template name="BookHeader">
+ <xsl:param name="homepageoffset" select="''"/>
+<!-- Overall label table  -->   
+<table align="center" width="100%">
+  <tr>
+    <td align="left" valign="top" width="10%">
+      <table align="left" cellpadding="4" valign="top">
+          <tr>
+            <td align="left" valign="top">
+              <xsl:if test="$queryURL='false'">
+                <button onclick="Javascript:setBookMark()" 
+                  style="font-weight:bold;color:blue;font-size:8pt" 
+                  title="Press to make this page bookmark-able. Then use the browser's built-in bookmark facility to bookmark the page.">
+                  Bookmark
+                </button> 
+              </xsl:if>
+            </td>
+          </tr>
+      </table>
+    </td>
+
+    <td align="center" valign="top" width="80%">
+      <table align="center">  <!-- Center label table -->
+          <tr>
+            <td align="center">
+              <span style="font-family:{$englishfontfamily};font-size:12pt">
+                <a href="JavaScript:showBookTEIHeader()" 
+                  style="text-decoration:none;color:black;font-weight:bold"
+                  title="Click to see this document's TEI header.">
+                  Unicode/XML Westminster Leningrad Codex 
+                  <xsl:text> [</xsl:text> 
+                  <xsl:value-of select="/Tanach/teiHeader/fileDesc/editionStmt/edition/version"/>
+                  <xsl:text>] </xsl:text>
+                </a>
+              </span>    
+            </td>
+          </tr>
+        <tr>
+          <td>
+             
+          </td>
+        </tr>
+            
+        <tr>
+          <td align="left">
+            <table>
+              <tr>
+                <td  align="right"> 
+                  <b>Citation</b> 
+                </td>
+                <td rowspan="2" >
+                  <form action="JavaScript:enterBookCitation()" name="excerptinput">
+                    &#x00a0;&#x00a0;<input maxlength="32" name="textfield" size="24" 
+                        style="font-weight:bold;font-family:{$englishfontfamily};font-size:16pt;" 
+                        title="Enter the Tanach citation here, i.e. Deut 26:5." type="TEXT">
+                    </input> 
+                  </form>
+                </td>
+              </tr>
+              <tr>
+                <td align="right">
+                  <a href="Pages/CitationSyntax.html" title="See how to enter a citation">Syntax</a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td align="center">
+            <b>
+              <span id="excerpterror" style="color:red">&#x00a0;</span>
+           </b>
+          </td>
+        </tr>
+     </table>
+  </td>  
+  <td align="left" valign="top" width="10%">
+    <table align="right">  <!-- Actions table -->
+      <tr>
+        <td align="right" colspan="2">
+           
+        </td>
+      </tr>
+      <tr title="Change text presentation.">
+        <td align="left">
+            <span style="font-size:12pt">Layout: </span>
+        </td>
+        <td align="right">
+              <select id="LayoutPD" onchange="JavaScript:changeLayout()" style="font-size:8pt">
+                <option selected="true" value="Full">Full</option>
+                <option value="Note-free">Note-free</option>
+                <option value="Text-only">Text-only</option>
+                <option value="Qere-only">Qere-only</option>
+                <option value="Verses">Verses view</option>
+              </select>
+        </td>
+      </tr> 
+      <tr title="Change text content.">
+        <td align="left">
+            <span style="font-size:12pt">Content: </span>
+        </td>
+        <td align="right">
+                <select id="ContentPD" onchange="JavaScript:changeContent()" style="font-size:8pt;">
+                    <option selected="true" value="Accents">Accents</option>
+                    <option value="Vowels">Vowels</option>
+                    <option value="Consonants">Consonants</option>
+                    <option value="Morphology">Morphology</option>
+                </select>
+        </td>
+      </tr> 
+      <tr title="Change font size.">
+        <td align="left">
+           <span style="font-size:12pt">Font: </span>
+        </td>
+        <td align="right">
+                <select id="FontSizePD" onchange="JavaScript:changeFontSize()" style="font-size:8pt">
+                    <option value="12">12pt</option>
+                    <option value="14">14pt</option>
+                    <option value="16">16pt</option>
+                    <option value="18">18pt</option>
+                    <option selected="true" value="20">20pt</option>
+                    <option value="22">22pt</option>
+                    <option value="24">24pt</option>
+                    <option value="28">28pt</option>
+                    <option value="32">32pt</option>
+                    <option value="40">40pt</option>
+                    <option value="48">48pt</option>
+                    <option value="56">56pt</option>
+                    <option value="64">64pt</option>
+                    <option value="68">68pt</option>
+                    <option value="72">72pt</option>
+                    <option style="color:blue" value="change">Change font</option>
+                    <option style="color:blue" value="test">Test font</option>
+                </select>
+        </td>
+      </tr> 
+      <xsl:if test="$clickbookindex &lt; 6">
+        <tr title="Change Documentary Hypothesis display.">
+          <td align="left">
+            <span style="font-size:12pt">DH: </span>
+          </td>
+          <td align="right">
+                <select id="DHPD" onchange="JavaScript:changeDH()" style="font-size:8pt">
+                    <option selected="true" value="Off">Off</option>
+                    <option value="Titles">Titles</option>
+                    <option value="All">All</option>
+                </select>
+          </td>
+        </tr> 
+      </xsl:if>
+    </table>
+  </td>
+</tr>
+</table>
+</xsl:template>
+<!--========================================================================-->
+
+<!-- Template to end descriptive pages. -->
+
+<!--========================================================================-->
+<xsl:template name="BookFooter">
+  <xsl:param name="xmldate" select="'XML date not available'"/>   
+  <xsl:param name="license" select="'License.html'"/>   
+<p/>
+<table width="100%" >
+  <tr>
+    <td align="left" width="15%">      
+      <a alt="License information" href="{$license}" target="_blank" title="License information." >
+        <img alt="License information" border="0" src="{$creativecommons}"/>
+      </a>
+    </td>
+    
+    <td align="center">
+      <table width="100%">
+        <tr>
+        
+        <td align="left" width="35%">
+         <span id="BookLinkControls">&#x00a0;</span>
+        </td>    
+        
+        <td align="center" >      
+          <button onclick="JavaScript:returnToHomePage()" 
+             style="color:blue;font-size:9pt;font-weight:bold;width:50pt;border-radius:5pt" 
+               title="Return to Home page.">Home</button>
+        </td>
+        
+        <td align="right"  width="35%">
+          <xsl:if test="$server='true'">
+            <table align="right">
+              <tr>
+                <td align="left"><button onclick="Javascript:getXML()" 
+                     style="font-weight:bold;color:black;font-size:7pt;width:40pt" 
+                     title="Show text as an XML document in new window.">XML</button></td>
+                <td align="right"><button onclick="Javascript:getText()" 
+                     style="font-weight:bold;color:black;font-size:7pt;width:40pt" 
+                     title="Show text as an text document in new window.">Text</button></td>
+              </tr>
+              <tr>
+                <td align="left"><button onclick="Javascript:getHTML()" 
+                     style="font-weight:bold;color:black;font-size:7pt;width:40pt" 
+                     title="Show text as an HTML document in new window.">HTML</button></td>
+                <td align="right"><button onclick="Javascript:getODT()" 
+                     style="font-weight:bold;color:blue;font-size:7pt;width:40pt" 
+                     title="Download text as an ODT document: Server.odt .">ODT</button></td>
+              </tr>
+            </table>
+          </xsl:if>
+          <xsl:if test="$server='false'">
+            &#x00a0;
+          </xsl:if>
+        </td>
+      </tr></table>
+    </td>
+    
+    <td align="right"  width="15%">    
+      <xsl:if test="$server='false'">
+        <span style="color:red;font-style:italic">Local mode</span>&#x00a0;&#x00a0;
+      </xsl:if>
+    
+      <b>
+        <a title="Build number.">
+           <xsl:value-of select="$build"/>
+        </a>
+      </b>
+    </td>
+  </tr>
+</table>
+<hr/>
+</xsl:template>
+<!--========================================================================-->
+<xsl:template name="InvalidTemplate">
+<html>
+  <h1>Invalid URL parameter on Tanach.xml</h1>
+  <p/>
+  <b>Tanach.xsl.xml</b> doesn't accept <b>'<xsl:value-of select="$template"/>'</b> 
+    as a template value. This is probably programming error, check the dispatching section
+    of <b>Tanach.xsl.xml</b> for the above template.
+  <xsl:call-template name="Footer"/>
+</html>        
+</xsl:template>
+<!--=======================================================================================-->
+<!--
+
+                              ToTable2  
+
+   Template to place an integer range into a table with a specified number of columns.
+   The table tags must enclose the call to ToTable2.
+
+   Must define a template called "TableCell" to output a single cell.
+    
+                 <td><xsl:value-of select="."/></td>
+                 
+   Parameters: start, end specify integer range.
+               columns is the desired number of columns greater than 1. (default 10).
+               format is the format passed to the TableCell template. (default '').
+-->
+<!--=======================================================================================-->
+
+<xsl:template name="ToTable2">
+  <xsl:param name="start"/>
+  <xsl:param name="end"/>
+  <xsl:param name="columns" select="10"/>
+  <xsl:param name="format" select="''"/>
+  
+  <xsl:if test="$end &lt; $start">
+    ToTable2: The end value, <xsl:value-of select="$end"/>, 
+    must be greater than or equal to the start value, <xsl:value-of select="$start"/>. 
+  </xsl:if>  
+  
+  <xsl:variable name="position">1</xsl:variable>
+  <xsl:if test="$columns &gt; 1">   
+  
+    <xsl:variable name="totalrows" select="ceiling($end div $columns)"/> 
+   
+    <xsl:call-template name="RowIterator">
+      <xsl:with-param name="position" select="$position"/>
+      <xsl:with-param name="start" select="$start"/>
+      <xsl:with-param name="end" select="$end"/>
+      <xsl:with-param name="columns" select="$columns"/>
+      <xsl:with-param name="format" select="$format"/>
+      <xsl:with-param name="rowcounter" select="$totalrows"/>
+    </xsl:call-template>
+  </xsl:if>
+  
+  <xsl:if test="$columns = 1">   
+    <xsl:variable name="totalrows" select="$end"/> 
+    <xsl:call-template name="RowIterator">
+      <xsl:with-param name="position" select="$position"/>
+      <xsl:with-param name="start" select="$start"/>
+      <xsl:with-param name="end" select="$end"/>
+      <xsl:with-param name="columns" select="$columns"/>
+      <xsl:with-param name="format" select="$format"/>
+      <xsl:with-param name="rowcounter" select="$totalrows"/>
+    </xsl:call-template>
+  </xsl:if>
+  
+  <xsl:if test="$columns &lt;1">     
+    ToTable2: The number of columns, <xsl:value-of select="$columns"/>, must be greater than 0.
+  </xsl:if>   
+</xsl:template>
+<!--=======================================================================================-->
+<xsl:template name="RowIterator">
+  <xsl:param name="start"/>
+  <xsl:param name="end"/>
+  <xsl:param name="position"/>
+  <xsl:param name="columns"/>
+  <xsl:param name="format" select="''"/>
+  <xsl:param name="rowcounter" select="1"/>
+       <tr>
+        <xsl:call-template name="ColumnIterator">
+          <xsl:with-param name="start" select="$start"/>
+          <xsl:with-param name="end" select="$end"/>
+          <xsl:with-param name="position" select="$position"/>
+          <xsl:with-param name="columns" select="$columns"/>
+          <xsl:with-param name="format" select="$format"/>
+          <xsl:with-param name="columnscounter" select="$columns"/>
+        </xsl:call-template>
+      </tr>
+      
+      <xsl:variable name="rowsremaining" select="$rowcounter -1"/>
+      <xsl:variable name="nextposition" select="$position + $columns"/>
+      <xsl:if test="$rowsremaining &gt; 0">
+        <xsl:call-template name="RowIterator">
+          <xsl:with-param name="start" select="$start"/>
+          <xsl:with-param name="end" select="$end"/>
+          <xsl:with-param name="position" select="$nextposition"/>
+          <xsl:with-param name="columns" select="$columns"/>
+          <xsl:with-param name="format" select="$format"/>
+          <xsl:with-param name="rowcounter" select="$rowsremaining"/>
+        </xsl:call-template>
+      </xsl:if>
+        
+</xsl:template>
+<!--=======================================================================================-->
+<xsl:template name="ColumnIterator">
+  <xsl:param name="start"/>
+  <xsl:param name="end"/>
+  <xsl:param name="position"/>
+  <xsl:param name="columns"/>
+  <xsl:param name="format" select="''"/>
+  <xsl:param name="columnscounter"/>
+       
+        <xsl:call-template name="OutputCell2">
+            <xsl:with-param name="position" select="$position"/>
+            <xsl:with-param name="start" select="$start"/>
+            <xsl:with-param name="end" select="$end"/>
+            <xsl:with-param name="format" select="$format"/>
+        </xsl:call-template>
+        
+        <xsl:variable name="columnsremaining" select="$columnscounter -1 "/>
+        <xsl:variable name="nextposition" select="$position + 1"/>
+        <xsl:if test="$columnsremaining &gt; 0">
+          <xsl:call-template name="ColumnIterator">
+            <xsl:with-param name="position" select="$nextposition"/>
+            <xsl:with-param name="start" select="$start"/>
+            <xsl:with-param name="end" select="$end"/>
+            <xsl:with-param name="columns" select="$columns"/>
+            <xsl:with-param name="format" select="$format"/>
+            <xsl:with-param name="columnscounter" select="$columnsremaining"/>
+          </xsl:call-template>
+        </xsl:if>
+        
+</xsl:template>
+<!--=======================================================================================-->
+<!--
+                       Outputs a cell of either type.
+-->
+<!--=======================================================================================-->
+<xsl:template name="OutputCell2">
+  <xsl:param name="position"/>
+  <xsl:param name="start"/>
+  <xsl:param name="end"/>
+  <xsl:param name="format" select="''"/>
+  
+        <xsl:if test="$position &lt; $start or $position &gt; $end ">
+          <xsl:call-template name="EmptyTableCell2">
+            <xsl:with-param name="format" select="$format"/>
+          </xsl:call-template>
+        </xsl:if>
+        
+        <xsl:if test="$position &gt;= $start and $position &lt;= $end ">
+          <xsl:call-template name="TableCell2">
+            <xsl:with-param name="value" select="$position"/>
+            <xsl:with-param name="format" select="$format"/>
+          </xsl:call-template>
+        </xsl:if>
+        
+</xsl:template>
+<!--========================================================================-->
+
+<!-- html template to change the font family -->
+
+<!--========================================================================-->
+<xsl:template name="ChangeFont">
+<html>
+<xsl:call-template name="PageHeader">
+  <xsl:with-param name="title" select="'Change the Hebrew font'"/>
+</xsl:call-template>
+
+<center>
+<h2>The current Hebrew font is <xsl:value-of select="$fontfamily"/>.</h2>
+</center>
+
+<table width="80%" border="0" align="center" cellpadding="10"><tr>
+  <tr>
+    <td colspan="2">
+      To return to the previous page <i>without changing anything</i> press "Enter font" without changing
+      the contents of the "Font name" text field. 
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">To enter a new Hebrew font type the font name, i.e. <b><tt>MyFont</tt></b>, 
+      into the text field below and press the <b>Enter font</b> button.  
+      Note that the required value is the name of the font <i>previously-installed on your system</i>, not the font's file name. 
+    </td>
+  </tr>
+    <td colspan="2">To reset to the default <b><tt>SBL Hebrew</tt></b> font press the <b>Set default</b> button, 
+        then the <b>Enter font</b> button.
+    </td>
+  </tr>
+  <tr>
+    <td align="right">
+      <form name="fontInput" >
+              <b>Font name:&#x00a0;&#x00a0;&#x00a0;&#x00a0;</b>
+              <input type="TEXT" style="font-weight:bold;font-family:{$englishfontfamily};font-size:16pt" 
+                         size="20" maxlength="64" name="textfield" value="{$fontfamily}"
+                          title="Enter font name, i.e. SBL Hebrew." />
+      </form>
+   </td>
+   <td>
+      <form>          
+        <input style="color:black;font-size:10pt;font-weight:bold" 
+            onClick="JavaScript:enterFont()" type="button" value="Enter font"/>    
+      </form>
+    </td>
+  </tr>
+  <tr>
+  <td> </td>
+    <td align="left">
+       <input style="color:black;font-size:8pt" 
+                   onClick="JavaScript:defaultFont()" type="button" value="Set default"/>
+    </td>
+  </tr>
+</table>
+
+
+<xsl:call-template name="PageFooter">
+  <xsl:with-param name="xmldate" select="/Tanach/teiHeader/profileDesc/creation/date"/>
+  </xsl:call-template>
+</html>
+</xsl:template>
+<!--========================================================================-->
+
+<!-- Template to head descriptive pages. -->
+
+<!--========================================================================-->
+<xsl:template name="PageHeader">
+  <xsl:param name="title" select="'Title not specified'"/>   
+  <xsl:param name="wlcversion" select="''"/>
+<table width="100%">
+  <tr>
+    <td align="left"> 
+      <span style="font-family:{$englishfontfamily};font-weight:bold;font-size:200%">
+        <xsl:value-of select="$title"/>
+          <xsl:if test="not($wlcversion='')">
+            <xsl:text> [</xsl:text><xsl:value-of select="$wlcversion"/><xsl:text>] </xsl:text>
+          </xsl:if>
+      </span>
+      <p/>     
+    </td>
+  </tr>
+</table>
+</xsl:template>
+<!--========================================================================-->
+
+<!-- Template to end descriptive pages. -->
+
+<!--========================================================================-->
+<xsl:template name="PageFooter">
+  <xsl:param name="xmldate" select="'XML date not available'"/>   
+  <xsl:param name="license" select="'License.html'"/>   
+<p/>
+<table width="100%">
+  <tr>
+    <td align="left" width="25%">      
+      <a  target="_blank" title="License information." href="{$license}" alt="License information">
+        <img src="{$creativecommons}" alt="License information" border="0"/>
+      </a>
+    </td>
+    <td align="center" width="50%">      
+      <button onclick="JavaScript:returnToBookPage()" 
+             style="color:blue;font-size:14pt;font-weight:bold;width:60pt;border-radius:5pt" 
+               title="Return to Book page.">Return</button>
+    </td>
+    <td align="right" width="25%">
+      <b>
+        <a title="Build number."><xsl:value-of select="$build"/></a>
+      </b>
+      </td>
+  </tr>
+</table>
+<hr/>
+</xsl:template>
+<!--========================================================================-->
+</xsl:stylesheet>
+<!--========================================================================-->
+<!--========================================================================-->

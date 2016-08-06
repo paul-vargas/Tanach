@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsl:stylesheet version="1.0"  xmlns:xsl="http://www.w3.org/1999/XSL/Transform" >
+<xsl:output method="xml" indent="yes"/>
+
+<!--========================================================================-->
+<!--========================================================================-->
+<!-- Copyright C.V.Kimball 2006                                             -->
+<!--
+
+    SelectText.xsl.xml - Server WLC text response selection.
+
+
+    The Server HttpServlet uses this XSL transformation file to
+    construct a server response from a Tanach book file.
+    
+    
+    Modified: 13 Feb 2009 - To include 5 title parameters,
+      a chk and xsl parameters.
+      
+      chk = true indicates that the server checked the validity of the citation.
+            false indicates that the SERVER didn't check the citation.   
+      
+      xsl is the name of the XSL file to be used in place of Text.xsl.xml.
+    
+-->
+<!--========================================================================-->
+<!--========================================================================-->
+<!-- Excerpt specification, set by JavaScript.                              -->
+<!-- Parameter conversiondate is the date of XML conversion.  -->
+<xsl:param name="conversiondate">25 Nov 2010</xsl:param>
+
+<!-- Chapter:Verse specification                                            -->
+<xsl:param name="chapter" >2</xsl:param>  
+<xsl:param name="verse" >3</xsl:param>  
+<!-- LastChapter:LastVerse specification                                    -->
+<xsl:param name="lastchapter" >2</xsl:param>  
+<xsl:param name="lastverse" >5</xsl:param>  
+<xsl:param name="title1">&#x0020;</xsl:param>  
+<xsl:param name="title2">&#x0020;</xsl:param>  
+<xsl:param name="title3">&#x0020;</xsl:param>  
+<xsl:param name="title4">&#x0020;</xsl:param>  
+<xsl:param name="title5">&#x0020;</xsl:param>  
+<xsl:param name="baseURL">&#x0020;</xsl:param>  
+<xsl:param name="stylesheet">&#x0020;</xsl:param>  
+<xsl:param name="chk">&#x0020;</xsl:param>  
+
+
+<!--========================================================================-->
+<!--========================================================================-->
+<xsl:template match="/Tanach">
+<xsl:processing-instruction name="xml-stylesheet">
+  type="text/xsl" href="<xsl:value-of select='$baseURL'/><xsl:value-of select='$stylesheet'/>"
+</xsl:processing-instruction>
+  <Tanach>
+  
+<teiHeader>
+  <fileDesc>
+    <titleStmt>
+      <xsl:copy-of select="/Tanach/teiHeader/fileDesc/titleStmt/title"/>
+      <title level="x" type="1"><xsl:value-of select="$title1"/></title>
+      <title level="x" type="2"><xsl:value-of select="$title2"/></title>
+      <title level="x" type="3"><xsl:value-of select="$title3"/></title>
+      <title level="x" type="4"><xsl:value-of select="$title4"/></title>
+      <title level="x" type="5"><xsl:value-of select="$title5"/></title>
+      <title level="chk"><xsl:value-of select="$chk"/></title>
+     
+    </titleStmt>
+    <editionStmt>
+      <edition>
+        <xsl:copy-of select="/Tanach/teiHeader/fileDesc/editionStmt/edition/version"/>
+        <xsl:copy-of select="/Tanach/teiHeader/fileDesc/editionStmt/edition/date"/>
+      </edition>
+    </editionStmt>
+    <notesStmt>
+      <xsl:copy-of select="/Tanach/teiHeader/fileDesc/notesStmt/note"/>
+    </notesStmt>
+  </fileDesc>
+  <profileDesc>
+    <creation>
+      <xsl:value-of select="$conversiondate"/>
+    </creation>
+  </profileDesc>
+</teiHeader>
+  
+    <tanach>
+      <book>
+        <xsl:copy-of select="/Tanach/tanach/book/names"/>
+        
+        <xsl:copy-of select="/Tanach/tanach/book/marking"/>
+        
+        <xsl:choose>
+          <xsl:when test="$chapter=$lastchapter">
+            <c n="{$chapter}">
+              <xsl:copy-of select= "/Tanach/tanach/book/c[./@n=$chapter]/v[./@n&gt;=$verse and ./@n&lt;=$lastverse]"/>
+            </c>
+          </xsl:when>  
+          
+          <xsl:otherwise>
+            <xsl:choose>
+          
+              <xsl:when test="$lastchapter = $chapter + 1">
+                <c n="{$chapter}">
+                  <xsl:copy-of select= "/Tanach/tanach/book/c[./@n=$chapter]/v[./@n&gt;=$verse]"/>
+                </c>
+                <c n="{$chapter + 1}">
+                  <xsl:copy-of select= "/Tanach/tanach/book/c[./@n=$lastchapter]/v[./@n&lt;=$lastverse]"/>
+                </c>
+              </xsl:when>
+          
+              <xsl:otherwise>
+                <c n="{$chapter}">
+                  <xsl:copy-of select= "/Tanach/tanach/book/c[./@n=$chapter]/v[./@n&gt;=$verse]"/>
+                </c>
+                <xsl:for-each select="/Tanach/tanach/book/c[ ./@n&gt;$chapter and ./@n&lt;$lastchapter]">
+                    <xsl:copy-of select= "."/>
+                </xsl:for-each>
+                <c n="{$lastchapter}">
+                  <xsl:copy-of select= "/Tanach/tanach/book/c[./@n=$lastchapter]/v[./@n&lt;=$lastverse]"/>
+                </c>
+              </xsl:otherwise>
+          
+            </xsl:choose>
+          </xsl:otherwise>
+                
+        </xsl:choose>
+      </book>
+    </tanach>
+    <xsl:copy-of select="/Tanach/notes"/>
+  </Tanach>
+</xsl:template>
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
+
+</xsl:stylesheet>
+<!--========================================================================-->
+<!--========================================================================-->

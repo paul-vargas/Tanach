@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsl:stylesheet version="1.0"  xmlns:xsl="http://www.w3.org/1999/XSL/Transform" >
+<xsl:output method="html"/>
+<xsl:strip-space elements="*"/>
+<!--========================================================================-->
+<!--========================================================================-->
+<!-- Copyright C.V.Kimball 2007                                            -->
+<!--
+
+    Links.xsl.xml - XSL file for links feature.
+    
+-->
+<!--========================================================================-->
+<!--========================================================================-->
+
+<!-- Variable xsldate is the date of this xsl file.                         -->
+<xsl:variable name="xsldate">12 Jul 2013</xsl:variable>  
+<!-- Variable build is the build date of the complete site as set by ant.   -->
+<xsl:variable name="build">25.1</xsl:variable>  
+<xsl:param name="template" >Links</xsl:param>  
+<xsl:param name="server" >true</xsl:param>  
+<!--========================================================================-->
+
+<xsl:template match="/Links">
+
+<xsl:choose>
+  <xsl:when test="$template='BookLinkControls'">
+    <xsl:call-template name="BookLinkControls"/>
+  </xsl:when>
+   <xsl:otherwise>
+    <xsl:call-template name="InvalidTemplate"/>
+  </xsl:otherwise>
+</xsl:choose>
+</xsl:template>
+<!--========================================================================-->
+
+<xsl:template name="BookLinkControls" >
+
+<html>
+  <xsl:if test="$server='true'">
+    <table align="left">
+      <tr><td>
+        <select id='LinksPD'  title="Available links by name." 
+                onchange="JavaScript:setLink()"  style="font-size:7pt;vertical-align:middle">
+          <xsl:call-template name="LinkOptions"/>
+        </select>
+      </td></tr>
+      <tr><td align="center">
+        <button title="Press to go to selected link." 
+          style="font-weight:bold;color:black;font-size:7pt;width:30pt" 
+          onclick="Javascript:goToLink()">Go</button> 
+      </td></tr>
+    </table> 
+   </xsl:if>
+   <xsl:if test="$server='false'">
+     &#x00a0;
+   </xsl:if>
+ </html>        
+</xsl:template>
+<!--========================================================================-->
+<xsl:template name="LinkOptions" >
+  <xsl:for-each select="/Links/links/link">
+    <xsl:variable name="index" select="position()" />
+    <option value="{$index}" selected="false"><xsl:value-of select="name"/></option> 
+  </xsl:for-each> 
+</xsl:template>
+<!--========================================================================-->
+
+<xsl:template name="InvalidTemplate" >
+
+<html>
+  <h1>Invalid template requested of Links.xsl.xml</h1>
+  <p/>
+  <b>Links.xsl.xml</b> doesn't accept <b>'<xsl:value-of select="$template"/>'</b> 
+    as a template value. This is probably programming error, check the dispatching section
+    of <b>Links.xsl.xml</b> for the above template.
+</html>        
+</xsl:template>
+<!--========================================================================-->
+</xsl:stylesheet>
+<!--========================================================================-->
+<!--========================================================================-->

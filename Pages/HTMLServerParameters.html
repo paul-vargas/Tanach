@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  Copyright C.V.Kimball 2013  -->
+<html>
+<header profile="http://www.w3.org/2005/11/profile" > 
+  <meta http-equiv="X-UA-Compatible" content="IE=8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
+  <link rel="icon" type="image.x-icon" href="http://www.cvkimball.com/Tanach/TanachIcon.ico"/>
+  <title>HTML server parameters</title>
+<!-- Force the default font so that the site looks the same on all systems.  -->
+  <style>
+    body {font-family:Times New Roman}
+  </style>
+</header>
+<body style="background-image:url('../Images/Background');margin-right:10pt; 
+              margin-left:10pt; margin-top:10pt; margin-bottom:0">
+<table width="100%">
+  <tr>
+    <td align="left"> 
+      <span style="font-family:Times New Roman;font-weight:bold;font-size:200%">HTML server parameters</span>
+      <p/>     
+    </td>
+  </tr>
+</table>
+<p/>
+
+<table width="90%" align="center"><tr><td>
+The text citation is the <i>only</i> required Server.html parameter; all others are <i>optional</i>. Server.html
+parameters are separated by ampersands (<b>&amp;</b>).
+<i>No blanks are permitted between an <b>&amp;</b> and a parameter name or around the '<b>=</b>' sign</i>.  Blanks are permitted
+<i>within</i> the t1...t5, fontfamily, and Englishfontfamily values.  For example:
+<blockquote>
+<a target="_blank" href="http://www.tanach.us/Server.html?Deut26:5-9&amp;font=40&amp;content=Vowels&amp;Brief=1&amp;t2=Title with blanks">
+  http://www.tanach.us/Server.html?Deut26:5-9&amp;font=40&amp;content=Vowels&amp;Brief=1&amp;t2=Title with blanks</a> 
+</blockquote>
+The order in which parameters are added has no effect. The parameters are independent of one another.
+Usually, good results can be obtained with only a small number of parameters. 
+<p/>
+Parameter names and values are <b>case-sensitive</b>. The Server verifies parameter names, but not parameter
+values.  For example, the pair <b>layout=full</b> is incorrect because of the lower case 'f' in full.
+<p/>
+When including Server.html references in HTML documents  '<b>&amp;</b>' signs in the URL must be replaced
+by the HTML constant '<b>&amp;amp;</b>'.
+</td></tr></table>
+<p/>
+<table border="1" cellpadding="10" align="center" width="90%">
+  <tr>
+    <th>Parameter</th>
+    <th>Default value</th>
+    <th>Allowable values</th>
+    <th>Action</th>
+  </tr>
+  
+  <tr>
+    <td>Citation</td>
+    <td><i>Always required</i></td>
+    <td><b>Book Chapter:Verse-LastVerse</b><br/>
+    or<br/><b>Book Chapter:Verse-LastChapter:LastVerse</b><br/>
+    or<br/>
+    <b>*</b></td>
+    <td>Specifies the text to be displayed. <b>*</b> indicates the entire book is to be downloaded.</td>
+  </tr> 
+  
+  
+  
+  <tr>
+    <td colspan="4"><b>The following are equivalent to the pull-down lists on the Book page. (from top to bottom)</b></td>
+  </tr> 
+  <tr>
+    <td><b>layout</b></td>
+    <td><b>Full</b></td>
+    <td><b> Full, Note-free, Text-only, Qere-only</b></td>
+    <td>Specifies the text layout. "Verses view" or "Chapter view" are not permitted.</td>
+  </tr> 
+  <tr>
+    <td><b>view</b></td>
+    <td><b>0</b></td>
+    <td><b>0,  1 </b></td>
+    <td>Specifies whether the text is shown in Chapter (0) or Verses (1) view.</td>
+  </tr> 
+  <tr>
+    <td><b>content</b></td>
+    <td><b>Accents</b></td>
+    <td><b>Morphology, Accents, Vowels, Consonants</b></td>
+    <td>Specifies the text contents.</td>
+  </tr> 
+  <tr>
+    <td><b>font</b><br/> </td>
+    <td><b>20</b></td>
+    <td>Any font size in points (pt)</td>
+    <td>Specifies the Hebrew font size in points.</td>
+  </tr> 
+  <tr>
+    <td><b>fontfamily</b></td>
+    <td><b>SBL Hebrew</b></td>
+    <td>Any Hebrew font.</td>
+    <td>Specifies the Hebrew font.</td>
+  </tr> 
+  <tr>
+    <td><b>dh</b></td>
+    <td><b>Off</b></td>
+    <td><b>Off, Titles, All</b></td>
+    <td>Specified if and how DH markings are displayed.</td>
+  </tr> 
+  <tr>
+    <td colspan="4"><b>The following are custom adjustments to text displays. (in alphabetical order)</b></td>
+  </tr>
+  <tr>
+    <td><b>align</b></td>
+    <td><b>center</b></td>
+    <td><b>left, center, right</b></td>
+    <td>Positions the text on the page if <b>width</b> &lt; 100.</td>
+  </tr> 
+  <tr>
+    <td><b>Brief</b></td>
+    <td><b>0</b></td>
+    <td><b>0, 1</b></td>
+    <td>Eliminates the site header and footer if 1.</td>
+  </tr> 
+  <tr>
+    <td><b>cellpadding</b></td>
+    <td><b>5</b></td>
+    <td>Any spacing in points.</td>
+    <td>Specifies padding around the text area.</td>
+  </tr> 
+   <tr>
+    <td><b>Englishfontfamily</b></td>
+    <td><b>Times New Roman</b></td>
+    <td>Any font size in points.</td>
+    <td>Specifies the font for all English text.</td>
+  </tr> 
+   <tr>
+    <td><b>Englishfontsize</b></td>
+    <td><b>20</b></td>
+    <td>Any font size in points.</td>
+    <td>Specifies the font size for text chapter:verse labels.</td>
+  </tr> 
+  <tr>
+    <td><b>labelsize</b></td>
+    <td><b>24</b></td>
+    <td>Any font size in points.</td>
+    <td>Specifies the font size of the citation and DH labels.</td>
+  </tr> 
+  <tr>
+    <td><b>lineheight</b></td>
+    <td><b>150</b></td>
+    <td>Any value.</td>
+    <td>Specifies the line height as a percentage of the normal height.</td>
+  </tr> 
+  <tr>
+    <td><b>nolabel </b></td>
+    <td><b>0</b></td>
+    <td><b>0, 1</b></td>
+    <td>Eliminates the citation label if 1.</td>
+  </tr> 
+  <tr>
+    <td><b>nobackground </b></td>
+    <td><b>0</b></td>
+    <td><b>0, 1</b></td>
+    <td>Eliminates the text background if 1.</td>
+  </tr> 
+  <tr>
+    <td><b>t1</b></td>
+    <td>none</td>
+    <td>Any text</td>
+    <td>Provides a centered &lt;h1&gt; header.</td>
+  </tr> 
+  <tr>
+    <td><b>t2</b></td>
+    <td>none</td>
+    <td>Any text</td>
+    <td>Provides a centered &lt;h2&gt; header.</td>
+  </tr> 
+  <tr>
+    <td><b>t3</b></td>
+    <td>none</td>
+    <td>Any text</td>
+    <td>Provides a centered &lt;h4&gt; header.</td>
+  </tr> 
+  <tr>
+    <td><b>t4</b></td>
+    <td>none</td>
+    <td>Any text</td>
+    <td>Provides a &lt;b&gt; header.</td>
+  </tr>
+  <tr>
+    <td><b>t5</b></td>
+    <td>none</td>
+    <td>Any text</td>
+    <td>Provides a plain header.</td>
+  </tr> 
+  <tr>
+    <td><b>width</b></td>
+    <td><b>90</b></td>
+    <td><b>10 - 100</b></td>
+    <td>Sets the text width as a percentage of the window width. Set the <b>align</b> variable to align the text.</td>
+  </tr> 
+  <tr>
+    <td><b>trailinglabel</b></td>
+    <td><b>0</b></td>
+    <td><b>0, 1</b></td>
+    <td>Places the citation label at the lower, right corner of the text.</td>
+  </tr> 
+</table>
+<p/>
+<table width="90%" align="center"><tr><td>
+Additional parameters can be provided on request.
+
+<p/>
+<table width="100%">
+  <tr>
+    <td align="left">      
+      <a  target="_blank" title="License information." href="../License.html" alt="License information">
+        <img src="../Images/CreativeCommons.gif" alt="License information" border="0"/>
+      </a>
+    </td>
+    <td align="right">
+      <b>
+        <a title="Build number.">25.1</a>
+      </b>
+  </tr>
+</table>
+<hr/>
+</body>
+</html>
+<!--========================================================================-->
+<!--========================================================================-->

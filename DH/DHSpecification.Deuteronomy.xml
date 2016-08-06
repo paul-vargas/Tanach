@@ -1,0 +1,147 @@
+<?xml version = "1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../XSL/DH.xsl.xml"?>
+<Marking xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation ="../XSL/Tanach.xsd">
+<!-- Copyright C.V.Kimball 2004 -->
+<DHheader>
+  <name>DeuteronomyDH</name>
+  <hebrewname>תנ״ך</hebrewname>
+  <title>DH sources in Deuteronomy</title>
+  <shortdescription>Documentary Hypothesis source markings from A.E.Friedman.
+  </shortdescription>
+     <description>Documentary Hypothesis (DH) source markings from  Richard E. Friedman's 
+       "Who wrote the Bible, Second Edition", pages 246-253, 1997, have been added. 
+       These markings appear as the 's' attribute on each verse and are one of 
+       J, E, P, Dtr1, Dtr2, R, or Other. Friedman splits some verses between sources, 
+       the decision on where to split a verse in the Hebrew text has been made by the transcriber
+       and should be regarded as tentative.  Modified to count orthographic,
+       rather than prosodic, words.
+     </description>
+  <date>19 Dec 2005</date>
+  <copyright>© C. V. Kimball 2004</copyright>
+  <filename>DHSpecifcation.Deuteronomy.xml</filename>
+</DHheader>
+<DHbook>
+    <names>
+      <name>Deuteronomy</name>
+      <abbrev>Deut</abbrev>
+      <number>5</number>
+      <filename>Deuteronomy</filename>
+      <hebrewname>דברים</hebrewname>
+    </names>
+  <marking>
+     <title>Documentary Hypothesis from R.E.Friedman's "Who wrote the Bible?".</title>
+     <shorttitle>DH</shorttitle>
+     <description>Documentary Hypothesis (DH) source markings from  Richard E. Friedman's 
+       "Who wrote the Bible, Second Edition", pages 246-253, 1997, have been added. 
+       These markings appear as the 's' attribute on each verse and are one of 
+       J, E, P, Dtr1, Dtr2, R, or Other. Friedman splits some verses between sources, 
+       the decision on where to split a verse in the Hebrew text has been made by the transcriber
+       and should be regarded as tentative.  Modified to count orthographic,
+       rather than prosodic, words.
+     </description>
+     <date>19 Dec 2005</date>
+     <marks>
+         <mark>
+           <code>D1</code>
+           <label>Dtr1</label>
+           <description>First deuteronomic source</description>
+           <color>maroon</color>
+           <style>normal</style>
+           <relativesize>1</relativesize>
+           <backgroundcolor>#ffffff</backgroundcolor>
+           <textdecoration>none</textdecoration>
+        </mark>
+         <mark>
+           <code>D2</code>
+           <label>Dtr2</label>
+           <description>Second deuteronomic source</description>
+           <color>maroon</color>
+           <style>normal</style>
+           <relativesize>.8</relativesize>
+           <backgroundcolor>#ffffff</backgroundcolor>
+           <textdecoration>none</textdecoration>
+        </mark>
+         <mark>
+           <code>Dn</code>
+           <label>Dtn</label>
+           <description>Deuteronomic law code</description>
+           <color>maroon</color>
+           <style>normal</style>
+           <relativesize>1</relativesize>
+           <backgroundcolor>#fffff8</backgroundcolor>
+           <textdecoration>none</textdecoration>
+        </mark>
+        <mark>
+           <code>E</code>
+           <label>E</label>
+           <description>E (Shiloh) source</description>
+           <color>blue</color>
+           <style>normal</style>
+           <relativesize>1</relativesize>
+           <backgroundcolor>#ffffff</backgroundcolor>
+           <textdecoration>none</textdecoration>
+        </mark>
+        <mark>
+           <code>P</code>
+           <label>P</label>
+           <description>Priestly source</description>
+           <color>black</color>
+           <style>normal</style>
+           <relativesize>1</relativesize>
+           <backgroundcolor>#ffffff</backgroundcolor>
+           <textdecoration>none</textdecoration>
+        </mark>
+        <mark>
+           <code>O</code>
+           <label>Other</label>
+           <description>Other texts</description>
+           <color>green</color>
+           <style>normal</style>
+           <relativesize>1</relativesize>
+           <backgroundcolor>#ffffff</backgroundcolor>
+           <textdecoration>none</textdecoration>
+        </mark>
+     </marks>
+  </marking>
+</DHbook>
+<excerpts>
+  <excerpt><range>1:1-4:24</range><source>D1</source><note></note></excerpt>
+  <excerpt><range>4:25-31</range><source>D2</source><note></note></excerpt>
+  <excerpt><range>4:32-49</range><source>D1</source><note></note></excerpt>
+  <excerpt><range>5:1-8:18</range><source>D1</source><note></note></excerpt>
+  <excerpt><range>8:19-20</range><source>D2</source><note></note></excerpt>
+  <excerpt><range>9:1-11:32</range><source>D1</source><note></note></excerpt>
+  <excerpt><range>12:1-26:15</range><source>Dn</source><note></note></excerpt>
+  <excerpt><range>26:16-19</range><source>D1</source><note></note></excerpt>
+  <excerpt><range>27:1-10</range><source>D1</source><note></note></excerpt>
+  <excerpt><range>27:11-26</range><source>D1</source><note></note></excerpt>
+  <excerpt><range>28:1-35</range><source>D1</source><note></note></excerpt>
+  <excerpt><range>28:36-37</range><source>D2</source><note></note></excerpt>
+  <excerpt><range>28:38-62</range><source>D1</source><note></note></excerpt>
+  <excerpt><range>28:63-68</range><source>D2</source><note></note></excerpt>
+  <excerpt><range>28:69</range><source>D1</source><note></note></excerpt>
+  <excerpt><range>29:1-20</range><source>D1</source><note></note></excerpt>
+  <excerpt><range>29:21-27</range><source>D2</source><note></note></excerpt>
+  <excerpt><range>29:28</range><source>D1</source><note></note></excerpt>
+  <excerpt><range>30:1-10</range><source>D2</source><note></note></excerpt>
+  <excerpt><range>30:11-13</range><source>D1</source><note></note></excerpt>
+  <excerpt><range>30:14-20</range><source>D2</source><note></note></excerpt>
+  <excerpt><range>31:1-8</range><source>D1</source><note></note></excerpt>
+  <excerpt><range>31:9-12</range><source>D1</source><note></note></excerpt>
+  <excerpt><range>31:13</range><source>O</source><note>Missing?</note></excerpt>
+  <excerpt><range>31:14-15</range><source>E</source><note></note></excerpt>
+  <excerpt><range>31:16-22</range><source>D2</source><note></note></excerpt>
+  <excerpt><range>31:23</range><source>E</source><note></note></excerpt>
+  <excerpt><range>31:24-27</range><source>D1</source><note></note></excerpt>
+  <excerpt><range>31:28-30</range><source>D2</source><note></note></excerpt>
+  <excerpt><range>32:1-43</range><source>O</source><note>*WWB: Special note: Song of Moses.</note></excerpt>
+  <excerpt><range>32:44</range><source>D2</source><note></note></excerpt>
+  <excerpt><range>32:45-47</range><source>D1</source><note></note></excerpt>
+  <excerpt><range>32:48-52</range><source>O</source><note>*WWB: Special note: Repeat of Numbers 27:12-14. WWB gives R marking, taken as Other.</note></excerpt>
+  <excerpt><range>33:1</range><source>E</source><note></note></excerpt>
+  <excerpt><range>33:2-29</range><source>O</source><note>*WWB: Special note: Blessing of Moses. WWB gives 33:2-27, probably misprint.  Taken as 33:2-29.</note></excerpt>
+  <excerpt><range>34:1-6</range><source>E</source><note></note></excerpt>
+  <excerpt><range>34:7-9</range><source>P</source><note></note></excerpt>
+  <excerpt><range>34:10-12</range><source>D1</source><note></note></excerpt>
+</excerpts>
+</Marking>

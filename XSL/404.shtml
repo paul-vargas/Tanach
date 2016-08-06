@@ -1,0 +1,28 @@
+<hr/>
+<h2>The file:</h2>
+<center>
+<h1><!--#echo var="REQUEST_URI" --></h1>
+</center>
+<h2>doesn't exist at the <!--#echo var="HTTP_HOST" --> site!</h2>
+<p/>
+<b>Error Details:</b><br/>
+<blockquote>
+Redirect status code: <!--#echo var="REDIRECT_STATUS" --><br/>
+Visitor's browser: <!--#echo var="HTTP_USER_AGENT" --><br/>
+Visitor's IP address: <!--#echo var="REMOTE_ADDR" --><br/>
+Referring URL: <!--#echo var="HTTP_REFERER" --><br/>
+</blockquote>
+<center>
+<h4>Please describe how you arrived here in a mail to <a href="mailto:transcriber@tanach.us"><i>transcriber@tanach.us</i></a> to help fix the problem.</h4>
+Paste the entire contents of this page into the message.
+</center>
+<p/>
+<hr/>
+<center>
+<h2>The Home page is <a href="http://<!--#echo var="HTTP_HOST" -->/Tanach.xml">
+http://<!--#echo var="HTTP_HOST" -->/Tanach.xml</a>.</h2>
+</center>
+<p/>
+<hr/>
+
+

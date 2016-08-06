@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  Copyright C.V.Kimball 2013  -->
+<html>
+<header profile="http://www.w3.org/2005/11/profile" > 
+  <meta http-equiv="X-UA-Compatible" content="IE=8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
+  <link rel="icon" type="image.x-icon" href="http://www.cvkimball.com/Tanach/TanachIcon.ico"/>
+  <title>Servers</title>
+<!-- Force the default font so that the site looks the same on all systems.  -->
+  <style>
+    body {font-family:Times New Roman}
+  </style>
+</header>
+<body style="background-image:url('../Images/Background');margin-right:10pt; 
+              margin-left:10pt; margin-top:10pt; margin-bottom:0">
+<table width="100%">
+  <tr>
+    <td align="left"> 
+      <span style="font-family:Times New Roman;font-weight:bold;font-size:200%">Servers</span>
+      <p/>     
+    </td>
+  </tr>
+</table>
+<p/>
+
+The <b><tt>tanach.us</tt></b> site offers many features and
+imposes the necessary bandwidth, memory, and computing resources on the user's device.
+<p/>
+A faster and lighter way to obtain Hebrew text from the site is with one of the 4 servers.
+These servers produce XML, text, HTML, or ODT formatted content depending on the particular server called.
+Each server requires a valid text citation possibly followed by additional parameters.
+A valid citation syntax for the servers has one of three formats
+defined on the <a href="CitationSyntax.html">Citation syntax</a> page:  
+<ul>
+<li>Chapter:Verse range: <b>b c1:v1 - c2:v2</b></li>
+<li>Single chapter:Verse range: <b>b c:v1 - v2</b></li>
+<li>Complete book: <b>b *</b></li>
+</ul>
+Other formats are invalid for the servers. Some servers allow URL parameters
+to customize the display.
+<p/>
+A simple example of a server call is:
+<blockquote>
+<a target="_blank" href="http://www.tanach.us/Server.html?Deut26:5-9">
+  http://www.tanach.us/Server.html?Deut26:5-9</a>
+</blockquote>
+which shows Deuteronomy 26:5-9 in HTML from the <b>Server.html</b> server. When this URL is entered into a
+browser, the <i>only</i> downloaded content is the HTML file itself; the <b><tt>tanach.us</tt></b>
+site does not need to be loaded at all. Incorrect citations or parameters produce
+meaningful error messages:
+<blockquote>
+<a target="_blank" href="http://www.tanach.us/Server.html">
+  http://www.tanach.us/Server.html</a> .
+</blockquote>
+<p/>
+Click on the links in the "Server" column for more information about a particular server.
+<p/>
+<table align="center" border="1" cellpadding="8pt" width="80%">
+<tr>
+  <th>Server</th>
+  <th>Server alias</th>
+  <th>Format</th>
+  <th>Purpose</th>
+  <th>Parameters</th>
+</tr>
+<tr>
+  <td><b><a href="XMLFiles.html">Server.xml</a></b></td>
+  <td>XMLServer</td>
+  <td><b>xml</b></td>
+  <td> Unicode, UTF-8 text file with XML markup. </td>
+  <td>None</td>
+</tr>
+<tr>
+  <td><b><a href="TextFiles.html">Server.txt</a></b></td>
+  <td>TextServer</td>
+  <td><b>txt</b></td>
+  <td>Unicode, UTF-8 text file without markup. </td>
+  <td>layout, content.</td>
+</tr>
+<tr>
+  <td><b><a href="HTMLFiles.html">Server.html</a></b></td>
+  <td>HTMLServer, Server</td>
+  <td><b>html</b></td>
+  <td>Browser-viewable hypertext (XHTML/CSS) document.</td>
+  <td><a href="HTMLServerParameters.html">Many</a></td>
+</tr>
+<tr>
+  <td><b><a href="ODTFiles.html">Server.odt</a></b></td>
+  <td>ODTServer</td>
+  <td><b>odt</b></td>
+  <td>Open Document (text) standard document.  .
+  <td><a href="ODTServerParameters.html">Many</a></td>
+</td>
+</tr>
+</table>
+<p/>
+<center><h4><i>No server is available for PDF files.</i></h4> </center>
+
+<p/>
+
+<h2>Checking operation of the servers.</h2>
+The status of the servers can be checked by the URL:
+<blockquote>
+<a target="_blank" href="http://www.tanach.us/ServerTest"><b><tt>http://www.tanach.us/ServerTest</tt></b></a>
+</blockquote>
+If the servers are not operational, contact the <a href="Transcriber.html">Transcriber</a> for repairs.
+
+<p/>
+<table width="100%">
+  <tr>
+    <td align="left">      
+      <a  target="_blank" title="License information." href="../License.html" alt="License information">
+        <img src="../Images/CreativeCommons.gif" alt="License information" border="0"/>
+      </a>
+    </td>
+    <td align="right">
+      <b>
+        <a title="Build number.">25.1</a>
+      </b>
+  </tr>
+</table>
+<hr/>
+</body>
+</html>
+<!--========================================================================-->
+<!--========================================================================-->

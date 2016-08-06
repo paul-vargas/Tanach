@@ -1,0 +1,4805 @@
+<HTML>
+<HEAD>
+<TITLE>LC folio index</TITLE>
+</HEAD>
+<BODY bgcolor = "EEEEEE">
+<h1>LC index</h1>
+<h4>This index was derived from indices available at the 
+<a href="http://www.usc.edu/dept/LAS/wsrp/scholarly_site/leningrad_codex/biblical/">Western Semitic Research Project (WSRP).</a></h4>
+<b>Range of text folios:  1v - 463r, 924 pages including 3 pages with only Masoretic notes.</b>
+<p/>The WSRP html files have been concatenated and modified for machine processing at the
+<a href="http://www.tanach.us">Tanach.us</a> site. Every range entry has a starting chapter:verse reference, a dash "-", 
+followed by an ending chapter:verse reference. Every book has its first and last verses given in the "Range" column. Page IDs are duplicated when two books appear on the same page.
+<p/>
+<table cellspacing="2pt" cellpadding="2pt" border="1" align="center" width="70%">
+  <tr>
+    <th width="10%">Page ID</th>
+    <th width="20%">Book</th>
+    <th width="30%">Range</th>
+    <th width="40%">Note</th>
+  </tr>
+  <tr>
+    <td>1v</td>
+    <td>Genesis</td>
+    <td>1:1-1:26a </td>
+  </tr>
+  <tr>
+    <td>2r</td>
+    <td>Genesis</td>
+    <td>1:26b-2:19a </td>
+  </tr>
+  <tr>
+    <td>2v</td>
+    <td>Genesis</td>
+    <td>2:19b-3:18a </td>
+  </tr>
+  <tr>
+    <td>3r</td>
+    <td>Genesis</td>
+    <td>3:18b-4:23a </td>
+  </tr>
+  <tr>
+    <td>3v</td>
+    <td>Genesis</td>
+    <td>4:23b-5:26a </td>
+  </tr>
+  <tr>
+    <td>4r</td>
+    <td>Genesis</td>
+    <td>5:26b-6:19a </td>
+  </tr>
+  <tr>
+    <td>4v</td>
+    <td>Genesis</td>
+    <td>6:19b-7:23a </td>
+  </tr>
+  <tr>
+    <td>5r</td>
+    <td>Genesis</td>
+    <td>7:23b-9:2a </td>
+  </tr>
+  <tr>
+    <td>5v</td>
+    <td>Genesis</td>
+    <td>9:2b-10:3a </td>
+  </tr>
+  <tr>
+    <td>6r</td>
+    <td>Genesis</td>
+    <td>10:3b-11:6a </td>
+  </tr>
+  <tr>
+    <td>6v</td>
+    <td>Genesis</td>
+    <td>11:6b-12:1a </td>
+  </tr>
+  <tr>
+    <td>7r</td>
+    <td>Genesis</td>
+    <td>12:1b-13:7a </td>
+  </tr>
+  <tr>
+    <td>7v</td>
+    <td>Genesis</td>
+    <td>13:7b-14:12a </td>
+  </tr>
+  <tr>
+    <td>8r</td>
+    <td>Genesis</td>
+    <td>14:12b-15:13a </td>
+  </tr>
+  <tr>
+    <td>8v</td>
+    <td>Genesis</td>
+    <td>15:13b-17:4a </td>
+  </tr>
+  <tr>
+    <td>9r</td>
+    <td>Genesis</td>
+    <td>17:4b-18:2a </td>
+  </tr>
+  <tr>
+    <td>9v</td>
+    <td>Genesis</td>
+    <td>18:2b-18:28a </td>
+  </tr>
+  <tr>
+    <td>10r</td>
+    <td>Genesis</td>
+    <td>18:28b-19:16a </td>
+  </tr>
+  <tr>
+    <td>10v</td>
+    <td>Genesis</td>
+    <td>19:16b-20:3a </td>
+  </tr>
+  <tr>
+    <td>11r</td>
+    <td>Genesis</td>
+    <td>20:3b-21:10a </td>
+  </tr>
+  <tr>
+    <td>11v</td>
+    <td>Genesis</td>
+    <td>21:10b-21:33a </td>
+  </tr>
+  <tr>
+    <td>12r</td>
+    <td>Genesis</td>
+    <td>21:33b-22:20a </td>
+  </tr>
+  <tr>
+    <td>12v</td>
+    <td>Genesis</td>
+    <td>22:20b-24:1a </td>
+  </tr>
+  <tr>
+    <td>13r</td>
+    <td>Genesis</td>
+    <td>24:1b-24:24a </td>
+  </tr>
+  <tr>
+    <td>13v</td>
+    <td>Genesis</td>
+    <td>24:24b-24:48a </td>
+  </tr>
+  <tr>
+    <td>14r</td>
+    <td>Genesis</td>
+    <td>24:48b-25:9a </td>
+  </tr>
+  <tr>
+    <td>14v</td>
+    <td>Genesis</td>
+    <td>25:9b-26:1a </td>
+  </tr>
+  <tr>
+    <td>15r</td>
+    <td>Genesis</td>
+    <td>26:1b-26:25a </td>
+  </tr>
+  <tr>
+    <td>15v</td>
+    <td>Genesis</td>
+    <td>26:25b-27:18a </td>
+  </tr>
+  <tr>
+    <td>16r</td>
+    <td>Genesis</td>
+    <td>27:18b-27:42a </td>
+  </tr>
+  <tr>
+    <td>16v</td>
+    <td>Genesis</td>
+    <td>27:42b-28:18a </td>
+  </tr>
+  <tr>
+    <td>17r</td>
+    <td>Genesis</td>
+    <td>28:18b-29:22 </td>
+  </tr>
+  <tr>
+    <td>17v</td>
+    <td>Genesis</td>
+    <td>29:23-30:14 </td>
+  </tr>
+  <tr>
+    <td>18r</td>
+    <td>Genesis</td>
+    <td>30:15-30:38a </td>
+  </tr>
+  <tr>
+    <td>18v</td>
+    <td>Genesis</td>
+    <td>30:38b-31:19a </td>
+  </tr>
+  <tr>
+    <td>19r</td>
+    <td>Genesis</td>
+    <td>31:19b-31:43a </td>
+  </tr>
+  <tr>
+    <td>19v</td>
+    <td>Genesis</td>
+    <td>31:43b-32:13a </td>
+  </tr>
+  <tr>
+    <td>20r</td>
+    <td>Genesis</td>
+    <td>32:13b-33:5a </td>
+  </tr>
+  <tr>
+    <td>20v</td>
+    <td>Genesis</td>
+    <td>33:5b-34:11a </td>
+  </tr>
+  <tr>
+    <td>21r</td>
+    <td>Genesis</td>
+    <td>34:11b-35:4a </td>
+  </tr>
+  <tr>
+    <td>21v</td>
+    <td>Genesis</td>
+    <td>35:4b-36:1a </td>
+  </tr>
+  <tr>
+    <td>22r</td>
+    <td>Genesis</td>
+    <td>36:1b-36:30a </td>
+  </tr>
+  <tr>
+    <td>22v</td>
+    <td>Genesis</td>
+    <td>36:30b-37:15 </td>
+  </tr>
+  <tr>
+    <td>23r</td>
+    <td>Genesis</td>
+    <td>37:16-38:5a </td>
+  </tr>
+  <tr>
+    <td>23v</td>
+    <td>Genesis</td>
+    <td>38:5b-39:1a </td>
+  </tr>
+  <tr>
+    <td>24r</td>
+    <td>Genesis</td>
+    <td>39:1b-40:2a </td>
+  </tr>
+  <tr>
+    <td>24v</td>
+    <td>Genesis</td>
+    <td>40:2b-41:4a </td>
+  </tr>
+  <tr>
+    <td>25r</td>
+    <td>Genesis</td>
+    <td>41:4b-41:30a </td>
+  </tr>
+  <tr>
+    <td>25v</td>
+    <td>Genesis</td>
+    <td>41:30b-41:55a </td>
+  </tr>
+  <tr>
+    <td>26r</td>
+    <td>Genesis</td>
+    <td>41:55b-42:25a </td>
+  </tr>
+  <tr>
+    <td>26v</td>
+    <td>Genesis</td>
+    <td>42:25b-43:9a </td>
+  </tr>
+  <tr>
+    <td>27r</td>
+    <td>Genesis</td>
+    <td>43:9b-43:32a </td>
+  </tr>
+  <tr>
+    <td>27v</td>
+    <td>Genesis</td>
+    <td>43:32b-44:23a </td>
+  </tr>
+  <tr>
+    <td>28r</td>
+    <td>Genesis</td>
+    <td>44:23b-45:16 </td>
+  </tr>
+  <tr>
+    <td>28v</td>
+    <td>Genesis</td>
+    <td>45:17-46:16a </td>
+  </tr>
+  <tr>
+    <td>29r</td>
+    <td>Genesis</td>
+    <td>46:16b-47:7a </td>
+  </tr>
+  <tr>
+    <td>29v</td>
+    <td>Genesis</td>
+    <td>47:7b-47:27a </td>
+  </tr>
+  <tr>
+    <td>30r</td>
+    <td>Genesis</td>
+    <td>47:27b-48:17a </td>
+  </tr>
+  <tr>
+    <td>30v</td>
+    <td>Genesis</td>
+    <td>48:17b-49:26a </td>
+  </tr>
+  <tr>
+    <td>31r</td>
+    <td>Genesis</td>
+    <td>49:26b-50:16a </td>
+  </tr>
+  <tr>
+    <td>31v</td>
+    <td>Genesis</td>
+    <td>50:16b-50:26</td>
+  </tr>
+  <tr>
+    <td>31v</td>
+    <td>Exodus</td>
+    <td>1:1-1:18a </td>
+  </tr>
+  <tr>
+    <td>32r</td>
+    <td>Exodus</td>
+    <td>1:18b-2:22a </td>
+  </tr>
+  <tr>
+    <td>32v</td>
+    <td>Exodus</td>
+    <td>2:22b-3:17a </td>
+  </tr>
+  <tr>
+    <td>33r</td>
+    <td>Exodus</td>
+    <td>3:17b-4:18 </td>
+  </tr>
+  <tr>
+    <td>33v</td>
+    <td>Exodus</td>
+    <td>4:19-5:14a </td>
+  </tr>
+  <tr>
+    <td>34r</td>
+    <td>Exodus</td>
+    <td>5:14b-6:13 </td>
+  </tr>
+  <tr>
+    <td>34v</td>
+    <td>Exodus</td>
+    <td>6:14-7:9a </td>
+  </tr>
+  <tr>
+    <td>35r</td>
+    <td>Exodus</td>
+    <td>7:9b-8:3a </td>
+  </tr>
+  <tr>
+    <td>35v</td>
+    <td>Exodus</td>
+    <td>8:3b-8:25a </td>
+  </tr>
+  <tr>
+    <td>36r</td>
+    <td>Exodus</td>
+    <td>8:25b-9:21a</td>
+  </tr>
+  <tr>
+    <td>36v</td>
+    <td>Exodus</td>
+    <td>9:21b-10:7a </td>
+  </tr>
+  <tr>
+    <td>37r</td>
+    <td>Exodus</td>
+    <td>10:7b-10:29 </td>
+  </tr>
+  <tr>
+    <td>37v</td>
+    <td>Exodus</td>
+    <td>11:1-12:13a </td>
+  </tr>
+  <tr>
+    <td>38r</td>
+    <td>Exodus</td>
+    <td>12:13b-12:34a </td>
+  </tr>
+  <tr>
+    <td>38v</td>
+    <td>Exodus</td>
+    <td>12:34b-13:9a </td>
+  </tr>
+  <tr>
+    <td>39r</td>
+    <td>Exodus</td>
+    <td>13:9b-14:10a </td>
+  </tr>
+  <tr>
+    <td>39v</td>
+    <td>Exodus</td>
+    <td>14:10b-14:28a </td>
+  </tr>
+  <tr>
+    <td>40r</td>
+    <td>Exodus</td>
+    <td>14:28b-15:14a </td>
+  </tr>
+  <tr>
+    <td>40v</td>
+    <td>Exodus</td>
+    <td>15:14b-16:3a </td>
+  </tr>
+  <tr>
+    <td>41r</td>
+    <td>Exodus</td>
+    <td>16:3b-16:24a </td>
+  </tr>
+  <tr>
+    <td>41v</td>
+    <td>Exodus</td>
+    <td>16:24b-17:11a </td>
+  </tr>
+  <tr>
+    <td>42r</td>
+    <td>Exodus</td>
+    <td>17:11b-18:19a </td>
+  </tr>
+  <tr>
+    <td>42v</td>
+    <td>Exodus</td>
+    <td>18:19b-19:13a </td>
+  </tr>
+  <tr>
+    <td>43r</td>
+    <td>Exodus</td>
+    <td>19:13b-20:15a </td>
+  </tr>
+  <tr>
+    <td>43v</td>
+    <td>Exodus</td>
+    <td>20:15b-21:18a </td>
+  </tr>
+  <tr>
+    <td>44r</td>
+    <td>Exodus</td>
+    <td>21:18b-22:6a </td>
+  </tr>
+  <tr>
+    <td>44v</td>
+    <td>Exodus</td>
+    <td>22:6b-23:5a </td>
+  </tr>
+  <tr>
+    <td>45r</td>
+    <td>Exodus</td>
+    <td>23:5b-23:30 </td>
+  </tr>
+  <tr>
+    <td>45v</td>
+    <td>Exodus</td>
+    <td>23:31-25:5a </td>
+  </tr>
+  <tr>
+    <td>46r</td>
+    <td>Exodus</td>
+    <td>25:5b-25:32a </td>
+  </tr>
+  <tr>
+    <td>46v</td>
+    <td>Exodus</td>
+    <td>25:32b-26:14 </td>
+  </tr>
+  <tr>
+    <td>47r</td>
+    <td>Exodus</td>
+    <td>26:15-27:2a </td>
+  </tr>
+  <tr>
+    <td>47v</td>
+    <td>Exodus</td>
+    <td>27:2b-28:5a </td>
+  </tr>
+  <tr>
+    <td>48r</td>
+    <td>Exodus</td>
+    <td>28:5b-28:30a </td>
+  </tr>
+  <tr>
+    <td>48v</td>
+    <td>Exodus</td>
+    <td>28:30b-29:12a </td>
+  </tr>
+  <tr>
+    <td>49r</td>
+    <td>Exodus</td>
+    <td>29:12b-29:34a </td>
+  </tr>
+  <tr>
+    <td>49v</td>
+    <td>Exodus</td>
+    <td>29:34b-30:13a </td>
+  </tr>
+  <tr>
+    <td>50r</td>
+    <td>Exodus</td>
+    <td>30:13b-31:3a </td>
+  </tr>
+  <tr>
+    <td>50v</td>
+    <td>Exodus</td>
+    <td>31:3b-32:8a </td>
+  </tr>
+  <tr>
+    <td>51r</td>
+    <td>Exodus</td>
+    <td>32:8b-32:32a </td>
+  </tr>
+  <tr>
+    <td>51v</td>
+    <td>Exodus</td>
+    <td>32:32b-33:20a </td>
+  </tr>
+  <tr>
+    <td>52r</td>
+    <td>Exodus</td>
+    <td>33:20b-34:22 </td>
+  </tr>
+  <tr>
+    <td>52v</td>
+    <td>Exodus</td>
+    <td>34:23-35:13a </td>
+  </tr>
+  <tr>
+    <td>53r</td>
+    <td>Exodus</td>
+    <td>35:13b-36:2a </td>
+  </tr>
+  <tr>
+    <td>53v</td>
+    <td>Exodus</td>
+    <td>36:2b-36:25a </td>
+  </tr>
+  <tr>
+    <td>54r</td>
+    <td>Exodus</td>
+    <td>36:25b-37:16a </td>
+  </tr>
+  <tr>
+    <td>54v</td>
+    <td>Exodus</td>
+    <td>37:16b-38:11a </td>
+  </tr>
+  <tr>
+    <td>55r</td>
+    <td>Exodus</td>
+    <td>38:11b-39:3a </td>
+  </tr>
+  <tr>
+    <td>55v</td>
+    <td>Exodus</td>
+    <td>39:3b-39:29a </td>
+  </tr>
+  <tr>
+    <td>56r</td>
+    <td>Exodus</td>
+    <td>39:29b-40:15a </td>
+  </tr>
+  <tr>
+    <td>56v</td>
+    <td>Exodus</td>
+    <td>40:15b-40:38</td>
+  </tr>
+  <tr>
+    <td>56v</td>
+    <td>Leviticus</td>
+    <td>1:1-1:2a</td>
+  </tr>
+  <tr>
+    <td>57r</td>
+    <td>Leviticus</td>
+    <td>1:2b-2:9a </td>
+  </tr>
+  <tr>
+    <td>57v</td>
+    <td>Leviticus</td>
+    <td>2:9b-3:17 </td>
+  </tr>
+  <tr>
+    <td>58r</td>
+    <td>Leviticus</td>
+    <td>4:1-4:24a </td>
+  </tr>
+  <tr>
+    <td>58v</td>
+    <td>Leviticus</td>
+    <td>4:24b-5:9a </td>
+  </tr>
+  <tr>
+    <td>59r</td>
+    <td>Leviticus</td>
+    <td>5:9b-6:4a </td>
+  </tr>
+  <tr>
+    <td>59v</td>
+    <td>Leviticus</td>
+    <td>6:4b-7:8a </td>
+  </tr>
+  <tr>
+    <td>60r</td>
+    <td>Leviticus</td>
+    <td>7:8b-7:34a </td>
+  </tr>
+  <tr>
+    <td>60v</td>
+    <td>Leviticus</td>
+    <td>7:34b-8:21a </td>
+  </tr>
+  <tr>
+    <td>61r</td>
+    <td>Leviticus</td>
+    <td>8:21b-9:6a </td>
+  </tr>
+  <tr>
+    <td>61v</td>
+    <td>Leviticus</td>
+    <td>9:6b-10:6a </td>
+  </tr>
+  <tr>
+    <td>62r</td>
+    <td>Leviticus</td>
+    <td>10:6b-11:12a </td>
+  </tr>
+  <tr>
+    <td>62v</td>
+    <td>Leviticus</td>
+    <td>11:12b-11:44a </td>
+  </tr>
+  <tr>
+    <td>63r</td>
+    <td>Leviticus</td>
+    <td>11:44b-13:12 </td>
+  </tr>
+  <tr>
+    <td>63v</td>
+    <td>Leviticus</td>
+    <td>13:13-13:38a </td>
+  </tr>
+  <tr>
+    <td>64r</td>
+    <td>Leviticus</td>
+    <td>13:38b-14:4a </td>
+  </tr>
+  <tr>
+    <td>64v</td>
+    <td>Leviticus</td>
+    <td>14:4b-14:25a </td>
+  </tr>
+  <tr>
+    <td>65r</td>
+    <td>Leviticus</td>
+    <td>14:25b-14:52a </td>
+  </tr>
+  <tr>
+    <td>65v</td>
+    <td>Leviticus</td>
+    <td>14:52b-15:25a </td>
+  </tr>
+  <tr>
+    <td>66r</td>
+    <td>Leviticus</td>
+    <td>15:25b-16:16a </td>
+  </tr>
+  <tr>
+    <td>66v</td>
+    <td>Leviticus</td>
+    <td>16:16b-17:3a </td>
+  </tr>
+  <tr>
+    <td>67r</td>
+    <td>Leviticus</td>
+    <td>17:3b-18:10a </td>
+  </tr>
+  <tr>
+    <td>67v</td>
+    <td>Leviticus</td>
+    <td>18:10b-19:10 </td>
+  </tr>
+  <tr>
+    <td>68r</td>
+    <td>Leviticus</td>
+    <td>19:11-20:2a </td>
+  </tr>
+  <tr>
+    <td>68v</td>
+    <td>Leviticus</td>
+    <td>20:2b-20:25a </td>
+  </tr>
+  <tr>
+    <td>69r</td>
+    <td>Leviticus</td>
+    <td>20:25b-22:2a </td>
+  </tr>
+  <tr>
+    <td>69v</td>
+    <td>Leviticus</td>
+    <td>22:2b-22:29a </td>
+  </tr>
+  <tr>
+    <td>70r</td>
+    <td>Leviticus</td>
+    <td>22:29b-23:21a </td>
+  </tr>
+  <tr>
+    <td>70v</td>
+    <td>Leviticus</td>
+    <td>23:21b-23:44 </td>
+  </tr>
+  <tr>
+    <td>71r</td>
+    <td>Leviticus</td>
+    <td>24:1-25:6a </td>
+  </tr>
+  <tr>
+    <td>71v</td>
+    <td>Leviticus</td>
+    <td>25:6b-25:33a </td>
+  </tr>
+  <tr>
+    <td>72r</td>
+    <td>Leviticus</td>
+    <td>25:33b-26:7 </td>
+  </tr>
+  <tr>
+    <td>72v</td>
+    <td>Leviticus</td>
+    <td>26:8-26:34a </td>
+  </tr>
+  <tr>
+    <td>73r</td>
+    <td>Leviticus</td>
+    <td>26:34b-27:11a </td>
+  </tr>
+  <tr>
+    <td>73v</td>
+    <td>Leviticus</td>
+    <td>27:11b-27:34</td>
+  </tr>
+  <tr>
+    <td>73v</td>
+    <td>Numbers</td>
+    <td>1:1-1:2a</td>
+  </tr>
+  <tr>
+    <td>74r</td>
+    <td>Numbers</td>
+    <td>1:2b-1:32a </td>
+  </tr>
+  <tr>
+    <td>74v</td>
+    <td>Numbers</td>
+    <td>1:32b-2:4a </td>
+  </tr>
+  <tr>
+    <td>75r</td>
+    <td>Numbers</td>
+    <td>2:4b-3:1a </td>
+  </tr>
+  <tr>
+    <td>75v</td>
+    <td>Numbers</td>
+    <td>3:1b-3:32a </td>
+  </tr>
+  <tr>
+    <td>76r</td>
+    <td>Numbers</td>
+    <td>3:32b-4:8a </td>
+  </tr>
+  <tr>
+    <td>76v</td>
+    <td>Numbers</td>
+    <td>4:8b-4:32a </td>
+  </tr>
+  <tr>
+    <td>77r</td>
+    <td>Numbers</td>
+    <td>4:32b-5:9a </td>
+  </tr>
+  <tr>
+    <td>77v</td>
+    <td>Numbers</td>
+    <td>5:9b-6:2a </td>
+  </tr>
+  <tr>
+    <td>78r</td>
+    <td>Numbers</td>
+    <td>6:2b-7:3a </td>
+  </tr>
+  <tr>
+    <td>78v</td>
+    <td>Numbers</td>
+    <td>7:3b-7:31a</td>
+  </tr>
+  <tr>
+    <td>79r</td>
+    <td>Numbers</td>
+    <td>7:31b-7:60a </td>
+  </tr>
+  <tr>
+    <td>79v</td>
+    <td>Numbers</td>
+    <td>7:60b-7:86a </td>
+  </tr>
+  <tr>
+    <td>80r</td>
+    <td>Numbers</td>
+    <td>7:86b-8:20a </td>
+  </tr>
+  <tr>
+    <td>80v</td>
+    <td>Numbers</td>
+    <td>8:20b-9:17 </td>
+  </tr>
+  <tr>
+    <td>81r</td>
+    <td>Numbers</td>
+    <td>9:18-10:22 </td>
+  </tr>
+  <tr>
+    <td>81v</td>
+    <td>Numbers</td>
+    <td>10:23-11:13a </td>
+  </tr>
+  <tr>
+    <td>82r</td>
+    <td>Numbers</td>
+    <td>11:13b-11:33a </td>
+  </tr>
+  <tr>
+    <td>82v</td>
+    <td>Numbers</td>
+    <td>11:33b-13:16a </td>
+  </tr>
+  <tr>
+    <td>83r</td>
+    <td>Numbers</td>
+    <td>13:16b-14:7a </td>
+  </tr>
+  <tr>
+    <td>83v</td>
+    <td>Numbers</td>
+    <td>14:7b-14:30 </td>
+  </tr>
+  <tr>
+    <td>84r</td>
+    <td>Numbers</td>
+    <td>14:31-15:12a </td>
+  </tr>
+  <tr>
+    <td>84v</td>
+    <td>Numbers</td>
+    <td>15:12b-15:38a </td>
+  </tr>
+  <tr>
+    <td>85r</td>
+    <td>Numbers</td>
+    <td>15:38b-16:19 </td>
+  </tr>
+  <tr>
+    <td>85v</td>
+    <td>Numbers</td>
+    <td>16:20-17:8 </td>
+  </tr>
+  <tr>
+    <td>86r</td>
+    <td>Numbers</td>
+    <td>17:9-18:4 </td>
+  </tr>
+  <tr>
+    <td>86v</td>
+    <td>Numbers</td>
+    <td>18:5-18:24a </td>
+  </tr>
+  <tr>
+    <td>87r</td>
+    <td>Numbers</td>
+    <td>18:24b-19:14a </td>
+  </tr>
+  <tr>
+    <td>87v</td>
+    <td>Numbers</td>
+    <td>19:14b-20:14a </td>
+  </tr>
+  <tr>
+    <td>88r</td>
+    <td>Numbers</td>
+    <td>20:14b-21:8a </td>
+  </tr>
+  <tr>
+    <td>88v</td>
+    <td>Numbers</td>
+    <td>21:8b-21:34a </td>
+  </tr>
+  <tr>
+    <td>89r</td>
+    <td>Numbers</td>
+    <td>21:34b-22:22a </td>
+  </tr>
+  <tr>
+    <td>89v</td>
+    <td>Numbers</td>
+    <td>22:22b-23:4a </td>
+  </tr>
+  <tr>
+    <td>90r</td>
+    <td>Numbers</td>
+    <td>23:4b-24:2a </td>
+  </tr>
+  <tr>
+    <td>90v</td>
+    <td>Numbers</td>
+    <td>24:2b-25:6a</td>
+  </tr>
+  <tr>
+    <td>91r</td>
+    <td>Numbers</td>
+    <td>25:6b-26:13a </td>
+  </tr>
+  <tr>
+    <td>91v</td>
+    <td>Numbers</td>
+    <td>26:13b-26:42a </td>
+  </tr>
+  <tr>
+    <td>92r</td>
+    <td>Numbers</td>
+    <td>26:42b-27:2 </td>
+  </tr>
+  <tr>
+    <td>92v</td>
+    <td>Numbers</td>
+    <td>27:3-28:4a </td>
+  </tr>
+  <tr>
+    <td>93r</td>
+    <td>Numbers</td>
+    <td>28:4b-28:30 </td>
+  </tr>
+  <tr>
+    <td>93v</td>
+    <td>Numbers</td>
+    <td>28:31-29:25a </td>
+  </tr>
+  <tr>
+    <td>94r</td>
+    <td>Numbers</td>
+    <td>29:25b-30:16a </td>
+  </tr>
+  <tr>
+    <td>94v</td>
+    <td>Numbers</td>
+    <td>30:16b-31:28 </td>
+  </tr>
+  <tr>
+    <td>95r</td>
+    <td>Numbers</td>
+    <td>31:29-31:54 </td>
+  </tr>
+  <tr>
+    <td>95v</td>
+    <td>Numbers</td>
+    <td>32:1-32:26a </td>
+  </tr>
+  <tr>
+    <td>96r</td>
+    <td>Numbers</td>
+    <td>32:26b-33:11a </td>
+  </tr>
+  <tr>
+    <td>96v</td>
+    <td>Numbers</td>
+    <td>33:11b-33:54a </td>
+  </tr>
+  <tr>
+    <td>97r</td>
+    <td>Numbers</td>
+    <td>33:54b-34:29 </td>
+  </tr>
+  <tr>
+    <td>97v</td>
+    <td>Numbers</td>
+    <td>35:1-35:25a </td>
+  </tr>
+  <tr>
+    <td>98r</td>
+    <td>Numbers</td>
+    <td>35:25b-36:13a </td>
+    <td>Numbers 36:13b is on folio 98v</td>
+  </tr>
+  <tr>
+    <td>98v</td>
+    <td>Numbers</td>
+    <td>36:13b-36:13</td>
+  </tr>
+  <tr>
+    <td>98v</td>
+    <td>Deuteronomy</td>
+    <td>1:1-1:21a </td>
+  </tr>
+  <tr>
+    <td>99r</td>
+    <td>Deuteronomy</td>
+    <td>1:21b-1:44a </td>
+  </tr>
+  <tr>
+    <td>99v</td>
+    <td>Deuteronomy</td>
+    <td>1:44b-2:23a </td>
+  </tr>
+  <tr>
+    <td>100r</td>
+    <td>Deuteronomy</td>
+    <td>2:23b-3:8a </td>
+  </tr>
+  <tr>
+    <td>100v</td>
+    <td>Deuteronomy</td>
+    <td>3:8b-3:27a </td>
+  </tr>
+  <tr>
+    <td>101r</td>
+    <td>Deuteronomy</td>
+    <td>3:27b-4:17a </td>
+  </tr>
+  <tr>
+    <td>101v</td>
+    <td>Deuteronomy</td>
+    <td>4:17b-4:35a </td>
+  </tr>
+  <tr>
+    <td>102r</td>
+    <td>Deuteronomy</td>
+    <td>4:35b-5:8 </td>
+  </tr>
+  <tr>
+    <td>102v</td>
+    <td>Deuteronomy</td>
+    <td>5:9-5:31a </td>
+  </tr>
+  <tr>
+    <td>103r</td>
+    <td>Deuteronomy</td>
+    <td>5:31b-6:22a </td>
+  </tr>
+  <tr>
+    <td>103v</td>
+    <td>Deuteronomy</td>
+    <td>6:22b-7:17a </td>
+  </tr>
+  <tr>
+    <td>104r</td>
+    <td>Deuteronomy</td>
+    <td>7:17b-8:14a </td>
+  </tr>
+  <tr>
+    <td>104v</td>
+    <td>Deuteronomy</td>
+    <td>8:14b-9:11a </td>
+  </tr>
+  <tr>
+    <td>105r</td>
+    <td>Deuteronomy</td>
+    <td>9:11b-10:2a </td>
+  </tr>
+  <tr>
+    <td>105v</td>
+    <td>Deuteronomy</td>
+    <td>10:2b-11:2a </td>
+  </tr>
+  <tr>
+    <td>106r</td>
+    <td>Deuteronomy</td>
+    <td>11:2b-11:22a </td>
+  </tr>
+  <tr>
+    <td>106v</td>
+    <td>Deuteronomy</td>
+    <td>11:22b-12:10a </td>
+  </tr>
+  <tr>
+    <td>107r</td>
+    <td>Deuteronomy</td>
+    <td>12:10b-12:29a </td>
+  </tr>
+  <tr>
+    <td>107v</td>
+    <td>Deuteronomy</td>
+    <td>12:29b-13:17a </td>
+  </tr>
+  <tr>
+    <td>108r</td>
+    <td>Deuteronomy</td>
+    <td>13:17b-14:25a </td>
+  </tr>
+  <tr>
+    <td>108v</td>
+    <td>Deuteronomy</td>
+    <td>14:25b-15:17a </td>
+  </tr>
+  <tr>
+    <td>109r</td>
+    <td>Deuteronomy</td>
+    <td>15:17b-16:15a </td>
+  </tr>
+  <tr>
+    <td>109v</td>
+    <td>Deuteronomy</td>
+    <td>16:15b-17:13a </td>
+  </tr>
+  <tr>
+    <td>110r</td>
+    <td>Deuteronomy</td>
+    <td>17:13b-18:16a </td>
+  </tr>
+  <tr>
+    <td>110v</td>
+    <td>Deuteronomy</td>
+    <td>18:16b-19:13 </td>
+  </tr>
+  <tr>
+    <td>111r</td>
+    <td>Deuteronomy</td>
+    <td>19:14-20:17a </td>
+  </tr>
+  <tr>
+    <td>111v</td>
+    <td>Deuteronomy</td>
+    <td>20:17b-21:19a </td>
+  </tr>
+  <tr>
+    <td>112r</td>
+    <td>Deuteronomy</td>
+    <td>21:19b-22:19a </td>
+  </tr>
+  <tr>
+    <td>112v</td>
+    <td>Deuteronomy</td>
+    <td>22:19b-23:13a</td>
+  </tr>
+  <tr>
+    <td>113r</td>
+    <td>Deuteronomy</td>
+    <td>23:13b-24:10a </td>
+  </tr>
+  <tr>
+    <td>113v</td>
+    <td>Deuteronomy</td>
+    <td>24:10b-25:12 </td>
+  </tr>
+  <tr>
+    <td>114r</td>
+    <td>Deuteronomy</td>
+    <td>25:13-26:15a </td>
+  </tr>
+  <tr>
+    <td>114v</td>
+    <td>Deuteronomy</td>
+    <td>26:15b-27:17a </td>
+  </tr>
+  <tr>
+    <td>115r</td>
+    <td>Deuteronomy</td>
+    <td>27:17b-28:17 </td>
+  </tr>
+  <tr>
+    <td>115v</td>
+    <td>Deuteronomy</td>
+    <td>28:18-28:45a </td>
+  </tr>
+  <tr>
+    <td>116r</td>
+    <td>Deuteronomy</td>
+    <td>28:45b-28:66a </td>
+  </tr>
+  <tr>
+    <td>116v</td>
+    <td>Deuteronomy</td>
+    <td>28:66b-29:19a </td>
+  </tr>
+  <tr>
+    <td>117r</td>
+    <td>Deuteronomy</td>
+    <td>29:19b-30:10a </td>
+  </tr>
+  <tr>
+    <td>117v</td>
+    <td>Deuteronomy</td>
+    <td>30:10b-31:11a </td>
+  </tr>
+  <tr>
+    <td>118r</td>
+    <td>Deuteronomy</td>
+    <td>31:11b-31:28a </td>
+  </tr>
+  <tr>
+    <td>118v</td>
+    <td>Deuteronomy</td>
+    <td>31:28b-32:23a </td>
+  </tr>
+  <tr>
+    <td>119r</td>
+    <td>Deuteronomy</td>
+    <td>32:23b-32:52a </td>
+  </tr>
+  <tr>
+    <td>119v</td>
+    <td>Deuteronomy</td>
+    <td>32:52b-33:29 </td>
+  </tr>
+  <tr>
+    <td>120r</td>
+    <td>Deuteronomy </td>
+    <td>34:1-34:12</td>
+    <td >Masoretic lists: Number of verses and the sections in the Torah  </td>
+  </tr>
+  <tr>
+   <td>120v</td>
+    <td colspan="3">Masoretic lists: Number of verses and the sections in the Torah  </td>
+  </tr>
+ <tr>
+   <td>121r</td>
+    <td colspan="3">Masoretic lists: Number of verses and the sections in the Torah  </td>
+  </tr>
+  <tr>
+    <td>121v</td>
+    <td>Joshua</td>
+    <td>1:1-2:1a </td>
+  </tr>
+  <tr>
+    <td>122r</td>
+    <td>Joshua</td>
+    <td>2:1b-2:22a </td>
+  </tr>
+  <tr>
+    <td>122v</td>
+    <td>Joshua</td>
+    <td>2:22b-4:1a </td>
+  </tr>
+  <tr>
+    <td>123r</td>
+    <td>Joshua</td>
+    <td>4:1b-4:21a </td>
+  </tr>
+  <tr>
+    <td>123v</td>
+    <td>Joshua</td>
+    <td>4:21b-5:15a </td>
+  </tr>
+  <tr>
+    <td>124r</td>
+    <td>Joshua</td>
+    <td>5:15b-6:20a </td>
+  </tr>
+  <tr>
+    <td>124v</td>
+    <td>Joshua</td>
+    <td>6:20b-7:12a </td>
+  </tr>
+  <tr>
+    <td>125r</td>
+    <td>Joshua</td>
+    <td>7:12b-8:4a </td>
+  </tr>
+  <tr>
+    <td>125v</td>
+    <td>Joshua</td>
+    <td>8:4b-8:26a </td>
+  </tr>
+  <tr>
+    <td>126r</td>
+    <td>Joshua</td>
+    <td>8:26b-9:11a </td>
+  </tr>
+  <tr>
+    <td>126v</td>
+    <td>Joshua</td>
+    <td>9:11b-10:5a </td>
+  </tr>
+  <tr>
+    <td>127r</td>
+    <td>Joshua</td>
+    <td>10:5b-10:25a </td>
+  </tr>
+  <tr>
+    <td>127v</td>
+    <td>Joshua</td>
+    <td>10:25b-11:2a</td>
+  </tr>
+  <tr>
+    <td>128r</td>
+    <td>Joshua</td>
+    <td>11:2b-11:22a </td>
+  </tr>
+  <tr>
+    <td>128v</td>
+    <td>Joshua</td>
+    <td>11:22b-13:3a </td>
+  </tr>
+  <tr>
+    <td>129r</td>
+    <td>Joshua</td>
+    <td>13:3b-13:29a </td>
+  </tr>
+  <tr>
+    <td>129v</td>
+    <td>Joshua</td>
+    <td>13:29b-15:2 </td>
+  </tr>
+  <tr>
+    <td>130r</td>
+    <td>Joshua</td>
+    <td>15:3-15:35a </td>
+  </tr>
+  <tr>
+    <td>130v</td>
+    <td>Joshua</td>
+    <td>15:35b-17:2a </td>
+  </tr>
+  <tr>
+    <td>131r</td>
+    <td>Joshua</td>
+    <td>17:2b-18:6a </td>
+  </tr>
+  <tr>
+    <td>131v</td>
+    <td>Joshua</td>
+    <td>18:6b-19:6a </td>
+  </tr>
+  <tr>
+    <td>132r</td>
+    <td>Joshua</td>
+    <td>19:6b-19:42a </td>
+  </tr>
+  <tr>
+    <td>132v</td>
+    <td>Joshua</td>
+    <td>19:42b-21:5a </td>
+  </tr>
+  <tr>
+    <td>133r</td>
+    <td>Joshua</td>
+    <td>21:5b-21:32a </td>
+  </tr>
+  <tr>
+    <td>133v</td>
+    <td>Joshua</td>
+    <td>21:32b-22:10a </td>
+  </tr>
+  <tr>
+    <td>134r</td>
+    <td>Joshua</td>
+    <td>22:10b-22:29a </td>
+  </tr>
+  <tr>
+    <td>134v</td>
+    <td>Joshua</td>
+    <td>22:29b-23:14a </td>
+  </tr>
+  <tr>
+    <td>135r</td>
+    <td>Joshua</td>
+    <td>23:14b-24:15a </td>
+  </tr>
+  <tr>
+    <td>135v</td>
+    <td>Joshua</td>
+    <td>24:15b-24:33 </td>
+  </tr>
+  <tr>
+    <td>136r</td>
+    <td>Judges</td>
+    <td>1:1-1:25a </td>
+  </tr>
+  <tr>
+    <td>136v</td>
+    <td>Judges</td>
+    <td>1:25b-2:11a </td>
+  </tr>
+  <tr>
+    <td>137r</td>
+    <td>Judges</td>
+    <td>2:11b-3:10a </td>
+  </tr>
+  <tr>
+    <td>137v</td>
+    <td>Judges</td>
+    <td>3:10b-4:2a </td>
+  </tr>
+  <tr>
+    <td>138r</td>
+    <td>Judges</td>
+    <td>4:2b-4:22a </td>
+  </tr>
+  <tr>
+    <td>138v</td>
+    <td>Judges</td>
+    <td>4:22b-5:13a </td>
+  </tr>
+  <tr>
+    <td>139r</td>
+    <td>Judges</td>
+    <td>5:13b-5:28a </td>
+  </tr>
+  <tr>
+    <td>139v</td>
+    <td>Judges</td>
+    <td>5:28b-6:20a </td>
+  </tr>
+  <tr>
+    <td>140r</td>
+    <td>Judges</td>
+    <td>6:20b-7:1a </td>
+  </tr>
+  <tr>
+    <td>140v</td>
+    <td>Judges</td>
+    <td>7:1b-7:18a </td>
+  </tr>
+  <tr>
+    <td>141r</td>
+    <td>Judges</td>
+    <td>7:18b-8:13a </td>
+  </tr>
+  <tr>
+    <td>141v</td>
+    <td>Judges</td>
+    <td>8:13b-9:2a </td>
+  </tr>
+  <tr>
+    <td>142r</td>
+    <td>Judges</td>
+    <td>9:2b-9:25 </td>
+  </tr>
+  <tr>
+    <td>142v</td>
+    <td>Judges</td>
+    <td>9:26-9:49a </td>
+  </tr>
+  <tr>
+    <td>143r</td>
+    <td>Judges</td>
+    <td>9:49b-10:15a </td>
+  </tr>
+  <tr>
+    <td>143v</td>
+    <td>Judges</td>
+    <td>10:15b-11:19a </td>
+  </tr>
+  <tr>
+    <td>144r</td>
+    <td>Judges</td>
+    <td>11:19b-11:40 </td>
+  </tr>
+  <tr>
+    <td>144v</td>
+    <td>Judges</td>
+    <td>12:1-13:7a </td>
+  </tr>
+  <tr>
+    <td>145r</td>
+    <td>Judges</td>
+    <td>13:7b-14:6a </td>
+  </tr>
+  <tr>
+    <td>145v</td>
+    <td>Judges</td>
+    <td>14:6b-15:8a </td>
+  </tr>
+  <tr>
+    <td>146r</td>
+    <td>Judges</td>
+    <td>15:8b-16:10a </td>
+  </tr>
+  <tr>
+    <td>146v</td>
+    <td>Judges</td>
+    <td>16:10b-16:30a </td>
+  </tr>
+  <tr>
+    <td>147r</td>
+    <td>Judges</td>
+    <td>16:30b-18:7a </td>
+  </tr>
+  <tr>
+    <td>147v</td>
+    <td>Judges</td>
+    <td>18:7b-18:29a </td>
+  </tr>
+  <tr>
+    <td>148r</td>
+    <td>Judges</td>
+    <td>18:29b-19:20a </td>
+  </tr>
+  <tr>
+    <td>148v</td>
+    <td>Judges</td>
+    <td>19:20b-20:11a </td>
+  </tr>
+  <tr>
+    <td>149r</td>
+    <td>Judges</td>
+    <td>20:11b-20:34a </td>
+  </tr>
+  <tr>
+    <td>149v</td>
+    <td>Judges</td>
+    <td>20:34b-21:9a </td>
+  </tr>
+  <tr>
+    <td>150r</td>
+    <td>Judges</td>
+    <td>21:9b-21:25</td>
+  </tr>
+  <tr>
+    <td>150r</td>
+    <td>1 Samuel</td>
+    <td>1:1-1:7a </td>
+  </tr>
+  <tr>
+    <td>150v</td>
+    <td>1 Samuel</td>
+    <td>1:7b-2:5a </td>
+  </tr>
+  <tr>
+    <td>151r</td>
+    <td>1 Samuel</td>
+    <td>2:5b-2:30a </td>
+  </tr>
+  <tr>
+    <td>151v</td>
+    <td>1 Samuel</td>
+    <td>2:30b-3:19a </td>
+  </tr>
+  <tr>
+    <td>152r</td>
+    <td>1 Samuel</td>
+    <td>3:19b-4:20a </td>
+  </tr>
+  <tr>
+    <td>152v</td>
+    <td>1 Samuel</td>
+    <td>4:20b-6:7a </td>
+  </tr>
+  <tr>
+    <td>153r</td>
+    <td>1 Samuel</td>
+    <td>6:7b-7:4a </td>
+  </tr>
+  <tr>
+    <td>153v</td>
+    <td>1 Samuel</td>
+    <td>7:4b-8:11a </td>
+  </tr>
+  <tr>
+    <td>154r</td>
+    <td>1 Samuel</td>
+    <td>8:11b-9:13a </td>
+  </tr>
+  <tr>
+    <td>154v</td>
+    <td>1 Samuel</td>
+    <td>9:13b-10:6a </td>
+  </tr>
+  <tr>
+    <td>155r</td>
+    <td>1 Samuel</td>
+    <td>10:6b-11:3a </td>
+  </tr>
+  <tr>
+    <td>155v</td>
+    <td>1 Samuel</td>
+    <td>11:3b-12:9a </td>
+  </tr>
+  <tr>
+    <td>156r</td>
+    <td>1 Samuel</td>
+    <td>12:9b-13:5a </td>
+  </tr>
+  <tr>
+    <td>156v</td>
+    <td>1 Samuel</td>
+    <td>13:5b-14:5a </td>
+  </tr>
+  <tr>
+    <td>157r</td>
+    <td>1 Samuel</td>
+    <td>14:5b-14:28a </td>
+  </tr>
+  <tr>
+    <td>157v</td>
+    <td>1 Samuel</td>
+    <td>14:28b-14:51a </td>
+  </tr>
+  <tr>
+    <td>158r</td>
+    <td>1 Samuel</td>
+    <td>14:51b-15:23a </td>
+  </tr>
+  <tr>
+    <td>158v</td>
+    <td>1 Samuel</td>
+    <td>15:23b-16:11a </td>
+  </tr>
+  <tr>
+    <td>159r</td>
+    <td>1 Samuel</td>
+    <td>16:11b-17:11a </td>
+  </tr>
+  <tr>
+    <td>159v</td>
+    <td>1 Samuel</td>
+    <td>17:11b-17:34a </td>
+  </tr>
+  <tr>
+    <td>160r</td>
+    <td>1 Samuel</td>
+    <td>17:34b-17:55 </td>
+  </tr>
+  <tr>
+    <td>160v</td>
+    <td>1 Samuel</td>
+    <td>17:56-18:23a </td>
+  </tr>
+  <tr>
+    <td>161r</td>
+    <td>1 Samuel</td>
+    <td>18:23b-19:14a </td>
+  </tr>
+  <tr>
+    <td>161v</td>
+    <td>1 Samuel</td>
+    <td>19:14b-20:12a </td>
+  </tr>
+  <tr>
+    <td>162r</td>
+    <td>1 Samuel</td>
+    <td>20:12b-20:35a </td>
+  </tr>
+  <tr>
+    <td>162v</td>
+    <td>1 Samuel</td>
+    <td>20:35b-21:14a </td>
+  </tr>
+  <tr>
+    <td>163r</td>
+    <td>1 Samuel</td>
+    <td>21:14b-22:19a </td>
+  </tr>
+  <tr>
+    <td>163v</td>
+    <td>1 Samuel</td>
+    <td>22:19b-23:18a </td>
+  </tr>
+  <tr>
+    <td>164r</td>
+    <td>1 Samuel</td>
+    <td>23:18b-24:11a </td>
+  </tr>
+  <tr>
+    <td>164v</td>
+    <td>1 Samuel</td>
+    <td>24:11b-25:11a </td>
+  </tr>
+  <tr>
+    <td>165r</td>
+    <td>1 Samuel</td>
+    <td>25:11b-25:32a </td>
+  </tr>
+  <tr>
+    <td>165v</td>
+    <td>1 Samuel</td>
+    <td>25:32b-26:9a </td>
+  </tr>
+  <tr>
+    <td>166r</td>
+    <td>1 Samuel</td>
+    <td>26:9b-27:4a </td>
+  </tr>
+  <tr>
+    <td>166v</td>
+    <td>1 Samuel</td>
+    <td>27:4b-28:13a </td>
+  </tr>
+  <tr>
+    <td>167r</td>
+    <td>1 Samuel</td>
+    <td>28:13b-29:6a </td>
+  </tr>
+  <tr>
+    <td>167v</td>
+    <td>1 Samuel</td>
+    <td>29:6b-30:17a </td>
+  </tr>
+  <tr>
+    <td>168r</td>
+    <td>1 Samuel</td>
+    <td>30:17b-31:7a </td>
+  </tr>
+  <tr>
+    <td>168v</td>
+    <td>1 Samuel</td>
+    <td> 31:7b-31:13</td>
+    <td>no break in text</td>
+  </tr>
+  <tr>
+    <td>168v</td>
+    <td>2 Samuel</td>
+    <td>1:1-1:20a</td>
+    <td>no break in text</td>
+  </tr>
+  <tr>
+    <td>169r</td>
+    <td>2 Samuel</td>
+    <td>1:20b-2:17a </td>
+  </tr>
+  <tr>
+    <td>169v</td>
+    <td>2 Samuel</td>
+    <td>2:17b-3:7a </td>
+  </tr>
+  <tr>
+    <td>170r</td>
+    <td>2 Samuel</td>
+    <td>3:7b-3:28a </td>
+  </tr>
+  <tr>
+    <td>170v</td>
+    <td>2 Samuel</td>
+    <td>3:28b-4:9a </td>
+  </tr>
+  <tr>
+    <td>171r</td>
+    <td>2 Samuel</td>
+    <td>4:9b-5:21a </td>
+  </tr>
+  <tr>
+    <td>171v</td>
+    <td>2 Samuel</td>
+    <td>5:21b-6:19a </td>
+  </tr>
+  <tr>
+    <td>172r</td>
+    <td>2 Samuel</td>
+    <td>6:19b-7:20a </td>
+  </tr>
+  <tr>
+    <td>172v</td>
+    <td>2 Samuel</td>
+    <td>7:20b-8:14a </td>
+  </tr>
+  <tr>
+    <td>173r</td>
+    <td>2 Samuel</td>
+    <td>8:14b-10:6a </td>
+  </tr>
+  <tr>
+    <td>173v</td>
+    <td>2 Samuel</td>
+    <td>10:6b-11:10a </td>
+  </tr>
+  <tr>
+    <td>174r</td>
+    <td>2 Samuel</td>
+    <td>11:10b-12:4 </td>
+  </tr>
+  <tr>
+    <td>174v</td>
+    <td>2 Samuel</td>
+    <td>12:5-12:27a </td>
+  </tr>
+  <tr>
+    <td>175r</td>
+    <td>2 Samuel</td>
+    <td>12:27b-13:18a </td>
+  </tr>
+  <tr>
+    <td>175v</td>
+    <td>2 Samuel</td>
+    <td>13:18b-14:1 </td>
+  </tr>
+  <tr>
+    <td>176r</td>
+    <td>2 Samuel</td>
+    <td>14:2-14:20 </td>
+  </tr>
+  <tr>
+    <td>176v</td>
+    <td>2 Samuel</td>
+    <td>14:21-15:7a </td>
+  </tr>
+  <tr>
+    <td>177r</td>
+    <td>2 Samuel</td>
+    <td>15:7b-15:30a </td>
+  </tr>
+  <tr>
+    <td>177v</td>
+    <td>2 Samuel</td>
+    <td>15:30b-16:14a </td>
+  </tr>
+  <tr>
+    <td>178r</td>
+    <td>2 Samuel</td>
+    <td>16:14b-17:13 </td>
+  </tr>
+  <tr>
+    <td>178v</td>
+    <td>2 Samuel</td>
+    <td>17:14-18:3a </td>
+  </tr>
+  <tr>
+    <td>179r</td>
+    <td>2 Samuel</td>
+    <td>18:3b-18:25 </td>
+  </tr>
+  <tr>
+    <td>179v</td>
+    <td>2 Samuel</td>
+    <td>18:26-19:12a </td>
+  </tr>
+  <tr>
+    <td>180r</td>
+    <td>2 Samuel</td>
+    <td>19:12b-19:35a </td>
+  </tr>
+  <tr>
+    <td>180v</td>
+    <td>2 Samuel</td>
+    <td>19:35b-20:9 </td>
+  </tr>
+  <tr>
+    <td>181r</td>
+    <td>2 Samuel</td>
+    <td>20:10-21:4a </td>
+  </tr>
+  <tr>
+    <td>181v</td>
+    <td>2 Samuel</td>
+    <td>21:4b-21:22 </td>
+  </tr>
+  <tr>
+    <td>182r</td>
+    <td>2 Samuel</td>
+    <td>22:1-22:24 </td>
+  </tr>
+  <tr>
+    <td>182v</td>
+    <td>2 Samuel</td>
+    <td>22:25-23:3a </td>
+  </tr>
+  <tr>
+    <td>183r</td>
+    <td>2 Samuel</td>
+    <td>23:3b-23:29a </td>
+  </tr>
+  <tr>
+    <td>183v</td>
+    <td>2 Samuel</td>
+    <td>23:29b-24:16a </td>
+  </tr>
+  <tr>
+    <td>184r</td>
+    <td>2 Samuel</td>
+    <td>24:16b-24:25</td>
+  </tr>
+  <tr>
+    <td>184r</td>
+    <td>1 Kings</td>
+    <td>1:1-1:12a</td>
+  </tr>
+  <tr>
+    <td>184v</td>
+    <td>1 Kings</td>
+    <td>1:12b-1:37a</td>
+  </tr>
+  <tr>
+    <td>185r</td>
+    <td>1 Kings</td>
+    <td>1:37b-2:5a</td>
+  </tr>
+  <tr>
+    <td>185v</td>
+    <td>1 Kings</td>
+    <td>2:5b-2:27</td>
+  </tr>
+  <tr>
+    <td>186r</td>
+    <td>1 Kings</td>
+    <td>2:28-3:2a</td>
+  </tr>
+  <tr>
+    <td>186v</td>
+    <td>1 Kings</td>
+    <td>3:2b-3:24</td>
+  </tr>
+  <tr>
+    <td>187r</td>
+    <td>1 Kings</td>
+    <td>3:25-5:4a</td>
+  </tr>
+  <tr>
+    <td>187v</td>
+    <td>1 Kings</td>
+    <td>5:4b-5:25a</td>
+  </tr>
+  <tr>
+    <td>188r</td>
+    <td>1 Kings</td>
+    <td>5:25b-6:16a</td>
+  </tr>
+  <tr>
+    <td>188v</td>
+    <td>1 Kings</td>
+    <td>6:16b-7:6a</td>
+  </tr>
+  <tr>
+    <td>189r</td>
+    <td>1 Kings</td>
+    <td>7:6b-7:27a</td>
+  </tr>
+  <tr>
+    <td>189v</td>
+    <td>1 Kings</td>
+    <td>7:27b-7:49a</td>
+  </tr>
+  <tr>
+    <td>190r</td>
+    <td>1 Kings</td>
+    <td>7:49b-8:21a</td>
+  </tr>
+  <tr>
+    <td>190v</td>
+    <td>1 Kings</td>
+    <td>8:21b-8:40a</td>
+  </tr>
+  <tr>
+    <td>191r</td>
+    <td>1 Kings</td>
+    <td>8:40b-8:62a</td>
+  </tr>
+  <tr>
+    <td>191v</td>
+    <td>1 Kings</td>
+    <td>8:62b-9:14a</td>
+  </tr>
+  <tr>
+    <td>192r</td>
+    <td>1 Kings</td>
+    <td>9:14b-10:10a</td>
+  </tr>
+  <tr>
+    <td>192v</td>
+    <td>1 Kings</td>
+    <td>10:10b-11:3a</td>
+  </tr>
+  <tr>
+    <td>193r</td>
+    <td>1 Kings</td>
+    <td>11:3b-11:26a</td>
+  </tr>
+  <tr>
+    <td>193v</td>
+    <td>1 Kings</td>
+    <td>11:26b-12:6a</td>
+  </tr>
+  <tr>
+    <td>194r</td>
+    <td>1 Kings</td>
+    <td>12:6b-12:25</td>
+  </tr>
+  <tr>
+    <td>194v</td>
+    <td>1 Kings</td>
+    <td>12:26-13:12a</td>
+  </tr>
+  <tr>
+    <td>195r</td>
+    <td>1 Kings</td>
+    <td>13:12b-14:1a</td>
+  </tr>
+  <tr>
+    <td>195v</td>
+    <td>1 Kings</td>
+    <td>14:1b-14:21a</td>
+  </tr>
+  <tr>
+    <td>196r</td>
+    <td>1 Kings</td>
+    <td>14:21b-15:17a</td>
+  </tr>
+  <tr>
+    <td>196v</td>
+    <td>1 Kings</td>
+    <td>15:17b-16:5a</td>
+  </tr>
+  <tr>
+    <td>197r</td>
+    <td>1 Kings</td>
+    <td>16:5b-16:26a</td>
+  </tr>
+  <tr>
+    <td>197v</td>
+    <td>1 Kings</td>
+    <td>16:26b-17:16</td>
+  </tr>
+  <tr>
+    <td>198r</td>
+    <td>1 Kings</td>
+    <td>17:17-18:16a</td>
+  </tr>
+  <tr>
+    <td>198v</td>
+    <td>1 Kings</td>
+    <td>18:16b-18:37a</td>
+  </tr>
+  <tr>
+    <td>199r</td>
+    <td>1 Kings</td>
+    <td>18:37b-19:13a</td>
+  </tr>
+  <tr>
+    <td>199v</td>
+    <td>1 Kings</td>
+    <td>19:13b-20:13a</td>
+  </tr>
+  <tr>
+    <td>200r</td>
+    <td>1 Kings</td>
+    <td>20:13b-20:32a</td>
+  </tr>
+  <tr>
+    <td>200v</td>
+    <td>1 Kings</td>
+    <td>20:32b-21:7a</td>
+  </tr>
+  <tr>
+    <td>201r</td>
+    <td>1 Kings</td>
+    <td>21:7b-22:1a</td>
+  </tr>
+  <tr>
+    <td>201v</td>
+    <td>1 Kings</td>
+    <td>22:1b-22:23a</td>
+  </tr>
+  <tr>
+    <td>202r</td>
+    <td>1 Kings</td>
+    <td>22:23b-22:48a</td>
+  </tr>
+  <tr>
+    <td>202v</td>
+    <td>1 Kings</td>
+    <td>22:48b-22:54</td>
+    <td>no break in text</td>
+  </tr>
+  <tr>
+    <td>202v</td>
+    <td>2 Kings</td>
+    <td>1:1-1:13a </td>
+    <td>no break in text</td>
+  </tr>
+  <tr>
+    <td>203r</td>
+    <td>2 Kings</td>
+    <td>1:13b-2:13a</td>
+  </tr>
+  <tr>
+    <td>203v</td>
+    <td>2 Kings</td>
+    <td>2:13b-3:11a</td>
+  </tr>
+  <tr>
+    <td>204r</td>
+    <td>2 Kings</td>
+    <td>3:11b-4:6a</td>
+  </tr>
+  <tr>
+    <td>204v</td>
+    <td>2 Kings</td>
+    <td>4:6b-4:30a</td>
+  </tr>
+  <tr>
+    <td>205r</td>
+    <td>2 Kings</td>
+    <td>4:30b-5:7a</td>
+  </tr>
+  <tr>
+    <td>205v</td>
+    <td>2 Kings</td>
+    <td>5:7b-5:26a</td>
+  </tr>
+  <tr>
+    <td>206r</td>
+    <td>2 Kings</td>
+    <td>5:26b-6:23a</td>
+  </tr>
+  <tr>
+    <td>206v</td>
+    <td>2 Kings</td>
+    <td>6:23b-7:8a</td>
+  </tr>
+  <tr>
+    <td>207r</td>
+    <td>2 Kings</td>
+    <td>7:8b-8:5a</td>
+  </tr>
+  <tr>
+    <td>207v</td>
+    <td>2 Kings</td>
+    <td>8:5b-8:27a</td>
+  </tr>
+  <tr>
+    <td>208r</td>
+    <td>2 Kings</td>
+    <td>8:27b-9:18a</td>
+  </tr>
+  <tr>
+    <td>208v</td>
+    <td>2 Kings</td>
+    <td>9:18b-10:1a</td>
+  </tr>
+  <tr>
+    <td>209r</td>
+    <td>2 Kings</td>
+    <td>10:1b-10:19a</td>
+  </tr>
+  <tr>
+    <td>209v</td>
+    <td>2 Kings</td>
+    <td>10:19b-11:4a</td>
+  </tr>
+  <tr>
+    <td>210r</td>
+    <td>2 Kings</td>
+    <td>11:4b-12:5a</td>
+  </tr>
+  <tr>
+    <td>210v</td>
+    <td>2 Kings</td>
+    <td>12:5b-13:1a</td>
+  </tr>
+  <tr>
+    <td>211r</td>
+    <td>2 Kings</td>
+    <td>13:1b-13:21a</td>
+  </tr>
+  <tr>
+    <td>211v</td>
+    <td>2 Kings</td>
+    <td>13:21b-14:15a</td>
+  </tr>
+  <tr>
+    <td>212r</td>
+    <td>2 Kings</td>
+    <td>14:15b-15:8</td>
+  </tr>
+  <tr>
+    <td>212v</td>
+    <td>2 Kings</td>
+    <td>15:9-15:29a</td>
+  </tr>
+  <tr>
+    <td>213r</td>
+    <td>2 Kings</td>
+    <td>15:29b-16:11a</td>
+  </tr>
+  <tr>
+    <td>213v</td>
+    <td>2 Kings</td>
+    <td>16:11b-17:12a</td>
+  </tr>
+  <tr>
+    <td>214r</td>
+    <td>2 Kings</td>
+    <td>17:12b-17:32a</td>
+  </tr>
+  <tr>
+    <td>214v</td>
+    <td>2 Kings</td>
+    <td>17:32b-18:12a</td>
+  </tr>
+  <tr>
+    <td>215r</td>
+    <td>2 Kings</td>
+    <td>18:12b-18:28a</td>
+  </tr>
+  <tr>
+    <td>215v</td>
+    <td>2 Kings</td>
+    <td>18:28b-19:11a</td>
+  </tr>
+  <tr>
+    <td>216r</td>
+    <td>2 Kings</td>
+    <td>19:11b-19:32</td>
+  </tr>
+  <tr>
+    <td>216v</td>
+    <td>2 Kings</td>
+    <td>19:33-20:15a</td>
+  </tr>
+  <tr>
+    <td>217r</td>
+    <td>2 Kings</td>
+    <td>20:15b-21:16a</td>
+  </tr>
+  <tr>
+    <td>217v</td>
+    <td>2 Kings</td>
+    <td>21:16b-22:12</td>
+  </tr>
+  <tr>
+    <td>218r</td>
+    <td>2 Kings</td>
+    <td>22:13-23:7a</td>
+  </tr>
+  <tr>
+    <td>218v</td>
+    <td>2 Kings</td>
+    <td>23:7b-23:24a</td>
+  </tr>
+  <tr>
+    <td>219r</td>
+    <td>2 Kings</td>
+    <td>23:24b-24:7a</td>
+  </tr>
+  <tr>
+    <td>219v</td>
+    <td>2 Kings</td>
+    <td>24:7b-25:10a</td>
+  </tr>
+  <tr>
+    <td>220r</td>
+    <td>2 Kings</td>
+    <td>25:10b-25:28a</td>
+  </tr>
+  <tr>
+    <td>220v</td>
+    <td>2 Kings</td>
+    <td>25:28b-25:30</td>
+  </tr>
+  <tr>
+    <td>220v</td>
+    <td>Isaiah</td>
+    <td>1:1-1:24a</td>
+  </tr>
+  <tr>
+    <td>221r</td>
+    <td>Isaiah</td>
+    <td>1:24b-2:22</td>
+  </tr>
+  <tr>
+    <td>221v</td>
+    <td>Isaiah</td>
+    <td>3:1-4:5a</td>
+  </tr>
+  <tr>
+    <td>222r</td>
+    <td>Isaiah</td>
+    <td>4:5b-5:26a</td>
+  </tr>
+  <tr>
+    <td>222v</td>
+    <td>Isaiah</td>
+    <td>5:26b-7:6a</td>
+  </tr>
+  <tr>
+    <td>223r</td>
+    <td>Isaiah</td>
+    <td>7:6b-8:7a</td>
+  </tr>
+  <tr>
+    <td>223v</td>
+    <td>Isaiah</td>
+    <td>8:7b-9:11a</td>
+  </tr>
+  <tr>
+    <td>224r</td>
+    <td>Isaiah</td>
+    <td>9:11b-10:17a</td>
+  </tr>
+  <tr>
+    <td>224v</td>
+    <td>Isaiah</td>
+    <td>10:17b-11:12a</td>
+  </tr>
+  <tr>
+    <td>225r</td>
+    <td>Isaiah</td>
+    <td>11:12b-13:19a</td>
+  </tr>
+  <tr>
+    <td>225v</td>
+    <td>Isaiah</td>
+    <td>13:19b-14:25a</td>
+  </tr>
+  <tr>
+    <td>226r</td>
+    <td>Isaiah</td>
+    <td>14:25b-16:10a</td>
+  </tr>
+  <tr>
+    <td>226v</td>
+    <td>Isaiah</td>
+    <td>16:10b-18:5a</td>
+  </tr>
+  <tr>
+    <td>227r</td>
+    <td>Isaiah</td>
+    <td>18:5b-19:21a</td>
+  </tr>
+  <tr>
+    <td>227v</td>
+    <td>Isaiah</td>
+    <td>19:21b-21:13a</td>
+  </tr>
+  <tr>
+    <td>228r</td>
+    <td>Isaiah</td>
+    <td>21:13b-22:25a</td>
+  </tr>
+  <tr>
+    <td>228v</td>
+    <td>Isaiah</td>
+    <td>22:25b-24:11</td>
+  </tr>
+  <tr>
+    <td>229r</td>
+    <td>Isaiah</td>
+    <td>24:12-26:5a</td>
+  </tr>
+  <tr>
+    <td>229v</td>
+    <td>Isaiah</td>
+    <td>26:5b-27:12a</td>
+  </tr>
+  <tr>
+    <td>230r</td>
+    <td>Isaiah</td>
+    <td>27:12b-28:23a</td>
+  </tr>
+  <tr>
+    <td>230v</td>
+    <td>Isaiah</td>
+    <td>28:23b-29:19a</td>
+  </tr>
+  <tr>
+    <td>231r</td>
+    <td>Isaiah</td>
+    <td>29:19b-30:19a</td>
+  </tr>
+  <tr>
+    <td>231v</td>
+    <td>Isaiah</td>
+    <td>30:19b-31:6</td>
+  </tr>
+  <tr>
+    <td>232r</td>
+    <td>Isaiah</td>
+    <td>31:7-33:9a</td>
+  </tr>
+  <tr>
+    <td>232v</td>
+    <td>Isaiah</td>
+    <td>33:9b-34:14a</td>
+  </tr>
+  <tr>
+    <td>233r</td>
+    <td>Isaiah</td>
+    <td>34:14b-36:10a</td>
+  </tr>
+  <tr>
+    <td>233v</td>
+    <td>Isaiah</td>
+    <td>36:10b-37:8a</td>
+  </tr>
+  <tr>
+    <td>234r</td>
+    <td>Isaiah</td>
+    <td>37:8b-37:32a</td>
+  </tr>
+  <tr>
+    <td>234v</td>
+    <td>Isaiah</td>
+    <td>37:32b-38:18a</td>
+  </tr>
+  <tr>
+    <td>235r</td>
+    <td>Isaiah</td>
+    <td>38:18b-40:12a</td>
+  </tr>
+  <tr>
+    <td>235v</td>
+    <td>Isaiah</td>
+    <td>40:12b-41:10a</td>
+  </tr>
+  <tr>
+    <td>236r</td>
+    <td>Isaiah</td>
+    <td>41:10b-42:7a</td>
+  </tr>
+  <tr>
+    <td>236v</td>
+    <td>Isaiah</td>
+    <td>42:7b-43:9a</td>
+  </tr>
+  <tr>
+    <td>237r</td>
+    <td>Isaiah</td>
+    <td>43:9b-44:11a</td>
+  </tr>
+  <tr>
+    <td>237v</td>
+    <td>Isaiah</td>
+    <td>44:11b-45:7a</td>
+  </tr>
+  <tr>
+    <td>238r</td>
+    <td>Isaiah</td>
+    <td>45:7b-46:6a</td>
+  </tr>
+  <tr>
+    <td>238v</td>
+    <td>Isaiah</td>
+    <td>46:6b-48:1a</td>
+  </tr>
+  <tr>
+    <td>239r</td>
+    <td>Isaiah</td>
+    <td>48:1b-49:6a</td>
+  </tr>
+  <tr>
+    <td>239v</td>
+    <td>Isaiah</td>
+    <td>49:6b-50:2a</td>
+  </tr>
+  <tr>
+    <td>240r</td>
+    <td>Isaiah</td>
+    <td>50:2b-51:12a</td>
+  </tr>
+  <tr>
+    <td>240v</td>
+    <td>Isaiah</td>
+    <td>51:12b-52:12a</td>
+  </tr>
+  <tr>
+    <td>241r</td>
+    <td>Isaiah</td>
+    <td>52:12b-54:10a</td>
+  </tr>
+  <tr>
+    <td>241v</td>
+    <td>Isaiah</td>
+    <td>54:10b-56:4</td>
+  </tr>
+  <tr>
+    <td>242r</td>
+    <td>Isaiah</td>
+    <td>56:5-57:19a</td>
+  </tr>
+  <tr>
+    <td>242v</td>
+    <td>Isaiah</td>
+    <td>57:19b-59:7a</td>
+  </tr>
+  <tr>
+    <td>243r</td>
+    <td>Isaiah</td>
+    <td>59:7b-60:12a</td>
+  </tr>
+  <tr>
+    <td>243v</td>
+    <td>Isaiah</td>
+    <td>60:12b-62:1a</td>
+  </tr>
+  <tr>
+    <td>244r</td>
+    <td>Isaiah</td>
+    <td>62:1b-63:16a</td>
+  </tr>
+  <tr>
+    <td>244v</td>
+    <td>Isaiah</td>
+    <td>63:16b-65:12a</td>
+  </tr>
+  <tr>
+    <td>245r</td>
+    <td>Isaiah</td>
+    <td>65:12b-66:10a</td>
+  </tr>
+  <tr>
+    <td>245v</td>
+    <td>Isaiah</td>
+    <td>66:10b-66:24</td>
+  </tr>
+  <tr>
+    <td>245v</td>
+    <td>Jeremiah</td>
+    <td>1:1-1:7a</td>
+  </tr>
+  <tr>
+    <td>246r</td>
+    <td>Jeremiah</td>
+    <td>1:7b-2:11a</td>
+  </tr>
+  <tr>
+    <td>246v</td>
+    <td>Jeremiah</td>
+    <td>2:11b-2:37a</td>
+  </tr>
+  <tr>
+    <td>247r</td>
+    <td>Jeremiah</td>
+    <td>2:37b-3:21a</td>
+  </tr>
+  <tr>
+    <td>247v</td>
+    <td>Jeremiah</td>
+    <td>3:21b-4:20a</td>
+  </tr>
+  <tr>
+    <td>248r</td>
+    <td>Jeremiah</td>
+    <td>4:20b-5:15a</td>
+  </tr>
+  <tr>
+    <td>248v</td>
+    <td>Jeremiah</td>
+    <td>5:15b-6:9a</td>
+  </tr>
+  <tr>
+    <td>249r</td>
+    <td>Jeremiah</td>
+    <td>6:9b-7:4a</td>
+  </tr>
+  <tr>
+    <td>249v</td>
+    <td>Jeremiah</td>
+    <td>7:4b-7:24a</td>
+  </tr>
+  <tr>
+    <td>250r</td>
+    <td>Jeremiah</td>
+    <td>7:24b-8:9a</td>
+  </tr>
+  <tr>
+    <td>250v</td>
+    <td>Jeremiah</td>
+    <td>8:9b-9:9a</td>
+  </tr>
+  <tr>
+    <td>251r</td>
+    <td>Jeremiah</td>
+    <td>9:9b-10:9a</td>
+  </tr>
+  <tr>
+    <td>251v</td>
+    <td>Jeremiah</td>
+    <td>10:9b-11:8a</td>
+  </tr>
+  <tr>
+    <td>252r</td>
+    <td>Jeremiah</td>
+    <td>11:8b-12:6a</td>
+  </tr>
+  <tr>
+    <td>252v</td>
+    <td>Jeremiah</td>
+    <td>12:6b-13:13a</td>
+  </tr>
+  <tr>
+    <td>253r</td>
+    <td>Jeremiah</td>
+    <td>13:13b-14:13a</td>
+  </tr>
+  <tr>
+    <td>253v</td>
+    <td>Jeremiah</td>
+    <td>14:13b-15:11a</td>
+  </tr>
+  <tr>
+    <td>254r</td>
+    <td>Jeremiah</td>
+    <td>15:11b-16:11a</td>
+  </tr>
+  <tr>
+    <td>254v</td>
+    <td>Jeremiah</td>
+    <td>16:11b-17:13a</td>
+  </tr>
+  <tr>
+    <td>255r</td>
+    <td>Jeremiah</td>
+    <td>17:13b-18:10a</td>
+  </tr>
+  <tr>
+    <td>255v</td>
+    <td>Jeremiah</td>
+    <td>18:10b-19:8a</td>
+  </tr>
+  <tr>
+    <td>256r</td>
+    <td>Jeremiah</td>
+    <td>19:8b-20:12a</td>
+  </tr>
+  <tr>
+    <td>256v</td>
+    <td>Jeremiah</td>
+    <td>20:12b-22:2a</td>
+  </tr>
+  <tr>
+    <td>257r</td>
+    <td>Jeremiah</td>
+    <td>22:2b-22:25a</td>
+  </tr>
+  <tr>
+    <td>257v</td>
+    <td>Jeremiah</td>
+    <td>22:25b-23:15</td>
+  </tr>
+  <tr>
+    <td>258r</td>
+    <td>Jeremiah</td>
+    <td>23:16-23:39a</td>
+  </tr>
+  <tr>
+    <td>258v</td>
+    <td>Jeremiah</td>
+    <td>23:39b-25:6a</td>
+  </tr>
+  <tr>
+    <td>259r</td>
+    <td>Jeremiah</td>
+    <td>25:6b-25:27a</td>
+  </tr>
+  <tr>
+    <td>259v</td>
+    <td>Jeremiah</td>
+    <td>25:27b-26:11a</td>
+  </tr>
+  <tr>
+    <td>260r</td>
+    <td>Jeremiah</td>
+    <td>26:11b-27:7a</td>
+  </tr>
+  <tr>
+    <td>260v</td>
+    <td>Jeremiah</td>
+    <td>27:7b-28:4a</td>
+  </tr>
+  <tr>
+    <td>261r</td>
+    <td>Jeremiah</td>
+    <td>28:4b-29:7</td>
+  </tr>
+  <tr>
+    <td>261v</td>
+    <td>Jeremiah</td>
+    <td>29:8-29:26</td>
+  </tr>
+  <tr>
+    <td>262r</td>
+    <td>Jeremiah</td>
+    <td>29:27-30:20a</td>
+  </tr>
+  <tr>
+    <td>262v</td>
+    <td>Jeremiah</td>
+    <td>30:20b-31:21a</td>
+  </tr>
+  <tr>
+    <td>263r</td>
+    <td>Jeremiah</td>
+    <td>31:21b-32:3a</td>
+  </tr>
+  <tr>
+    <td>263v</td>
+    <td>Jeremiah</td>
+    <td>32:3b-32:24a</td>
+  </tr>
+  <tr>
+    <td>264r</td>
+    <td>Jeremiah</td>
+    <td>32:24b-33:4a</td>
+  </tr>
+  <tr>
+    <td>264v</td>
+    <td>Jeremiah</td>
+    <td>33:4b-33:26a</td>
+  </tr>
+  <tr>
+    <td>265r</td>
+    <td>Jeremiah</td>
+    <td>33:26b-34:18a</td>
+  </tr>
+  <tr>
+    <td>265v</td>
+    <td>Jeremiah</td>
+    <td>34:18b-35:16a</td>
+  </tr>
+  <tr>
+    <td>266r</td>
+    <td>Jeremiah</td>
+    <td>35:16b-36:17a</td>
+  </tr>
+  <tr>
+    <td>266v</td>
+    <td>Jeremiah</td>
+    <td>36:17b-37:4a</td>
+  </tr>
+  <tr>
+    <td>267r</td>
+    <td>Jeremiah</td>
+    <td>37:4b-38:4a</td>
+  </tr>
+  <tr>
+    <td>267v</td>
+    <td>Jeremiah</td>
+    <td>38:4b-38:23</td>
+  </tr>
+  <tr>
+    <td>268r</td>
+    <td>Jeremiah</td>
+    <td>38:24-39:17a</td>
+  </tr>
+  <tr>
+    <td>268v</td>
+    <td>Jeremiah</td>
+    <td>39:17b-40:16a</td>
+  </tr>
+  <tr>
+    <td>269r</td>
+    <td>Jeremiah</td>
+    <td>40:16b-41:17a</td>
+  </tr>
+  <tr>
+    <td>269v</td>
+    <td>Jeremiah</td>
+    <td>41:17b-42:18a</td>
+  </tr>
+  <tr>
+    <td>270r</td>
+    <td>Jeremiah</td>
+    <td>42:18b-44:3a</td>
+  </tr>
+  <tr>
+    <td>270v</td>
+    <td>Jeremiah</td>
+    <td>44:3b-44:20a</td>
+  </tr>
+  <tr>
+    <td>271r</td>
+    <td>Jeremiah</td>
+    <td>44:20b-46:2a</td>
+  </tr>
+  <tr>
+    <td>271v</td>
+    <td>Jeremiah</td>
+    <td>46:2b-46:28a</td>
+  </tr>
+  <tr>
+    <td>272r</td>
+    <td>Jeremiah</td>
+    <td>46:28b-48:22a</td>
+  </tr>
+  <tr>
+    <td>272v</td>
+    <td>Jeremiah</td>
+    <td>48:22b-49:3a</td>
+  </tr>
+  <tr>
+    <td>273r</td>
+    <td>Jeremiah</td>
+    <td>49:3b-49:29a</td>
+  </tr>
+  <tr>
+    <td>273v</td>
+    <td>Jeremiah</td>
+    <td>49:29b-50:13a</td>
+  </tr>
+  <tr>
+    <td>274r</td>
+    <td>Jeremiah</td>
+    <td>50:13b-50:39a</td>
+  </tr>
+  <tr>
+    <td>274v</td>
+    <td>Jeremiah</td>
+    <td>50:39b-51:19a</td>
+  </tr>
+  <tr>
+    <td>275r</td>
+    <td>Jeremiah</td>
+    <td>51:19b-51:46a</td>
+  </tr>
+  <tr>
+    <td>275v</td>
+    <td>Jeremiah</td>
+    <td>51:46b-52:6a</td>
+  </tr>
+  <tr>
+    <td>276r</td>
+    <td>Jeremiah</td>
+    <td>52:6b-52:26a</td>
+  </tr>
+  <tr>
+    <td>276v</td>
+    <td>Jeremiah</td>
+    <td>52:26b-52:34</td>
+  </tr>
+  <tr>
+    <td>276v</td>
+    <td>Ezekiel</td>
+    <td>1:1-1:16a</td>
+  </tr>
+  <tr>
+    <td>277r</td>
+    <td>Ezekiel</td>
+    <td>1:16b-3:3a</td>
+  </tr>
+  <tr>
+    <td>277v</td>
+    <td>Ezekiel</td>
+    <td>3:3b-3:27a</td>
+  </tr>
+  <tr>
+    <td>278r</td>
+    <td>Ezekiel</td>
+    <td>3:27b-5:5a</td>
+  </tr>
+  <tr>
+    <td>278v</td>
+    <td>Ezekiel</td>
+    <td>5:5b-6:9a</td>
+  </tr>
+  <tr>
+    <td>279r</td>
+    <td>Ezekiel</td>
+    <td>6:9b-7:20a</td>
+  </tr>
+  <tr>
+    <td>279v</td>
+    <td>Ezekiel</td>
+    <td>7:20b-8:16a</td>
+  </tr>
+  <tr>
+    <td>280r</td>
+    <td>Ezekiel</td>
+    <td>8:16b-10:7a</td>
+  </tr>
+  <tr>
+    <td>280v</td>
+    <td>Ezekiel</td>
+    <td>10:7b-11:10a</td>
+  </tr>
+  <tr>
+    <td>281r</td>
+    <td>Ezekiel</td>
+    <td>11:10b-12:8a</td>
+  </tr>
+  <tr>
+    <td>281v</td>
+    <td>Ezekiel</td>
+    <td>12:8b-13:7a</td>
+  </tr>
+  <tr>
+    <td>282r</td>
+    <td>Ezekiel</td>
+    <td>13:7b-14:4a</td>
+  </tr>
+  <tr>
+    <td>282v</td>
+    <td>Ezekiel</td>
+    <td>14:4b-14:23</td>
+  </tr>
+  <tr>
+    <td>283r</td>
+    <td>Ezekiel</td>
+    <td>15:1-16:20</td>
+  </tr>
+  <tr>
+    <td>283v</td>
+    <td>Ezekiel</td>
+    <td>16:21-16:47a</td>
+  </tr>
+  <tr>
+    <td>284r</td>
+    <td>Ezekiel</td>
+    <td>16:47b-17:9a</td>
+  </tr>
+  <tr>
+    <td>284v</td>
+    <td>Ezekiel</td>
+    <td>17:9b-18:8a</td>
+  </tr>
+  <tr>
+    <td>285r</td>
+    <td>Ezekiel</td>
+    <td>18:8b-18:31a</td>
+  </tr>
+  <tr>
+    <td>285v</td>
+    <td>Ezekiel</td>
+    <td>18:31b-20:11a</td>
+  </tr>
+  <tr>
+    <td>286r</td>
+    <td>Ezekiel</td>
+    <td>20:11b-20:32a</td>
+  </tr>
+  <tr>
+    <td>286v</td>
+    <td>Ezekiel</td>
+    <td>20:32b-21:10a</td>
+  </tr>
+  <tr>
+    <td>287r</td>
+    <td>Ezekiel</td>
+    <td>21:10b-21:33a</td>
+  </tr>
+  <tr>
+    <td>287v</td>
+    <td>Ezekiel</td>
+    <td>21:33b-22:25a</td>
+  </tr>
+  <tr>
+    <td>288r</td>
+    <td>Ezekiel</td>
+    <td>22:25b-23:21</td>
+  </tr>
+  <tr>
+    <td>288v</td>
+    <td>Ezekiel</td>
+    <td>23:22-23:46a</td>
+  </tr>
+  <tr>
+    <td>289r</td>
+    <td>Ezekiel</td>
+    <td>23:46b-24:22</td>
+  </tr>
+  <tr>
+    <td>289v</td>
+    <td>Ezekiel</td>
+    <td>24:23-26:2a</td>
+  </tr>
+  <tr>
+    <td>290r</td>
+    <td>Ezekiel</td>
+    <td>26:2b-27:7a</td>
+  </tr>
+  <tr>
+    <td>290v</td>
+    <td>Ezekiel</td>
+    <td>27:7b-27:35a</td>
+  </tr>
+  <tr>
+    <td>291r</td>
+    <td>Ezekiel</td>
+    <td>27:35b-28:25a</td>
+  </tr>
+  <tr>
+    <td>291v</td>
+    <td>Ezekiel</td>
+    <td>28:25b-29:19a</td>
+  </tr>
+  <tr>
+    <td>292r</td>
+    <td>Ezekiel</td>
+    <td>29:19b-30:23a</td>
+  </tr>
+  <tr>
+    <td>292v</td>
+    <td>Ezekiel</td>
+    <td>30:23b-31:18</td>
+  </tr>
+  <tr>
+    <td>293r</td>
+    <td>Ezekiel</td>
+    <td>32:1-32:25a</td>
+  </tr>
+  <tr>
+    <td>293v</td>
+    <td>Ezekiel</td>
+    <td>32:25b-33:13a</td>
+  </tr>
+  <tr>
+    <td>294r</td>
+    <td>Ezekiel</td>
+    <td>33:13b-34:4a</td>
+  </tr>
+  <tr>
+    <td>294v</td>
+    <td>Ezekiel</td>
+    <td>34:4b-34:26a</td>
+  </tr>
+  <tr>
+    <td>295r</td>
+    <td>Ezekiel</td>
+    <td>34:26b-36:4a</td>
+  </tr>
+  <tr>
+    <td>295v</td>
+    <td>Ezekiel</td>
+    <td>36:4b-36:26a</td>
+  </tr>
+  <tr>
+    <td>296r</td>
+    <td>Ezekiel</td>
+    <td>36:26b-37:12a</td>
+  </tr>
+  <tr>
+    <td>296v</td>
+    <td>Ezekiel</td>
+    <td>37:12b-38:5a</td>
+  </tr>
+  <tr>
+    <td>297r</td>
+    <td>Ezekiel</td>
+    <td>38:5b-39:1a</td>
+  </tr>
+  <tr>
+    <td>297v</td>
+    <td>Ezekiel</td>
+    <td>39:1b-39:24a</td>
+  </tr>
+  <tr>
+    <td>298r</td>
+    <td>Ezekiel</td>
+    <td>39:24b-40:16a</td>
+  </tr>
+  <tr>
+    <td>298v</td>
+    <td>Ezekiel</td>
+    <td>40:16b-40:41a</td>
+  </tr>
+  <tr>
+    <td>299r</td>
+    <td>Ezekiel</td>
+    <td>40:41b-41:12a</td>
+  </tr>
+  <tr>
+    <td>299v</td>
+    <td>Ezekiel</td>
+    <td>41:12b-42:11a</td>
+  </tr>
+  <tr>
+    <td>300r</td>
+    <td>Ezekiel</td>
+    <td>42:11b-43:11a</td>
+  </tr>
+  <tr>
+    <td>300v</td>
+    <td>Ezekiel</td>
+    <td>43:11b-44:5a</td>
+  </tr>
+  <tr>
+    <td>301r</td>
+    <td>Ezekiel</td>
+    <td>44:5b-44:27a</td>
+  </tr>
+  <tr>
+    <td>301v</td>
+    <td>Ezekiel</td>
+    <td>44:27b-45:17a</td>
+  </tr>
+  <tr>
+    <td>302r</td>
+    <td>Ezekiel</td>
+    <td>45:17b-46:14a</td>
+  </tr>
+  <tr>
+    <td>302v</td>
+    <td>Ezekiel</td>
+    <td>46:14b-47:12a</td>
+  </tr>
+  <tr>
+    <td>303r</td>
+    <td>Ezekiel</td>
+    <td>47:12b-48:11a</td>
+  </tr>
+  <tr>
+    <td>303v</td>
+    <td>Ezekiel</td>
+    <td>48:11b-48:32a</td>
+  </tr>
+  <tr>
+    <td>304r</td>
+    <td>Ezekiel</td>
+    <td>48:32b-48:35</td>
+  </tr>
+  <tr>
+    <td>304r</td>
+    <td>Hosea</td>
+    <td>1:1-2:10</td>
+  </tr>
+  <tr>
+    <td>304v</td>
+    <td>Hosea</td>
+    <td>2:10b-4:4a </td>
+  </tr>
+  <tr>
+    <td>305r</td>
+    <td>Hosea</td>
+    <td>4:4b-5:15a </td>
+  </tr>
+  <tr>
+    <td>305v</td>
+    <td>Hosea</td>
+    <td>5:15b-8:5 </td>
+  </tr>
+  <tr>
+    <td>306r</td>
+    <td>Hosea</td>
+    <td>8:6-10:3a </td>
+  </tr>
+  <tr>
+    <td>306v</td>
+    <td>Hosea</td>
+    <td>10:3b-12:4 </td>
+  </tr>
+  <tr>
+    <td>307r</td>
+    <td>Hosea</td>
+    <td>12:5-14:6a </td>
+  </tr>
+  <tr>
+    <td>307v</td>
+    <td>Hosea</td>
+    <td>14:6b-14:10</td>
+  </tr>
+  <tr>
+    <td>307v</td>
+    <td>Joel</td>
+    <td>1:1-2:3</td>
+  </tr>
+  <tr>
+    <td>308r</td>
+    <td>Joel</td>
+    <td>2:4-3:1a </td>
+  </tr>
+  <tr>
+    <td>308v</td>
+    <td>Joel</td>
+    <td>3:1b-3:21 </td>
+  </tr>
+  <tr>
+    <td>309r</td>
+    <td>Amos</td>
+    <td>1:1-2:7a </td>
+  </tr>
+  <tr>
+    <td>309v</td>
+    <td>Amos</td>
+    <td>2:7b-4:1a </td>
+  </tr>
+  <tr>
+    <td>310r</td>
+    <td>Amos</td>
+    <td>4:1b-5:11a </td>
+  </tr>
+  <tr>
+    <td>310v</td>
+    <td>Amos</td>
+    <td>5:11b-6:10 </td>
+  </tr>
+  <tr>
+    <td>311r</td>
+    <td>Amos</td>
+    <td>6:11-8:3 </td>
+  </tr>
+  <tr>
+    <td>311v</td>
+    <td>Amos</td>
+    <td>8:4-9:12a </td>
+  </tr>
+  <tr>
+    <td>312r</td>
+    <td>Amos</td>
+    <td>9:12b-9:15</td>
+  </tr>
+  <tr>
+    <td>312r</td>
+    <td>Obadiah</td>
+    <td>1:1-1:20a </td>
+  </tr>
+  <tr>
+    <td>312v</td>
+    <td>Obadiah</td>
+    <td>1:20b-1:21</td>
+  </tr>
+  <tr>
+    <td>312v</td>
+    <td>Jonah</td>
+    <td>1:1-2:7a </td>
+  </tr>
+  <tr>
+    <td>313r</td>
+    <td>Jonah</td>
+    <td>2:7b-4:11a </td>
+    <td>Jonah 4:11b is on folio 313v</td>
+  </tr>
+  <tr>
+    <td>313v</td>
+    <td>Jonah</td>
+    <td>4:11b-4:11</td>
+  </tr>
+  <tr>
+    <td>313v</td>
+    <td>Micah</td>
+    <td>1:1-2:7a</td>
+  </tr>
+  <tr>
+    <td>314r</td>
+    <td>Micah</td>
+    <td>2:7b-4:4a </td>
+  </tr>
+  <tr>
+    <td>314v</td>
+    <td>Micah</td>
+    <td>4:4b-5:14a </td>
+  </tr>
+  <tr>
+    <td>315r</td>
+    <td>Micah</td>
+    <td>5:14b-7:10a </td>
+  </tr>
+  <tr>
+    <td>315v</td>
+    <td>Micah</td>
+    <td>7:10b-7:20</td>
+  </tr>
+  <tr>
+    <td>315v</td>
+    <td>Nahum</td>
+    <td>1:1-2:3a</td>
+  </tr>
+  <tr>
+    <td>316r</td>
+    <td>Nahum</td>
+    <td>2:3b-3:15a </td>
+  </tr>
+  <tr>
+    <td>316v</td>
+    <td>Nahum</td>
+    <td>3:15b-3:19</td>
+  </tr>
+  <tr>
+    <td>316v</td>
+    <td>Habakkuk</td>
+    <td>1:1-2:5a </td>
+  </tr>
+  <tr>
+    <td>317r</td>
+    <td>Habakkuk</td>
+    <td>2:5b-3:12 </td>
+  </tr>
+  <tr>
+    <td>317v</td>
+    <td>Habakkuk</td>
+    <td>3:13-3:19</td>
+  </tr>
+  <tr>
+    <td>317v</td>
+    <td>Zephaniah</td>
+    <td>1:1-1:16a </td>
+  </tr>
+  <tr>
+    <td>318r</td>
+    <td>Zephaniah</td>
+    <td>1:16b-3:6a </td>
+  </tr>
+  <tr>
+    <td>318v</td>
+    <td>Zephaniah</td>
+    <td>3:6b-3:20</td>
+  </tr>
+  <tr>
+    <td>318v</td>
+    <td>Haggai</td>
+    <td>1:1-1:8a</td>
+  </tr>
+  <tr>
+    <td>319r</td>
+    <td>Haggai</td>
+    <td>1:8b-2:12a </td>
+  </tr>
+  <tr>
+    <td>319v</td>
+    <td>Haggai</td>
+    <td>2:12b-2:23</td>
+  </tr>
+  <tr>
+    <td>319v</td>
+    <td>Zechariah</td>
+    <td>1:1-1:7a </td>
+  </tr>
+  <tr>
+    <td>320r</td>
+    <td>Zechariah</td>
+    <td>1:7b-2:15a </td>
+  </tr>
+  <tr>
+    <td>320v</td>
+    <td>Zechariah</td>
+    <td>2:15b-4:11a </td>
+  </tr>
+  <tr>
+    <td>321r</td>
+    <td>Zechariah</td>
+    <td>4:11b-6:9a </td>
+  </tr>
+  <tr>
+    <td>321v</td>
+    <td>Zechariah</td>
+    <td>6:9b-8:2a </td>
+  </tr>
+  <tr>
+    <td>322r</td>
+    <td>Zechariah</td>
+    <td>8:2b-8:21a </td>
+  </tr>
+  <tr>
+    <td>322v</td>
+    <td>Zechariah</td>
+    <td>8:21b-10:3a </td>
+  </tr>
+  <tr>
+    <td>323r</td>
+    <td>Zechariah</td>
+    <td>10:3b-11:14a </td>
+  </tr>
+  <tr>
+    <td>323v</td>
+    <td>Zechariah</td>
+    <td>11:14b-13:2a </td>
+  </tr>
+  <tr>
+    <td>324r</td>
+    <td>Zechariah</td>
+    <td>13:2b-14:12a </td>
+  </tr>
+  <tr>
+    <td>324v</td>
+    <td>Zechariah</td>
+    <td>14:12b-14:21</td>
+  </tr>
+  <tr>
+    <td>324v</td>
+    <td>Malachi</td>
+    <td>1:1-1:9a</td>
+  </tr>
+  <tr>
+    <td>325r</td>
+    <td>Malachi</td>
+    <td>1:9b-2:15a </td>
+  </tr>
+  <tr>
+    <td>325v</td>
+    <td>Malachi</td>
+    <td>2:15b-3:17a </td>
+  </tr>
+  <tr>
+    <td>326r</td>
+    <td>Malachi</td>
+    <td>3:17b-3:24</td>
+     <td>Masoretic lists: Number of verses and the sections in the Prophets </td>
+  </tr>
+  <tr>
+    <td>326v</td>
+    <td colspan="3">Masoretic lists: Number of verses and the sections in the Prophets </td>
+  </tr>
+  <tr>
+    <td>327v</td>
+    <td>1 Chronicles</td>
+    <td>1:1-1:41a </td>
+  </tr>
+  <tr>
+    <td>328r</td>
+    <td>1 Chronicles</td>
+    <td>1:41b-2:23a </td>
+  </tr>
+  <tr>
+    <td>328v</td>
+    <td>1 Chronicles</td>
+    <td>2:23b-3:1 </td>
+  </tr>
+  <tr>
+    <td>329r</td>
+    <td>1 Chronicles</td>
+    <td>3:2-4:12a </td>
+  </tr>
+  <tr>
+    <td>329v</td>
+    <td>1 Chronicles</td>
+    <td>4:12b-4:41a </td>
+  </tr>
+  <tr>
+    <td>330r</td>
+    <td>1 Chronicles</td>
+    <td>4:41b-5:24a </td>
+  </tr>
+  <tr>
+    <td>330v</td>
+    <td>1 Chronicles</td>
+    <td>5:24b-6:17 </td>
+  </tr>
+  <tr>
+    <td>331r</td>
+    <td>1 Chronicles</td>
+    <td>6:18-6:51a </td>
+  </tr>
+  <tr>
+    <td>331v</td>
+    <td>1 Chronicles</td>
+    <td>6:51b-7:9 </td>
+  </tr>
+  <tr>
+    <td>332r</td>
+    <td>1 Chronicles</td>
+    <td>7:10-8:4a </td>
+  </tr>
+  <tr>
+    <td>332v</td>
+    <td>1 Chronicles</td>
+    <td>8:4b-9:3 </td>
+  </tr>
+  <tr>
+    <td>333r</td>
+    <td>1 Chronicles</td>
+    <td>9:4-9:33a </td>
+  </tr>
+  <tr>
+    <td>333v</td>
+    <td>1 Chronicles</td>
+    <td>9:33b-10:14a </td>
+  </tr>
+  <tr>
+    <td>334r</td>
+    <td>1 Chronicles</td>
+    <td>10:14b-11:21 </td>
+  </tr>
+  <tr>
+    <td>334v</td>
+    <td>1 Chronicles</td>
+    <td>11:22-12:6a </td>
+  </tr>
+  <tr>
+    <td>335r</td>
+    <td>1 Chronicles</td>
+    <td>12:6b-12:31a </td>
+  </tr>
+  <tr>
+    <td>335v</td>
+    <td>1 Chronicles</td>
+    <td>12:31b-13:10a </td>
+  </tr>
+  <tr>
+    <td>336r</td>
+    <td>1 Chronicles</td>
+    <td>13:10b-15:7a </td>
+  </tr>
+  <tr>
+    <td>336v</td>
+    <td>1 Chronicles</td>
+    <td>15:7b-15:29a </td>
+  </tr>
+  <tr>
+    <td>337r</td>
+    <td>1 Chronicles</td>
+    <td>15:29b-16:35a </td>
+  </tr>
+  <tr>
+    <td>337v</td>
+    <td>1 Chronicles</td>
+    <td>16:35b-17:14 </td>
+  </tr>
+  <tr>
+    <td>338r</td>
+    <td>1 Chronicles</td>
+    <td>17:15-18:9 </td>
+  </tr>
+  <tr>
+    <td>338v</td>
+    <td>1 Chronicles</td>
+    <td>18:10-19:13a </td>
+  </tr>
+  <tr>
+    <td>339r</td>
+    <td>1 Chronicles</td>
+    <td>19:13b-21:5a </td>
+  </tr>
+  <tr>
+    <td>339v</td>
+    <td>1 Chronicles</td>
+    <td>21:5b-21:26a </td>
+  </tr>
+  <tr>
+    <td>340r</td>
+    <td>1 Chronicles</td>
+    <td>21:26b-22:19a </td>
+  </tr>
+  <tr>
+    <td>340v</td>
+    <td>1 Chronicles</td>
+    <td>22:19b-23:28a </td>
+  </tr>
+  <tr>
+    <td>341r</td>
+    <td>1 Chronicles</td>
+    <td>23:28b-24:26a </td>
+  </tr>
+  <tr>
+    <td>341v</td>
+    <td>1 Chronicles</td>
+    <td>24:26b-25:23a </td>
+  </tr>
+  <tr>
+    <td>342r</td>
+    <td>1 Chronicles</td>
+    <td>25:23b-26:21a </td>
+  </tr>
+  <tr>
+    <td>342v</td>
+    <td>1 Chronicles</td>
+    <td>26:21b-27:10a </td>
+  </tr>
+  <tr>
+    <td>343r</td>
+    <td>1 Chronicles</td>
+    <td>27:10b-27:34a </td>
+  </tr>
+  <tr>
+    <td>343v</td>
+    <td>1 Chronicles</td>
+    <td>27:34b-28:18a </td>
+  </tr>
+  <tr>
+    <td>344r</td>
+    <td>1 Chronicles</td>
+    <td>28:18b-29:17a </td>
+  </tr>
+  <tr>
+    <td>344v</td>
+    <td>1 Chronicles</td>
+    <td>29:17b-29:30</td>
+    <td>no break in text</td>
+  </tr>
+  <tr>
+    <td>344v</td>
+    <td>2 Chronicles</td>
+    <td>1:1-1:7a</td>
+    <td>no break in text</td>
+  </tr>
+  <tr>
+    <td>345r</td>
+    <td>2 Chronicles</td>
+    <td>1:7b-2:7a </td>
+  </tr>
+  <tr>
+    <td>345v</td>
+    <td>2 Chronicles</td>
+    <td>2:7b-3:8 </td>
+  </tr>
+  <tr>
+    <td>346r</td>
+    <td>2 Chronicles</td>
+    <td>3:9-4:11a </td>
+  </tr>
+  <tr>
+    <td>346v</td>
+    <td>2 Chronicles</td>
+    <td>4:11b-5:10a </td>
+  </tr>
+  <tr>
+    <td>347r</td>
+    <td>2 Chronicles</td>
+    <td>5:10b-6:16a </td>
+  </tr>
+  <tr>
+    <td>347v</td>
+    <td>2 Chronicles</td>
+    <td>6:16b-6:32a </td>
+  </tr>
+  <tr>
+    <td>348r</td>
+    <td>2 Chronicles</td>
+    <td>6:32b-7:7a </td>
+  </tr>
+  <tr>
+    <td>348v</td>
+    <td>2 Chronicles</td>
+    <td>7:7b-8:4 </td>
+  </tr>
+  <tr>
+    <td>349r</td>
+    <td>2 Chronicles</td>
+    <td>8:5-9:5a </td>
+  </tr>
+  <tr>
+    <td>349v</td>
+    <td>2 Chronicles</td>
+    <td>9:5b-9:24a </td>
+  </tr>
+  <tr>
+    <td>350r</td>
+    <td>2 Chronicles</td>
+    <td>9:24b-10:14a </td>
+  </tr>
+  <tr>
+    <td>350v</td>
+    <td>2 Chronicles</td>
+    <td>10:14b-11:17a </td>
+  </tr>
+  <tr>
+    <td>351r</td>
+    <td>2 Chronicles</td>
+    <td>11:17b-12:15a </td>
+  </tr>
+  <tr>
+    <td>351v</td>
+    <td>2 Chronicles</td>
+    <td>12:15b-13:18a </td>
+  </tr>
+  <tr>
+    <td>352r</td>
+    <td>2 Chronicles</td>
+    <td>13:18b-15:2a </td>
+  </tr>
+  <tr>
+    <td>352v</td>
+    <td>2 Chronicles</td>
+    <td>15:2b-16:6a </td>
+  </tr>
+  <tr>
+    <td>353r</td>
+    <td>2 Chronicles</td>
+    <td>16:6b-17:13a </td>
+  </tr>
+  <tr>
+    <td>353v</td>
+    <td>2 Chronicles</td>
+    <td>17:13b-18:16a </td>
+  </tr>
+  <tr>
+    <td>354r</td>
+    <td>2 Chronicles</td>
+    <td>18:16b-19:3a </td>
+  </tr>
+  <tr>
+    <td>354v</td>
+    <td>2 Chronicles</td>
+    <td>19:3b-20:13a </td>
+  </tr>
+  <tr>
+    <td>355r</td>
+    <td>2 Chronicles</td>
+    <td>20:13b-20:33a </td>
+  </tr>
+  <tr>
+    <td>355v</td>
+    <td>2 Chronicles</td>
+    <td>20:33b-21:18a </td>
+  </tr>
+  <tr>
+    <td>356r</td>
+    <td>2 Chronicles</td>
+    <td>21:18b-23:2a </td>
+  </tr>
+  <tr>
+    <td>356v</td>
+    <td>2 Chronicles</td>
+    <td>23:2b-23:20a </td>
+  </tr>
+  <tr>
+    <td>357r</td>
+    <td>2 Chronicles</td>
+    <td>23:20b-24:20a </td>
+  </tr>
+  <tr>
+    <td>357v</td>
+    <td>2 Chronicles</td>
+    <td>24:20b-25:10 </td>
+  </tr>
+  <tr>
+    <td>358r</td>
+    <td>2 Chronicles</td>
+    <td>25:11-25:28a </td>
+  </tr>
+  <tr>
+    <td>358v</td>
+    <td>2 Chronicles</td>
+    <td>25:28b-26:19a </td>
+  </tr>
+  <tr>
+    <td>359r</td>
+    <td>2 Chronicles</td>
+    <td>26:19b-28:7 </td>
+  </tr>
+  <tr>
+    <td>359v</td>
+    <td>2 Chronicles</td>
+    <td>28:8-28:25a </td>
+  </tr>
+  <tr>
+    <td>360r</td>
+    <td>2 Chronicles</td>
+    <td>28:25b-29:19a </td>
+  </tr>
+  <tr>
+    <td>360v</td>
+    <td>2 Chronicles</td>
+    <td>29:19b-30:3a </td>
+  </tr>
+  <tr>
+    <td>361r</td>
+    <td>2 Chronicles</td>
+    <td>30:3b-30:23a </td>
+  </tr>
+  <tr>
+    <td>361v</td>
+    <td>2 Chronicles</td>
+    <td>30:23b-31:14a </td>
+  </tr>
+  <tr>
+    <td>362r</td>
+    <td>2 Chronicles</td>
+    <td>31:14b-32:13a </td>
+  </tr>
+  <tr>
+    <td>362v</td>
+    <td>2 Chronicles</td>
+    <td>32:13b-32:32 </td>
+  </tr>
+  <tr>
+    <td>363r</td>
+    <td>2 Chronicles</td>
+    <td>32:33-33:20a </td>
+  </tr>
+  <tr>
+    <td>363v</td>
+    <td>2 Chronicles</td>
+    <td>33:20b-34:14a </td>
+  </tr>
+  <tr>
+    <td>364r</td>
+    <td>2 Chronicles</td>
+    <td>34:14b-34:31a</td>
+  </tr>
+  <tr>
+    <td>364v</td>
+    <td>2 Chronicles</td>
+    <td>34:31b-35:16a </td>
+  </tr>
+  <tr>
+    <td>365r</td>
+    <td>2 Chronicles</td>
+    <td>35:16b-36:8a </td>
+  </tr>
+  <tr>
+    <td>365v</td>
+    <td>2 Chronicles</td>
+    <td>36:8b-36:23 </td>
+  </tr>
+  <tr>
+    <td>366r</td>
+    <td>Psalms</td>
+    <td>1:1-5:5a</td>
+  </tr>
+  <tr>
+    <td>366v</td>
+    <td>Psalms</td>
+    <td>5:5b-8:5a</td>
+  </tr>
+  <tr>
+    <td>367r</td>
+    <td>Psalms</td>
+    <td>8:5b-10:17a</td>
+  </tr>
+  <tr>
+    <td>367v</td>
+    <td>Psalms</td>
+    <td>10:17b-15:3a</td>
+  </tr>
+  <tr>
+    <td>368r</td>
+    <td>Psalms</td>
+    <td>15:3b-18:7a</td>
+  </tr>
+  <tr>
+    <td>368v</td>
+    <td>Psalms</td>
+    <td>18:7b-19:2a</td>
+  </tr>
+  <tr>
+    <td>369r</td>
+    <td>Psalms</td>
+    <td>19:2b-22:4a</td>
+  </tr>
+  <tr>
+    <td>369v</td>
+    <td>Psalms</td>
+    <td>22:4b-24:7a</td>
+  </tr>
+  <tr>
+    <td>370r</td>
+    <td>Psalms</td>
+    <td>24:7b-27:5</td>
+  </tr>
+  <tr>
+    <td>370v</td>
+    <td>Psalms</td>
+    <td>27:6-30:11</td>
+  </tr>
+  <tr>
+    <td>371r</td>
+    <td>Psalms</td>
+    <td>30:12-32:10a</td>
+  </tr>
+  <tr>
+    <td>371v</td>
+    <td>Psalms</td>
+    <td>32:10b-34:23</td>
+  </tr>
+  <tr>
+    <td>372r</td>
+    <td>Psalms</td>
+    <td>35:1-36:13a</td>
+  </tr>
+  <tr>
+    <td>372v</td>
+    <td>Psalms</td>
+    <td>36:13b-38:5a</td>
+  </tr>
+  <tr>
+    <td>373r</td>
+    <td>Psalms</td>
+    <td>38:5b-40:7a</td>
+  </tr>
+  <tr>
+    <td>373v</td>
+    <td>Psalms</td>
+    <td>40:7b-42:7a</td>
+  </tr>
+  <tr>
+    <td>374r</td>
+    <td>Psalms</td>
+    <td>42:7b-44:26a</td>
+  </tr>
+  <tr>
+    <td>374v</td>
+    <td>Psalms</td>
+    <td>44:26b-47:5</td>
+  </tr>
+  <tr>
+    <td>375r</td>
+    <td>Psalms</td>
+    <td>47:6-49:21</td>
+  </tr>
+  <tr>
+    <td>375v</td>
+    <td>Psalms</td>
+    <td>50:1-51:21a</td>
+  </tr>
+  <tr>
+    <td>376r</td>
+    <td>Psalms</td>
+    <td>51:21b-55:11</td>
+  </tr>
+  <tr>
+    <td>376v</td>
+    <td>Psalms</td>
+    <td>55:12-57:11</td>
+  </tr>
+  <tr>
+    <td>377r</td>
+    <td>Psalms</td>
+    <td>57:12-60:6</td>
+  </tr>
+  <tr>
+    <td>377v</td>
+    <td>Psalms</td>
+    <td>60:7-63:8</td>
+  </tr>
+  <tr>
+    <td>378r</td>
+    <td>Psalms</td>
+    <td>63:9-66:10a</td>
+  </tr>
+  <tr>
+    <td>378v</td>
+    <td>Psalms</td>
+    <td>66:10b-68:20a</td>
+  </tr>
+  <tr>
+    <td>379r</td>
+    <td>Psalms</td>
+    <td>68:20b-69:21a</td>
+  </tr>
+  <tr>
+    <td>379v</td>
+    <td>Psalms</td>
+    <td>69:21b-71:18a</td>
+  </tr>
+  <tr>
+    <td>380r</td>
+    <td>Psalms</td>
+    <td>71:18b-73:12a</td>
+  </tr>
+  <tr>
+    <td>380v</td>
+    <td>Psalms</td>
+    <td>73:12b-75:3a</td>
+  </tr>
+  <tr>
+    <td>381r</td>
+    <td>Psalms</td>
+    <td>75:3b-77:19a</td>
+  </tr>
+  <tr>
+    <td>381v</td>
+    <td>Psalms</td>
+    <td>77:19b-78:36a</td>
+  </tr>
+  <tr>
+    <td>382r</td>
+    <td>Psalms</td>
+    <td>78:36b-79:5a</td>
+  </tr>
+  <tr>
+    <td>382v</td>
+    <td>Psalms</td>
+    <td>79:5b-81:12a</td>
+  </tr>
+  <tr>
+    <td>383r</td>
+    <td>Psalms</td>
+    <td>81:12b-84:11a</td>
+  </tr>
+  <tr>
+    <td>383v</td>
+    <td>Psalms</td>
+    <td>84:11b-87:6a</td>
+  </tr>
+  <tr>
+    <td>384r</td>
+    <td>Psalms</td>
+    <td>87:6b-89:19a</td>
+  </tr>
+  <tr>
+    <td>384v</td>
+    <td>Psalms</td>
+    <td>89:19b-90:7a</td>
+  </tr>
+  <tr>
+    <td>385r</td>
+    <td>Psalms</td>
+    <td>90:7b-93:3a</td>
+  </tr>
+  <tr>
+    <td>385v</td>
+    <td>Psalms</td>
+    <td>93:3b-96:8a</td>
+  </tr>
+  <tr>
+    <td>386r</td>
+    <td>Psalms</td>
+    <td>96:8b-99:8</td>
+  </tr>
+  <tr>
+    <td>386v</td>
+    <td>Psalms</td>
+    <td>99:9-102:24a</td>
+  </tr>
+  <tr>
+    <td>387r</td>
+    <td>Psalms</td>
+    <td>102:24b-104:14a</td>
+  </tr>
+  <tr>
+    <td>387v</td>
+    <td>Psalms</td>
+    <td>104:14b-105:23a</td>
+  </tr>
+  <tr>
+    <td>388r</td>
+    <td>Psalms</td>
+    <td>105:23b-106:23a</td>
+  </tr>
+  <tr>
+    <td>388v</td>
+    <td>Psalms</td>
+    <td>106:23b-107:18a</td>
+  </tr>
+  <tr>
+    <td>389r</td>
+    <td>Psalms</td>
+    <td>107:18b-109:6a</td>
+  </tr>
+  <tr>
+    <td>389v</td>
+    <td>Psalms</td>
+    <td>109:6b-111:9a</td>
+  </tr>
+  <tr>
+    <td>390r</td>
+    <td>Psalms</td>
+    <td>111:9b-115:16a</td>
+    <td>L combines 114 and 115 under 114: all Hebrew numbers of Psalms from here on are one less than the numbers given</td>
+  </tr>
+  <tr>
+    <td>390v</td>
+    <td>Psalms</td>
+    <td>115:16b-118:26</td>
+  </tr>
+  <tr>
+    <td>391r</td>
+    <td>Psalms</td>
+    <td>118:27-119:45</td>
+  </tr>
+  <tr>
+    <td>391v</td>
+    <td>Psalms</td>
+    <td>119:46-119:93</td>
+  </tr>
+  <tr>
+    <td>392r</td>
+    <td>Psalms</td>
+    <td>119:94-119:141</td>
+  </tr>
+  <tr>
+    <td>392v</td>
+    <td>Psalms</td>
+    <td>119:142-121:4</td>
+  </tr>
+  <tr>
+    <td>393r</td>
+    <td>Psalms</td>
+    <td>121:5-126:6</td>
+  </tr>
+  <tr>
+    <td>393v</td>
+    <td>Psalms</td>
+    <td>127:1-132:10a</td>
+  </tr>
+  <tr>
+    <td>394r</td>
+    <td>Psalms</td>
+    <td>132:10b-136:3</td>
+  </tr>
+  <tr>
+    <td>394v</td>
+    <td>Psalms</td>
+    <td>136:4-139:4a</td>
+  </tr>
+  <tr>
+    <td>395r</td>
+    <td>Psalms</td>
+    <td>139:4b-141:6a</td>
+  </tr>
+  <tr>
+    <td>395v</td>
+    <td>Psalms</td>
+    <td>141:6b-144:11a</td>
+  </tr>
+  <tr>
+    <td>396r</td>
+    <td>Psalms</td>
+    <td>144:11b-147:5</td>
+  </tr>
+  <tr>
+    <td>396v</td>
+    <td>Psalms</td>
+    <td>147:6-150:6</td>
+  </tr>
+  <tr>
+    <td>397r</td>
+    <td>Job</td>
+    <td>1:1-1:21a</td>
+  </tr>
+  <tr>
+    <td>397v</td>
+    <td>Job</td>
+    <td>1:21b-3:14a</td>
+  </tr>
+  <tr>
+    <td>398r</td>
+    <td>Job</td>
+    <td>3:14b-5:9a</td>
+  </tr>
+  <tr>
+    <td>398v</td>
+    <td>Job</td>
+    <td>5:9b-6:28a</td>
+  </tr>
+  <tr>
+    <td>399r</td>
+    <td>Job</td>
+    <td>6:28b-8:19a</td>
+  </tr>
+  <tr>
+    <td>399v</td>
+    <td>Job</td>
+    <td>8:19b-10:5a</td>
+  </tr>
+  <tr>
+    <td>400r</td>
+    <td>Job</td>
+    <td>10:5b-12:4a</td>
+  </tr>
+  <tr>
+    <td>400v</td>
+    <td>Job</td>
+    <td>12:4b-13:21</td>
+  </tr>
+  <tr>
+    <td>401r</td>
+    <td>Job</td>
+    <td>13:22-15:14a</td>
+  </tr>
+  <tr>
+    <td>401v</td>
+    <td>Job</td>
+    <td>15:14b-16:22a</td>
+  </tr>
+  <tr>
+    <td>402r</td>
+    <td>Job</td>
+    <td>16:22b-19:9a</td>
+  </tr>
+  <tr>
+    <td>402v</td>
+    <td>Job</td>
+    <td>19:9b-20:24a</td>
+  </tr>
+  <tr>
+    <td>403r</td>
+    <td>Job</td>
+    <td>20:24b-22:2</td>
+  </tr>
+  <tr>
+    <td>403v</td>
+    <td>Job</td>
+    <td>22:3-24:4a</td>
+  </tr>
+  <tr>
+    <td>404r</td>
+    <td>Job</td>
+    <td>24:4b-27:4a</td>
+  </tr>
+  <tr>
+    <td>404v</td>
+    <td>Job</td>
+    <td>27:4b-28:26a</td>
+  </tr>
+  <tr>
+    <td>405r</td>
+    <td>Job</td>
+    <td>28:26b-30:20a</td>
+  </tr>
+  <tr>
+    <td>405v</td>
+    <td>Job</td>
+    <td>30:20b-31:35a</td>
+  </tr>
+  <tr>
+    <td>406r</td>
+    <td>Job</td>
+    <td>31:35b-33:11a</td>
+  </tr>
+  <tr>
+    <td>406v</td>
+    <td>Job</td>
+    <td>33:11b-34:20a</td>
+  </tr>
+  <tr>
+    <td>407r</td>
+    <td>Job</td>
+    <td>34:20b-36:10a</td>
+  </tr>
+  <tr>
+    <td>407v</td>
+    <td>Job</td>
+    <td>36:10b-37:22a</td>
+  </tr>
+  <tr>
+    <td>408r</td>
+    <td>Job</td>
+    <td>37:22b-39:4a</td>
+  </tr>
+  <tr>
+    <td>408v</td>
+    <td>Job</td>
+    <td>39:4b-40:19a</td>
+  </tr>
+  <tr>
+    <td>409r</td>
+    <td>Job</td>
+    <td>40:19b-42:7a</td>
+  </tr>
+  <tr>
+    <td>409v</td>
+    <td>Job</td>
+    <td>42:7b-42:17</td>
+  </tr>
+  <tr>
+    <td>409v</td>
+    <td>Proverbs</td>
+    <td>1:1-1:19</td>
+  </tr>
+  <tr>
+    <td>410r</td>
+    <td>Proverbs</td>
+    <td>1:20-3:4</td>
+  </tr>
+  <tr>
+    <td>410v</td>
+    <td>Proverbs</td>
+    <td>3:5-4:8a</td>
+  </tr>
+  <tr>
+    <td>411r</td>
+    <td>Proverbs</td>
+    <td>4:8b-5:23</td>
+  </tr>
+  <tr>
+    <td>411v</td>
+    <td>Proverbs</td>
+    <td>6:1-7:2</td>
+  </tr>
+  <tr>
+    <td>412r</td>
+    <td>Proverbs</td>
+    <td>7:3-8:18a</td>
+  </tr>
+  <tr>
+    <td>412v</td>
+    <td>Proverbs</td>
+    <td>8:18b-10:3a</td>
+  </tr>
+  <tr>
+    <td>413r</td>
+    <td>Proverbs</td>
+    <td>10:3b-11:12a</td>
+  </tr>
+  <tr>
+    <td>413v</td>
+    <td>Proverbs</td>
+    <td>11:12b-12:24a</td>
+  </tr>
+  <tr>
+    <td>414r</td>
+    <td>Proverbs</td>
+    <td>12:24b-14:16</td>
+  </tr>
+  <tr>
+    <td>414v</td>
+    <td>Proverbs</td>
+    <td>14:17-15:26a</td>
+  </tr>
+  <tr>
+    <td>415r</td>
+    <td>Proverbs</td>
+    <td>15:26b-17:2a</td>
+  </tr>
+  <tr>
+    <td>415v</td>
+    <td>Proverbs</td>
+    <td>17:2b-18:16a</td>
+  </tr>
+  <tr>
+    <td>416r</td>
+    <td>Proverbs</td>
+    <td>18:16b-20:7a</td>
+  </tr>
+  <tr>
+    <td>416v</td>
+    <td>Proverbs</td>
+    <td>20:7b-21:18a</td>
+  </tr>
+  <tr>
+    <td>417r</td>
+    <td>Proverbs</td>
+    <td>21:18b-22:29a</td>
+  </tr>
+  <tr>
+    <td>417v</td>
+    <td>Proverbs</td>
+    <td>22:29b-24:5a</td>
+  </tr>
+  <tr>
+    <td>418r</td>
+    <td>Proverbs</td>
+    <td>24:5b-25:8a</td>
+  </tr>
+  <tr>
+    <td>418v</td>
+    <td>Proverbs</td>
+    <td>25:8b-26:19a</td>
+  </tr>
+  <tr>
+    <td>419r</td>
+    <td>Proverbs</td>
+    <td>26:19b-28:2a</td>
+  </tr>
+  <tr>
+    <td>419v</td>
+    <td>Proverbs</td>
+    <td>28:2b-29:11a</td>
+  </tr>
+  <tr>
+    <td>420r</td>
+    <td>Proverbs</td>
+    <td>29:11b-30:17</td>
+  </tr>
+  <tr>
+    <td>420v</td>
+    <td>Proverbs</td>
+    <td>30:18-31:23a</td>
+  </tr>
+  <tr>
+    <td>421r</td>
+    <td>Proverbs</td>
+    <td>31:23b-31:31</td>
+  </tr>
+  <tr>
+    <td>421r</td>
+    <td>Ruth</td>
+    <td>1:1-1:17a</td>
+  </tr>
+  <tr>
+    <td>421v</td>
+    <td>Ruth</td>
+    <td>1:17b-2:14 </td>
+  </tr>
+  <tr>
+    <td>422r</td>
+    <td>Ruth</td>
+    <td>2:15-3:13a </td>
+  </tr>
+  <tr>
+    <td>422v</td>
+    <td>Ruth</td>
+    <td>3:13b-4:13a </td>
+  </tr>
+  <tr>
+    <td>423r</td>
+    <td>Ruth</td>
+    <td>4:13b-4:22</td>
+  </tr>
+  <tr>
+    <td>423r</td>
+    <td>Song of Songs</td>
+    <td>1:1-2:5a</td>
+  </tr>
+  <tr>
+    <td>423v</td>
+    <td>Song of Songs</td>
+    <td>2:5b-4:1a </td>
+  </tr>
+  <tr>
+    <td>424r</td>
+    <td>Song of Songs</td>
+    <td>4:1b-5:13a </td>
+  </tr>
+  <tr>
+    <td>424v</td>
+    <td>Song of Songs</td>
+    <td>5:13b-8:1a </td>
+  </tr>
+  <tr>
+    <td>425r</td>
+    <td>Song of Songs</td>
+    <td>8:1b-8:14</td>
+  </tr>
+  <tr>
+    <td>425r</td>
+    <td>Ecclesiastes</td>
+    <td>1:1-1:13a</td>
+  </tr>
+  <tr>
+    <td>425v</td>
+    <td>Ecclesiastes</td>
+    <td>1:13b-2:16 </td>
+  </tr>
+  <tr>
+    <td>426r</td>
+    <td>Ecclesiastes</td>
+    <td>2:17-3:13a </td>
+  </tr>
+  <tr>
+    <td>426v</td>
+    <td>Ecclesiastes</td>
+    <td>3:13b-4:13a </td>
+  </tr>
+  <tr>
+    <td>427r</td>
+    <td>Ecclesiastes</td>
+    <td>4:13b-5:19a </td>
+  </tr>
+  <tr>
+    <td>427v</td>
+    <td>Ecclesiastes</td>
+    <td>5:19b-7:17a </td>
+  </tr>
+  <tr>
+    <td>428r</td>
+    <td>Ecclesiastes</td>
+    <td>7:17b-8:14a </td>
+  </tr>
+  <tr>
+    <td>428v</td>
+    <td>Ecclesiastes</td>
+    <td>8:14b-9:12a </td>
+  </tr>
+  <tr>
+    <td>429r</td>
+    <td>Ecclesiastes</td>
+    <td>9:12b-11:3a </td>
+  </tr>
+  <tr>
+    <td>429v</td>
+    <td>Ecclesiastes</td>
+    <td>11:3b-12:14 </td>
+  </tr>
+  <tr>
+    <td>430r</td>
+    <td>Lamentations</td>
+    <td>1:1-1:18a </td>
+  </tr>
+  <tr>
+    <td>430v</td>
+    <td>Lamentations</td>
+    <td>1:18b-2:13a </td>
+  </tr>
+  <tr>
+    <td>431r</td>
+    <td>Lamentations</td>
+    <td>2:13b-3:22 </td>
+  </tr>
+  <tr>
+    <td>431v</td>
+    <td>Lamentations</td>
+    <td>3:23-4:4a </td>
+  </tr>
+  <tr>
+    <td>432r</td>
+    <td>Lamentations</td>
+    <td>4:4b-5:12a </td>
+  </tr>
+  <tr>
+    <td>432v</td>
+    <td>Lamentations</td>
+    <td>5:12b-5:22</td>
+  </tr>
+  <tr>
+    <td>432v</td>
+    <td>Esther</td>
+    <td>1:1-1:14a</td>
+  </tr>
+  <tr>
+    <td>433r</td>
+    <td>Esther</td>
+    <td>1:14b-2:8a </td>
+  </tr>
+  <tr>
+    <td>433v</td>
+    <td>Esther</td>
+    <td>2:8b-3:1a </td>
+  </tr>
+  <tr>
+    <td>434r</td>
+    <td>Esther</td>
+    <td>3:1b-3:15a </td>
+  </tr>
+  <tr>
+    <td>434v</td>
+    <td>Esther</td>
+    <td>3:15b-4:17a </td>
+  </tr>
+  <tr>
+    <td>435r</td>
+    <td>Esther</td>
+    <td>4:17b-6:2a </td>
+  </tr>
+  <tr>
+    <td>435v</td>
+    <td>Esther</td>
+    <td>6:2b-7:4a </td>
+  </tr>
+  <tr>
+    <td>436r</td>
+    <td>Esther</td>
+    <td>7:4b-8:8a </td>
+  </tr>
+  <tr>
+    <td>436v</td>
+    <td>Esther</td>
+    <td>8:8b-9:5 </td>
+  </tr>
+  <tr>
+    <td>437r</td>
+    <td>Esther</td>
+    <td>9:6-9:24a </td>
+  </tr>
+  <tr>
+    <td>437v</td>
+    <td>Esther</td>
+    <td>9:24b-10:3</td>
+  </tr>
+  <tr>
+    <td>437v</td>
+    <td>Daniel</td>
+    <td>1:1-1:5a</td>
+  </tr>
+  <tr>
+    <td>438r</td>
+    <td>Daniel</td>
+    <td>1:5b-2:5a</td>
+  </tr>
+  <tr>
+    <td>438v</td>
+    <td>Daniel</td>
+    <td>2:5b-2:24a</td>
+  </tr>
+  <tr>
+    <td>439r</td>
+    <td>Daniel</td>
+    <td>2:24b-2:41a</td>
+  </tr>
+  <tr>
+    <td>439v</td>
+    <td>Daniel</td>
+    <td>2:41b-3:6a</td>
+  </tr>
+  <tr>
+    <td>440r</td>
+    <td>Daniel</td>
+    <td>3:6b-3:22a</td>
+  </tr>
+  <tr>
+    <td>440v</td>
+    <td>Daniel</td>
+    <td>3:22b-4:5a</td>
+  </tr>
+  <tr>
+    <td>441r</td>
+    <td>Daniel</td>
+    <td>4:5b-4:22a</td>
+  </tr>
+  <tr>
+    <td>441v</td>
+    <td>Daniel</td>
+    <td>4:22b-5:5a</td>
+  </tr>
+  <tr>
+    <td>442r</td>
+    <td>Daniel</td>
+    <td>5:5b-5:20a</td>
+  </tr>
+  <tr>
+    <td>442v</td>
+    <td>Daniel</td>
+    <td>5:20b-6:8a</td>
+  </tr>
+  <tr>
+    <td>443r</td>
+    <td>Daniel</td>
+    <td>6:8b-6:25a</td>
+  </tr>
+  <tr>
+    <td>443v</td>
+    <td>Daniel</td>
+    <td>6:25b-7:12a</td>
+  </tr>
+  <tr>
+    <td>444r</td>
+    <td>Daniel</td>
+    <td>7:12b-8:4a</td>
+  </tr>
+  <tr>
+    <td>444v</td>
+    <td>Daniel</td>
+    <td>8:4b-8:27a</td>
+  </tr>
+  <tr>
+    <td>445r</td>
+    <td>Daniel</td>
+    <td>8:27b-9:19a</td>
+  </tr>
+  <tr>
+    <td>445v</td>
+    <td>Daniel</td>
+    <td>9:19b-10:11a</td>
+  </tr>
+  <tr>
+    <td>446r</td>
+    <td>Daniel</td>
+    <td>10:11b-11:12a</td>
+  </tr>
+  <tr>
+    <td>446v</td>
+    <td>Daniel</td>
+    <td>11:12b-11:36a</td>
+  </tr>
+  <tr>
+    <td>447r</td>
+    <td>Daniel</td>
+    <td>11:36b-12:13</td>
+  </tr>
+  <tr>
+    <td>447v</td>
+    <td>Ezra</td>
+    <td>1:1-2:8</td>
+  </tr>
+  <tr>
+    <td>448r</td>
+    <td>Ezra</td>
+    <td>2:9-2:44a </td>
+  </tr>
+  <tr>
+    <td>448v</td>
+    <td>Ezra</td>
+    <td>2:44b-2:69a </td>
+  </tr>
+  <tr>
+    <td>449r</td>
+    <td>Ezra</td>
+    <td>2:69b-4:2a </td>
+  </tr>
+  <tr>
+    <td>449v</td>
+    <td>Ezra</td>
+    <td>4:2b-4:18a </td>
+  </tr>
+  <tr>
+    <td>450r</td>
+    <td>Ezra</td>
+    <td>4:18b-5:12a </td>
+  </tr>
+  <tr>
+    <td>450v</td>
+    <td>Ezra</td>
+    <td>5:12b-6:10a </td>
+  </tr>
+  <tr>
+    <td>451r</td>
+    <td>Ezra</td>
+    <td>6:10b-7:7a </td>
+  </tr>
+  <tr>
+    <td>451v</td>
+    <td>Ezra</td>
+    <td>7:7b-7:26a </td>
+  </tr>
+  <tr>
+    <td>452r</td>
+    <td>Ezra</td>
+    <td>7:26b-8:20a </td>
+  </tr>
+  <tr>
+    <td>452v</td>
+    <td>Ezra</td>
+    <td>8:20b-9:2 </td>
+  </tr>
+  <tr>
+    <td>453r</td>
+    <td>Ezra</td>
+    <td>9:3-10:3a </td>
+  </tr>
+  <tr>
+    <td>453v</td>
+    <td>Ezra</td>
+    <td>10:3b-10:23 </td>
+  </tr>
+  <tr>
+    <td>454r</td>
+    <td>Ezra</td>
+    <td>10:24-10:44</td>
+    <td>only one line break in text</td>
+  </tr>
+  <tr>
+    <td>454r</td>
+    <td>Nehemiah</td>
+    <td>1:1-1:9a</td>
+    <td>only one line break in text</td>
+  </tr>
+  <tr>
+    <td>454v</td>
+    <td>Nehemiah</td>
+    <td>1:9b-2:16a </td>
+  </tr>
+  <tr>
+    <td>455r</td>
+    <td>Nehemiah</td>
+    <td>2:16b-3:14a </td>
+  </tr>
+  <tr>
+    <td>455v</td>
+    <td>Nehemiah</td>
+    <td>3:14b-3:34a </td>
+  </tr>
+  <tr>
+    <td>456r</td>
+    <td>Nehemiah</td>
+    <td>3:34b-4:16a </td>
+  </tr>
+  <tr>
+    <td>456v</td>
+    <td>Nehemiah</td>
+    <td>4:16b-5:16 </td>
+  </tr>
+  <tr>
+    <td>457r</td>
+    <td>Nehemiah</td>
+    <td>5:17-6:16a </td>
+  </tr>
+  <tr>
+    <td>457v</td>
+    <td>Nehemiah</td>
+    <td>6:16b-7:25 </td>
+  </tr>
+  <tr>
+    <td>458r</td>
+    <td>Nehemiah</td>
+    <td>7:26-7:65a </td>
+  </tr>
+  <tr>
+    <td>458v</td>
+    <td>Nehemiah</td>
+    <td>7:65b-8:9a </td>
+  </tr>
+  <tr>
+    <td>459r</td>
+    <td>Nehemiah</td>
+    <td>8:9b-9:8a </td>
+  </tr>
+  <tr>
+    <td>459v</td>
+    <td>Nehemiah</td>
+    <td>9:8b-9:25a </td>
+  </tr>
+  <tr>
+    <td>460r</td>
+    <td>Nehemiah</td>
+    <td>9:25b-10:18a </td>
+  </tr>
+  <tr>
+    <td>460v</td>
+    <td>Nehemiah</td>
+    <td>10:18b-11:1a </td>
+  </tr>
+  <tr>
+    <td>461r</td>
+    <td>Nehemiah</td>
+    <td>11:1b-11:24a </td>
+  </tr>
+  <tr>
+    <td>461v</td>
+    <td>Nehemiah</td>
+    <td>11:24b-12:26a </td>
+  </tr>
+  <tr>
+    <td>462r</td>
+    <td>Nehemiah</td>
+    <td>12:26b-12:47a </td>
+  </tr>
+  <tr>
+    <td>462v</td>
+    <td>Nehemiah</td>
+    <td>12:47b-13:19a </td>
+  </tr>
+  <tr>
+    <td>463r</td>
+    <td>Nehemiah</td>
+    <td>13:19b-13:31</td>
+    <td>Masoretic lists: Number of verses and the sections in the writings </td>
+  </tr>
+
+
+</table>
+<p/>
+<p align="right"><b>14 Nov 2014</b></p>
+<hr/>
+</BODY>
+</HTML>
+

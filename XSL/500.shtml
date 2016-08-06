@@ -1,0 +1,17 @@
+<hr/>
+<h1>An internal server error has occurred at <!--#echo var="HTTP_HOST" -->!</h1>
+<b>Error Details:</b><br/>
+<blockquote>
+Redirect status code: <!--#echo var="REDIRECT_STATUS" --><br/>
+Requested URL: <!--#echo var="REQUEST_URI" --><br/>
+Visitor's browser: <!--#echo var="HTTP_USER_AGENT" --><br/>
+Visitor's IP address: <!--#echo var="REMOTE_ADDR" --><br/>
+Referring URL: <!--#echo var="HTTP_REFERER" --><br/>
+</blockquote>
+<center>
+<h4>Please describe how you arrived here in a mail to <a href="mailto:transcriber@tanach.us"><i>transcriber@tanach.us</i></a> to help fix the problem.</h4>
+Paste the entire contents of this page into the message.
+</center>
+<p/>
+<hr/>
+

@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsl:stylesheet version="1.0"  xmlns:xsl="http://www.w3.org/1999/XSL/Transform" >
+<xsl:output method="html"/>
+<xsl:strip-space elements="*"/>
+ <!--========================================================================-->
+<!--========================================================================-->
+<!-- Copyright C.V.Kimball 2007                                             -->
+<!--
+
+    Coding.xsl.xml -  XSLT file for Coding.xml page.
+          
+-->
+<!--========================================================================-->
+<!--========================================================================-->    
+<xsl:variable name="xsldate">18 Jul 2013</xsl:variable>
+<!-- Variable build is the build date of the complete site as set by ant.   -->
+<xsl:variable name="build">25.1</xsl:variable>  
+<xsl:param name="template" >Dispatcher</xsl:param>  
+
+
+<xsl:param name="englishfontfamily">Times New Roman</xsl:param>
+<!-- Font for Hebrew text                                                   -->
+<xsl:param name="fontfamily">SBL Hebrew</xsl:param>
+<!-- Variable fontsize gives the size of the fonts in points.               -->
+<xsl:variable name="fontsize">20</xsl:variable> 
+
+<!-- The MIME type of the favicon icon.           -->
+<!-- This is loaded BEFORE the baseURL is defined.                          -->
+<xsl:variable name="icontype">image.x-icon</xsl:variable>
+<!-- URL of the favicon icon.           -->
+<!-- This is loaded BEFORE the baseURL is defined.                          -->
+<xsl:variable name="iconURL">Images/TanachIcon.ico</xsl:variable>
+
+
+<!-- Variable UnicodeURL holds the URL of the Unicode manual.     -->
+<xsl:variable name="UnicodeURL" >http://www.unicode.org/charts/PDF/U0590.pdf</xsl:variable>  
+<!-- Smaller font size controlled from fontsize through JavaScript          -->
+<xsl:param name="reducedfontsize">12</xsl:param> 
+<!-- Variable HudsonURL holds the URL of John Hudson, Tiro.com.     -->
+<xsl:variable name="HudsonURL">http://www.tiro.com</xsl:variable>  
+<!-- Variable SBLFontManualURL holds the URL of the SBL Hebrew fonts manual.     -->
+<xsl:variable name="SBLFontManualURL" >http://www.sbl-site.org/educational/BiblicalFonts_SBLHebrew.aspx</xsl:variable>  
+<!--
+     Very basic definitions of Unicode Hebrew blocks
+-->
+<!-- Blank character -->
+<xsl:variable   name="blank">&#x0020;</xsl:variable>  
+<!-- Variable consonants contains consonants ONLY -->
+<xsl:variable   name="consonants">&#x05d0;&#x05d1;&#x05d2;&#x05d3;&#x05d4;&#x05d5;&#x05d6;&#x05d7;&#x05d8;&#x05d9;&#x05da;&#x05db;&#x05dc;&#x05dd;&#x05de;&#x05df;&#x05e0;&#x05e1;&#x05e2;&#x05e3;&#x05e4;&#x05e5;&#x05e6;&#x05e7;&#x05e8;&#x05e9;&#x05ea;</xsl:variable>  
+<!-- Variable maqafsofpasuq contains ONLY maqaf and the sof passuq.                    -->
+<xsl:variable   name="maqafsofpasuq">&#x05be;&#x05c3;</xsl:variable>  
+<!-- Variable vowels contains vowels and shin/sin dots.                    -->
+<xsl:variable   name="vowels">&#x05b0;&#x05b1;&#x05b2;&#x05b3;&#x05b4;&#x05b5;&#x05b6;&#x05b7;&#x05b8;&#x05b9;&#x05ba;&#x05bb;&#x05bc;&#x05c1;&#x05c2;</xsl:variable>  
+<!-- Variable trueaccents contains accents less maqaf and sof pasuq plus ZWJ but without blank.             -->
+<xsl:variable name="trueaccents">&#x0591;&#x0592;&#x0593;&#x0594;&#x0595;&#x0596;&#x0597;&#x0598;&#x0599;&#x059a;&#x059b;&#x059c;&#x059d;&#x059e;&#x059f;&#x05a0;&#x05a1;&#x05a3;&#x05a4;&#x05a5;&#x05a6;&#x05a7;&#x05a8;&#x05a9;&#x05aa;&#x05ab;&#x05ac;&#x05ad;&#x05ae;&#x05bd;&#x05bf;&#x05c0;&#x05c4;&#x05c5;&#x200d;</xsl:variable>
+<!-- Variable mdivider contains the morphogical divider, /.                 -->
+<xsl:variable name="mdivider">/</xsl:variable>
+<!--
+     Block definitions for book contents,
+     morphology, accents, vowels, consonants. 
+-->
+<!-- Variable accents contains trueaccents plus blank.             -->
+<xsl:variable name="accents">&#x0591;&#x0592;&#x0593;&#x0594;&#x0595;&#x0596;&#x0597;&#x0598;&#x0599;&#x059a;&#x059b;&#x059c;&#x059d;&#x059e;&#x059f;&#x05a0;&#x05a1;&#x05a3;&#x05a4;&#x05a5;&#x05a6;&#x05a7;&#x05a8;&#x05a9;&#x05aa;&#x05ab;&#x05ac;&#x05ad;&#x05ae;&#x05bd;&#x05bf;&#x05c0;&#x05c4;&#x05c5;&#x200d;&#x0020;</xsl:variable>
+<!--========================================================================-->
+<!--
+                              Template dispatching
+-->                              
+<!--========================================================================-->
+<xsl:template match="/Coding">
+      <xsl:call-template name="Dispatcher"/>
+</xsl:template>
+<!--========================================================================-->
+<xsl:template match="/Tanach">
+      <xsl:call-template name="Coding"/>
+</xsl:template>
+<!--========================================================================-->
+<!--========================================================================-->
+<xsl:template name="Dispatcher">
+<html>
+<head> 
+  <meta http-equiv="X-UA-Compatible" content="IE=8"/>
+  <link href="{$iconURL}" rel="icon" type="{$icontype}"/>
+  <title>Coding</title>
+  <script src="../Javascript/SarissaLib.js" type="text/javascript"> </script>
+  <script src="../Javascript/UtilityLib.js" type="text/javascript"> </script>
+  <script  type="text/javascript"> 
+    var baseURL ;
+    function init(){
+        baseURL = getBaseURL("Tanach.xml") ;
+        codingXSL = loadSarissaDoc("../XSL/Coding.xsl.xml") ;
+        codingXML = loadSarissaDoc("../Books/TanachHeader.xml") ;
+        setAsXSL(codingXSL) ;
+       
+        setTemplateToNode(codingXML, codingXSL, "Coding", document.body)        
+    }
+  </script>
+</head>
+<body background="../Images/Background"  onload="Javascript:init()"
+   style="margin-right:10pt; margin-left:10pt; margin-top:10pt; margin-bottom:0">
+   &#x00a0;
+</body>
+</html>
+</xsl:template>
+<!--========================================================================-->
+<!--========================================================================-->
+<xsl:template name="Coding">
+<html>
+<xsl:call-template name="PageHeader">
+  <xsl:with-param name="title" select="'Unicode character coding'"/>
+</xsl:call-template>
+    
+The transcription is based on the "Supplement to the code manual for 
+the Michigan Old Testament" by Alan Groves and the <a  target="_blank" href="{$UnicodeURL}">
+"Unicode Standard, Version 5.1, Hebrew. Range: 0590 to 05FF"</a>. 
+<p/>
+A special rule has been
+applied in the transcription of Michigan-Claremont (MC) coded text to Unicode for the MC pair <b>OW</b>.
+This rule isn't explicit in the code manual and was suggested by
+David P. Donnelly and Peter Kirk (5 March 2007 1740). It has been accepted by Kirk Lowery of the
+J. Alan Groves Center for Advanced Biblical Research (26 Mar 2007 0950):
+
+<blockquote>
+The Unicode text corresponding to an MC text <b>xOWy</b> depends on whether <b>y</b> is an MC
+vowel, that is, one of <b>{ A, E, F, I, O, U, "}</b>.  Let <b>(x)</b> and <b>(y)</b> be the Unicode characters corresponding to 
+<b>x</b> and <b>y</b>.<p/>
+<ul>
+<li>If <b>y</b> is an MC vowel, the Unicode text is <b>(x) holam vav (y) </b>. (99 instances)</li><p/>
+<li>If <b>y</b> is <b>not</b> an MC vowel, the Unicode text is <b> (x) vav holam (y) </b>. (36,866 instances)</li>
+</ul>
+That is, if <b>OW</b> is followed by a vowel, then the holam is applied to the preceding character
+and the vav has the vowel.
+</blockquote>
+<p/>
+Transcription notes are indicated by red, superscript numbers or letters, between
+Hebrew <i>geresh</i>&#x00a0; <b><tt>(x05f3)</tt></b> characters i.e 
+<xsl:variable name="note" select="/Tanach/tanach/notes/note/note[../code='3']"/>
+<span title="&#x200e;{$note}&#x200e;" 
+      style="text-decoration:none;vertical-align:super;color:red;
+      font-family:{$englishfontfamily};font-size:{$reducedfontsize}pt">
+      &#x05f3;3&#x05f3;
+</span>.
+When the cursor is held motionless over the red letter for a few seconds 
+the note is given in a title box. Superscripts 
+for large, small, and suspended letters and for reversed nuns (5, 6, 7, 8) are not shown
+because the feature is shown in the displayed text.  Firefox currently doesn't
+show suspended letters.
+<p/>
+    
+<i>Only</i> the <b><xsl:value-of select="count(/Tanach/tanach/coding/char) + count(/Tanach/tanach/coding/specialchar)"/></b> 
+characters given below can appear in the text fields of word 
+    (<b>&lt;w&gt;</b>),
+    qere (<b>&lt;q&gt;</b>), or ketiv (<b>&lt;k&gt;</b>) tags in the XML files. 
+    The corresponding Unicode range is: <b><tt>20, 2f, 591-5ae, 5b0-5c5, 5d0-5ea, 200d</tt></b>. 
+    The <b>&lt;reversednun/&gt;</b> tag is rendered as a <i>nun hafukha</i>, <b><tt>5c6</tt></b>, but is not 
+    included in any text tag.
+    <p/>
+    The vowels and accents are ordered by the specified <i>non-standard</i>
+    combining groups in the table.  This ordering is a minor expansion of the custom mark ordering
+    proposed by John Hudson of 
+    <a  target="_blank" href="{$HudsonURL}"><b><xsl:value-of select="$HudsonURL"/></b></a> in his 
+    <a  target="_blank" href="{$SBLFontManualURL}">
+    SBL Hebrew Hebrew Font User Manual</a> that is part of the SBL Hebrew font release. Marks
+    with lower values appear closer to the preceding consonant.  Marks having the same combining class
+    appear in the order in which they appear in the WLC text.
+    <p/>
+    Although the WLC text specifies three types of meteg (left (75), center (35), right (95) ), Unicode
+    has a single symbol for all metegs.  Proper meteg positioning is obtained by providing
+    different combining class values to the different metegs and by prefacing the Unicode
+    meteg with a special Unicode character, a Zero Width Joiner (ZWJ, \u200d), to obtain a
+    center meteg.  This approach was also suggested by John Hudson. 
+     <p/>
+     Each paseq is preceded by a space to produce a more legible text. This is the <i>only</i>
+     instance in which a space appears in a text tag. <b>&lt;w&gt;</b>,
+     <b>&lt;q&gt;</b>, or <b>&lt;k&gt;</b>.
+     <p/>
+     
+    
+    <table cellpadding="1" border="1" width="100%">
+      <tr>
+        <th>Char</th><th>Hex<br/></th><th>Name</th><th>WLC code(s)</th>
+            <th>with &#1505;</th><th>Combining<br/>group</th><th>Content<br/>type</th><th>Equivalent</th>
+            <th>Notes</th>
+      </tr>
+      <xsl:for-each select="/Tanach/tanach/coding">
+        <xsl:for-each select="char">
+          <xsl:if test="./value!='?'">
+            <tr>
+                <td><div align="center" style="font-family:{$fontfamily};font-size:{$fontsize}pt;font-weight:bold">
+                  <xsl:value-of select="value"/></div></td>
+                <td align="center">
+                  <span style="font-family:Courier New;font-size:12pt;font-weight:bold">
+                    <xsl:value-of select="hexvalue"/>
+                  </span>
+                </td>
+                 <td><b><xsl:value-of select="name"/></b></td>
+                <td><b>
+                    <xsl:if test="./mccode!=''">
+                        <center><xsl:value-of select="mccode"/></center>
+                    </xsl:if>
+                    <xsl:if test="./mccode=''">
+                        &#160;
+                    </xsl:if>
+                </b></td>
+                
+                
+                <td>
+                    <xsl:choose>
+                        <xsl:when test="./type = 'Accent'">
+                            <div align="center" style="font-family:{$fontfamily};font-size:{$fontsize}pt;font-weight:bold">
+                              &#1505;<xsl:value-of select="value"/></div>
+                        </xsl:when>
+                        <xsl:when test="./type = 'Point'">
+                            <div align="center" style="font-family:{$fontfamily};font-size:{$fontsize}pt;font-weight:bold">
+                              &#1505;<xsl:value-of select="value"/></div>
+                        </xsl:when>
+                        <xsl:when test="./type = 'Mark'">
+                            <div align="center" style="font-family:{$fontfamily};font-size:{$fontsize}pt;font-weight:bold">
+                              &#1505;<xsl:value-of select="value"/></div>
+                        </xsl:when>
+                        <xsl:otherwise>
+                           &#160;
+                        </xsl:otherwise>
+                    </xsl:choose>     
+                </td>     
+                <td><b>
+                    <xsl:if test="./group!=''">
+                        <center><xsl:value-of select="group"/></center>
+                    </xsl:if>
+                    <xsl:if test="./group=''">
+                        &#160;
+                    </xsl:if>
+                </b></td>
+                <td align="center"><b>
+                    <xsl:if test="contains($accents, ./value)">Accent</xsl:if> 
+                    <xsl:if test="contains($vowels, ./value)">Vowel</xsl:if> 
+                    <xsl:if test="contains($consonants, ./value)">Consonant</xsl:if> 
+                    <xsl:if test="contains($mdivider, ./value)">M. divider</xsl:if> 
+                    <xsl:if test="contains($maqafsofpasuq, ./value)">Accent</xsl:if> 
+                    &#160;
+                 </b></td>
+                <td>
+                    <xsl:if test="./equivalents!=''">
+                        <xsl:value-of select="equivalents"/>
+                    </xsl:if>
+                    <xsl:if test="./equivalents=''">
+                        &#160;
+                    </xsl:if>
+                </td>
+                <td>
+                    <xsl:if test="./notes!=''">
+                        <xsl:value-of select="notes"/>
+                    </xsl:if>
+                    <xsl:if test="./notes=''">
+                        &#160;
+                    </xsl:if>
+                </td>
+                
+            </tr>
+          </xsl:if>
+        </xsl:for-each>
+        
+        <xsl:for-each select="specialchar">
+            <xsl:if test="./value!='?'">
+                <tr>
+                <td>
+                    <xsl:if test="./value!=''">
+                        <xsl:choose>
+                           <xsl:when test="./value=' '">
+                               &#160;
+                           </xsl:when>
+                           <xsl:otherwise>
+                               <div align="center" 
+                                   style="font-family:{$fontfamily};font-size:{$fontsize}pt;font-weight:bold">
+                                   <xsl:value-of select="value"/>
+                               </div>
+                           </xsl:otherwise>
+                        </xsl:choose>
+                    </xsl:if>
+                    <xsl:if test="./value=''">
+                        &#160;
+                    </xsl:if>
+                </td>    
+                <td align="right">                  
+                  <span style="font-family:Courier New;font-size:12pt;font-weight:bold">
+                    <xsl:value-of select="hexvalue"/>
+                    <p/>
+                     <xsl:choose>
+                       <xsl:when test="./name='Space'">
+                        &amp;#x0020;
+                      </xsl:when>
+                    </xsl:choose>
+                  </span>
+                </td>
+                
+                <td><b><xsl:value-of select="name"/></b></td>
+                <td><b>
+                    <xsl:if test="./mccode!=''">
+                        <center><xsl:value-of select="mccode"/></center>
+                    </xsl:if>
+                    <xsl:if test="./mccode=''">
+                        &#160;
+                    </xsl:if>
+                </b></td>
+                <td align="center">
+                    <xsl:choose>
+                        <xsl:when test="./type = 'Accent'">
+                            <div align="center" style="font-family:{$fontfamily};font-size:{$fontsize}pt;font-weight:bold">
+                              &#1505;<xsl:value-of select="value"/></div>
+                        </xsl:when>
+                        <xsl:when test="./type = 'Point'">
+                            <div align="center" style="font-family:{$fontfamily};font-size:{$fontsize}pt;font-weight:bold">
+                              &#1505;<xsl:value-of select="value"/></div>
+                        </xsl:when>
+                        <xsl:when test="./type = 'PrepositiveMark'">
+                            <div dir="rtl" align="center" style="font-family:{$fontfamily};font-size:{$fontsize}pt;font-weight:bold">
+                              <xsl:value-of select="value"/>&#1505;</div>
+                        </xsl:when>
+                        <xsl:when test="./type = 'Mark'">
+                            <div dir="rtl" align="center" style="font-family:{$fontfamily};font-size:{$fontsize}pt;font-weight:bold">
+                              &#1505;<xsl:value-of select="value"/></div>
+                        </xsl:when>
+                        <xsl:otherwise>
+                           &#160;
+                        </xsl:otherwise>
+                    </xsl:choose>     
+                </td>     
+                <td><b>
+                    <xsl:if test="./group!=''">
+                        <center><xsl:value-of select="group"/></center>
+                    </xsl:if>
+                    <xsl:if test="./group=''">
+                        &#160;
+                    </xsl:if>
+                </b></td>
+                <td align="center"><b>
+                    <xsl:choose>
+                    <xsl:when test="./value=''">
+                        <xsl:if test="contains($accents, ' ')">Accent</xsl:if> 
+                        <xsl:if test="contains($vowels, ' ')">Vowel</xsl:if> 
+                        <xsl:if test="contains($consonants, ' ')">Consonant</xsl:if> 
+                        <xsl:if test="contains($mdivider, ' ')">M. divider</xsl:if> 
+                     </xsl:when>
+                    <xsl:otherwise>
+                       <xsl:if test="contains($accents, ./value)">Accent</xsl:if> 
+                       <xsl:if test="contains($vowels, ./value)">Vowel</xsl:if> 
+                       <xsl:if test="contains($consonants, ./value)">Consonant</xsl:if> 
+                       <xsl:if test="contains($mdivider, ./value)">M. divider</xsl:if> 
+                    </xsl:otherwise>
+                    </xsl:choose>
+                         &#160;
+                 </b></td>
+                <td align="center">
+                    <xsl:value-of select="./type"/>
+                </td>
+                <td>
+                    <xsl:if test="./notes!=''">
+                        <xsl:value-of select="notes"/>
+                    </xsl:if>
+                    <xsl:if test="./notes=''">
+                        &#160;
+                    </xsl:if>
+                </td>
+                </tr>
+            </xsl:if>
+        </xsl:for-each>
+      </xsl:for-each>
+    </table>
+ <xsl:call-template name="PageFooter"/>
+</html>
+</xsl:template>
+<!--========================================================================-->
+<!--========================================================================-->
+
+<!-- Template to head descriptive pages. -->
+
+<!--========================================================================-->
+<xsl:template name="PageHeader">
+  <xsl:param name="title" select="'Title not specified'"/>   
+<table width="100%">
+  <tr>
+    <td align="left"> 
+      <span style="font-family:{$englishfontfamily};font-weight:bold;font-size:200%">
+        <xsl:value-of select="$title"/>
+      </span>
+      <p/>     
+    </td>
+  </tr>
+</table>
+</xsl:template>
+<!--========================================================================-->
+
+<!-- Template to end descriptive pages. -->
+
+<!--========================================================================-->
+<xsl:template name="PageFooter">
+<p/>
+<table width="100%">
+  <tr>
+    <td align="left">      
+      <a  target="_blank" title="License information." href="../License.html" alt="License information">
+        <img src="../Images/CreativeCommons.gif" alt="License information" border="0"/>
+      </a>
+    </td>
+    <td align="right">
+      <b>
+        <a title="Build number."><xsl:value-of select="$build"/></a>
+      </b>
+    </td>
+  </tr>
+</table>
+<hr/>
+</xsl:template>
+</xsl:stylesheet>
+<!--========================================================================-->
+<!--========================================================================-->

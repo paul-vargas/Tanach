@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  Copyright C.V.Kimball 2013  -->
+<html>
+<header profile="http://www.w3.org/2005/11/profile" > 
+  <meta http-equiv="X-UA-Compatible" content="IE=8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
+  <link rel="icon" type="image.x-icon" href="http://www.cvkimball.com/Tanach/TanachIcon.ico"/>
+  <title>Citation syntax</title>
+<!-- Force the default font so that the site looks the same on all systems.  -->
+  <style>
+    body {font-family:Times New Roman}
+  </style>
+</header>
+<body style="background-image:url('../Images/Background');margin-right:10pt; 
+              margin-left:10pt; margin-top:10pt; margin-bottom:0">
+<table width="100%">
+  <tr>
+    <td align="left"> 
+      <span style="font-family:Times New Roman;font-weight:bold;font-size:200%">Citation syntax</span>
+      <p/>     
+    </td>
+  </tr>
+</table>
+<p/>
+
+
+<h4>Choosing a book:</h4>
+The easiest way to choose a book is to click on the table of books below the citation text field.
+The book name will appear in the text field.  A book can be entered from the keyboard by either by its 
+English name or  <b>abbreviation</b>:
+<p/>
+<center>
+<table border="2" cellpadding="10">
+<tr><td><center><b>Torah</b></center></td>
+    <td><center><b>Prophets</b></center></td>
+    <td colspan="2"><center><b>Minor prophets</b></center></td>
+    <td colspan="2"><center><b>Writings</b></center></td></tr>
+
+<tr><td>Genesis; <b>Gen</b></td>
+    <td>Joshua; <b>Josh</b></td>
+    <td>Hosea; <b>Hos</b></td>
+    <td>Nahum; <b>Nah</b></td>
+    <td>Psalms; <b>Ps</b></td>
+    <td>Ecclesiastes; <b>Eccl</b></td></tr>
+    
+<tr><td>Exodus; <b>Ex</b></td>
+    <td>Judges; <b>Judg</b></td>
+    <td>Joel; <b>Joel</b></td>
+    <td>Habakkuk; <b>Hab</b></td>
+    <td>Proverbs; <b>Prov</b></td>
+    <td>Esther; <b>Esth</b></td></tr>
+    
+<tr><td>Leviticus; <b>Lev</b></td>
+    <td>1 Samuel; <b>1 Sam</b></td>
+    <td>Amos; <b>Am</b></td>
+    <td>Zephaniah; <b>Zeph</b></td>
+    <td>Job; <b>Job</b></td>
+    <td>Daniel; <b>Dan</b></td></tr>
+
+<tr><td>Numbers; <b>Num</b></td>
+    <td>2 Samuel; <b>2 Sam</b></td>
+    <td>Obadiah; <b>Ob</b></td>
+    <td>Haggai; <b>Hag</b></td>
+    <td>Song of songs; <b>Song</b></td>
+    <td>Ezra; <b>Ezra</b></td></tr>
+    
+<tr><td>Deuteronomy; <b>Deut</b></td>
+    <td>1 Kings; <b>1 Kings</b></td>
+    <td>Jonah; <b>Jon</b></td>
+    <td>Zechariah; <b>Zech</b></td>
+    <td>Ruth; <b>Ruth</b></td>
+    <td>Nehemiah; <b>Neh</b></td></tr>
+    
+<tr><td>&#160;</td>
+    <td>2 Kings; <b>2 Kings</b></td>
+    <td>Micah; <b>Mic</b></td>
+    <td>Malachi; <b>Mal</b></td>
+    <td>Lamentations; <b>Lam</b></td>
+    <td>1 Chronicles; <b>1 Chr</b></td></tr>
+
+<tr><td>&#160;</td>
+    <td>Isaiah; <b>Isa</b></td>
+    <td colspan="3">&#160;</td>
+    <td>2 Chronicles; <b>2 Chr</b></td></tr>
+    
+    
+<tr><td>&#160;</td>
+    <td>Jeremiah; <b>Jer</b></td>
+    <td colspan="4">&#160;</td></tr>
+    
+<tr><td>&#160;</td>
+    <td>Ezekiel; <b>Ezek</b></td>
+    <td colspan="4">&#160;</td></tr>
+</table>
+</center>
+<p/>
+Book names and abbreviations are case-insensitive.  That is, deut, 
+DEUT, deuteronomy, and dEUTERONOMY
+are valid entries for the book of Deuteronomy.
+<p/> 
+<h4>Choosing chapters and verses:</h4>
+Six different formats are available to specify a citation.  Only these
+formats are accepted, all others will produce error messages. 
+To view the entire book, usually <i>not</i> a good idea, enter a single asterisk, <b>'*'</b>.
+The general format is
+<b>b c:v</b> where <b>b</b> is the book, <b>c</b> is the chapter, and
+<b>v</b> is the verse. 
+A dash, "<b>-</b>", indicates a range of values. If the specified book, chapter, verse
+doesn't exist, an error message is given.  This message also gives the limits
+on the chapters or verses in the citation.  Indicies are positive, starting at 1,
+not zero.
+<p/>
+<table align="center" width="90%" border="1" cellpadding="4">
+    <th align="center" width="30%">Syntax</th>
+    <th align="center">Syntax name</th>
+    <th align="center">yields...</th>
+<tr>
+    <td><b>b *</b></td>
+    <td>Complete book</td>
+    <td>All the chapters and verses in the book. <br/>
+       <i>Caution: This will usually take a long time to display!</i>
+    </td></tr> 
+<tr>
+    <td><b>b <b>c</b></b></td>
+    <td>Single chapter</td>
+    <td>Book <b>b</b>, chapter <b>c</b>.</td></tr> 
+<tr>
+    <td><b>b c:v</b></td>
+    <td>Single verse</td>
+    <td>Book <b>b</b>, chapter <b>c</b>, verse <b>v</b>.</td></tr> 
+<tr>
+    <td><b>b c1 - c2</b></td>
+    <td>Chapter range</td>
+    <td>Book <b>b</b>, chapters <b>c1</b> through <b>c2</b>.<br/> <i>Caution: Wide ranges are slow to display!</i></td></tr> 
+<tr>
+    <td><b>b c:v1 - v2</b></td>
+    <td>Single chapter:Verse range</td>
+    <td>Book <b>b</b>, chapter <b>c</b> verses <b>v1</b> through <b>v2</b>.</td></tr> 
+<tr>
+    <td><b>b c1:v1 - c2:v2</b></td>
+    <td>Chapter:Verse range</td>
+    <td>Book <b>b</b>, from chapter <b>c1</b>, verse <b>v1</b> to chapter <b>c2</b>, verse <b>v2</b>.</td></tr> 
+</table>
+<p/>
+A citation may <i>not</i> specify more than one book. Blanks may be omitted.
+  
+<p/>
+<table width="100%">
+  <tr>
+    <td align="left">      
+      <a  target="_blank" title="License information." href="../License.html" alt="License information">
+        <img src="../Images/CreativeCommons.gif" alt="License information" border="0"/>
+      </a>
+    </td>
+    <td align="right">
+      <b>
+        <a title="Build number.">25.1</a>
+      </b>
+  </tr>
+</table>
+<hr/>
+</body>
+</html>
+<!--========================================================================-->
+<!--========================================================================-->

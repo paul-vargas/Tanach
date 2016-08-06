@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  Copyright C.V.Kimball 2013  -->
+<html>
+<header profile="http://www.w3.org/2005/11/profile" >   
+  <meta http-equiv="X-UA-Compatible" content="IE=8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
+  <link rel="icon" type="image.x-icon" href="http://www.cvkimball.com/Tanach/TanachIcon.ico"/>
+  <title>Text files</title>
+<!-- Force the default font so that the site looks the same on all systems.  -->
+  <style>
+    body {font-family:Times New Roman}
+  </style>
+</header>
+<body style="background-image:url('../Images/Background');margin-right:10pt; 
+              margin-left:10pt; margin-top:10pt; margin-bottom:0">
+<table width="100%">
+  <tr>
+    <td align="left"> 
+      <span style="font-family:Times New Roman;font-weight:bold;font-size:200%">Text files</span>
+      <p/>     
+    </td>
+  </tr>
+</table>
+<p/>
+
+Text files are sequences of UTF-8 (Unicode Transformation Format-8) characters without markup.  
+They are editable by simple system editors and are highly transportable.  Although without markup, the
+files have a fixed format described below to facilitate machine processing. 
+Text files lack Documentary Hypothesis markings.
+<p/>
+Text files can be obtained in one of 4 ways:
+<ol>
+<li>When viewing biblical text press the "Text" button
+at the bottom of a text page.  The file will be displayed by the browser and can be saved
+ via the browser's "Save Page as ..." command. The text file will have the Layout
+and Content of the original text.  (The font and font size are not in the file and are browser-dependent.)</li>
+<p/>
+<li>Text files for <i>entire biblical books</i> can be obtained by clicking on the book name on the Home
+page. The middle row of the resulting page offers a table of available formats and contents.
+In the row labelled "Text", click the link corresponding to the desired content 
+("Accents", "Vowels", "Consonants", "Morphology").  These text files are an official repository
+of the Groves Center for the Westminster Leningrad Codex in Unicode. </li>
+<p/>
+<li>Text files can also be obtained from the <b>Server.txt</b> by entering a <i>query</i> URL into a
+browser address bar.  Only 2 parameters,
+layout, content, each having values from the pulldown lists are permitted.  For example,
+<blockquote>
+<a target="_blank" href="http://www.tanach.us/Server.txt?Deut26:5-9&amp;layout=Qere-only&amp;content=Consonants">
+  http://www.tanach.us/Server.txt?Deut26:5-9&amp;layout=Qere-only&amp;content=Consonants</a>
+</blockquote>
+displays Deuteronomy 26:5-9 in Qere-only Layout with Consonants Content. Note that layout and content
+are not capitalized, although Qere-only and Consonants are capitalized. 
+See the <a href="Servers.html">Servers</a> page for more information 
+about using the <b>Server.txt</b>.
+</li>
+<p/>
+<li>Zipped archives of complete Tanach books in text format are available in the <b><tt>TextFiles</tt></b> directory.
+See the "Zipped archives of Tanach books" section of the 
+<a href="Technical.html">Technical</a> page.
+</li>
+</ol>
+<p/>
+<h4>Text file applications:</h4>
+
+Because the files are without markup, the <i>display</i> of the text files is completely dependent on
+the implementation of the Unicode bi-directional (bidi) text algorithm in the displaying application. 
+Although Unicode has been a web standard for a long time, 
+many applications do not have full implementations
+of the bidi algorithm.  Not all applications reliably <i>display</i> Unicode text files
+that contain both left-to-right and right-to-left text. 
+Fortunately, the files appear correctly on all systems' default editor and many other applications:
+<p/>
+<table align="center" border="1" cellpadding="5" width="80%">
+  <tr>
+    <th>System</th>
+    <th>Editor</th>
+    <th>Font</th>    
+    <th>Comments</th>
+  </tr>
+  <tr>
+    <td><b>Windows</b><br/>Windows XP<sup>+</sup></td>
+    <td><b>Notepad</b></td>
+    <td><b>SBL Hebrew</b></td>
+    <td>Do not use WordPad!</td>
+  </tr>
+  <tr>
+    <td><b>Mac OSX</b><br/>10.6.3<sup>+</sup></td>
+    <td><b>TextEdit</b></td>
+    <td><b>Raanana</b></td>
+    <td>The SBL Hebrew font causes display crashes in long files.</td>
+  </tr>
+  <tr>
+    <td><b>Ubuntu Linux</b><br/>9.10<sup>+</sup></td>
+    <td><b>gedit</b></td>
+    <td><b>Frank Ruehl CLM</b></td>
+    <td>&#x00a0;</td>
+  </tr>
+  <tr>
+    <td><b>SUSE Linux</b><br/>11.1<sup>+</sup></td>
+    <td><b>KWrite</b></td>
+    <td><b>Frank Ruehl CLM</b></td>
+    <td>&#x00a0;</td>
+  </tr>
+</table>
+<p/>
+Even if the <i>display</i> is distorted by an application's shortcomings in bidi implementation, <i>machine processing</i> of the files will not be effected.
+
+<h4>Format:</h4>
+
+Unicode contains three helpful 
+directional characters, the left-to-right embedding (<b>LRE, 202a</b>), the right-to-left embedding (<b>RLE, 202b</b>) and the
+pop directional formating (<b>PDF, 202c</b>) to set the text direction
+for the next block of characters.   
+The text files have been formatted with <b>LRE</b>, <b>RLE</b>, and <b>PDF</b> characters. Applications that
+fail to handle these characters correctly will produce erroneous displays.
+<p/>
+Lines consist of either an <b>LRE</b> or <b>RLE</b> character followed by a sequence of Unicode characters terminated by
+a <b>PDF</b> character, a carriage return (<b>000d</b>), and a linefeed (<b>000a</b>). By this approach each line
+starts with a directional specification and then 'escapes' this direction at the end of the line.  Thus there is no change
+in embedding level from line to line.
+<p/>
+Lines containing labels or blanks begin with the <b>LRE</b> character and then the prefix <b>xxxx</b>,
+followed by the text, and then are
+terminated by a <b>PDF</b> character, a carriage return (<b>000d</b>), and a linefeed (<b>000a</b>). 
+Blank lines and a line with the chapter number are inserted
+between chapters for ease of reading.
+<p/>
+All Hebrew text lines begin with an <b>RLE</b> and follow this order:
+<ol>
+<li>The initial <b>RLE</b>,</li>
+<li>one (1) non-breaking space (<b>00a0</b>),</li>
+<p/>
+If the Layout is "Full" or "Note-free":
+
+<li>the verse number in a three-digit-wide field padded with non-breaking spaces (<b>00a0</b>),</li>
+<li>a sof pasuq  '<span style="text-direction:rtl;font-weight:bold;font-family:SBL Hebrew;">&#x05c3;&#x200e;</span>' (<b>05c3</b>, acting in place of a colon),</li>
+<li>the chapter number in a three-digit-wide field padded with non-breaking spaces (<b>00a0</b>),</li>
+
+<p/>
+"Text-only" and "Qere-only" Layouts omit the above 3 fields.
+<p/>
+<li>one (1) non-breaking space (<b>00a0</b>), and</li>
+<li>the Hebrew text with transcription notes (see below), and </li>
+<li>the line termination of consisting of a <b>PDF</b> character, a carriage return (<b>000d</b>), and a linefeed (<b>000a</b>).</li>
+</ol>
+In parsing the text, the first number found is the verse number, not the chapter number.
+<p/>
+Hebrew text lines may contain transcription notes depending on the selected Layout.  
+These notes are denoted by values within square brackets, i.e. <b>[x]</b>.
+Because the square brackets and possibly the note itself may be left-to-right characters, all notes are preceded
+by an <b>LRE</b> character and followed by a <b>PDF</b> character. Thus there is no change
+in embedding level after entering and leaving a transcription note. Except in the Qere-only Layout, ketiv/qere sections are marked
+with '<b>*</b>'s as in the original Michigan-Claremont coding.
+<p/>
+The text files with "Full" Layout and "Morphology" Content contain all the information 
+available in the Westminster Leningrad Codex.  The ordering of cantillation marks
+may differ from that of the  Westminster Leningrad Codex, however. The mark ordering is that suggested by 
+<a  target="_blank" href="http://www.tiro.com">John Hudson</a> in his 
+<a  target="_blank" href="http://www.sbl-site.org/educational/BiblicalFonts_SBLHebrew.aspx">SBL Hebrew Hebrew Font User Manual</a>.
+
+<p/>
+<table width="100%">
+  <tr>
+    <td align="left">      
+      <a  target="_blank" title="License information." href="../License.html" alt="License information">
+        <img src="../Images/CreativeCommons.gif" alt="License information" border="0"/>
+      </a>
+    </td>
+    <td align="right">
+      <b>
+        <a title="Build number.">25.1</a>
+      </b>
+  </tr>
+</table>
+<hr/>
+</body>
+</html>
+<!--========================================================================-->
+<!--========================================================================-->
