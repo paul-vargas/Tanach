@@ -57,7 +57,7 @@
 <!-- Font for Hebrew text                                                   -->
 <xsl:param name="fontfamily">SBL Hebrew</xsl:param>
 <!-- Font for English text                                                  -->
-<xsl:param name="englishfontfamily">Times New Roman</xsl:param>
+<xsl:param name="englishfontfamily">serif</xsl:param>
 <!-- Variable fontsize gives the size of the fonts in points.               -->
 <xsl:param name="fontsize">20</xsl:param> 
 <!-- Smaller font size controlled from fontsize through JavaScript          -->
@@ -179,6 +179,7 @@
   <meta content="Unicode/XML Westminster Leningrad Codex" name="description"/>
   <meta content="Bible, Hebrew, Tanach, Tanakh, Unicode,
         XML, HTML, Text, ODT, PDF, Documentary Hypothesis, Open Document Format" name="keywords"/>
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width"/>
   <link href="{$iconURL}" rel="icon" type="{$icontype}"/>
   <title>Westminster Leningrad Codex</title>
   <script src="Javascript/SarissaLib.js" type="text/javascript"> </script>
@@ -186,6 +187,11 @@
   <script src="Javascript/LCFacsimile.js" type="text/javascript"> </script> 
   <script src="Javascript/TanachBook.js" type="text/javascript"> </script>
   <script src="Javascript/TanachHome.js" type="text/javascript"> </script>
+  <link rel="stylesheet" type="text/css" href="css/custom.css"/>
+  <link rel="stylesheet" type="text/css" href="css/font-awesome.css"/>
+  <link id="linktheme" rel="stylesheet" type="text/css" href="css/day.css"/>
+  <script src="js/jquery-3.1.0.min.js" type="text/javascript"> </script>
+  <script src="js/custom.js" type="text/javascript"> </script>  
 </head>
 <body  onload="Javascript:init()" 
        style="background-image:url('{$background}');margin-right:10pt; 
@@ -219,6 +225,7 @@
 
 <table align="center" width="100%">
   <tr>
+<!--
     <td align="left" valign="top" width="18%">
       <table cellpadding="3">
         <tr>
@@ -249,16 +256,20 @@
       </table>
     </td>
     <td align="center" width="64%">
+-->
+    <td align="center" width="100%">
       <table>
         <tr>
           <td align="center">
             <span style="font-family:{$englishfontfamily};font-size:12pt">
+              <small>
               <a href="{$GCWLCurl}" target="_blank" title="Go to the Groves Center that provided the Hebrew text.">
                 Unicode/XML Westminster Leningrad Codex
                 <xsl:text> [</xsl:text> 
                 <xsl:value-of select="/Tanach/teiHeader/fileDesc/editionStmt/edition/version"/>
                 <xsl:text>] </xsl:text> 
               </a>
+              </small>
             </span>
           </td>
         </tr>
@@ -286,6 +297,7 @@
         </tr>
       </table>
     </td>
+<!--
     <td valign="top" width="18%">
        <table align="right" valign="top">
         <tr>
@@ -315,6 +327,7 @@
         </tr>
       </table>
     </td>
+-->
   </tr>
 </table>
 
@@ -323,29 +336,19 @@
     <td align="left">
             <table>
               <tr>
-                <td align="right"> 
-                  <b>&#x00a0;Citation</b> 
-                </td>
-                <td rowspan="2">
-                  <form action="JavaScript:enterHomeCitation()" name="excerptinput">
-                    &#x00a0;&#x00a0;<input maxlength="32" name="textfield" size="20" 
-                        style="font-weight:bold;font-family:{$englishfontfamily};font-size:16pt;" 
-                        title="Enter the Tanach citation here, i.e. Deut 26:5." type="TEXT">
-                    </input> 
-                  </form>
-                </td>
-              </tr>
-              <tr>
+                <td align="left"><b><i class="fa fa-book" aria-hidden="true">&#x200B;</i> Citation:</b></td>
                 <td align="right">
-                  <a href="Pages/CitationSyntax.html" title="See how to enter a citation">Syntax</a>
+                  <a href="Pages/CitationSyntax.html" title="See how to enter a citation"><i class="fa fa-question-circle-o" aria-hidden="true">&#x200B;</i> Syntax</a>
                 </td>
               </tr>
+              <tr><td colspan="2"><form action="JavaScript:enterHomeCitation()" name="excerptinput"><input maxlength="32" name="textfield" style="font-weight:bold;font-family:{$englishfontfamily};font-size:16pt; width: 100%;" title="Enter the Tanach citation here, i.e. Deut 26:5." type="TEXT" placeholder="e.g. Deut 26:5" /></form></td></tr>
             </table>
     </td>
   </tr>
 </table>
+<!--
 <span> </span>
-
+-->
 <table align="center">
   <tr>
     <td align="center">
@@ -363,182 +366,114 @@
 <!--========================================================================-->
 <html>
 <center>
-<table align="center" border="2" cellpadding="7pt" width="95%">
-<tr>
-<td>
-<center>
-<b>Torah</b>
-</center>
-</td>
-    <td>
-<center>
-<b>Prophets</b>
-</center>
-</td>
-    <td colspan="2">
-<center>
-<b>Minor prophets</b>
-</center>
-</td>
-    <td colspan="2">
-<center>
-<b>Writings</b>
-</center>
-</td>
-</tr>
-
-<tr>
-<td align="left">
-<a href="Javascript:setBookClick('1')">Genesis</a>
-</td>
-    <td align="left">
-<a href="Javascript:setBookClick('6')">Joshua</a>
-</td>
-    <td align="left">
-<a href="Javascript:setBookClick('15')">Hosea</a>
-</td>
-    <td align="left">
-<a href="Javascript:setBookClick('21')">Nahum</a>
-</td>
-    <td align="left">
-<a href="Javascript:setBookClick('29')">Psalms</a>
-</td>
-    <td align="left">
-<a href="Javascript:setBookClick('34')">Ecclesiastes</a>
-</td>
-</tr>
-    
-<tr>
-<td align="left">
-<a href="Javascript:setBookClick('2')">Exodus</a>
-</td>
-    <td align="left">
-<a href="Javascript:setBookClick('7')">Judges</a>
-</td>
-    <td align="left">
-<a href="Javascript:setBookClick('16')">Joel</a>
-</td>
-    <td align="left">
-<a href="Javascript:setBookClick('22')">Habakkuk</a>
-</td>
-    <td align="left">
-<a href="Javascript:setBookClick('31')">Proverbs</a>
-</td>
-    <td align="left">
-<a href="Javascript:setBookClick('36')">Esther</a>
-</td>
-</tr>
-    
-<tr>
-<td align="left">
-<a href="Javascript:setBookClick('3')">Leviticus</a>
-</td>
-    <td align="left">
-<a href="Javascript:setBookClick('8')">1 Samuel</a>
-</td>
-    <td align="left">
-<a href="Javascript:setBookClick('17')">Amos</a>
-</td>
-    <td align="left">
-<a href="Javascript:setBookClick('23')">Zephaniah</a>
-</td>
-    <td align="left">
-<a href="Javascript:setBookClick('30')">Job</a>
-</td>
-    <td align="left">
-<a href="Javascript:setBookClick('37')">Daniel</a>
-</td>
-</tr>
-
-<tr>
-<td align="left">
-<a href="Javascript:setBookClick('4')">Numbers</a>
-</td>
-    <td align="left">
-<a href="Javascript:setBookClick('9')">2 Samuel</a>
-</td>
-    <td align="left">
-<a href="Javascript:setBookClick('18')">Obadiah</a>
-</td>
-    <td align="left">
-<a href="Javascript:setBookClick('24')">Haggai</a>
-</td>
-    <td align="left">
-<a href="Javascript:setBookClick('33')">Song of songs</a>
-</td>
-    <td align="left">
-<a href="Javascript:setBookClick('38')">Ezra</a>
-</td>
-</tr>
-    
-<tr>
-<td align="left">
-<a href="Javascript:setBookClick('5')">Deuteronomy</a>
-</td>
-    <td align="left">
-<a href="Javascript:setBookClick('10')">1 Kings</a>
-</td>
-    <td align="left">
-<a href="Javascript:setBookClick('19')">Jonah</a>
-</td>
-    <td align="left">
-<a href="Javascript:setBookClick('25')">Zechariah</a>
-</td>
-    <td align="left">
-<a href="Javascript:setBookClick('32')">Ruth</a>
-</td>
-    <td align="left">
-<a href="Javascript:setBookClick('39')">Nehemiah</a>
-</td>
-</tr>
-    
-<tr>
-<td align="left"> </td>
-    <td align="left">
-<a href="Javascript:setBookClick('11')">2 Kings</a>
-</td>
-    <td align="left">
-<a href="Javascript:setBookClick('20')">Micah</a>
-</td>
-    <td align="left">
-<a href="Javascript:setBookClick('26')">Malachi</a>
-</td>
-    <td align="left">
-<a href="Javascript:setBookClick('35')">Lamentations</a>
-</td>
-    <td align="left">
-<a href="Javascript:setBookClick('27')">1 Chronicles</a>
-</td>
-</tr>
-
-<tr>
-<td align="left"> </td>
-    <td align="left">
-<a href="Javascript:setBookClick('12')">Isaiah</a>
-</td>
-    <td align="left" colspan="3"> </td>
-    <td align="left">
-<a href="Javascript:setBookClick('28')">2 Chronicles</a>
-</td>
-</tr>
-    
-    
-<tr>
-<td align="left"> </td>
-    <td align="left">
-<a href="Javascript:setBookClick('13')">Jeremiah</a>
-</td>
-    <td align="left" colspan="4"> </td>
-</tr>
-    
-<tr>
-<td align="left"> </td>
-    <td align="left">
-<a href="Javascript:setBookClick('14')">Ezekiel</a>
-</td>
-    <td align="left" colspan="4"> </td>
-</tr>
-</table>
+<table align="center" border="1" cellpadding="5" width="100%">
+	<tbody><tr>
+			<td colspan="2" style="text-align: center;"><strong>Torah</strong></td>
+		</tr>
+		<tr >
+			<td colspan="2" style="text-align: center;"><a href="javascript:setBookClick('1')">Genesis</a></td>
+		</tr>
+		<tr >
+			<td colspan="2" style="text-align: center;"><a href="javascript:setBookClick('2')">Exodus</a></td>
+		</tr>
+		<tr >
+			<td colspan="2" style="text-align: center;"><a href="javascript:setBookClick('3')">Leviticus</a></td>
+		</tr>
+		<tr >
+			<td colspan="2" style="text-align: center;"><a href="javascript:setBookClick('4')">Numbers</a></td>
+		</tr>
+		<tr >
+			<td colspan="2" style="text-align: center;"><a href="javascript:setBookClick('5')">Deuteronomy</a></td>
+		</tr>
+		<tr >
+			<td colspan="2" style="text-align: center;"><strong>Prophets</strong></td>
+		</tr>
+		<tr >
+			<td colspan="2" style="text-align: center;"><a href="javascript:setBookClick('6')">Joshua</a></td>
+		</tr>
+		<tr >
+			<td colspan="2" style="text-align: center;"><a href="javascript:setBookClick('7')">Judges</a></td>
+		</tr>
+		<tr >
+			<td colspan="2" style="text-align: center;"><a href="javascript:setBookClick('8')">1 Samuel</a></td>
+		</tr>
+		<tr >
+			<td colspan="2" style="text-align: center;"><a href="javascript:setBookClick('9')">2 Samuel</a></td>
+		</tr>
+		<tr >
+			<td colspan="2" style="text-align: center;"><a href="javascript:setBookClick('10')">1 Kings</a></td>
+		</tr>
+		<tr >
+			<td colspan="2" style="text-align: center;"><a href="javascript:setBookClick('11')">2 Kings</a></td>
+		</tr>
+		<tr >
+			<td colspan="2" style="text-align: center;"><a href="javascript:setBookClick('12')">Isaiah</a></td>
+		</tr>
+		<tr >
+			<td colspan="2" style="text-align: center;"><a href="javascript:setBookClick('13')">Jeremiah</a></td>
+		</tr>
+		<tr >
+			<td colspan="2" style="text-align: center;"><a href="javascript:setBookClick('14')">Ezekiel</a></td>
+		</tr>
+		<tr >
+			<td colspan="2" style="text-align: center;"><strong>Minor prophets</strong></td>
+		</tr>
+		<tr >
+			<td style="text-align: center;"><a href="javascript:setBookClick('15')">Hosea</a></td>
+			<td style="text-align: center;"><a href="javascript:setBookClick('21')">Nahum</a></td>
+		</tr>
+		<tr >
+			<td style="text-align: center;"><a href="javascript:setBookClick('16')">Joel</a></td>
+			<td style="text-align: center;"><a href="javascript:setBookClick('22')">Habakkuk</a></td>
+		</tr>
+		<tr >
+			<td style="text-align: center;"><a href="javascript:setBookClick('17')">Amos</a></td>
+			<td style="text-align: center;"><a href="javascript:setBookClick('23')">Zephaniah</a></td>
+		</tr>
+		<tr >
+			<td style="text-align: center;"><a href="javascript:setBookClick('18')">Obadiah</a></td>
+			<td style="text-align: center;"><a href="javascript:setBookClick('24')">Haggai</a></td>
+		</tr>
+		<tr >
+			<td style="text-align: center;"><a href="javascript:setBookClick('19')">Jonah</a></td>
+			<td style="text-align: center;"><a href="javascript:setBookClick('25')">Zechariah</a></td>
+		</tr>
+		<tr >
+			<td style="text-align: center;"><a href="javascript:setBookClick('20')">Micah</a></td>
+			<td style="text-align: center;"><a href="javascript:setBookClick('26')">Malachi</a></td>
+		</tr>
+		<tr >
+			<td colspan="2" style="text-align: center;"><strong>Writings</strong></td>
+		</tr>
+		<tr >
+			<td style="text-align: center;"><a href="javascript:setBookClick('29')">Psalms</a></td>
+			<td style="text-align: center;"><a href="javascript:setBookClick('34')">Ecclesiastes</a></td>
+		</tr>
+		<tr >
+			<td style="text-align: center;"><a href="javascript:setBookClick('31')">Proverbs</a></td>
+			<td style="text-align: center;"><a href="javascript:setBookClick('36')">Esther</a></td>
+		</tr>
+		<tr >
+			<td style="text-align: center;"><a href="javascript:setBookClick('30')">Job</a></td>
+			<td style="text-align: center;"><a href="javascript:setBookClick('37')">Daniel</a></td>
+		</tr>
+		<tr >
+			<td style="text-align: center;"><a href="javascript:setBookClick('33')">Song of songs</a></td>
+			<td style="text-align: center;"><a href="javascript:setBookClick('38')">Ezra</a></td>
+		</tr>
+		<tr >
+			<td style="text-align: center;"><a href="javascript:setBookClick('32')">Ruth</a></td>
+			<td style="text-align: center;"><a href="javascript:setBookClick('39')">Nehemiah</a></td>
+		</tr>
+		<tr>
+			<td style="text-align: center;"><a href="javascript:setBookClick('35')">Lamentations</a></td>
+			<td style="text-align: center;"><a href="javascript:setBookClick('27')">1 Chronicles</a></td>
+		</tr>
+		<tr>
+			<td style="text-align: center;"></td>
+			<td style="text-align: center;"><a href="javascript:setBookClick('28')">2 Chronicles</a></td>
+		</tr>
+	</tbody></table>
 </center>
 </html>
 </xsl:template>
@@ -549,10 +484,10 @@
 <!--========================================================================-->
 <html>
 <center>
-<table border="1" cellpadding="10" width="64%">
+<table border="1" cellpadding="5" width="100%">
   <tr>
     <td>
-      <table border="1" cellpadding="10" width="100%">
+      <table border="1" cellpadding="2" width="100%">
         <tr>
           <th colspan="10"><xsl:value-of select="$clickbook"/> chapter:</th>
         </tr>
@@ -715,11 +650,11 @@
   </tr>
   </xsl:if>
   <tr>
-    <td align="right">
+    <td align="left">
       <table cellpadding="5">
         <tr>
           <td>
-            <button onclick="Javascript:setBookTable()" style="font-weight:bold;color:blue;font-size:12pt" title="Return to the Home page.">Back</button>
+            <button onclick="Javascript:setBookTable()" style1="font-weight:bold;color:blue;font-size:12pt" title="Return to the Home page."><i class="fa fa-arrow-circle-left" aria-hidden="true">&#x200B;</i> Back</button>
           </td>
         </tr>
       </table>
@@ -776,10 +711,10 @@
 <!--========================================================================-->
 <html>
 <center>
-<table border="1" cellpadding="10" width="64%">
+<table border="1" cellpadding="5" width="100%">
   <tr>
     <td>
-      <table border="1" cellpadding="10" width="100%">
+      <table border="1" cellpadding="2" width="100%">
         <tr>
 <th colspan="10">
 <xsl:value-of select="$clickbook"/> chapter <xsl:value-of select="$clickchapter"/> verse:</th>
@@ -795,8 +730,8 @@
     </td>
   </tr>
   <tr>
-    <td align="right">
-      <button onclick="Javascript:setChapterTable()" style="font-weight:bold;color:blue;font-size:12pt" title="Return to the {$clickbook} chapter table.">Back</button>
+    <td align="left">
+      <button onclick="Javascript:setChapterTable()" style1="font-weight:bold;color:blue;font-size:12pt" title="Return to the {$clickbook} chapter table."><i class="fa fa-arrow-circle-left" aria-hidden="true">&#x200B;</i> Back</button>
     </td>
   </tr>
 </table>
@@ -810,11 +745,11 @@
 <!--========================================================================-->
 <html>
 <center>
-<table border="1" cellpadding="15" width="64%">
+<table border="1" cellpadding="5" width="100%">
   <tr>
     <td>
       <b>
-         <a href="JavaScript:setLastVerseClick({$clickverse})">Show <xsl:value-of select="$clickbook"/> 
+         <a href="JavaScript:setLastVerseClick({$clickverse})"><i class="fa fa-hand-o-right" aria-hidden="true">&#x200B;</i> Show <xsl:value-of select="$clickbook"/> 
            <xsl:value-of select="$clickchapter"/>:<xsl:value-of select="$clickverse"/> 
          </a>
       </b>
@@ -841,15 +776,15 @@
   <tr>
     <td>
       <b>
-<a href="JavaScript:setShowVerse()">Show <xsl:value-of select="$clickbook"/> <xsl:value-of select="$clickchapter"/>:<xsl:value-of select="$clickverse"/> 
+<a href="JavaScript:setShowVerse()"><i class="fa fa-hand-o-right" aria-hidden="true">&#x200B;</i> Show <xsl:value-of select="$clickbook"/> <xsl:value-of select="$clickchapter"/>:<xsl:value-of select="$clickverse"/> 
       within chapter <xsl:value-of select="$clickchapter"/>
 </a>
 </b>
     </td>
   </tr>
   <tr>
-    <td align="right">
-      <button onclick="Javascript:setVerseTable()" style="font-weight:bold;color:blue;font-size:12pt" title="Return to the {$clickbook} chapter {$clickchapter} verse table">Back</button>
+    <td align="left">
+      <button onclick="Javascript:setVerseTable()" style1="font-weight:bold;color:blue;font-size:12pt" title="Return to the {$clickbook} chapter {$clickchapter} verse table"><i class="fa fa-arrow-circle-left" aria-hidden="true">&#x200B;</i> Back</button>
     </td>
   </tr>
 </table>
@@ -863,8 +798,33 @@
 <!--========================================================================-->
 
 <table cellpadding="0" width="100%">
+      <tr>
+    <td align="center" colspan="3"><small>
+        <a href="Pages/PageIndex.html" title="Index of available pages.">Page index</a> | <a href="Pages/Supplements.html" title="Tools and data tables.">Supplements</a> | <a href="{$previousversionurl}" style="font-style:italic" target="_blank" title="Go to the previous version.">Previous version</a></small>
+    </td>
+  </tr>
+
 <tr>
-  <td align="left" width="25%">
+    <td align="center" colspan="3">
+    <small>
+        <a href="Pages/About.html" title="Site overview.">About</a> | <a href="Pages/Installation.html" title="How to install the site correctly on your machine.">Installation</a> | <a href="Pages/Instructions.html" title="How to view the text and use other site features.">Instructions</a> | <a href="Pages/Technical.html" title="Detailed technical information about site.">Technical</a> | <a href="Pages/DH.html" title="Documentary Hypothesis information">DH</a>
+    </small>
+    </td>
+  </tr>
+    <tr>
+      <td align="center" colspan="3">
+          <small>
+              <a href="index.html?theme=day"><i class="fa fa-sun-o" aria-hidden="true">&#x200B;</i> Day theme</a> | <a href="index.html?theme=night"><i class="fa fa-moon-o" aria-hidden="true">&#x200B;</i> Night theme</a>
+          </small>
+      </td>
+  </tr>
+    <tr>
+      <td align="center" colspan="3">
+          <small>&#x00a0;</small>
+      </td>
+  </tr>
+<tr>
+  <td align="left">
       <span style="font-size:12pt">  
         <a href="License.html" target="_blank" title="See the full license information">
           <img border="0" src="{$creativecommons}"/>          
@@ -886,7 +846,7 @@
 
 <!-- Build numbers title changes with Server mode. -->
   
-  <td align="right" width="25%">
+  <td align="right">
     <xsl:if test="$server='false'">
       <span style="color:red;font-style:italic">Local mode</span>&#x00a0;&#x00a0;
     </xsl:if>
@@ -945,12 +905,15 @@
           </tr>
       </table>
     </td>
+  </tr>
+    <tr>
 
-    <td align="center" valign="top" width="80%">
+    <td align="center">
       <table align="center">  <!-- Center label table -->
           <tr>
             <td align="center">
               <span style="font-family:{$englishfontfamily};font-size:12pt">
+                <small>
                 <a href="JavaScript:showBookTEIHeader()" 
                   style="text-decoration:none;color:black;font-weight:bold"
                   title="Click to see this document's TEI header.">
@@ -959,34 +922,36 @@
                   <xsl:value-of select="/Tanach/teiHeader/fileDesc/editionStmt/edition/version"/>
                   <xsl:text>] </xsl:text>
                 </a>
+                <br/><br/></small>
               </span>    
             </td>
           </tr>
+<!--
         <tr>
           <td>
              
           </td>
         </tr>
+-->
             
         <tr>
-          <td align="left">
+          <td align="center">
             <table>
               <tr>
-                <td  align="right"> 
-                  <b>Citation</b> 
-                </td>
-                <td rowspan="2" >
-                  <form action="JavaScript:enterBookCitation()" name="excerptinput">
-                    &#x00a0;&#x00a0;<input maxlength="32" name="textfield" size="24" 
-                        style="font-weight:bold;font-family:{$englishfontfamily};font-size:16pt;" 
-                        title="Enter the Tanach citation here, i.e. Deut 26:5." type="TEXT">
-                    </input> 
-                  </form>
-                </td>
+                <td align="left"><b><i class="fa fa-book" aria-hidden="true">&#x200B;</i> Citation:</b></td>
+                <td align="right"><a href="Pages/CitationSyntax.html" title="See how to enter a citation"><i class="fa fa-question-circle-o" aria-hidden="true">&#x200B;</i> Syntax</a></td>
               </tr>
               <tr>
-                <td align="right">
-                  <a href="Pages/CitationSyntax.html" title="See how to enter a citation">Syntax</a>
+                <td colspan="2" >
+                  <form action="JavaScript:enterBookCitation()" name="excerptinput">
+                    <input maxlength="32" 
+                           name="textfield" 
+                           style="font-weight:bold;font-family:{$englishfontfamily};font-size:16pt; width: 100%" 
+                           title="Enter the Tanach citation here, i.e. Deut 26:5." 
+                           type="TEXT"
+                           placeholder="e.g. Deut 26:5">
+                    </input> 
+                  </form>
                 </td>
               </tr>
             </table>
@@ -1000,19 +965,14 @@
           </td>
         </tr>
      </table>
-  </td>  
+  </td> </tr> <tr>
   <td align="left" valign="top" width="10%">
-    <table align="right">  <!-- Actions table -->
-      <tr>
-        <td align="right" colspan="2">
-           
-        </td>
-      </tr>
+    <table align="center">  <!-- Actions table -->
       <tr title="Change text presentation.">
-        <td align="left">
+        <td align="right">
             <span style="font-size:12pt">Layout: </span>
         </td>
-        <td align="right">
+        <td align="left">
               <select id="LayoutPD" onchange="JavaScript:changeLayout()" style="font-size:8pt">
                 <option selected="true" value="Full">Full</option>
                 <option value="Note-free">Note-free</option>
@@ -1023,10 +983,10 @@
         </td>
       </tr> 
       <tr title="Change text content.">
-        <td align="left">
+        <td align="right">
             <span style="font-size:12pt">Content: </span>
         </td>
-        <td align="right">
+        <td align="left">
                 <select id="ContentPD" onchange="JavaScript:changeContent()" style="font-size:8pt;">
                     <option selected="true" value="Accents">Accents</option>
                     <option value="Vowels">Vowels</option>
@@ -1036,10 +996,10 @@
         </td>
       </tr> 
       <tr title="Change font size.">
-        <td align="left">
+        <td align="right">
            <span style="font-size:12pt">Font: </span>
         </td>
-        <td align="right">
+        <td align="left">
                 <select id="FontSizePD" onchange="JavaScript:changeFontSize()" style="font-size:8pt">
                     <option value="12">12pt</option>
                     <option value="14">14pt</option>
@@ -1063,10 +1023,10 @@
       </tr> 
       <xsl:if test="$clickbookindex &lt; 6">
         <tr title="Change Documentary Hypothesis display.">
-          <td align="left">
+          <td align="right">
             <span style="font-size:12pt">DH: </span>
           </td>
-          <td align="right">
+          <td align="left">
                 <select id="DHPD" onchange="JavaScript:changeDH()" style="font-size:8pt">
                     <option selected="true" value="Off">Off</option>
                     <option value="Titles">Titles</option>
@@ -1090,6 +1050,7 @@
   <xsl:param name="license" select="'License.html'"/>   
 <p/>
 <table width="100%" >
+<!--
   <tr>
     <td align="left" width="15%">      
       <a alt="License information" href="{$license}" target="_blank" title="License information." >
@@ -1107,8 +1068,8 @@
         
         <td align="center" >      
           <button onclick="JavaScript:returnToHomePage()" 
-             style="color:blue;font-size:9pt;font-weight:bold;width:50pt;border-radius:5pt" 
-               title="Return to Home page.">Home</button>
+             style1="color:blue;font-size:9pt;font-weight:bold;width:50pt;border-radius:5pt" 
+               title="Return to Home page."><i class="fa fa-home" aria-hidden="true"></i> Home</button>
         </td>
         
         <td align="right"  width="35%">
@@ -1151,6 +1112,29 @@
       </b>
     </td>
   </tr>
+-->
+<tr>
+  <td align="left" width="33%">
+        <a href="License.html" target="_blank" title="See the full license information">
+          <img border="0" src="{$creativecommons}"/>
+        </a>
+  </td>
+  
+  <td align="center" width="33%">
+<button onclick="JavaScript:returnToHomePage()" 
+             style1="color:blue;font-size:9pt;font-weight:bold;width:50pt;border-radius:5pt" 
+               title="Return to Home page."><i class="fa fa-home" aria-hidden="true">&#x200B;</i> Home</button>
+  </td>
+
+<!-- Build numbers title changes with Server mode. -->
+  
+  <td align="right" width="33%">
+    <xsl:if test="$server='false'">
+      <span style="color:red;font-style:italic">Local mode</span>&#x00a0;&#x00a0;
+    </xsl:if>
+    <b><a title="Current build number."><xsl:value-of select="$build"/></a></b>
+  </td>
+</tr>  
 </table>
 <hr/>
 </xsl:template>

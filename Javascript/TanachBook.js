@@ -743,13 +743,13 @@ function getODT(){
 function showText(e){
     if(!e.shiftKey) return ;
     if(window.getSelection){
-      SelectedText = new String(window.getSelection()) ; <!-- Firefox -->
+      SelectedText = new String(window.getSelection()) ; //<!-- Firefox -->
       }
     else if( document.getSelection){
       SelectedText = document.getSelection() ;
       }
     else if(document.selection){
-      SelectedText = document.selection.createRange().text ; <!-- IE6 -->
+      SelectedText = document.selection.createRange().text ; //<!-- IE6 -->
     }  
     ShiftPressed = false ;
     if (SelectedText.length > 200){

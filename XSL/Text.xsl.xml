@@ -78,7 +78,7 @@
 <!-- Variable brief eliminates header and footer if 1                     [URL name: Brief]             -->
 <xsl:param name="brief">0</xsl:param> 
 <!-- Cellpadding from fontsize through JavaScript                         [URL name: cellpadding]       -->
-<xsl:param name="cellpadding">10</xsl:param> 
+<xsl:param name="cellpadding">0</xsl:param> 
 <!-- Variable content chooses how to display chapter content.             [URL name: content]           -->
 <!-- Currently allowable: Morphology, Accents, Vowels, Consonants.                                      -->
 <xsl:param name="content">Accents</xsl:param>  
@@ -119,7 +119,7 @@
 <!-- Currently allowable: 0 <-> Chapter, 1 <-> Verses                     [URL name: view]              -->
 <xsl:param name="view">0</xsl:param>     
 <!-- Variable chapterwidth gives % width in layouts                       [URL name: width]             -->
-<xsl:param name="chapterwidth">95</xsl:param>
+<xsl:param name="chapterwidth">100</xsl:param>
 <!-- Excerpt specification, set by JavaScript.                              -->
 <!-- Book specification (starting from 1 ).  Set for multibook files only! -->
 <xsl:param name="booknumber">1</xsl:param>  
@@ -1262,7 +1262,7 @@
     p.errortext { font-size:12pt; font-weight:bold; text-align:left; }
     span.englishlabel{ font-family:"<xsl:value-of select="$englishfontfamily"/>"; font-size:<xsl:value-of select="$labelsize"/>pt; font-weight:bold; }
     span.hebrewlabel{ font-family:"<xsl:value-of select="$fontfamily"/>"; font-size:<xsl:value-of select="round($hebrewlabelsize)"/>pt; font-weight:bold; }
-    span.hebrewtext { font-size:<xsl:value-of select="round($fontsize)"/>pt; line-height:<xsl:value-of select="$lineheight"/>%; font-family:"<xsl:value-of select="$fontfamily"/>"; color:black; direction:rtl; text-align:right; }
+    span.hebrewtext { font-size:<xsl:value-of select="round($fontsize)"/>pt; line-height:<xsl:value-of select="$lineheight"/>%; font-family:"<xsl:value-of select="$fontfamily"/>"; color:black; direction:rtl; text-align:right; padding: 0 3pt; display: block; }
     span.ketiv { direction:rtl; vertical-align:super; color:maroon; }
     span.qere { direction:rtl; color:blue; }
     span.note { direction:ltr; vertical-align:super; font-size:<xsl:value-of select="round($Englishfontsize)"/>pt; color:red; }
