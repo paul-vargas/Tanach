@@ -137,6 +137,8 @@
 
 <!-- Variable chapterborder gives border width in Full Layout               -->
 <xsl:variable name="chapterborder">1</xsl:variable>
+<!-- Variable bordercolor gives border color in Full Layout               -->
+<xsl:variable name="bordercolor">#ccc</xsl:variable>
 <!-- Color for emphasized text in DH display mode.                          -->
 <xsl:variable name="emphasiscolor">black</xsl:variable> 
 <!-- Color for de-emphasized text in DH display mode.                       -->
@@ -1285,18 +1287,18 @@
 <xsl:if test="$view=1">
     <xsl:choose>
       <xsl:when test="$align='right'">
-    table.hebrewtextverses{ margin-top:20pt; margin-right:0; margin-left:auto; margin-bottom:20pt; border-color:black; border-style:solid; border-width:<xsl:value-of select="$chapterborder"/>pt; padding:0; width:<xsl:value-of select="$chapterwidth"/>%; }
+    table.hebrewtextverses{ margin-top:20pt; margin-right:0; margin-left:auto; margin-bottom:20pt; border-color:black; border-style:solid; border-color:<xsl:value-of select="$bordercolor"/>; border-width:<xsl:value-of select="$chapterborder"/>pt; padding:0; width:<xsl:value-of select="$chapterwidth"/>%; }
       </xsl:when>
       <xsl:when test="$align='left'">
-    table.hebrewtextverses{ margin-top:20pt; margin-right:auto; margin-left:0; margin-bottom:20pt; border-color:black; border-style:solid; border-width:<xsl:value-of select="$chapterborder"/>pt; padding:0; width:<xsl:value-of select="$chapterwidth"/>%; }
+    table.hebrewtextverses{ margin-top:20pt; margin-right:auto; margin-left:0; margin-bottom:20pt; border-color:black; border-style:solid; border-color:<xsl:value-of select="$bordercolor"/>; border-width:<xsl:value-of select="$chapterborder"/>pt; padding:0; width:<xsl:value-of select="$chapterwidth"/>%; }
       </xsl:when>
       <xsl:otherwise>
-    table.hebrewtextverses{ margin-top:20pt; margin-right:auto; margin-left:auto; margin-bottom:20pt; border-color:black; border-style:solid; border-width:<xsl:value-of select="$chapterborder"/>pt; padding:0; width:<xsl:value-of select="$chapterwidth"/>%; }
+    table.hebrewtextverses{ margin-top:20pt; margin-right:auto; margin-left:auto; margin-bottom:20pt; border-color:black; border-style:solid; border-color:<xsl:value-of select="$bordercolor"/>; border-width:<xsl:value-of select="$chapterborder"/>pt; padding:0; width:<xsl:value-of select="$chapterwidth"/>%; }
       </xsl:otherwise>
     </xsl:choose>
     table.citationverses { margin-left:auto; margin-right:auto; width:100%; font-size:<xsl:value-of select="round($Englishfontsize)"/>pt; font-family:'<xsl:value-of select="$englishfontfamily"/>'; font-weight:bold; }
-    td.hebrewtextverses { width:90%; border-style:solid; border-width:<xsl:value-of select="$chapterborder"/>pt; padding:<xsl:value-of select="$cellpadding"/>pt; text-align:right; }
-    td.citationverses{ margin-left:auto; margin-right:auto; width:10%; border-style:solid; border-width:<xsl:value-of select="$chapterborder"/>pt; text-align:center; }
+    td.hebrewtextverses { width:90%; border-style:solid; border-color:<xsl:value-of select="$bordercolor"/>; border-width:<xsl:value-of select="$chapterborder"/>pt; padding:<xsl:value-of select="$cellpadding"/>pt; text-align:right; }
+    td.citationverses{ margin-left:auto; margin-right:auto; width:10%; border-style:solid; border-color:<xsl:value-of select="$bordercolor"/>; border-width:<xsl:value-of select="$chapterborder"/>pt; text-align:center; }
 </xsl:if>
 <!-- DH label styles  -->
 <xsl:if test="not($DH='Off')">

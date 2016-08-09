@@ -83,7 +83,7 @@
 <!-- Variable GCWLCurl holds the URL of the WLC at the J. Alan Groves Center for Advanced Biblical Research.     -->
 <xsl:variable name="GCWLCurl">http://www.grovescenter.org/GC/projects/wlc-1</xsl:variable>  
 <!-- Variable previousversionurl is a URL pointing to the previous version. -->
-<xsl:variable name="previousversionurl">PreviousVersions/Tanach-24.2/Tanach.xml</xsl:variable>  
+<xsl:variable name="previousversionurl">PreviousVersions/Tanach-25.0/Tanach.xml</xsl:variable>  
 <xsl:variable name="doublearrow">
 <xsl:value-of select="$baseURL"/>Images/doublearrow.ico</xsl:variable>
 <!-- Variable displaystring hold string to be displayed in Unicode.         -->
@@ -850,7 +850,7 @@
     <xsl:if test="$server='false'">
       <span style="color:red;font-style:italic">Local mode</span>&#x00a0;&#x00a0;
     </xsl:if>
-    <b><a title="Current build number."><xsl:value-of select="$build"/></a></b>
+    <b><a title="Current build number." style="color:red;font-style:italic"><xsl:value-of select="$build"/></a></b>
   </td>
 </tr>
 </table>
@@ -978,7 +978,7 @@
                 <option value="Note-free">Note-free</option>
                 <option value="Text-only">Text-only</option>
                 <option value="Qere-only">Qere-only</option>
-                <option value="Verses">Verses view</option>
+                <option value="Verses">Toggle Chapter/Verses view</option>
               </select>
         </td>
       </tr> 

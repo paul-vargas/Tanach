@@ -563,12 +563,12 @@ function changeLayout(){
       if(VersesMode=='1'){ // In Verse view=1, go to Chapter view=0
         setXSLParam(textXSL, "view", '0') ;
         createCookie("View", "0", 3650) ;
-        setSelectedText( 'LayoutPD', 4, 'Verses view' ) ;
+        setSelectedText( 'LayoutPD', 4, 'Toggle Chapter/Verses view' ) ;
       }
       else{  // In Chapter view=0, go to Verses view=1
         setXSLParam(textXSL, "view", '1') ;
         createCookie("View", "1", 3650) ;
-        setSelectedText( 'LayoutPD', 4, 'Chapter view' ) ;
+        setSelectedText( 'LayoutPD', 4, 'Toggle Chapter/Verses view' ) ;
       }
     }
     createCookie("Layout", layout, 3650) ;
@@ -585,10 +585,10 @@ function setPDs(){
    view = askForCookie("View", view)   ;
    setXSLParam(textXSL, "view", view) ;
    if(view=='1'){
-      setSelectedText( 'LayoutPD', 4, 'Chapter view' ) ;
+      setSelectedText( 'LayoutPD', 4, 'Toggle Chapter/Verses view' ) ;
       }
    else{
-      setSelectedText( 'LayoutPD', 4, 'Verses view' ) ;
+      setSelectedText( 'LayoutPD', 4, 'Toggle Chapter/Verses view' ) ;
       }
    setSelectedValue("LayoutPD", layout) ;
    setXSLParam(textXSL, "format", layout) ;
