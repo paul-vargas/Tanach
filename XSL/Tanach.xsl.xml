@@ -965,9 +965,9 @@
           </td>
         </tr>
      </table>
-  </td> </tr> <tr>
-  <td align="left" valign="top" width="10%">
-    <table align="center">  <!-- Actions table -->
+  </td> </tr> <tr><!--
+  <td align="center">
+    <table align="center">
       <tr title="Change text presentation.">
         <td align="right">
             <span style="font-size:12pt">Layout: </span>
@@ -1036,7 +1036,66 @@
         </tr> 
       </xsl:if>
     </table>
-  </td>
+  </td>-->
+  <td align="center">
+      <span title="Change text presentation." style="display: inline-block; padding: 2pt 3pt;">
+            <span style="font-size:12pt">View: </span>
+              <select id="LayoutPD2" onchange="JavaScript:changeLayout2()" style="font-size:8pt">
+                <option value="Chapter" selected="true">Chapter</option>
+                <option value="Verses">Verses</option>
+              </select>
+      </span> 
+      <span title="Change text presentation." style="display: inline-block; padding: 2pt 3pt;">
+            <span style="font-size:12pt">Layout: </span>
+              <select id="LayoutPD" onchange="JavaScript:changeLayout()" style="font-size:8pt">
+                <option selected="true" value="Full">Full</option>
+                <option value="Note-free">Note-free</option>
+                <option value="Text-only">Text-only</option>
+                <option value="Qere-only">Qere-only</option>
+              </select>
+      </span> 
+      <span title="Change text content." style="display: inline-block; padding: 2pt 3pt;">
+            <span style="font-size:12pt">Content: </span>
+                <select id="ContentPD" onchange="JavaScript:changeContent()" style="font-size:8pt;">
+                    <option selected="true" value="Accents">Accents</option>
+                    <option value="Vowels">Vowels</option>
+                    <option value="Consonants">Consonants</option>
+                    <option value="Morphology">Morphology</option>
+                </select>
+      </span> 
+      <span title="Change font size." style="display: inline-block; padding: 2pt 3pt;">
+           <span style="font-size:12pt">Font: </span>
+                <select id="FontSizePD" onchange="JavaScript:changeFontSize()" style="font-size:8pt">
+                    <option value="12">12pt</option>
+                    <option value="14">14pt</option>
+                    <option value="16">16pt</option>
+                    <option value="18">18pt</option>
+                    <option selected="true" value="20">20pt</option>
+                    <option value="22">22pt</option>
+                    <option value="24">24pt</option>
+                    <option value="28">28pt</option>
+                    <option value="32">32pt</option>
+                    <option value="40">40pt</option>
+                    <option value="48">48pt</option>
+                    <option value="56">56pt</option>
+                    <option value="64">64pt</option>
+                    <option value="68">68pt</option>
+                    <option value="72">72pt</option>
+                    <option style="color:blue" value="change">Change font</option>
+                    <option style="color:blue" value="test">Test font</option>
+                </select>
+      </span> 
+      <xsl:if test="$clickbookindex &lt; 6">
+        <span title="Change Documentary Hypothesis display." style="display: inline-block; padding: 2pt 3pt;">
+            <span style="font-size:12pt">DH: </span>
+                <select id="DHPD" onchange="JavaScript:changeDH()" style="font-size:8pt">
+                    <option selected="true" value="Off">Off</option>
+                    <option value="Titles">Titles</option>
+                    <option value="All">All</option>
+                </select>
+        </span> 
+      </xsl:if>
+  </td>  
 </tr>
 </table>
 </xsl:template>
