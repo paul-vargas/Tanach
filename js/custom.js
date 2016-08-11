@@ -47,6 +47,14 @@ function init() {
         setXSLParam(tanachXSL, "queryURL", "true");
         testAndLaunchBookPage(queryString);
     }
+
+    if (theme == "night") {
+        $("#linkDay").show();
+        $("#linkNight").hide();
+    } else {
+        $("#linkDay").hide();
+        $("#linkNight").show();
+    }
 }
 
 function changeLayout() {
