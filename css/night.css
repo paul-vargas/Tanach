@@ -5,3 +5,7 @@ body {
 * {
     color: #ddd !important;
 }
+
+table.hebrewtextverses, td.hebrewtextverses, td.citationverses {
+	border-color: #222 !important;
+}

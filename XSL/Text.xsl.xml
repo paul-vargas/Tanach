@@ -138,7 +138,7 @@
 <!-- Variable chapterborder gives border width in Full Layout               -->
 <xsl:variable name="chapterborder">1</xsl:variable>
 <!-- Variable bordercolor gives border color in Full Layout               -->
-<xsl:variable name="bordercolor">#ccc</xsl:variable>
+<xsl:variable name="bordercolor">#e6e6e6</xsl:variable>
 <!-- Color for emphasized text in DH display mode.                          -->
 <xsl:variable name="emphasiscolor">black</xsl:variable> 
 <!-- Color for de-emphasized text in DH display mode.                       -->
