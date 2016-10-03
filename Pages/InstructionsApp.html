@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            if (localStorage.theme == "night") {
+                document.write("<link rel=\"stylesheet\" type=\"text\/css\" href=\"..\/css\/night.css\">");
+            } else {
+                document.write("<link rel=\"stylesheet\" type=\"text\/css\" href=\"..\/css\/day.css\">");
+            }
+        </script>
+        <meta charset="utf-8">
+        <link rel="icon" href="../Images/TanachIcon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="../Images/TanachIcon.ico" type="image/x-icon" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+
+        <link rel="stylesheet" type="text/css" href="../css/font-awesome.css">
+        <link rel="stylesheet" type="text/css" href="../css/custom.css">
+
+        <title>Instructions</title>
+        <!-- Force the default font so that the site looks the same on all systems.  -->
+        <style>
+            body {font-family:serif}
+        </style>
+    </head>
+    <body style="margin: .5em; cursor: auto; background-image: url(&quot;../Images/Background&quot;);">
+        <h1>Instructions</h1>
+
+
+        <p>The following is provided as a reference; most people can best learn to use the application by experimentation.</p>
+        <p>A citation, i.e. Deut 26:5-9, can be viewed either by clicking the desired book, chapter, verse, and last verse in a succession of pages from the initial ("<b>Home</b>") page or by entering the citation in the "Citation" text field and pushing return. The details of the citation syntax can be viewed by clicking the "Syntax" link to the right of the text field.</p>
+        <p>A correct citation brings up a <b>Book</b> page with the Hebrew text. Further citations can be entered in the Book page's text field; however, pushing the "Home" button or entering a blank citation returns to the <b>Home</b> page.</p>
+
+
+        <h2>Modifying the text format:</h2>
+        In the upper, right corner of each <b>Book</b> page are three to six pull down lists which control the formatting of the text.
+        <p/>
+
+
+        <ul>
+            <li>
+                <b>View: </b> <b>Chapter</b> view displays contiguous text and is the default view. 
+                <b>Verses</b> view displays the text as individually-labeled verses in individual table cells.</li>
+
+            <li><b>Layout:</b> controls the presentation of the text. The layouts Full -> Note-free -> Text-only -> Qere-only 
+                represent a reduction in text detail for continuous text.  The Verses layout has equivalent content to the Full
+                layout, however verses are presented separately.
+                <ul>
+                    <li>
+                        <b>Full</b> (default)<br>
+                        Continuous text with: 
+                        <ul>
+                            <li>Qere markings in blue, ketib markings in red.</li>
+                            <li>Chapter:Verse markings and traditional pe, samekh, and reversed nun markers.</li>
+                            <li>Transcription notes.</li>
+                        </ul>
+                        Subsequent layouts progressively remove these features, starting at the bottom of this list.
+                    </li> 
+                    <li>
+                        <b>Note-free</b><br>
+                        Text is displayed as in the "Full" layout, but <i>without</i> transcription notes.
+                        <i>This is the easiest layout to copy and paste into other documents.</i>
+                    </li> 
+                    <li>
+                        <b>Text-only</b><br>
+                        Text is displayed as in the "Note-free" layout, but <i>without</i> the Chapter:Verse labels or samekh/pe markings.
+                    </li> 
+                    <li>
+                        <b>Qere-only</b><br>
+                        Text is displayed as in the "Text-only" layout, but <i>without</i> the ketiv variants.
+                        The qere variants are not colorized.
+                    </li> 
+
+                </ul>
+            </li>
+            <li>
+                <b>Content:</b> controls what markings are shown on the text consonants.
+                <ul>
+                    <li>
+                        <b>Accents</b> (default)<br>
+                        Vowels and accents are displayed on consonants. 
+                        <span dir="rtl" style="font-family:SBL Hebrew; font-size:18pt; display: inline-block; text-align: right; width: 100%;">
+                            &#x05d1;&#x05bc;&#x05b0;&#x05e8;&#x05b5;&#x05d0;&#x05e9;&#x05c1;&#x05b4;&#x0596;&#x05d9;&#x05ea;&#x0020;
+                            &#x05d1;&#x05bc;&#x05b8;&#x05e8;&#x05b8;&#x05a3;&#x05d0;&#x0020;
+                            &#x05d0;&#x05b1;&#x05dc;&#x05b9;&#x05d4;&#x05b4;&#x0591;&#x05d9;&#x05dd;&#x0020;
+                            &#x05d0;&#x05b5;&#x05a5;&#x05ea;&#x0020;
+                            &#x05d4;&#x05b7;&#x05e9;&#x05c1;&#x05bc;&#x05b8;&#x05de;&#x05b7;&#x0596;&#x05d9;&#x05b4;&#x05dd;&#x0020;
+                            &#x05d5;&#x05b0;&#x05d0;&#x05b5;&#x05a5;&#x05ea;&#x0020;
+                            &#x05d4;&#x05b8;&#x05d0;&#x05b8;&#x05bd;&#x05e8;&#x05b6;&#x05e5;&#x05c3;
+                        </span>
+                    </li> 
+                    <li>
+                        <b>Vowels</b><br>
+                        The vowels plus the maqaf and sof pasuq are displayed on the consonants. <p/>
+                        <span dir="rtl" style="font-family:SBL Hebrew; font-size:18pt; display: inline-block; text-align: right; width: 100%;">
+                            &#x05d1;&#x05bc;&#x05b0;&#x05e8;&#x05b5;&#x05d0;&#x05e9;&#x05c1;&#x05b4;&#x05d9;&#x05ea;&#x0020;
+                            &#x05d1;&#x05bc;&#x05b8;&#x05e8;&#x05b8;&#x05d0;&#x0020;
+                            &#x05d0;&#x05b1;&#x05dc;&#x05b9;&#x05d4;&#x05b4;&#x05d9;&#x05dd;&#x0020;
+                            &#x05d0;&#x05b5;&#x05ea;&#x0020;
+                            &#x05d4;&#x05b7;&#x05e9;&#x05c1;&#x05bc;&#x05b8;&#x05de;&#x05b7;&#x05d9;&#x05b4;&#x05dd;&#x0020;
+                            &#x05d5;&#x05b0;&#x05d0;&#x05b5;&#x05ea;&#x0020;
+                            &#x05d4;&#x05b8;&#x05d0;&#x05b8;&#x05e8;&#x05b6;&#x05e5;&#x05c3;
+                        </span>
+                    </li> 
+                    <li>
+                        <b>Consonants</b><br>
+                        Only the consonants are displayed. <p/>
+                        <span dir="rtl" style="font-family:SBL Hebrew; font-size:18pt; display: inline-block; text-align: right; width: 100%;">
+                            &#x05d1;&#x05e8;&#x05d0;&#x05e9;&#x05d9;&#x05ea;&#x0020;
+                            &#x05d1;&#x05e8;&#x05d0;&#x0020;
+                            &#x05d0;&#x05dc;&#x05d4;&#x05d9;&#x05dd;&#x0020;
+                            &#x05d0;&#x05ea;&#x0020;
+                            &#x05d4;&#x05e9;&#x05de;&#x05d9;&#x05dd;&#x0020;
+                            &#x05d5;&#x05d0;&#x05ea;&#x0020;
+                            &#x05d4;&#x05d0;&#x05e8;&#x05e5;
+                        </span>
+                    </li> 
+                    <li>
+                        <b>Morphology</b><br>
+                        Vowels and accents are displayed on consonants. Morphological division
+                        marks are given as forward slashes (/). <p/>
+                        <span dir="rtl" style="font-family:SBL Hebrew; font-size:18pt; display: inline-block; text-align: right; width: 100%;">
+                            &#x05d1;&#x05bc;&#x05b0;&#x002f;&#x05e8;&#x05b5;&#x05d0;&#x05e9;&#x05c1;&#x05b4;&#x0596;&#x05d9;&#x05ea;&#x0020;
+                            &#x05d1;&#x05bc;&#x05b8;&#x05e8;&#x05b8;&#x05a3;&#x05d0;&#x0020;
+                            &#x05d0;&#x05b1;&#x05dc;&#x05b9;&#x05d4;&#x05b4;&#x0591;&#x05d9;&#x05dd;&#x0020;
+                            &#x05d0;&#x05b5;&#x05a5;&#x05ea;&#x0020;
+                            &#x05d4;&#x05b7;&#x002f;&#x05e9;&#x05c1;&#x05bc;&#x05b8;&#x05de;&#x05b7;&#x0596;&#x05d9;&#x05b4;&#x05dd;&#x0020;
+                            &#x05d5;&#x05b0;&#x002f;&#x05d0;&#x05b5;&#x05a5;&#x05ea;&#x0020;
+                            &#x05d4;&#x05b8;&#x002f;&#x05d0;&#x05b8;&#x05bd;&#x05e8;&#x05b6;&#x05e5;&#x05c3;
+                        </span>
+                    </li> 
+                </ul>
+            </li>
+            <li>
+                <b>Font:</b> This pulldown provides a reasonable range of font sizes from 12 to 72 points. 
+                The default font size is 24 points.
+            </li>
+            <li>
+                <b>DH: </b> This <i>only</i> appears on books from the <b>Torah</b> having DH markings.
+                <ul>
+                    <li>
+                        <b>Off</b> (default)<br>
+                        DH markings are not shown.
+                    </li>
+                    <li>
+                        <b>Titles</b><br>
+                        DH markings appear as temporary pop-up titles when cursor is held over  the text for a while. 
+                        <span title="This is an example title."> 
+                            Hold the cursor over this sentence to see an example title.
+                        </span>
+                        <i>This is a way to see source markings without distraction.
+                        </i> 
+                    </li>
+                    <li>
+                        <b>All</b><br>
+                        DH markings are shown with the font properties coding shown in the legend.  The coding scheme
+                        depends on the particular book. 
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        The settings of these pull down lists are remembered from session to session.
+        <p>A <b>Book</b> page can be <b>bookmarked</b> by pressing the "Bookmark" button in the upper-left corner of the page and then
+            one address for the site http://www.tanach.us/ is showed and can be selected and copied with the usual browser controls.</p>
+        <table width="100%">
+            <tr>
+                <td align="left" width="33%">
+                    <img src="../Images/CreativeCommons.gif" alt="License information" border="0"/>
+                </td>
+                <td align="center" width="33%">
+                    <button onclick="window.history.back();"><i class="fa fa-home" aria-hidden="true"></i> Home</button>
+                </td>
+                <td align="right" width="33%">
+                    <b>25.1</b>
+                </td>
+            </tr>
+        </table>
+        <hr/>
+    </body>
+</html>

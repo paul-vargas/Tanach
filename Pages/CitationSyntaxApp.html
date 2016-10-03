@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            if (localStorage.theme == "night") {
+                document.write("<link rel=\"stylesheet\" type=\"text\/css\" href=\"..\/css\/night.css\">");
+            } else {
+                document.write("<link rel=\"stylesheet\" type=\"text\/css\" href=\"..\/css\/day.css\">");
+            }
+        </script>
+        <meta charset="utf-8">
+        <link rel="icon" href="../Images/TanachIcon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="../Images/TanachIcon.ico" type="image/x-icon" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="../css/custom.css">
+  <title>Citation syntax</title>
+<!-- Force the default font so that the site looks the same on all systems.  -->
+  <style>
+    body {font-family:serif;}
+  </style>
+</head>
+<body style="background-image:url('../Images/Background');margin-right:10pt; 
+              margin-left:10pt; margin-top:10pt; margin-bottom:0">
+<table width="100%">
+  <tr>
+    <td align="left"> 
+      <span style="font-family:Times New Roman;font-weight:bold;font-size:200%">Citation syntax</span>
+      <p/>     
+    </td>
+  </tr>
+</table>
+<p/>
+
+
+<h4>Choosing a book:</h4>
+The easiest way to choose a book is to click on the table of books below the citation text field.
+The book name will appear in the text field.  A book can be entered from the keyboard by either by its 
+English name or  <b>abbreviation</b>:
+<p/>
+<table width="100%" border="1" cellpadding="1" style="font-size: 95%; text-align: center;">
+<tr><td><b>Torah</b></td></tr>
+<tr><td>Genesis; <b>Gen</b></td></tr>
+<tr><td>Exodus; <b>Ex</b></td></tr>
+<tr><td>Leviticus; <b>Lev</b></td></tr>
+<tr><td>Numbers; <b>Num</b></td></tr>
+<tr><td>Deuteronomy; <b>Deut</b></td></tr>
+<tr><td><b>Prophets</b></td></tr>
+<tr><td>Joshua; <b>Josh</b></td></tr>
+<tr><td>Judges; <b>Judg</b></td></tr>
+<tr><td>1 Samuel; <b>1 Sam</b></td></tr>
+<tr><td>2 Samuel; <b>2 Sam</b></td></tr>
+<tr><td>1 Kings; <b>1 Kings</b></td></tr>
+<tr><td>2 Kings; <b>2 Kings</b></td></tr>
+<tr><td>Isaiah; <b>Isa</b></td></tr>
+<tr><td>Jeremiah; <b>Jer</b></td></tr>
+<tr><td>Ezekiel; <b>Ezek</b></td></tr>
+<tr><td><b>Minor prophets</b></td></tr>
+<tr><td>Hosea; <b>Hos</b></td></tr>
+<tr><td>Joel; <b>Joel</b></td></tr>
+<tr><td>Amos; <b>Am</b></td></tr>
+<tr><td>Obadiah; <b>Ob</b></td></tr>
+<tr><td>Jonah; <b>Jon</b></td></tr>
+<tr><td>Micah; <b>Mic</b></td></tr>
+<tr><td>Nahum; <b>Nah</b></td></tr>
+<tr><td>Habakkuk; <b>Hab</b></td></tr>
+<tr><td>Zephaniah; <b>Zeph</b></td></tr>
+<tr><td>Haggai; <b>Hag</b></td></tr>
+<tr><td>Zechariah; <b>Zech</b></td></tr>
+<tr><td>Malachi; <b>Mal</b></td></tr>
+<tr><td><b>Writings</b></td></tr>
+<tr><td>Psalms; <b>Ps</b></td></tr>
+<tr><td>Proverbs; <b>Prov</b></td></tr>
+<tr><td>Job; <b>Job</b></td></tr>
+<tr><td>Song of songs; <b>Song</b></td></tr>
+<tr><td>Ruth; <b>Ruth</b></td></tr>
+<tr><td>Lamentations; <b>Lam</b></td></tr>
+<tr><td>Ecclesiastes; <b>Eccl</b></td></tr>
+<tr><td>Esther; <b>Esth</b></td></tr>
+<tr><td>Daniel; <b>Dan</b></td></tr>
+<tr><td>Ezra; <b>Ezra</b></td></tr>
+<tr><td>Nehemiah; <b>Neh</b></td></tr>
+<tr><td>1 Chronicles; <b>1 Chr</b></td></tr>
+<tr><td>2 Chronicles; <b>2 Chr</b></td></tr>
+</table>
+<p/>
+Book names and abbreviations are case-insensitive.  That is, deut, 
+DEUT, deuteronomy, and dEUTERONOMY
+are valid entries for the book of Deuteronomy.
+<p/> 
+<h4>Choosing chapters and verses:</h4>
+Six different formats are available to specify a citation.  Only these
+formats are accepted, all others will produce error messages. 
+To view the entire book, usually <i>not</i> a good idea, enter a single asterisk, <b>'*'</b>.
+The general format is
+<b>b c:v</b> where <b>b</b> is the book, <b>c</b> is the chapter, and
+<b>v</b> is the verse. 
+A dash, "<b>-</b>", indicates a range of values. If the specified book, chapter, verse
+doesn't exist, an error message is given.  This message also gives the limits
+on the chapters or verses in the citation.  Indicies are positive, starting at 1,
+not zero.
+<p/>
+<table align="center" width="100%" border="1" cellpadding="1" style="font-size: 95%">
+    <th align="center" width="30%">Syntax</th>
+    <th align="center" width="25%">Syntax name</th>
+    <th align="center" width="45%">yields...</th>
+<tr>
+    <td><b>b *</b></td>
+    <td>Complete book</td>
+    <td>All the chapters and verses in the book. <br/>
+       <i>Caution: This will usually take a long time to display!</i>
+    </td></tr> 
+<tr>
+    <td><b>b <b>c</b></b></td>
+    <td>Single chapter</td>
+    <td>Book <b>b</b>, chapter <b>c</b>.</td></tr> 
+<tr>
+    <td><b>b c:v</b></td>
+    <td>Single verse</td>
+    <td>Book <b>b</b>, chapter <b>c</b>, verse <b>v</b>.</td></tr> 
+<tr>
+    <td><b>b c1 - c2</b></td>
+    <td>Chapter range</td>
+    <td>Book <b>b</b>, chapters <b>c1</b> through <b>c2</b>.<br/> <i>Caution: Wide ranges are slow to display!</i></td></tr> 
+<tr>
+    <td><b>b c:v1 - v2</b></td>
+    <td>Single chapter: Verse range</td>
+    <td>Book <b>b</b>, chapter <b>c</b> verses <b>v1</b> through <b>v2</b>.</td></tr> 
+<tr>
+    <td><b>b c1:v1 - c2:v2</b></td>
+    <td>Chapter: Verse range</td>
+    <td>Book <b>b</b>, from chapter <b>c1</b>, verse <b>v1</b> to chapter <b>c2</b>, verse <b>v2</b>.</td></tr> 
+</table>
+<p/>
+A citation may <i>not</i> specify more than one book. Blanks may be omitted.
+  
+<p/>
+        <table width="100%">
+            <tr>
+                <td align="left" width="33%">
+                    <img src="../Images/CreativeCommons.gif" alt="License information" border="0"/>
+                </td>
+                <td align="center" width="33%">
+                    <button onclick="window.history.back();"><i class="fa fa-home" aria-hidden="true"></i> Home</button>
+                </td>
+                <td align="right" width="33%">
+                    <b>25.1</b>
+                </td>
+            </tr>
+        </table>
+        <hr/>
+</body>
+</html>

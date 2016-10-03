@@ -1,7 +1,7 @@
 
 /* global P, tanachXSL */
 
-$(function() {
+$(function () {
     $("body").css({
         margin: "2px"
     });
@@ -22,17 +22,34 @@ function setBookMark() {
     window.prompt("BookMark", "http://www.tanach.us/" + location);
 }
 
-function setShowVerse() {
-    document.excerptinput.textfield.value = getXSLParam(tanachXSL, "clickbook")
-            + " " + getXSLParam(tanachXSL, "clickchapter");
-    testAndLaunchBookPage(document.excerptinput.textfield.value);
+/* Overwritings for cookie functions */
+function askForCookie(name, defaultvalue) {
+    var thisCookie = readCookie(name);
+    if (!thisCookie) {
+        return defaultvalue;
+    }
+    return thisCookie;
 }
+
+function clearCookies() {
+    localStorage.clear();
+}
+
+function createCookie(name, value, days) {
+    localStorage.setItem(name, value);
+}
+
+function readCookie(name) {
+    return localStorage.getItem(name);
+}
+
+/* Other overwritings */
 
 function init() {
     baseURL = getBaseURL("Tanach.xml");
     loadHomePageFiles();  // Always needed. Sets Server variable.
-    
-    var theme = localStorage.getItem("theme");
+
+    var theme = localStorage.theme || "day";
     if (theme == "night") {
         $("#linktheme").attr("href", "css/night.css");
     } else {
@@ -47,7 +64,46 @@ function init() {
         setXSLParam(tanachXSL, "queryURL", "true");
         testAndLaunchBookPage(queryString);
     }
+}
 
+function setShowVerse() {
+    document.excerptinput.textfield.value = getXSLParam(tanachXSL, "clickbook")
+            + " " + getXSLParam(tanachXSL, "clickchapter");
+    testAndLaunchBookPage(document.excerptinput.textfield.value);
+}
+
+function setLastVerseClick(lastVerse) {
+    testAndLaunchBookPage(document.excerptinput.textfield.value + " - " + lastVerse);
+}
+
+function enterBookCitation() {
+    if (window.location.search.substring(1).length == 0) {
+        if (document.excerptinput.textfield.value.length == 0) {
+            setHomePage()
+        } else {
+            testAndLaunchBookPage(document.excerptinput.textfield.value);
+        }
+    }
+    // Previous page had a query parameter, load the Home page.
+    else {
+        createCookie("Citation", document.excerptinput.textfield.value, 3650);
+        window.location = "Tanach.xml";
+    }
+}
+
+function setHomePage() {
+
+    //  Place the Home template in the body element.
+    FontFamily = askForCookie("FontFamily", "SBL Hebrew");
+    setXSLParam(tanachXSL, "fontfamily", FontFamily);
+    setTemplateToNode(tanachIndexXML, tanachXSL, "Home", document.body);
+
+    var Citation = askForCookie('Citation', "");
+    document.excerptinput.textfield.value = Citation;
+    //  Place the BookTable into the Text area.
+    setBookTable();
+
+    var theme = askForCookie("theme", "day");
     if (theme == "night") {
         $("#linkDay").show();
         $("#linkNight").hide();
@@ -55,6 +111,9 @@ function init() {
         $("#linkDay").hide();
         $("#linkNight").show();
     }
+    $("a[href='Pages/CitationSyntax.html']").attr("href", "Pages/CitationSyntaxApp.html?theme=" + theme);
+    $("a[href='Pages/About.html']").attr("href", "Pages/AboutApp.html?theme=" + theme);
+    $("a[href='Pages/Instructions.html']").attr("href", "Pages/InstructionsApp.html?theme=" + theme);
 }
 
 function changeLayout() {
@@ -139,4 +198,19 @@ function changeFontSize() {
     setXSLParam(textXSL, "fontsize", fontsize);
     setDependentFontSizes(textXSL);
     setTemplateToNode(bookXML, textXSL, "Excerpt", document.getElementById("Text"));
+}
+
+function changeTheme() {
+    var theme = localStorage.theme || "day";
+    if (theme == "night") {
+        localStorage.theme = "day";
+        $("#linktheme").attr("href", "css/day.css");
+        $("#linkDay").hide();
+        $("#linkNight").show();
+    } else {
+        localStorage.theme = "night";
+        $("#linktheme").attr("href", "css/night.css");
+        $("#linkDay").show();
+        $("#linkNight").hide();
+    }
 }

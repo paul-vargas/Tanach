@@ -3,9 +3,13 @@ body {
 }
 
 * {
-    color: #ddd !important;
+    color: #ccc !important;
 }
 
 table.hebrewtextverses, td.hebrewtextverses, td.citationverses {
-	border-color: #222 !important;
+    border-color: #262626 !important;
+}
+
+.citation, .citationverses * {
+    color: #777 !important;
 }

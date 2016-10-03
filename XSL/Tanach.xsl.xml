@@ -173,7 +173,14 @@
 <!--========================================================================-->
 <xsl:template name="Dispatcher">
 <html>
-<head> 
+<head>
+  <script><![CDATA[
+            if (localStorage.theme == "night") {
+                document.write("<link id=\"linktheme\" rel=\"stylesheet\" type=\"text\/css\" href=\"css\/night.css\">");
+            } else {
+                document.write("<link id=\"linktheme\" rel=\"stylesheet\" type=\"text\/css\" href=\"css\/day.css\">");
+            }
+  ]]></script>
   <meta charset="UTF-8"/>  
   <meta http-equiv="X-UA-Compatible" content="IE=8"/>
   <meta content="Unicode/XML Westminster Leningrad Codex" name="description"/>
@@ -189,9 +196,8 @@
   <script src="Javascript/TanachHome.js" type="text/javascript"> </script>
   <link rel="stylesheet" type="text/css" href="css/custom.css"/>
   <link rel="stylesheet" type="text/css" href="css/font-awesome.css"/>
-  <link id="linktheme" rel="stylesheet" type="text/css" href="css/day.css"/>
   <script src="js/jquery-3.1.0.min.js" type="text/javascript"> </script>
-  <script src="js/custom.js" type="text/javascript"> </script>  
+  <script src="js/custom.js" type="text/javascript"> </script>
 </head>
 <body  onload="Javascript:init()" 
        style="background-image:url('{$background}');margin-right:10pt; 
@@ -279,7 +285,8 @@
               style="text-decoration:none;color:black" 
               title="Click to see the Hebrew text's overall TEI header.">
               <span style="font-family:{$englishfontfamily};font-weight:bold;font-size:200%">
-                <xsl:value-of select="teiHeader/fileDesc/titleStmt/title[./@level='s' and ./@type='uniform'] "/>
+                <!--<xsl:value-of select="teiHeader/fileDesc/titleStmt/title[./@level='s' and ./@type='uniform'] "/>-->
+                <xsl:text>Tanakh</xsl:text>
                 <xsl:text> - </xsl:text>
               </span>
               <span align="left" style="font-family:{$fontfamily};font-size:250%">
@@ -338,7 +345,7 @@
               <tr>
                 <td align="left"><b><i class="fa fa-book" aria-hidden="true">&#x200B;</i> Citation:</b></td>
                 <td align="right">
-                  <a href="Pages/CitationSyntax.html" title="See how to enter a citation"><i class="fa fa-question-circle-o" aria-hidden="true">&#x200B;</i> Syntax</a>
+                  <a href="Pages/CitationSyntaxApp.html" title="See how to enter a citation"><i class="fa fa-question-circle-o" aria-hidden="true">&#x200B;</i> Syntax</a>
                 </td>
               </tr>
               <tr><td colspan="2"><form action="JavaScript:enterHomeCitation()" name="excerptinput"><input maxlength="32" name="textfield" style="font-weight:bold;font-family:{$englishfontfamily};font-size:16pt; width: 100%;" title="Enter the Tanach citation here, i.e. Deut 26:5." type="TEXT" placeholder="e.g. Deut 26:5" /></form></td></tr>
@@ -814,7 +821,7 @@
     <tr>
       <td align="center" colspan="3">
           <small>
-              <a href="Pages/About.html"><i class="fa fa-info-circle" aria-hidden="true">&#x200B;</i> About</a> | <a href="Pages/Instructions.html"><i class="fa fa-file-text-o" aria-hidden="true">&#x200B;</i> Instructions</a> | <a id="linkDay" href="index.html?theme=day" style="display: none;"><i class="fa fa-sun-o" aria-hidden="true">&#x200B;</i> Day theme</a><a id="linkNight" href="index.html?theme=night"><i class="fa fa-moon-o" aria-hidden="true">&#x200B;</i> Night theme</a>
+              <a href="Pages/About.html"><i class="fa fa-info-circle" aria-hidden="true">&#x200B;</i> About</a> | <a href="Pages/Instructions.html"><i class="fa fa-file-text-o" aria-hidden="true">&#x200B;</i> Instructions</a> | <a id="linkDay" href="javascript:void(0)" style="display: none;" onclick="Javascript:changeTheme()"><i class="fa fa-sun-o" aria-hidden="true">&#x200B;</i> Day theme</a><a id="linkNight" href="javascript:void(0)" onclick="Javascript:changeTheme()"><i class="fa fa-moon-o" aria-hidden="true">&#x200B;</i> Night theme</a>
           </small>
       </td>
   </tr>
@@ -939,7 +946,7 @@
             <table>
               <tr>
                 <td align="left"><b><i class="fa fa-book" aria-hidden="true">&#x200B;</i> Citation:</b></td>
-                <td align="right"><a href="Pages/CitationSyntax.html" title="See how to enter a citation"><i class="fa fa-question-circle-o" aria-hidden="true">&#x200B;</i> Syntax</a></td>
+                <td align="right"><a href="Pages/CitationSyntaxApp.html" title="See how to enter a citation"><i class="fa fa-question-circle-o" aria-hidden="true">&#x200B;</i> Syntax</a></td>
               </tr>
               <tr>
                 <td colspan="2" >
@@ -1081,8 +1088,6 @@
                     <option value="64">64pt</option>
                     <option value="68">68pt</option>
                     <option value="72">72pt</option>
-                    <option style="color:blue" value="change">Change font</option>
-                    <option style="color:blue" value="test">Test font</option>
                 </select>
       </span> 
       <xsl:if test="$clickbookindex &lt; 6">

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            if (localStorage.theme == "night") {
+                document.write("<link rel=\"stylesheet\" type=\"text\/css\" href=\"..\/css\/night.css\">");
+            } else {
+                document.write("<link rel=\"stylesheet\" type=\"text\/css\" href=\"..\/css\/day.css\">");
+            }
+        </script>
+        <meta charset="utf-8">
+        <link rel="icon" href="../Images/TanachIcon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="../Images/TanachIcon.ico" type="image/x-icon" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+
+        <link rel="stylesheet" type="text/css" href="../css/custom.css">
+        <link rel="stylesheet" type="text/css" href="../css/font-awesome.css">
+
+        <title>About</title>
+        <!-- Force the default font so that the site looks the same on all systems.  -->
+        <style>
+            body {
+                font-family: serif;
+            }
+        </style>
+    </head>
+    <body style="margin: .5em; cursor: auto; background-image: url(&quot;../Images/Background&quot;);">
+        <h1>About</h1>
+
+        <p>This application is an adapted version of the <a href="http://www.tanach.us/" target="_blank"><strong><code>http://www.tanach.us/</code></strong><i class="fa fa-external-link" aria-hidden="true"></i></a> web site (particularly of the <a href="http://www.tanach.us/Pages/Technical.html" target="_blank">offline or local site<i class="fa fa-external-link" aria-hidden="true"></i></a>).</p>
+
+        <p>It's using <a href="https://crosswalk-project.org/" target="_blank">Crosswalk<i class="fa fa-external-link" aria-hidden="true"></i></a> 20 (<a href="https://www.chromium.org/Home" target="_blank">Chromium<i class="fa fa-external-link" aria-hidden="true"></i></a> M50) with the aim (and hope) to display correctly the character set of <a href="https://www.sbl-site.org/educational/BiblicalFonts_SBLHebrew.aspx" target="_blank">SBL Hebrew font<i class="fa fa-external-link" aria-hidden="true"></i></a>.</p>
+
+        <p>I appreciate your time and interest in using this application. Please feel free to send your feedback/suggestions for any improvements to <a href="mailto:support@paulvargas.org" style="color:blue">support@paulvargas.org</a>.</p>
+
+        <table width="100%">
+            <tr>
+                <td align="left" width="33%">
+                    <img src="../Images/CreativeCommons.gif" alt="License information" border="0"/>
+                </td>
+                <td align="center" width="33%">
+                    <button onclick="window.history.back();"><i class="fa fa-home" aria-hidden="true"></i> Home</button>
+                </td>
+                <td align="right" width="33%">
+                    <b>25.1</b>
+                </td>
+            </tr>
+        </table>
+        <hr/>
+    </body>
+</html>
